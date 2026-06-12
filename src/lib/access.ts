@@ -7,7 +7,7 @@
 
 /** Apps Script Web App endpoint backed by the access-log Sheet. */
 export const ACCESS_LOG_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbw0srPiP3ffdbpPHylXYhAtvKfs4QNYkALquDGnUkAJ2upjKWPz15eySeZSkHG8nzVv/exec";
+  "https://script.google.com/macros/s/AKfycbxccCCLmMkgP03-KRi6bJp1xJI4bpxpe9xnAUoacb2QkfBkqJ8S4xozQDnMd6XDVuYy/exec";
 
 const STORAGE_KEY = "jh-access-v1";
 
