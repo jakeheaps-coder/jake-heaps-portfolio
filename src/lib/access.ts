@@ -5,8 +5,9 @@
  * Apps Script endpoint backed by a Sheet.
  */
 
-/** Paste the Apps Script Web App URL (ends in /exec) here after deploying. */
-export const ACCESS_LOG_ENDPOINT = "";
+/** Apps Script Web App endpoint backed by the access-log Sheet. */
+export const ACCESS_LOG_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbw0srPiP3ffdbpPHylXYhAtvKfs4QNYkALquDGnUkAJ2upjKWPz15eySeZSkHG8nzVv/exec";
 
 const STORAGE_KEY = "jh-access-v1";
 

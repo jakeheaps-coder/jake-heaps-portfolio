@@ -77,9 +77,9 @@ export default function Education() {
               The roster, by department
             </h3>
             <p className="measure mt-4 text-ink-soft">
-              Each line is one person and the workflow they now run in
-              production — built or co-built during enablement, documented, and
-              in daily use. The length of the list is the point.
+              Selected entries from the roster — each one a workflow now
+              running in production, built or co-built during enablement,
+              documented, and in daily use.
             </p>
             <p className="measure mt-3 font-mono text-caption text-ink-soft">
               Published with the consent of those named; roles are generalized

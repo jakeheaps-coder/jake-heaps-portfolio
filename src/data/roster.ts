@@ -95,13 +95,7 @@ export const teamRoster: TeamMember[] = [
     tool: "Custom AI Agents",
   },
   {
-    role: "Content Strategist",
-    department: "Content & Comms",
-    workflow: "Using AI and the Knowledge Graph to create and audit content",
-    tool: "Knowledge Graph + AI",
-  },
-  {
-    role: "Sr. Content Strategist",
+    role: "Content Strategists",
     department: "Content & Comms",
     workflow: "Using AI and the Knowledge Graph to create and audit content",
     tool: "Knowledge Graph + AI",
@@ -167,8 +161,8 @@ export const teamRoster: TeamMember[] = [
     role: "Sr. Blog Manager",
     department: "Brand & Community",
     workflow:
-      "Implemented AirOps, automating the blog creation process end-to-end",
-    tool: "AirOps + AI",
+      "Implemented an AI content platform, automating the blog creation process end-to-end",
+    tool: "AI content platform",
   },
 
   // Leadership & Strategy

@@ -31,6 +31,7 @@ FORBIDDEN=(
   'NLC Mutual'
   'awardco'
   'BankSouth'
+  'AirOps'
   '10 people'
   'replaced 10'
   'people replaced'
