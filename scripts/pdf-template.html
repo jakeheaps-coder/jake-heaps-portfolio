@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jake Heaps — AI Strategy &amp; Transformation · Private Brief · 2026</title>
+<meta name="author" content="Jake Heaps">
+<meta name="description" content="A private brief on twelve months of enterprise AI transformation.">
+<meta name="generator" content="The Manuscript Brief">
+<style>
+/* ==========================================================================
+   Fonts — static instances pinned from variable masters
+   ========================================================================== */
+@font-face { font-family: "Newsreader Display"; src: url("{{ font_dir }}/Newsreader-Display.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Newsreader Display"; src: url("{{ font_dir }}/Newsreader-DisplayMedium.ttf"); font-weight: 500; font-style: normal; }
+@font-face { font-family: "Newsreader Display"; src: url("{{ font_dir }}/Newsreader-DisplayItalic.ttf"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Newsreader Text"; src: url("{{ font_dir }}/Newsreader-Text.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Newsreader Text"; src: url("{{ font_dir }}/Newsreader-TextItalic.ttf"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "General Sans"; src: url("{{ font_dir }}/GeneralSans-Regular.otf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "General Sans"; src: url("{{ font_dir }}/GeneralSans-Italic.otf"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "General Sans"; src: url("{{ font_dir }}/GeneralSans-Medium.otf"); font-weight: 500; font-style: normal; }
+@font-face { font-family: "General Sans"; src: url("{{ font_dir }}/GeneralSans-Semibold.otf"); font-weight: 600; font-style: normal; }
+@font-face { font-family: "IBM Plex Mono"; src: url("{{ font_dir }}/IBMPlexMono-Regular.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "IBM Plex Mono"; src: url("{{ font_dir }}/IBMPlexMono-Medium.ttf"); font-weight: 500; font-style: normal; }
+
+/* ==========================================================================
+   Page masters
+   ========================================================================== */
+@page {
+  size: letter;
+  margin: 20mm 22mm 24mm 22mm;
+  @top-left {
+    content: "JAKE HEAPS — PRIVATE BRIEF";
+    font-family: "IBM Plex Mono"; font-weight: 500; font-size: 6.4pt;
+    letter-spacing: 0.14em; color: #8c8578;
+    vertical-align: bottom; padding-bottom: 4mm;
+  }
+  @top-right {
+    content: string(chapter);
+    font-family: "IBM Plex Mono"; font-weight: 500; font-size: 6.4pt;
+    letter-spacing: 0.14em; color: #8c8578;
+    vertical-align: bottom; padding-bottom: 4mm;
+  }
+  @bottom-center {
+    content: counter(page);
+    font-family: "IBM Plex Mono"; font-weight: 400; font-size: 8pt;
+    color: #5F594F; vertical-align: top; padding-top: 5mm;
+  }
+}
+@page night {
+  margin: 0; background: #131210;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html { font-size: 10pt; }
+body {
+  margin: 0;
+  font-family: "General Sans", sans-serif;
+  font-size: 10pt; line-height: 1.55;
+  color: #1A1714; background: #FFFFFF;
+  font-kerning: normal;
+}
+p, h1, h2, h3, h4, figure, blockquote, dl, dd { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img { display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { break-after: avoid; }
+p { orphans: 3; widows: 3; }
+
+.prose p { max-width: 95mm; hyphens: auto; margin-bottom: 3.4mm; }
+.prose p:last-child { margin-bottom: 0; }
+.soft { color: #5F594F; }
+.sienna { color: #8A4226; }
+.cedar { color: #2D4A3A; }
+
+/* Mono eyebrow — the ledger voice */
+.eyebrow {
+  font-family: "IBM Plex Mono"; font-weight: 500;
+  font-size: 7.5pt; line-height: 1.45;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+/* Serif display numerals */
+.numeral {
+  font-family: "Newsreader Display"; font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: -0.01em;
+}
+.rule-ink { border: 0; border-top: 1.5pt solid #1A1714; margin: 0; }
+.keep { break-inside: avoid; }
+.rule-hair { border: 0; border-top: 0.45pt solid #C9C2B2; margin: 0; }
+
+/* Sections */
+section.sheet { break-before: page; }
+section[data-chapter] { string-set: chapter attr(data-chapter); }
+
+/* Section opener (light pages) */
+.opener-title {
+  font-family: "Newsreader Display"; font-weight: 500;
+  font-size: 22pt; line-height: 1.12; letter-spacing: -0.005em;
+  margin-top: 3mm;
+}
+.standfirst {
+  font-family: "Newsreader Text";
+  font-size: 11.5pt; line-height: 1.5; color: #5F594F;
+  max-width: 108mm; margin-top: 3.6mm;
+}
+
+/* ==========================================================================
+   Cover & back cover — Nightfall
+   ========================================================================== */
+.cover { page: night; position: relative; width: 215.9mm; height: 279.3mm; background: #131210; }
+.cover-head { position: absolute; top: 20mm; left: 20mm; right: 20mm; }
+.cover-eyebrow { color: #A39B8B; font-size: 8pt; letter-spacing: 0.16em; }
+.cover-head .rule { border: 0; border-top: 0.5pt solid #2A2722; margin-top: 4.5mm; }
+.cover-stat { position: absolute; top: 72mm; left: 20mm; right: 20mm; }
+.cover-stat .big {
+  font-family: "Newsreader Display"; font-weight: 400;
+  font-size: 154pt; line-height: 0.94; letter-spacing: -0.025em;
+  color: #E09B62;
+}
+.cover-stat .statlabel { color: #A39B8B; margin-top: 7mm; font-size: 8pt; letter-spacing: 0.14em; }
+.cover-line { position: absolute; top: 192mm; left: 20mm; right: 56mm; }
+.cover-line p {
+  font-family: "Newsreader Display"; font-weight: 400;
+  font-size: 23pt; line-height: 1.25; color: #ECE7DD;
+  letter-spacing: -0.005em;
+}
+.cover-foot { position: absolute; left: 20mm; right: 20mm; bottom: 18mm; }
+.cover-foot .rule { border: 0; border-top: 0.5pt solid #2A2722; margin-bottom: 4.5mm; }
+.cover-foot-row { display: table; width: 100%; }
+.cover-foot-row .l { display: table-cell; text-align: left; color: #A39B8B; }
+.cover-foot-row .r { display: table-cell; text-align: right; color: #6e675c; }
+
+.backcover { page: night; position: relative; width: 215.9mm; height: 279.3mm; background: #131210; break-before: page; }
+.back-main { position: absolute; top: 96mm; left: 20mm; right: 20mm; }
+.back-main h2 {
+  font-family: "Newsreader Display"; font-weight: 400;
+  font-size: 33pt; line-height: 1.1; color: #ECE7DD; letter-spacing: -0.01em;
+}
+.back-contact { margin-top: 16mm; max-width: 120mm; }
+.back-contact .row {
+  display: table; width: 100%;
+  border-top: 0.5pt solid #2A2722; padding: 4mm 0;
+}
+.back-contact .row .k { display: table-cell; width: 34mm; color: #A39B8B; vertical-align: baseline; }
+.back-contact .row .v { display: table-cell; color: #ECE7DD; vertical-align: baseline; font-size: 9.5pt; letter-spacing: 0.04em; }
+.back-contact .row .v a { color: #E09B62; }
+.back-foot { position: absolute; left: 20mm; right: 20mm; bottom: 18mm; }
+.back-foot .rule { border: 0; border-top: 0.5pt solid #2A2722; margin-bottom: 4.5mm; }
+.back-foot p { color: #6e675c; }
+
+/* ==========================================================================
+   Contents
+   ========================================================================== */
+.toc-head { margin-top: 10mm; }
+.toc { margin-top: 12mm; }
+.toc li { border-top: 0.45pt solid #C9C2B2; }
+.toc li.first { border-top: 1.5pt solid #1A1714; }
+.toc a {
+  display: block; padding: 3.6mm 0;
+  font-family: "IBM Plex Mono"; font-size: 8.5pt; font-weight: 400;
+  letter-spacing: 0.06em; color: #1A1714;
+}
+.toc a .n { color: #8A4226; font-weight: 500; }
+.toc a .t { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+.toc a .d { color: #5F594F; text-transform: none; letter-spacing: 0.02em; }
+.toc a::after {
+  content: leader(" · ") " " target-counter(attr(href), page);
+  color: #5F594F; font-weight: 400;
+}
+.toc-note { margin-top: 14mm; }
+.colophon { margin-top: 16mm; color: #8c8578; font-size: 6.8pt; }
+
+/* ==========================================================================
+   The record
+   ========================================================================== */
+.stat-ledger { margin-top: 9mm; border-bottom: 0.45pt solid #C9C2B2; }
+.stat-row { display: table; width: 100%; border-top: 0.45pt solid #C9C2B2; padding: 4.2mm 0 3.4mm; }
+.stat-row.first { border-top: 1.5pt solid #1A1714; }
+.stat-num {
+  display: table-cell; width: 64mm; vertical-align: baseline;
+  font-family: "Newsreader Display"; font-weight: 400; font-size: 27pt; line-height: 1;
+  font-feature-settings: "tnum" 1, "lnum" 1; letter-spacing: -0.015em;
+}
+.stat-num .affix { color: #8A4226; }
+.stat-label { display: table-cell; vertical-align: baseline; font-size: 9.5pt; color: #5F594F; }
+
+.pullquote { margin-top: 13mm; }
+.pullquote blockquote {
+  font-family: "Newsreader Display"; font-style: italic; font-weight: 400;
+  font-size: 19pt; line-height: 1.3; color: #1A1714;
+  max-width: 138mm; text-indent: -0.42em;
+}
+.pullquote figcaption { margin-top: 5mm; color: #5F594F; }
+
+.logo-strip { margin-top: 13mm; }
+.logo-row { margin-top: 7mm; }
+.logo-row img { display: inline-block; vertical-align: middle; margin-right: 9.5mm; }
+.logo-row img:last-child { margin-right: 0; }
+
+/* ==========================================================================
+   Chapter dividers — Nightfall band
+   ========================================================================== */
+.divider {
+  background: #131210;
+  margin: 0 -22mm 8mm -22mm;
+  padding: 11.5mm 22mm 10mm 22mm;
+}
+.div-grid { display: table; width: 100%; }
+.div-left { display: table-cell; vertical-align: bottom; }
+.div-right { display: table-cell; vertical-align: bottom; text-align: right; width: 56mm; }
+.div-eyebrow { color: #E09B62; letter-spacing: 0.14em; }
+.div-eyebrow .chno { color: #A39B8B; }
+.div-title {
+  font-family: "Newsreader Display"; font-weight: 500;
+  font-size: 30pt; line-height: 1.04; color: #ECE7DD; letter-spacing: -0.005em;
+  margin-top: 4mm;
+}
+.div-standfirst {
+  font-family: "Newsreader Text";
+  font-size: 10.5pt; line-height: 1.5; color: #A39B8B;
+  max-width: 95mm; margin-top: 4.5mm;
+}
+.div-num {
+  font-family: "Newsreader Display"; font-size: 30pt; line-height: 1;
+  color: #E09B62; font-feature-settings: "tnum" 1, "lnum" 1;
+}
+.div-statlabel { color: #A39B8B; margin-top: 2.5mm; font-size: 6.8pt; }
+
+/* Chapter content blocks */
+.block { margin-top: 8mm; }
+.block-title {
+  font-family: "Newsreader Display"; font-weight: 500;
+  font-size: 15.5pt; line-height: 1.15; margin-top: 2.2mm; margin-bottom: 3.4mm;
+}
+
+/* Formula rows */
+.formula { border-bottom: 0.45pt solid #C9C2B2; margin-top: 5mm; }
+.formula-row { display: table; width: 100%; border-top: 0.45pt solid #C9C2B2; padding: 4.6mm 0; break-inside: avoid; }
+.formula-row.first { border-top: 1.5pt solid #1A1714; }
+.f-num { display: table-cell; width: 17mm; vertical-align: baseline;
+  font-family: "Newsreader Display"; font-size: 17pt; line-height: 1; color: #8A4226;
+  font-feature-settings: "tnum" 1, "lnum" 1; }
+.f-title { display: table-cell; width: 40mm; vertical-align: baseline;
+  font-family: "Newsreader Display"; font-weight: 500; font-size: 13.5pt; line-height: 1.2; }
+.f-desc { display: table-cell; vertical-align: baseline; color: #5F594F; font-size: 9.5pt; line-height: 1.5; }
+
+/* ==========================================================================
+   Ledger tables — Tufte rules
+   ========================================================================== */
+table.ledger { width: 100%; border-collapse: collapse; border-top: 1.5pt solid #1A1714; }
+table.ledger.quiet { border-top: 0.45pt solid #C9C2B2; }
+table.ledger th {
+  font-family: "IBM Plex Mono"; font-weight: 500; font-size: 7pt;
+  text-transform: uppercase; letter-spacing: 0.08em; color: #5F594F;
+  text-align: left; padding: 2.2mm 4mm 2mm 0;
+  border-bottom: 0.45pt solid #C9C2B2;
+}
+table.ledger td {
+  padding: 2.3mm 4mm 2.3mm 0; vertical-align: top;
+  border-top: 0.45pt solid #C9C2B2; font-size: 8.7pt; line-height: 1.5;
+}
+table.ledger tr:first-child td { border-top: none; }
+table.ledger tr { break-inside: avoid; }
+table.ledger th.num, table.ledger td.num {
+  text-align: right; padding-right: 0;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+table.ledger td.lead { font-weight: 500; color: #1A1714; }
+table.ledger td.soft { color: #5F594F; }
+table.ledger td.mono {
+  font-family: "IBM Plex Mono"; font-weight: 400; font-size: 7.8pt; line-height: 1.5;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+table.ledger tfoot td, .table-note {
+  font-family: "IBM Plex Mono"; font-size: 6.8pt; line-height: 1.5;
+  color: #8c8578; letter-spacing: 0.03em;
+  padding-top: 2mm; border-top: 0.45pt solid #C9C2B2;
+}
+.table-note { border-top: none; margin-top: 2.4mm; }
+.caption-line { margin-bottom: 2.8mm; color: #5F594F; }
+/* Compact variant — the standards ledger sits tighter than the money tables. */
+table.ledger.tight th { padding-top: 1.8mm; padding-bottom: 1.7mm; }
+table.ledger.tight td { padding-top: 1.9mm; padding-bottom: 1.9mm; }
+/* Value-ledger totals — a heavier rule opens the subtotal band; the
+   first-year total carries the closing double voice: medium ink. */
+table.ledger tr.sum td { border-top: 1pt solid #1A1714; }
+table.ledger tr.sum ~ tr.sum td { border-top: 0.45pt solid #C9C2B2; }
+table.ledger tr.grand td { border-top: 1pt solid #1A1714; font-weight: 500; color: #1A1714; }
+table.ledger tr.grand td.mono { font-weight: 500; }
+/* Page cross-reference — resolves to the target's page number. */
+.pgref::after {
+  content: target-counter(attr(href), page);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Timeline */
+.timeline { display: table; width: 100%; table-layout: fixed; margin-top: 5mm; }
+.timeline-row { display: table-row; }
+.phase { display: table-cell; padding: 3mm 6mm 5mm 0; border-top: 0.45pt solid #C9C2B2; vertical-align: top; }
+.phase .pn { color: #8A4226; }
+.phase .pp { color: #5F594F; }
+.phase h4 { font-family: "Newsreader Display"; font-weight: 500; font-size: 12pt; margin-top: 1.6mm; }
+.phase p.pd { color: #5F594F; font-size: 8.4pt; line-height: 1.5; margin-top: 1.2mm; }
+
+/* Margin-rail blocks */
+.rail-block { position: relative; }
+.rail { float: right; width: 50mm; margin-left: 10mm; }
+.rail-note {
+  font-family: "IBM Plex Mono"; font-size: 7pt; font-weight: 400; line-height: 1.5;
+  color: #5F594F; border-top: 0.45pt solid #C9C2B2;
+  padding-top: 1.8mm; margin-bottom: 3.4mm; letter-spacing: 0.02em;
+}
+.rail-note .rl {
+  display: block; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.08em; color: #8A4226; margin-bottom: 1.2mm;
+}
+.clear { clear: both; }
+
+/* Case notes (Education) */
+.casenote { border-top: 0.45pt solid #C9C2B2; padding-top: 3mm; margin-top: 3.2mm; break-inside: avoid; }
+.casenote .who { color: #8A4226; }
+.casenote p.body { max-width: 95mm; margin-top: 2.2mm; color: #1A1714; font-size: 9.2pt; line-height: 1.5; hyphens: auto; }
+
+/* Task ledger — the one bespoke visualization, print edition.
+   Ink track = time before; sienna bar = time after, drawn to scale. */
+.tasks { border-top: 1.5pt solid #1A1714; margin-top: 5mm; }
+.tasks-head { display: table; width: 100%; border-bottom: 0.45pt solid #C9C2B2; }
+.tasks-head .th { display: table-cell; padding: 2.2mm 0 2mm;
+  font-family: "IBM Plex Mono"; font-weight: 500; font-size: 7pt;
+  text-transform: uppercase; letter-spacing: 0.08em; color: #5F594F; }
+.tasks-head .th.r { text-align: right; }
+.task { border-top: 0.45pt solid #C9C2B2; padding: 2.2mm 0 2.4mm; break-inside: avoid; }
+.task:first-of-type { border-top: none; }
+.t-head { display: table; width: 100%; }
+.t-name { display: table-cell; font-weight: 500; font-size: 9.2pt; }
+.t-red { display: table-cell; text-align: right; font-family: "IBM Plex Mono";
+  font-size: 7.8pt; color: #8A4226; font-feature-settings: "tnum" 1; }
+.t-bar-row { display: table; width: 100%; margin-top: 1mm; }
+.t-track { display: table-cell; vertical-align: middle; }
+.t-val { display: table-cell; width: 32mm; text-align: right; vertical-align: middle;
+  font-family: "IBM Plex Mono"; font-size: 6.8pt; line-height: 1.35; color: #5F594F;
+  font-feature-settings: "tnum" 1; }
+.t-val.after { color: #1A1714; }
+.t-bar { height: 0.9mm; background: #d3cec3; }
+.t-bar.after { height: 1.3mm; background: #8A4226; }
+
+/* ==========================================================================
+   The work — case files
+   ========================================================================== */
+.file { border-top: 0.45pt solid #C9C2B2; padding-top: 4.5mm; margin-top: 6mm; break-inside: avoid; }
+.file-grid { display: table; width: 100%; }
+.file-main { display: table-cell; vertical-align: top; padding-right: 9mm; }
+.file-rail { display: table-cell; vertical-align: top; width: 50mm; }
+.file-eyebrow .fn { color: #8A4226; }
+.file-eyebrow .fk { color: #5F594F; }
+.file h3 {
+  font-family: "Newsreader Display"; font-weight: 500;
+  font-size: 15.5pt; line-height: 1.15; margin-top: 2.4mm;
+}
+.file p.body { max-width: 95mm; margin-top: 2.6mm; color: #44403a; font-size: 9.3pt; line-height: 1.55; hyphens: auto; }
+.spec-list { width: 100%; border-collapse: collapse; }
+.spec-list td { font-family: "IBM Plex Mono"; font-size: 7pt; line-height: 1.55; padding: 0.6mm 0; color: #5F594F; vertical-align: baseline; }
+.spec-list td.v { text-align: right; color: #1A1714; font-feature-settings: "tnum" 1; }
+
+.plate { margin-top: 4mm; break-inside: avoid; }
+.plate img { border: 0.45pt solid #C9C2B2; }
+.plate figcaption {
+  font-family: "IBM Plex Mono"; font-size: 6.8pt; line-height: 1.5;
+  color: #8c8578; letter-spacing: 0.03em; margin-top: 1.6mm;
+}
+.plate figcaption .fig { color: #8A4226; font-weight: 500; }
+
+/* Catalog index */
+.cat-tier { margin-top: 8mm; }
+.cat-tier h3 {
+  font-family: "Newsreader Display"; font-weight: 500;
+  font-size: 13.5pt; line-height: 1.2;
+}
+.cat-tier p.tier-intro {
+  font-family: "Newsreader Text"; font-size: 9.8pt; line-height: 1.5;
+  color: #5F594F; max-width: 108mm; margin-top: 1.8mm;
+}
+.cat-group { margin-top: 4.6mm; }
+.cat-head { color: #1A1714; break-after: avoid; }
+.cat-head .cnt { color: #8c8578; }
+table.catalog { width: 100%; border-collapse: collapse; margin-top: 2mm; border-top: 0.45pt solid #C9C2B2; }
+table.catalog td { border-bottom: 0.45pt solid #ddd6c6; padding: 1.5mm 4mm 1.5mm 0; vertical-align: baseline; font-size: 8pt; line-height: 1.4; }
+table.catalog td.name { width: 40mm; font-weight: 500; color: #1A1714; }
+table.catalog td.gloss { color: #5F594F; }
+table.catalog td.roi {
+  width: 48mm; text-align: right; padding-right: 0;
+  font-family: "IBM Plex Mono"; font-size: 6.5pt; line-height: 1.5; color: #8A4226;
+  font-feature-settings: "tnum" 1;
+}
+table.catalog tr { break-inside: avoid; }
+table.catalog td.tool { width: 38mm; color: #5F594F; }
+
+/* ==========================================================================
+   On the record
+   ========================================================================== */
+.ref { border-top: 0.45pt solid #C9C2B2; padding-top: 5mm; margin-top: 6mm; break-inside: avoid; }
+.ref .rn { color: #8A4226; }
+.ref .rk { color: #5F594F; }
+.ref h3 { font-family: "Newsreader Display"; font-weight: 500; font-size: 14.5pt; line-height: 1.2; margin-top: 2.2mm; }
+.ref p.ctx { max-width: 100mm; margin-top: 2.4mm; color: #5F594F; font-size: 9.3pt; }
+.ref p.url { font-family: "IBM Plex Mono"; font-size: 7pt; letter-spacing: 0.02em; margin-top: 2.6mm; color: #2D4A3A; }
+
+/* ==========================================================================
+   The letter
+   ========================================================================== */
+.letter-fig { float: right; width: 36mm; margin-left: 9mm; margin-bottom: 3.5mm; }
+.letter-fig img { width: 36mm; height: 36mm; border: 0.45pt solid #C9C2B2; }
+.letter-fig figcaption { font-family: "IBM Plex Mono"; font-size: 6.8pt; color: #8c8578; letter-spacing: 0.04em; margin-top: 2mm; }
+.letter-prose { margin-top: 3.6mm; }
+.letter-prose p {
+  font-family: "Newsreader Text"; font-size: 9.7pt; line-height: 1.5;
+  max-width: 101mm; margin-bottom: 2.2mm; hyphens: auto;
+}
+.signature { margin-top: 2.5mm; break-inside: avoid; }
+.signature img { height: 10mm; width: auto; }
+.signature .sig-name { margin-top: 1.6mm; color: #5F594F; }
+</style>
+</head>
+<body>
+
+<!-- ======================================================== 1 · COVER -->
+<section class="cover">
+  <div class="cover-head">
+    <p class="eyebrow cover-eyebrow">Jake Heaps&ensp;—&ensp;AI Strategy &amp; Transformation</p>
+    <hr class="rule">
+  </div>
+  <div class="cover-stat">
+    <p class="big">93%</p>
+    <p class="eyebrow statlabel">Team adoption&ensp;·&ensp;Twelve-month enterprise transformation&ensp;·&ensp;{{ system_count }} production systems</p>
+  </div>
+  <div class="cover-line">
+    <p>I build AI operating systems that people <em>actually</em>&nbsp;use.</p>
+  </div>
+  <div class="cover-foot">
+    <hr class="rule">
+    <div class="cover-foot-row eyebrow">
+      <span class="l">Private brief&ensp;·&ensp;2026</span>
+      <span class="r">The Manuscript Brief</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== 2 · CONTENTS -->
+<section class="sheet" id="contents" data-chapter="CONTENTS">
+  <div class="toc-head">
+    <p class="eyebrow soft">Contents</p>
+    <h2 class="opener-title">A brief in five chapters.</h2>
+    <p class="standfirst">The record first, then how it was done — the strategy,
+    the systems, and the people who now run them. Governance runs through all
+    three. The work follows as case files; the letter closes it.</p>
+  </div>
+  <ul class="toc">
+    <li class="first"><a href="#record"><span class="t">The record</span> <span class="d">— twelve months, measured</span></a></li>
+    <li><a href="#ch-01"><span class="n">01</span>&ensp;<span class="t">Strategy</span> <span class="d">— the formula, the decisions, the post-mortems</span></a></li>
+    <li><a href="#ch-02"><span class="n">02</span>&ensp;<span class="t">Transformation</span> <span class="d">— the twelve months, down to the ledger</span></a></li>
+    <li><a href="#ch-03"><span class="n">03</span>&ensp;<span class="t">Education</span> <span class="d">— the roster that runs without me</span></a></li>
+    <li><a href="#governance"><span class="t">How this runs safely</span> <span class="d">— governance, cross-cutting</span></a></li>
+    <li><a href="#work"><span class="n">04</span>&ensp;<span class="t">The work</span> <span class="d">— six case files</span></a></li>
+    <li><a href="#catalog"><span class="t">Catalog index</span> <span class="d">— the remaining {{ catalog_count }}</span></a></li>
+    <li><a href="#on-the-record"><span class="t">On the record</span> <span class="d">— press &amp; keynotes</span></a></li>
+    <li><a href="#letter"><span class="n">05</span>&ensp;<span class="t">A letter</span> <span class="d">— from the author</span></a></li>
+  </ul>
+  <div class="toc-note prose">
+    <p class="soft">This document is a private briefing. The figures inside are
+    measured, not estimated: adoption is counted on live workflows, returns on
+    displaced license invoices, and pipeline in the CRM of record. Where a
+    number is self-reported, the sourcing note says&nbsp;so.</p>
+  </div>
+  <p class="colophon eyebrow">Set in Newsreader, General Sans &amp; IBM Plex Mono&ensp;·&ensp;Composed June 2026&ensp;·&ensp;Lehi, Utah</p>
+  <p class="colophon eyebrow" style="margin-top: 2mm">Production screenshots are blurred for confidentiality.</p>
+</section>
+
+<!-- =================================================== 3 · THE RECORD -->
+<section class="sheet" id="record" data-chapter="THE RECORD">
+  <p class="eyebrow soft">The record</p>
+  <h2 class="opener-title">Twelve months, measured.</h2>
+
+  <div class="stat-ledger">
+    {% for m in record %}
+    <div class="stat-row{% if loop.first %} first{% endif %}">
+      <p class="stat-num">{% if m.prefix %}<span class="affix">{{ m.prefix }}</span>{% endif %}{{ m.value }}{% if m.suffix %}<span class="affix">{{ m.suffix }}</span>{% endif %}</p>
+      <p class="stat-label">{{ m.label }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="table-note" style="max-width: 130mm">Counting rules and itemization:
+  the ledger (p.&nbsp;<a class="pgref" href="#ledger"></a>). Adoption measured on
+  live workflows; hours per the FY26 Q3 quarterly business review; pipeline
+  tracked separately from P&amp;L.</p>
+
+  <figure class="pullquote">
+    <blockquote>“One of the best hires I’ve made in my entire career.”</blockquote>
+    <figcaption class="eyebrow">—&ensp;Mark Boothe&ensp;·&ensp;Chief Marketing Officer, Domo</figcaption>
+  </figure>
+
+  <div class="logo-strip">
+    <p class="eyebrow soft">Select engagements</p>
+    <p class="soft" style="font-size: 8.7pt; margin-top: 2.6mm; max-width: 110mm">Direct client engagements and Domo-guided engagements.</p>
+    {% for row in logo_rows %}
+    <div class="logo-row">
+      {% for c in row %}<img src="{{ c.uri }}" alt="{{ c.name }}" style="height: {{ c.h }}mm">{% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ================================================== 4 · CHAPTER 01 -->
+<section class="sheet" id="ch-01" data-chapter="01 · STRATEGY">
+  <div class="divider">
+    <div class="div-grid">
+      <div class="div-left">
+        <p class="eyebrow div-eyebrow"><span class="chno">Chapter</span>&ensp;01</p>
+        <h2 class="div-title">Strategy</h2>
+        <p class="div-standfirst">The framework behind 93% adoption — the reasoning,
+        the decisions, and the attempts that failed on the way&nbsp;there.</p>
+      </div>
+      <div class="div-right">
+        <p class="div-num">3</p>
+        <p class="eyebrow div-statlabel">Ingredients, applied in fixed order</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">The core framework</p>
+    <h3 class="block-title">The three-ingredient formula</h3>
+    <div class="rail-block">
+      <aside class="rail">
+        <p class="rail-note"><span class="rl">Sequence</span>mindset → enablement → tools<br>applied in that order, never reversed</p>
+      </aside>
+      <div class="prose">
+        <p class="soft">The strategy came from study — across AI strategy,
+        adoption patterns, implementation practice, and organizational change before
+        I wrote a single line of code. The research kept returning the same answer:
+        adoption is a sequencing problem, three ingredients in a fixed&nbsp;order.</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="formula">
+      {% for f in formula %}
+      <div class="formula-row{% if loop.first %} first{% endif %}">
+        <span class="f-num">{{ f.n }}</span>
+        <span class="f-title">{{ f.title }}</span>
+        <span class="f-desc">{{ f.desc }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">The record of choices</p>
+    <h3 class="block-title">The decision log</h3>
+    <table class="ledger">
+      <thead><tr><th style="width: 52mm">Decision</th><th>Rationale</th></tr></thead>
+      <tbody>
+        {% for d in decision_log %}
+        <tr><td class="lead">{{ d.decision }}</td><td class="soft">{{ d.rationale }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="table-note">Decisions and rationale recorded during the engagement, not reconstructed after the fact.</p>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">Post-mortems</p>
+    <h3 class="block-title">What didn’t work</h3>
+    <table class="ledger">
+      <thead><tr><th style="width: 52mm">Attempt</th><th>Lesson</th></tr></thead>
+      <tbody>
+        {% for f in failures %}
+        <tr><td class="lead">{{ f.attempt }}</td><td class="soft">{{ f.lesson }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="table-note">Every failure was an attempt to scale without human readiness first. The three-ingredient formula was designed around that pattern.</p>
+  </div>
+
+  <div class="block" style="margin-top: 5mm">
+    <p class="eyebrow soft" style="border-top: 0.45pt solid #C9C2B2; padding-top: 3.4mm; max-width: 130mm; color: #5F594F; text-transform: none; letter-spacing: 0.02em; font-size: 7.4pt; line-height: 1.55">Strategy is also where governance starts — every plan is threat-modeled, and the data boundaries are decided, before a line of code exists.&ensp;<a href="#governance" class="cedar" style="font-weight: 500">How this runs safely →</a></p>
+  </div>
+</section>
+
+<!-- ================================================== 5 · CHAPTER 02 -->
+<section class="sheet" id="ch-02" data-chapter="02 · TRANSFORMATION">
+  <div class="divider">
+    <div class="div-grid">
+      <div class="div-left">
+        <p class="eyebrow div-eyebrow"><span class="chno">Chapter</span>&ensp;02</p>
+        <h2 class="div-title">Transformation</h2>
+        <p class="div-standfirst">Twenty-six production systems in twelve months —
+        deployed, measured, and running in the team’s daily&nbsp;work.</p>
+      </div>
+      <div class="div-right">
+        <p class="div-num">$2.3M</p>
+        <p class="eyebrow div-statlabel">First-year economic value, itemized in the ledger</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">The twelve months</p>
+    <div class="timeline">
+      {% for row in timeline_rows %}
+      <div class="timeline-row">
+        {% for ph in row %}
+        <div class="phase">
+          <p class="eyebrow"><span class="pn">{{ ph.n }}</span>&ensp;<span class="pp">{{ ph.period }}</span></p>
+          <h4>{{ ph.name }}</h4>
+          <p class="pd">{{ ph.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="block keep">
+    <p class="eyebrow soft">Measured results</p>
+    <h3 class="block-title">What the year returned</h3>
+    <table class="ledger">
+      <thead><tr>
+        <th style="width: 40mm">Category</th>
+        <th class="num" style="width: 38mm">Result</th>
+        <th style="padding-left: 8mm">Detail</th>
+      </tr></thead>
+      <tbody>
+        {% for r in results %}
+        <tr>
+          <td class="lead">{{ r.category }}</td>
+          <td class="num mono sienna">{{ r.metric }}</td>
+          <td class="soft" style="padding-left: 8mm">{{ r.detail }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="table-note">Pipeline figures are Salesforce-tracked. Time savings converge across two instruments: team survey (264–273 hrs/week) and the quarterly business review (280 hrs/week).</p>
+  </div>
+  <div class="block keep">
+    <p class="eyebrow soft">Task-level impact</p>
+    <h3 class="block-title">Before and after, task by task</h3>
+    <div class="tasks">
+      <div class="tasks-head"><span class="th">Task</span><span class="th r">Reduction</span></div>
+      {% for t in task_improvements %}
+      <div class="task">
+        <div class="t-head"><span class="t-name">{{ t.task }}</span><span class="t-red">{{ t.reduction }}</span></div>
+        {% set scaled = t.before not in ["Manual", "Baseline"] %}
+        <div class="t-bar-row">
+          <span class="t-track">{% if scaled %}<span class="t-bar" style="display: block; width: 100%"></span>{% endif %}</span>
+          <span class="t-val">{{ t.before }}</span>
+        </div>
+        <div class="t-bar-row" style="margin-top: 0.8mm">
+          <span class="t-track">{% if scaled %}<span class="t-bar after" style="display: block; width: {{ t.after_share }}%"></span>{% endif %}</span>
+          <span class="t-val after">{{ t.after }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="table-note">Ink track — time before. Sienna bar — time after, drawn to scale; ranges take the lower bound, and workflows with no measured before-time are listed without bars. Source — self-reported team survey.</p>
+  </div>
+
+  <div class="block keep" id="ledger">
+    <p class="eyebrow soft">The ledger</p>
+    <h3 class="block-title">Where the money comes from</h3>
+    <div class="file-grid">
+      <div class="file-main">
+        <p class="soft" style="max-width: 95mm; font-size: 9.3pt; margin-bottom: 3.4mm">Every
+        dollar claimed in this brief, itemized and classed. Vendor names are
+        withheld for confidentiality; categories and amounts are as&nbsp;recorded.</p>
+        <table class="ledger">
+          <thead><tr>
+            <th>Item</th>
+            <th style="width: 17mm">Class</th>
+            <th style="width: 15mm">Basis</th>
+            <th class="num" style="width: 19mm">Amount</th>
+          </tr></thead>
+          <tbody>
+            {% for r in ledger_rows %}
+            <tr>
+              <td class="lead">{{ r.item }}</td>
+              <td class="soft">{{ r.cls }}</td>
+              <td class="soft">{{ r.basis }}</td>
+              <td class="num mono sienna">{{ r.amount }}</td>
+            </tr>
+            {% endfor %}
+            {% for r in ledger_totals %}
+            <tr class="{{ 'grand' if r.grand else 'sum' }}">
+              <td class="{{ 'lead' if r.grand else 'soft' }}">{{ r.item }}</td>
+              <td class="soft">{{ r.cls }}</td>
+              <td class="soft">{{ r.basis }}</td>
+              <td class="num mono{{ '' if r.grand else ' sienna' }}">{{ r.amount }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <p class="table-note">First-year value ledger&ensp;·&ensp;AI-attributed pipeline (seven figures, CRM-tracked) is excluded from every total.</p>
+      </div>
+      <div class="file-rail">
+        <p class="rail-note"><span class="rl">Attested</span>“{{ attestation.quote }}” — {{ attestation.source }}.</p>
+        <p class="rail-note"><span class="rl">Counting rules</span>{% for rule in counting_rules %}{{ rule }}{% if not loop.last %}<br><br>{% endif %}{% endfor %}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" style="margin-top: 5mm">
+    <p class="eyebrow soft" style="border-top: 0.45pt solid #C9C2B2; padding-top: 3.4mm; max-width: 130mm; color: #5F594F; text-transform: none; letter-spacing: 0.02em; font-size: 7.4pt; line-height: 1.55">Every system in this chapter shipped through the gates — security-reviewed, eval-tested, and controlled before it touched production.&ensp;<a href="#governance" class="cedar" style="font-weight: 500">How this runs safely →</a></p>
+  </div>
+
+</section>
+
+<!-- ================================================== 6 · CHAPTER 03 -->
+<section class="sheet" id="ch-03" data-chapter="03 · EDUCATION">
+  <div class="divider">
+    <div class="div-grid">
+      <div class="div-left">
+        <p class="eyebrow div-eyebrow"><span class="chno">Chapter</span>&ensp;03</p>
+        <h2 class="div-title">Education</h2>
+        <p class="div-standfirst">How a non-technical marketing team became AI
+        builders — one person, one bottleneck, one working system at a&nbsp;time.</p>
+      </div>
+      <div class="div-right">
+        <p class="div-num">575+</p>
+        <p class="eyebrow div-statlabel">AI skills built by the team</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">The thesis</p>
+    <h3 class="block-title">Training is not enablement</h3>
+    <div class="rail-block">
+      <aside class="rail">
+        <p class="rail-note"><span class="rl">First pass</span>workshops · docs · office hours<br>adoption ≈ 0</p>
+        <p class="rail-note"><span class="rl">Second pass</span>one-on-one build sessions<br>adoption 93%<br>measured on live workflows, not attendance</p>
+      </aside>
+      <div class="prose">
+        <p>My first pass looked like every enterprise rollout — announcement
+        emails, documentation, office hours, a standing invitation to experiment.
+        People showed up. Then they went back to their desks and worked exactly
+        as before. Measured honestly, adoption was near zero.</p>
+        <p>So I stopped teaching the tool and started building the workflow.
+        I sat down with each person on the team, asked to see the worst
+        bottleneck in their week, and built the fix with them — in their files,
+        on their accounts, against their real deadlines. A session ended when
+        the system ran, and the only measure I kept was whether it was still
+        running a month later.</p>
+        <p>The order never changed: mindset first, enablement second, tools&nbsp;third.</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">Appendix · Personnel</p>
+    <h3 class="block-title">The roster, by department</h3>
+    <p class="prose soft" style="max-width: 95mm; margin-bottom: 3mm">Each line is one
+    person and the workflow they now run in production — built or co-built during
+    enablement, documented, and in daily use. The length of the list is the&nbsp;point.</p>
+    {% for dept in departments %}
+    <div class="cat-group">
+      <p class="eyebrow cat-head">{{ dept.name }}</p>
+      <table class="catalog">
+        {% for m in dept.members %}
+        <tr>
+          <td class="name">{{ m.role }}</td>
+          <td class="gloss">{{ m.workflow }}</td>
+          <td class="roi tool">{{ m.tool }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">From the roster</p>
+    <h3 class="block-title">Three case notes</h3>
+
+    <div class="casenote">
+      <div class="rail-block">
+        <aside class="rail">
+          <p class="rail-note"><span class="rl">Video production</span>16 h → 1 h 15 m per video<br>creative delivery: 5 days → same day<br>“85–90% at 10× speed is the right tradeoff”</p>
+        </aside>
+        <p class="eyebrow who">Wes Holley&ensp;·&ensp;Creative Director</p>
+        <p class="body">Wes ran creative delivery on a five-day turnaround, and a
+        single video cost sixteen working hours. We rebuilt the pipeline in his
+        enablement sessions; creative now ships the same day, and a video takes
+        him just over an hour. He is clear about the trade — most of the
+        hand-finished quality at ten times the speed — and he calls it the
+        right one.</p>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="casenote">
+      <div class="rail-block">
+        <aside class="rail">
+          <p class="rail-note"><span class="rl">Webinar program</span>~20 h/wk → ~2 h/wk<br>follow-up: daily, by agents</p>
+        </aside>
+        <p class="eyebrow who">Milo Bush&ensp;·&ensp;Events Manager</p>
+        <p class="body">Milo had never written a line of code. His webinar program
+        ran on roughly twenty hours a week of manual administration — scheduling,
+        logistics, follow-up. With AI as his coach, he automated the entire
+        sequence himself, and agents now handle the daily follow-up on their own.
+        The same program takes about two hours of his week.</p>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="casenote">
+      <div class="rail-block">
+        <aside class="rail">
+          <p class="rail-note"><span class="rl">Sponsorship</span>individual experiments → coordinated strategy<br>department-wide, measured</p>
+        </aside>
+        <p class="eyebrow who">Mark Boothe&ensp;·&ensp;CMO</p>
+        <p class="body">Before the program, AI inside the department was a set of
+        individual experiments with no coordinated strategy. Mark made adoption
+        an operating priority: he orchestrated the design and implementation of
+        the department-wide strategy and held the results to measurement. The
+        roster above is as long as it is because the program had an owner at
+        the top.</p>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" style="margin-top: 5mm">
+    <p class="eyebrow soft" style="border-top: 0.45pt solid #C9C2B2; padding-top: 3.4mm; max-width: 130mm; color: #5F594F; text-transform: none; letter-spacing: 0.02em; font-size: 7.4pt; line-height: 1.55">The team didn’t just learn the tools — they learned the gates, so the discipline scales without me in the room.&ensp;<a href="#governance" class="cedar" style="font-weight: 500">How this runs safely →</a></p>
+  </div>
+</section>
+
+<!-- ============================================ 7 · GOVERNANCE (cross-cutting) -->
+<section class="sheet" id="governance" data-chapter="HOW THIS RUNS SAFELY">
+  <div class="divider">
+    <div class="div-grid">
+      <div class="div-left">
+        <p class="eyebrow div-eyebrow"><span class="chno">Cross-cutting</span></p>
+        <h2 class="div-title">How this runs safely</h2>
+        <p class="div-standfirst">Governance is not a fourth step — it runs through
+        all three. Plan-time at strategy, controls shipped with every system,
+        gates the team learned to run&nbsp;themselves.</p>
+      </div>
+      <div class="div-right">
+        <p class="div-num">3</p>
+        <p class="eyebrow div-statlabel">Gates before anything ships</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="eyebrow soft">The posture</p>
+    <h3 class="block-title">Three gates</h3>
+    <div class="rail-block">
+      <aside class="rail">
+        <p class="rail-note"><span class="rl">The gates</span>plan-time → pre-deploy → milestone</p>
+      </aside>
+      <div class="prose">
+        <p class="soft">Governance here is shift-left — review moves to the
+        earliest point where it can still change the design. Three gates.
+        Plan-time review reads the plan before any code exists: threat model,
+        PII handling, compliance posture, eval strategy. The pre-deploy gate
+        runs on every merge, four domains deep. And milestone review runs the
+        full system — all 13 audit domains, roughly 43 specialist auditors
+        working in parallel.</p>
+        <p class="soft">Every review ends in one of three verdicts — block
+        deploy, proceed with caveats, or ship — and severity is policy, not
+        opinion. Critical and high findings block the merge. Medium findings
+        get scheduled. Low findings get logged. Nobody negotiates with
+        the&nbsp;gate.</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="block keep">
+    <p class="eyebrow soft">The rulebook</p>
+    <h3 class="block-title">The standards ledger</h3>
+    <div class="rail-block">
+      <aside class="rail">
+        <p class="rail-note"><span class="rl">Why standards</span>The 120 framework-mapped checks above are the core; the remaining 32 are implementation-level — client-side AI surfaces, platform specifics.</p>
+      </aside>
+      <div class="prose">
+        <p class="soft">A finding that traces to a published framework survives
+        an audit; a finding that traces to my taste does not. Every check in
+        the review system maps to one — the same standards an external assessor
+        would bring, run before the assessor&nbsp;arrives.</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <table class="ledger tight" style="margin-top: 3.4mm">
+      <thead><tr>
+        <th style="width: 44mm">Framework</th>
+        <th>Scope</th>
+        <th class="num" style="width: 16mm">Checks</th>
+      </tr></thead>
+      <tbody>
+        {% for s in standards %}
+        <tr>
+          <td class="lead">{{ s.framework }}</td>
+          <td class="soft">{{ s.scope }}</td>
+          <td class="num mono">{{ s.checks }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="table-note">152 security checks per full review&ensp;·&ensp;115 backend, 37 frontend</p>
+  </div>
+
+  <div class="block keep">
+    <p class="eyebrow soft">Agentic risk</p>
+    <h3 class="block-title">What AI changes about risk</h3>
+    <div class="prose">
+      <p class="soft">Most of the rulebook predates AI; the newest checks exist
+      because agents are different. Software that reads, decides, and acts
+      needs controls ordinary code never did. Prompt injection, direct and
+      indirect — including tool descriptors poisoned to turn an agent’s own
+      instructions against it. Human-in-the-loop gates on any tool that is
+      destructive or irreversible. Agent identity and confused-deputy
+      prevention, so a system acting on someone’s behalf can never borrow more
+      authority than that person holds. Memory poisoning. Cross-tenant context
+      bleed. Cost and turn caps, so no agent can run away with a loop or
+      a&nbsp;budget.</p>
+      <p class="soft">Customer-facing agents carry the strictest set — they
+      ship with approval gates, suppression lists, and&nbsp;disclosure.</p>
+    </div>
+  </div>
+
+  <div class="block keep">
+    <p class="eyebrow soft">Verification</p>
+    <h3 class="block-title">Trust is adversarial</h3>
+    <div class="rail-block">
+      <aside class="rail">
+        <p class="rail-note"><span class="rl">In practice</span>The news-monitoring workflow shipped only after a 90-agent security audit surfaced — and remediated — an SSRF class.</p>
+      </aside>
+      <div class="prose">
+        <p class="soft">The verification rule is blunt: a check without a
+        command run is a skip. An auditor that reads code and nods has verified
+        nothing — run the probe, capture the output, then judge. The same rule
+        covers fixes: reproduce the bug before trusting the&nbsp;patch.</p>
+        <p class="soft">Evals are model-risk controls, not marketing. The CMO
+        agent’s 110-question suite gates its deploys — fail the suite, miss the
+        release. And the honest number is the held-out one: the Agent Factory
+        ships at a 91% pass rate, published because a self-graded 100% means
+        the test is too&nbsp;easy.</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="block keep">
+    <p class="eyebrow soft">The perimeter</p>
+    <h3 class="block-title">Data boundaries</h3>
+    <div class="prose">
+      <p class="soft">Everything in this record runs inside the company’s
+      existing platform permissions — no system widens the aperture. Dataset
+      access controls are reproduced in full; the DAM migration shipped with a
+      complete ACL parity layer, granting exactly what the old system granted
+      and nothing more. MCP servers sit behind OAuth with allowlisted tools.
+      Secrets live in managed stores. Nothing is trained on customer&nbsp;data.</p>
+    </div>
+    <p class="table-note" style="border-top: 0.45pt solid #C9C2B2; max-width: 95mm; margin-top: 3.4mm">Published screenshots in this brief are blurred for confidentiality.</p>
+  </div>
+</section>
+
+<!-- ==================================================== 8 · THE WORK -->
+<section class="sheet" id="work" data-chapter="04 · THE WORK">
+  <hr class="rule-ink">
+  <div style="padding-top: 4mm">
+    <div class="div-grid">
+      <div class="div-left">
+        <p class="eyebrow soft">04&ensp;·&ensp;The work</p>
+        <h2 class="opener-title">Six case files</h2>
+        <p class="standfirst">Every system in this section is in production. Six are
+        examined in detail; the rest are indexed in the catalog.</p>
+      </div>
+      <div class="div-right">
+        <p class="numeral" style="font-size: 30pt; line-height: 1; color: #8A4226">{{ system_count }}</p>
+        <p class="eyebrow soft" style="margin-top: 2.5mm; font-size: 6.8pt">Systems in production</p>
+      </div>
+    </div>
+  </div>
+
+  {% for f in flagships %}
+  <article class="file">
+    <div class="file-grid">
+      <div class="file-main">
+        <p class="eyebrow file-eyebrow"><span class="fn">{{ f.file }}</span>&ensp;<span class="fk">·&ensp;{{ f.kind }}</span></p>
+        <h3>{{ f.title }}</h3>
+        <p class="body">{{ f.body }}</p>
+      </div>
+      <div class="file-rail">
+        <p class="rail-note"><span class="rl">{{ f.roi_label }}</span><span class="sienna">{{ f.roi }}</span></p>
+        <p class="rail-note"><span class="rl">Stack</span>{{ f.stack | join(" · ") }}</p>
+        {% if f.spec %}
+        <p class="rail-note" style="margin-bottom: 0"><span class="rl">System spec</span></p>
+        <table class="spec-list" style="margin-bottom: 3.4mm">
+          {% for s in f.spec %}
+          <tr><td>{{ s.label }}</td><td class="v">{{ s.value }}</td></tr>
+          {% endfor %}
+        </table>
+        {% endif %}
+        {% if f.controls %}
+        <p class="rail-note"><span class="rl">Controls</span>{{ f.controls }}</p>
+        {% endif %}
+        {% if f.owner %}
+        <p class="rail-note" style="margin-bottom: 0"><span class="rl">Owner</span>{{ f.owner }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% if f.figure %}
+    <figure class="plate">
+      <img src="{{ f.figure.uri }}" alt="{{ f.figure.alt }}" style="width: {{ f.figure.w }}mm">
+      <figcaption><span class="fig">{{ f.figure.fig }}</span> — {{ f.figure.caption }}</figcaption>
+    </figure>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<!-- ================================================ 9 · CATALOG INDEX -->
+<section id="catalog" data-chapter="04 · THE WORK · CATALOG" style="margin-top: 12mm">
+  <hr class="rule-ink">
+  <div style="padding-top: 5mm">
+    <p class="eyebrow soft">Catalog&ensp;·&ensp;{{ catalog_count }} entries</p>
+    <h2 class="opener-title">The rest of the record</h2>
+    <p class="standfirst">One line per entry, returns set at the margin —
+    production systems first, then artifacts, then personal builds.</p>
+  </div>
+
+  <div class="cat-tier">
+    <h3>Production systems</h3>
+    {% for group in system_catalog %}
+    <div class="cat-group">
+      <p class="eyebrow cat-head">{{ group.label }}&ensp;<span class="cnt">·&ensp;{{ group.entries | length }}</span></p>
+      <table class="catalog">
+        {% for p in group.entries %}
+        <tr>
+          <td class="name">{{ p.name }}</td>
+          <td class="gloss">— {{ p.gloss }}</td>
+          <td class="roi">{{ p.roi }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="cat-tier">
+    <h3>Selected artifacts</h3>
+    <p class="tier-intro">Not systems — the videos, courses, and presentations
+    the systems made possible.</p>
+    <div class="cat-group">
+      <table class="catalog" style="border-top: 0.45pt solid #C9C2B2">
+        {% for p in artifact_catalog %}
+        <tr>
+          <td class="name">{{ p.name }}</td>
+          <td class="gloss">— {{ p.gloss }}</td>
+          <td class="roi">{{ p.roi }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+  <div class="cat-tier">
+    <h3>Off the clock</h3>
+    <p class="tier-intro">Personal builds from nights and weekends — they sit
+    outside the record’s production stats.</p>
+    <div class="cat-group">
+      <table class="catalog" style="border-top: 0.45pt solid #C9C2B2">
+        {% for p in personal_catalog %}
+        <tr>
+          <td class="name">{{ p.name }}</td>
+          <td class="gloss">— {{ p.gloss }}</td>
+          <td class="roi">{{ p.roi }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================== 10 · ON THE RECORD -->
+<section class="sheet" id="on-the-record" data-chapter="ON THE RECORD">
+  <hr class="rule-ink">
+  <div style="padding-top: 5mm">
+    <p class="eyebrow soft">On the record</p>
+    <h2 class="opener-title">The public references</h2>
+    <p class="standfirst">The work described in this brief is on the public
+    record — in national press, in a Google Cloud partner keynote, and on the
+    CEO’s main stage.</p>
+  </div>
+
+  {% for r in references %}
+  <div class="ref">
+    <p class="eyebrow"><span class="rn">{{ r.n }}</span>&ensp;<span class="rk">·&ensp;{{ r.kind }}</span></p>
+    <h3>{{ r.title }}</h3>
+    <p class="ctx">{{ r.context }}</p>
+    <p class="url"><a href="{{ r.href }}">{{ r.display_url }}</a></p>
+  </div>
+  {% endfor %}
+
+  <div class="block" style="margin-top: 14mm">
+    <p class="table-note" style="max-width: 130mm">A fourth artifact — the tutorial
+    “Build your first AI agent,” with script, visuals, and voiceover produced
+    entirely with AI across 15+ iterations — ships with the web edition of this
+    brief at {{ site_url }}.</p>
+  </div>
+</section>
+
+<!-- ================================================== 11 · THE LETTER -->
+<section class="sheet" id="letter" data-chapter="05 · A LETTER">
+  <hr class="rule-ink">
+  <div style="padding-top: 4mm">
+    <p class="eyebrow soft">05&ensp;·&ensp;A letter</p>
+    <h2 class="opener-title">The proof of concept is complete.</h2>
+  </div>
+
+  <div class="letter-prose">
+    <figure class="letter-fig">
+      <img src="{{ headshot_uri }}" alt="Jake Heaps">
+      <figcaption><span style="color: #8A4226; font-weight: 500">Fig. 04</span> — The author</figcaption>
+    </figure>
+    <p>I started in growth marketing — running campaigns, then teams. The longer
+    I ran them, the more I was pulled toward the systems underneath: why work
+    flowed the way it did, and what would happen if the repetitive ninety percent
+    of it simply went away. That question became my career. Today I design AI
+    operating systems for enterprises — the strategy, the production systems,
+    and the part almost everyone skips, the adoption.</p>
+    <p>I lead AI implementation at Domo today — full-time, in the operating
+    seat. This brief is that seat’s output: 26 production systems, a first-year
+    value ledger that closed at $2.3M, and a ~30-person marketing organization
+    where 93% of the team now builds with AI independently. The transfer
+    completed in May 2026, and the systems have run without my daily hands
+    since — by design. Enablement, not dependency, is the product.</p>
+    <p>I’ll name the question this document raises rather than leave it to your
+    diligence: the job I’m describing barely existed three years ago. Nobody has
+    twenty years of it. The only credential anyone in this discipline can offer
+    is an operating record — measured, itemized, attested — and that is what
+    you’re holding.</p>
+    <p>How I work comes from how I grew up. I’m the youngest of three brothers,
+    which means I have never once been allowed to win anything easily. I played
+    everything — baseball, basketball, soccer — and football through high school,
+    where a phrase got into my bones and never left: love the challenge, love
+    your teammates, love the process. I spent two years of service in
+    San Bernardino, California, where I learned Spanish and learned that you
+    change what people do by sitting next to them, not by sending them a
+    document. That, it turns out, is also the entire secret of enterprise AI
+    adoption.</p>
+    <p>Outside of work: family first. This August I’m marrying Ella — we met
+    through my mom, who she works with. The rest of my time goes to sports, the
+    gym, and building things on nights and weekends because I genuinely cannot
+    help&nbsp;it.</p>
+    <p>The proof of concept is complete. If you’re building toward the seat this
+    record describes — where AI becomes how the company operates, not a pilot
+    program on its edge — I’d like to&nbsp;talk.</p>
+  </div>
+
+  <div class="signature">
+    <img src="{{ signature_uri }}" alt="Jake Heaps signature">
+    <p class="eyebrow sig-name">Jake Heaps&ensp;·&ensp;Lehi, Utah</p>
+  </div>
+</section>
+
+<!-- ================================================== 12 · BACK COVER -->
+<section class="backcover">
+  <div class="back-main">
+    <h2>Start a conversation.</h2>
+    <div class="back-contact eyebrow">
+      <div class="row"><span class="k">Email</span><span class="v"><a href="mailto:jakeheaps@me.com">jakeheaps@me.com</a></span></div>
+      <div class="row"><span class="k">Call / text</span><span class="v">(385) 443-2020</span></div>
+      <div class="row"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/jakeheaps/">linkedin.com/in/jakeheaps</a></span></div>
+    </div>
+  </div>
+  <div class="back-foot">
+    <hr class="rule">
+    <div class="cover-foot-row eyebrow">
+      <span class="l" style="color: #A39B8B">Jake Heaps&ensp;—&ensp;AI Strategy &amp; Transformation</span>
+      <span class="r">Private brief&ensp;·&ensp;2026</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

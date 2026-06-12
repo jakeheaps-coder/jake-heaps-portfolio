@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* Don't scan tooling/docs for class names (.claude contains detector rule
+   files whose example strings would emit unused keyframes). */
+@source not "../.claude";
+@source not "../.cursor";
+@source not "../docs";
+@source not "../scripts";
+
+/* ==========================================================================
+   Fonts — self-hosted, latin subsets
+   ========================================================================== */
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/jake-heaps-portfolio/fonts/Newsreader-400-500.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/jake-heaps-portfolio/fonts/Newsreader-400-500-italic.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/jake-heaps-portfolio/fonts/GeneralSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/jake-heaps-portfolio/fonts/GeneralSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/jake-heaps-portfolio/fonts/GeneralSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/jake-heaps-portfolio/fonts/GeneralSans-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/jake-heaps-portfolio/fonts/IBMPlexMono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/jake-heaps-portfolio/fonts/IBMPlexMono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Design tokens — "Manuscript" (paper) + "Nightfall" (reserved dark)
+   One canvas, one ink, one accent pair, one type voice per role.
+   ========================================================================== */
+
+@theme {
+  /* Manuscript palette */
+  --color-paper: #f7f4ee;
+  --color-surface: #efeae0;
+  --color-ink: #1a1714;
+  --color-ink-soft: #5f594f;
+  --color-hairline: #e2dccf;
+  --color-cedar: #2d4a3a;
+  --color-sienna: #8a4226;
+
+  /* Nightfall — PDF cover + the single dark interlude only */
+  --color-night: #131210;
+  --color-night-surface: #1c1a17;
+  --color-night-ink: #ece7dd;
+  --color-night-soft: #a39b8b;
+  --color-night-hairline: #2a2722;
+  --color-amber: #e09b62;
+
+  /* Type voices */
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "General Sans", "Avenir Next", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Type scale — body 17px, editorial contrast at the top end */
+  --text-eyebrow: 0.75rem; /* 12 — mono caps only */
+  --text-eyebrow--line-height: 1.4;
+  --text-caption: 0.875rem; /* 14 */
+  --text-caption--line-height: 1.6;
+  --text-body: 1.0625rem; /* 17 */
+  --text-body--line-height: 1.65;
+  --text-h3: 1.1875rem; /* 19 */
+  --text-h3--line-height: 1.35;
+  --text-lede: 1.3125rem; /* 21 */
+  --text-lede--line-height: 1.55;
+  --text-h2: 1.75rem; /* 28 */
+  --text-h2--line-height: 1.2;
+  --text-h1: 2.5rem; /* 40 */
+  --text-h1--line-height: 1.1;
+
+  /* Shadows — hue-matched to warm ink, never pure black */
+  --shadow-hairline:
+    inset 0 1px 0 rgb(255 255 255 / 0.85), 0 0 0 1px rgb(26 23 20 / 0.06),
+    0 1px 2px rgb(26 23 20 / 0.04);
+  --shadow-low:
+    0 1px 2px rgb(26 23 20 / 0.05), 0 2px 4px rgb(26 23 20 / 0.04);
+  --shadow-medium:
+    0 1px 2px rgb(26 23 20 / 0.05), 0 2px 4px rgb(26 23 20 / 0.05),
+    0 4px 8px rgb(26 23 20 / 0.05), 0 8px 16px rgb(26 23 20 / 0.04);
+  --shadow-high:
+    0 1px 2px rgb(26 23 20 / 0.06), 0 2px 4px rgb(26 23 20 / 0.05),
+    0 4px 8px rgb(26 23 20 / 0.05), 0 8px 16px rgb(26 23 20 / 0.05),
+    0 16px 32px rgb(26 23 20 / 0.06), 0 32px 64px rgb(26 23 20 / 0.05);
+
+  /* Easing — eases for system-initiated, springs for user-driven */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+/* ==========================================================================
+   Base — inside @layer base so utilities always win the cascade
+   ========================================================================== */
+
+@layer base {
+html {
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-kerning: auto;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  text-wrap: pretty;
+  hanging-punctuation: first allow-end;
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-cedar);
+  color: var(--color-paper);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cedar);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+table {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+}
+
+/* ==========================================================================
+   Editorial utilities
+   ========================================================================== */
+
+/* Mono eyebrow label — the ledger voice */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+/* Serif display numerals — tabular so they settle without shifting */
+@utility numeral {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Layered hairline ring — replaces every gray 1px border */
+@utility ring-hairline {
+  box-shadow: var(--shadow-hairline);
+}
+
+/* Editorial plate: the one treatment for every screenshot/video/photo */
+@utility plate {
+  border-radius: 2px;
+  box-shadow: var(--shadow-hairline), var(--shadow-medium);
+}
+
+/* Reading measure — 58ch of General Sans ≈ 70 real characters */
+@utility measure {
+  max-width: 58ch;
+}
+@utility measure-narrow {
+  max-width: 45ch;
+}

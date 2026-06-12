@@ -1,0 +1,1225 @@
+{
+  "metrics": {
+    "decisionLog": [
+      {
+        "decision": "Marketing as the proving ground",
+        "rationale": "Marketing had the highest density of repetitive, AI-automatable tasks combined with a CMO willing to sponsor the experiment. Engineering and Sales had neither."
+      },
+      {
+        "decision": "Enablement over training",
+        "rationale": "Emails, office hours, and documentation produced near-zero adoption. Sitting with each person and building their specific workflow together produced 93%."
+      },
+      {
+        "decision": "Build vs. buy for vendor displacement",
+        "rationale": "When the existing vendor’s core value could be replicated with AI + existing data platform capabilities, building in-house saved five- to six-figure annual licenses while giving us full control."
+      },
+      {
+        "decision": "Gemini for enterprise agents",
+        "rationale": "Vertex AI ADK provided enterprise-grade deployment, Google Cloud integration, and Gemini Enterprise gave every employee agent access without per-seat licensing friction."
+      },
+      {
+        "decision": "“Tools last” in the three-ingredient sequence",
+        "rationale": "Every failed AI rollout I studied led with tools. Tools without mindset shift and enablement became shelfware. The sequence — mindset, enablement, then tools — is the core strategic insight."
+      }
+    ],
+    "failures": [
+      {
+        "attempt": "Self-service AI interface",
+        "lesson": "People need role-specific tools, not a general-purpose AI chat. A “one tool for everything” approach created decision paralysis."
+      },
+      {
+        "attempt": "Self-serve enablement (emails, office hours, docs)",
+        "lesson": "Focused 1:1 coaching produced results. Async materials alone produced almost nothing. People don’t adopt AI from a PDF."
+      },
+      {
+        "attempt": "Early Gemini adoption push",
+        "lesson": "Access does not equal adoption. Giving everyone a tool without showing them their specific use case is giving them a hammer without showing them nails."
+      },
+      {
+        "attempt": "AI outbound engine",
+        "lesson": "Multi-system integration (CRM + enrichment + sequencing + AI) requires more orchestration maturity than a team has in month three. Timing matters."
+      }
+    ],
+    "record": [
+      {
+        "value": 93,
+        "suffix": "%",
+        "label": "team adoption in 12 months"
+      },
+      {
+        "value": 26,
+        "label": "production systems in daily use"
+      },
+      {
+        "value": 2,
+        "prefix": "$",
+        "suffix": "M+",
+        "label": "first-year economic value — itemized in the ledger"
+      },
+      {
+        "value": 280,
+        "label": "hours/week returned to the team"
+      },
+      {
+        "value": 1,
+        "prefix": "$",
+        "suffix": "M+",
+        "label": "AI-attributed pipeline, tracked separately"
+      }
+    ],
+    "taskImprovements": [
+      {
+        "task": "Video Production",
+        "before": "8–16 hrs",
+        "after": "1.25 hrs",
+        "reduction": "85–92%"
+      },
+      {
+        "task": "Creative SLA",
+        "before": "5 days",
+        "after": "Same day",
+        "reduction": "80%+"
+      },
+      {
+        "task": "Webinar Management",
+        "before": "~20 hrs/week",
+        "after": "~2 hrs/week",
+        "reduction": "90%"
+      },
+      {
+        "task": "SEO Optimization",
+        "before": "8 hrs/batch",
+        "after": "1 hr/batch",
+        "reduction": "87%"
+      },
+      {
+        "task": "Speaker Cards",
+        "before": "3 hrs / 50 cards",
+        "after": "10 min",
+        "reduction": "94%"
+      },
+      {
+        "task": "Form Submission Routing",
+        "before": "Manual",
+        "after": "1 form triggers all",
+        "reduction": "88%"
+      },
+      {
+        "task": "Ad Creative SLA",
+        "before": "Baseline",
+        "after": "67% faster",
+        "reduction": "67%"
+      }
+    ],
+    "timelinePhases": [
+      {
+        "period": "Jun–Aug 2025",
+        "name": "Foundation",
+        "desc": "Assessment, first agent builds, early enablement sessions"
+      },
+      {
+        "period": "Sep–Oct 2025",
+        "name": "Enablement",
+        "desc": "One-on-one coaching, workflow design, team-specific tools"
+      },
+      {
+        "period": "Nov–Dec 2025",
+        "name": "Infrastructure",
+        "desc": "Knowledge Graph, MCP servers, platform integrations"
+      },
+      {
+        "period": "Jan–Feb 2026",
+        "name": "Gemini Enterprise",
+        "desc": "Production agent deployments, enterprise-wide access"
+      },
+      {
+        "period": "Mar–Apr 2026",
+        "name": "Scaling",
+        "desc": "Vendor displacements, automation at scale, measurement"
+      },
+      {
+        "period": "May 2026",
+        "name": "Transfer",
+        "desc": "Team operates independently. Playbook ready for enterprise rollout."
+      }
+    ],
+    "transformationResults": [
+      {
+        "category": "Time Efficiency",
+        "metric": "264–273 hrs/week",
+        "detail": "Saved across team (self-report survey)"
+      },
+      {
+        "category": "Cost eliminated",
+        "metric": "$495K/yr",
+        "detail": "Software displaced, built-instead, or avoided — see the ledger"
+      },
+      {
+        "category": "Economic value",
+        "metric": "$2.34M",
+        "detail": "First-year total, itemized in the ledger"
+      },
+      {
+        "category": "Pipeline",
+        "metric": "Seven-figure",
+        "detail": "AI-attributed pipeline (Salesforce-tracked)"
+      },
+      {
+        "category": "AI Utilization",
+        "metric": "20K+ queries",
+        "detail": "500–900 hrs/quarter saved via Gemini Enterprise"
+      }
+    ]
+  },
+  "projects": {
+    "categoryColors": {
+      "agents": "bg-crimson",
+      "displacement": "bg-gold",
+      "infrastructure": "bg-steel",
+      "creative": "bg-crimson",
+      "revenue": "bg-navy",
+      "operations": "bg-steel",
+      "education": "bg-gold",
+      "personal": "bg-navy"
+    },
+    "categoryLabels": {
+      "agents": "Enterprise AI Agents",
+      "displacement": "Vendor Displacement",
+      "infrastructure": "Knowledge & Infrastructure",
+      "creative": "Creative & Media Production",
+      "revenue": "Sales & Revenue",
+      "operations": "Operations & Automation",
+      "education": "Education & Enablement",
+      "personal": "Personal / Side Projects"
+    },
+    "productionSystems": [
+      {
+        "name": "Paid Search Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Paid media analyst and optimization specialist. Google Ads analysis, keyword generation, ad copy, competitor analysis. 24 tools across 6 regional datasets.",
+        "roi": "$80–120K/yr analyst equivalent",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Google Ads API",
+          "Domo"
+        ]
+      },
+      {
+        "name": "CMO Marketing Intelligence",
+        "category": "agents",
+        "kind": "system",
+        "description": "Executive marketing brain for the CMO. Strategic reasoning engine with attribution, funnel analysis, and ROI modeling. 20 tools, 110-question regression suite gating every deploy.",
+        "roi": "2–3 analyst functions consolidated",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Domo",
+          "Salesforce"
+        ]
+      },
+      {
+        "name": "Competitive Intel Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "AI competitive intelligence analyst. Battle cards, M&A tracking, sales enablement. 23 tools, 18 competitors tracked daily with live internet research.",
+        "roi": "$100K+/yr analyst displaced",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Domo AppDB"
+        ]
+      },
+      {
+        "name": "Sales Discovery Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Sales discovery coach using a structured questioning framework. Generates 10–20 open-ended discovery questions with real-time adaptation from prospect responses. 11 graph-database tools.",
+        "roi": "AE ramp time reduced",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Knowledge Graph API"
+        ]
+      },
+      {
+        "name": "MarketingHub",
+        "category": "agents",
+        "kind": "system",
+        "description": "Multi-agent router that delegates to specialized agents (Competitive Intel, Knowledge Graph Assistant). Orchestration layer enabling agents to work as a coordinated system.",
+        "roi": "One interface for all marketing AI",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Multi-agent routing"
+        ]
+      },
+      {
+        "name": "Creative Asset System",
+        "category": "agents",
+        "kind": "system",
+        "description": "Gemini Enterprise agent generating brand-compliant creative across 6 output types: images, emails, presentations, SVG/vector, video, and social assets.",
+        "roi": "$50–100K/yr agency reliance cut",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Creative MCP Server",
+          "Veo 3.1"
+        ]
+      },
+      {
+        "name": "Agent Factory",
+        "category": "agents",
+        "kind": "system",
+        "description": "AI agent inside Domo that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
+        "roi": "Agent creation: weeks to hours",
+        "tech": [
+          "Domo Code Engine",
+          "Domo Workflows",
+          "AppDB",
+          "Custom Apps"
+        ]
+      },
+      {
+        "name": "One Chat Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions — the single pane of glass for customer engagement.",
+        "roi": "Support channels consolidated",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Knowledge Graph",
+          "Domo"
+        ]
+      },
+      {
+        "name": "Stock Distribution Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Built for the HR and finance teams under their access controls: monitors employee stock distributions, departures, tax-document deadlines, and compliance events. Automated tracking of equity-related workflows.",
+        "roi": "Manual equity tracking automated",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Domo Workflows"
+        ]
+      },
+      {
+        "name": "AI Onboarding Experience",
+        "category": "agents",
+        "kind": "system",
+        "description": "Onboards new customers with AI-guided training checklists, product tours, and personalized enablement paths. Adapts to each customer's use case and maturity level.",
+        "roi": "Onboarding scaled, no added roles",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Domo",
+          "Custom Apps"
+        ]
+      },
+      {
+        "name": "Rooster IQ",
+        "category": "agents",
+        "kind": "system",
+        "description": "Brand intelligence watcher for the executive team. Monitors market trends, brand sentiment, competitor moves, voice of customer, and AI industry developments in real time.",
+        "roi": "Always-on brand intelligence",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Domo AppDB",
+          "Web Scraping"
+        ]
+      },
+      {
+        "name": "Live Translator Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Real-time call translation agent enabling cross-language conversations during live meetings and customer calls. Bidirectional audio translation with minimal latency.",
+        "roi": "Language barriers removed",
+        "tech": [
+          "Gemini",
+          "Google Cloud STT",
+          "LiveKit",
+          "Python"
+        ]
+      },
+      {
+        "name": "DAM Platform (Vendor Replacement)",
+        "category": "displacement",
+        "kind": "system",
+        "description": "Domo-native Digital Asset Management platform replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 Code Engine functions, full ACL permission layer.",
+        "roi": "Mid-five-figure license displaced",
+        "tech": [
+          "Domo Fileset",
+          "AppDB",
+          "Code Engine",
+          "Custom Apps",
+          "SQL DataFlows"
+        ],
+        "screenshot": "screenshots/asset-library.png"
+      },
+      {
+        "name": "Employee Recognition Platform",
+        "category": "displacement",
+        "kind": "system",
+        "description": "Domo-native employee recognition and rewards platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
+        "roi": "Five-figure license displaced",
+        "tech": [
+          "Domo Custom Apps",
+          "Code Engine",
+          "Workflows",
+          "AppDB"
+        ]
+      },
+      {
+        "name": "Signal Platform (AI SDR)",
+        "category": "displacement",
+        "kind": "system",
+        "description": "AI-powered SDR platform replacing a six-figure sales engagement tool. Chat widget, form interceptor, calendar booking, AI avatar modal. Full prospect qualification and meeting scheduling.",
+        "roi": "$36K–130K/yr platform displaced",
+        "tech": [
+          "Flask",
+          "Gemini 2.5 Flash",
+          "SocketIO",
+          "React",
+          "Domo AppDB"
+        ]
+      },
+      {
+        "name": "Media Relations Platform",
+        "category": "displacement",
+        "kind": "system",
+        "description": "Proactive AI media relations replacing a PR platform. Scans 17 RSS feeds daily, scores stories for company angle credibility, auto-generates pitches in 3 formats (interview, byline, Q&A).",
+        "roi": "Five-figure PR license displaced",
+        "tech": [
+          "Python",
+          "Gemini",
+          "RSS",
+          "Domo Workflows"
+        ]
+      },
+      {
+        "name": "Knowledge Graph + Figma Plugin",
+        "category": "infrastructure",
+        "kind": "system",
+        "description": "Graph database storing product messaging, competitive intelligence, and industry data. 55-tool API powering all agents. Custom Figma plugin connecting designers directly to on-brand messaging.",
+        "roi": "$65K/yr license equivalent",
+        "tech": [
+          "Graph Database",
+          "Python",
+          "Flask",
+          "React",
+          "Figma Plugin API"
+        ]
+      },
+      {
+        "name": "MCP Servers (3)",
+        "category": "infrastructure",
+        "kind": "system",
+        "description": "Three Model Context Protocol servers: Creative (image/video generation with brand enforcement), Knowledge Graph (23 tools), and Data Platform (146 tools, 647 endpoints).",
+        "roi": "Powers all agent/creative systems",
+        "tech": [
+          "Python",
+          "MCP Protocol",
+          "Serverless Containers",
+          "OAuth"
+        ]
+      },
+      {
+        "name": "Video Pipeline",
+        "category": "creative",
+        "kind": "system",
+        "description": "Scalable AI-avatar video production system. Script generation via Knowledge Graph, AI avatar rendering, multi-format output (16:9, 9:16, vertical). Avatar registry for consistent branding.",
+        "roi": "Video: 16 hrs to 1 hr 15 min",
+        "tech": [
+          "HeyGen",
+          "Knowledge Graph",
+          "Python",
+          "FFmpeg"
+        ]
+      },
+      {
+        "name": "Sales Navigator",
+        "category": "revenue",
+        "kind": "system",
+        "description": "Real-time AI sales coaching desktop app. Captures two-channel audio (rep + prospect), streams to speech recognition, delivers real-time coaching via AI overlay invisible on screen-share.",
+        "roi": "AE ramp cut, close rates improved",
+        "tech": [
+          "Electron",
+          "React",
+          "Flask",
+          "Google Cloud STT",
+          "Gemini 2.5 Flash"
+        ]
+      },
+      {
+        "name": "AI Outbound Engine",
+        "category": "revenue",
+        "kind": "system",
+        "description": "Full automated outbound pipeline. Multi-stage: discover, enrich, sequence, agent feedback, converted prospect. Orchestrates data platform + Apollo for end-to-end prospecting.",
+        "roi": "End-to-end outbound orchestration",
+        "tech": [
+          "Domo",
+          "Apollo.io",
+          "Gemini",
+          "JavaScript"
+        ],
+        "screenshot": "screenshots/outbound-engine.png"
+      },
+      {
+        "name": "Deck Builder",
+        "category": "revenue",
+        "kind": "system",
+        "description": "Automated PowerPoint generation from templates + data. Turns structured data into polished presentation decks without manual slide creation.",
+        "roi": "Deck creation: hours to minutes",
+        "tech": [
+          "Python",
+          "python-pptx",
+          "Domo APIs"
+        ]
+      },
+      {
+        "name": "Weekly Executive Report",
+        "category": "operations",
+        "kind": "system",
+        "description": "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + Domo dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
+        "roi": "4–6 hrs/wk saved (~$15K/yr)",
+        "tech": [
+          "Python",
+          "Gemini",
+          "MSAL",
+          "SharePoint",
+          "Domo API",
+          "Playwright"
+        ]
+      },
+      {
+        "name": "Domo Monitoring Agents",
+        "category": "operations",
+        "kind": "system",
+        "description": "Autonomous system health monitoring. Checks service health, data quality, git repos, toolkit sync, and cookie expiration. Hourly via launchd, alerts via email.",
+        "roi": "Production incidents prevented",
+        "tech": [
+          "Python",
+          "launchd",
+          "Email",
+          "Domo APIs"
+        ]
+      },
+      {
+        "name": "Tracking Workflow (News Monitor)",
+        "category": "operations",
+        "kind": "system",
+        "description": "Two-workflow media monitoring system. Topic-continuity digest, airtight dedup, deterministic ticker-spam filter, SSRF host-resolution. 90-agent security audit remediated.",
+        "roi": "Zero manual media monitoring",
+        "tech": [
+          "Domo Workflows",
+          "Code Engine",
+          "Gemini"
+        ]
+      },
+      {
+        "name": "Front-End Sites (14)",
+        "category": "education",
+        "kind": "system",
+        "description": "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more — fourteen in total. All React + Vite or Next.js.",
+        "roi": "$70–210K agency cost avoided",
+        "tech": [
+          "React",
+          "Next.js",
+          "Vite",
+          "Tailwind CSS",
+          "TypeScript"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Paid Search Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Paid media analyst and optimization specialist. Google Ads analysis, keyword generation, ad copy, competitor analysis. 24 tools across 6 regional datasets.",
+        "roi": "$80–120K/yr analyst equivalent",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Google Ads API",
+          "Domo"
+        ]
+      },
+      {
+        "name": "CMO Marketing Intelligence",
+        "category": "agents",
+        "kind": "system",
+        "description": "Executive marketing brain for the CMO. Strategic reasoning engine with attribution, funnel analysis, and ROI modeling. 20 tools, 110-question regression suite gating every deploy.",
+        "roi": "2–3 analyst functions consolidated",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Domo",
+          "Salesforce"
+        ]
+      },
+      {
+        "name": "Competitive Intel Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "AI competitive intelligence analyst. Battle cards, M&A tracking, sales enablement. 23 tools, 18 competitors tracked daily with live internet research.",
+        "roi": "$100K+/yr analyst displaced",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Domo AppDB"
+        ]
+      },
+      {
+        "name": "Sales Discovery Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Sales discovery coach using a structured questioning framework. Generates 10–20 open-ended discovery questions with real-time adaptation from prospect responses. 11 graph-database tools.",
+        "roi": "AE ramp time reduced",
+        "tech": [
+          "Gemini 2.5 Flash",
+          "Vertex AI ADK",
+          "Knowledge Graph API"
+        ]
+      },
+      {
+        "name": "MarketingHub",
+        "category": "agents",
+        "kind": "system",
+        "description": "Multi-agent router that delegates to specialized agents (Competitive Intel, Knowledge Graph Assistant). Orchestration layer enabling agents to work as a coordinated system.",
+        "roi": "One interface for all marketing AI",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Multi-agent routing"
+        ]
+      },
+      {
+        "name": "Creative Asset System",
+        "category": "agents",
+        "kind": "system",
+        "description": "Gemini Enterprise agent generating brand-compliant creative across 6 output types: images, emails, presentations, SVG/vector, video, and social assets.",
+        "roi": "$50–100K/yr agency reliance cut",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Creative MCP Server",
+          "Veo 3.1"
+        ]
+      },
+      {
+        "name": "Agent Factory",
+        "category": "agents",
+        "kind": "system",
+        "description": "AI agent inside Domo that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
+        "roi": "Agent creation: weeks to hours",
+        "tech": [
+          "Domo Code Engine",
+          "Domo Workflows",
+          "AppDB",
+          "Custom Apps"
+        ]
+      },
+      {
+        "name": "One Chat Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions — the single pane of glass for customer engagement.",
+        "roi": "Support channels consolidated",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Knowledge Graph",
+          "Domo"
+        ]
+      },
+      {
+        "name": "Stock Distribution Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Built for the HR and finance teams under their access controls: monitors employee stock distributions, departures, tax-document deadlines, and compliance events. Automated tracking of equity-related workflows.",
+        "roi": "Manual equity tracking automated",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Domo Workflows"
+        ]
+      },
+      {
+        "name": "AI Onboarding Experience",
+        "category": "agents",
+        "kind": "system",
+        "description": "Onboards new customers with AI-guided training checklists, product tours, and personalized enablement paths. Adapts to each customer's use case and maturity level.",
+        "roi": "Onboarding scaled, no added roles",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Domo",
+          "Custom Apps"
+        ]
+      },
+      {
+        "name": "Rooster IQ",
+        "category": "agents",
+        "kind": "system",
+        "description": "Brand intelligence watcher for the executive team. Monitors market trends, brand sentiment, competitor moves, voice of customer, and AI industry developments in real time.",
+        "roi": "Always-on brand intelligence",
+        "tech": [
+          "Gemini",
+          "Vertex AI ADK",
+          "Domo AppDB",
+          "Web Scraping"
+        ]
+      },
+      {
+        "name": "Live Translator Agent",
+        "category": "agents",
+        "kind": "system",
+        "description": "Real-time call translation agent enabling cross-language conversations during live meetings and customer calls. Bidirectional audio translation with minimal latency.",
+        "roi": "Language barriers removed",
+        "tech": [
+          "Gemini",
+          "Google Cloud STT",
+          "LiveKit",
+          "Python"
+        ]
+      },
+      {
+        "name": "DAM Platform (Vendor Replacement)",
+        "category": "displacement",
+        "kind": "system",
+        "description": "Domo-native Digital Asset Management platform replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 Code Engine functions, full ACL permission layer.",
+        "roi": "Mid-five-figure license displaced",
+        "tech": [
+          "Domo Fileset",
+          "AppDB",
+          "Code Engine",
+          "Custom Apps",
+          "SQL DataFlows"
+        ],
+        "screenshot": "screenshots/asset-library.png"
+      },
+      {
+        "name": "Employee Recognition Platform",
+        "category": "displacement",
+        "kind": "system",
+        "description": "Domo-native employee recognition and rewards platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
+        "roi": "Five-figure license displaced",
+        "tech": [
+          "Domo Custom Apps",
+          "Code Engine",
+          "Workflows",
+          "AppDB"
+        ]
+      },
+      {
+        "name": "Signal Platform (AI SDR)",
+        "category": "displacement",
+        "kind": "system",
+        "description": "AI-powered SDR platform replacing a six-figure sales engagement tool. Chat widget, form interceptor, calendar booking, AI avatar modal. Full prospect qualification and meeting scheduling.",
+        "roi": "$36K–130K/yr platform displaced",
+        "tech": [
+          "Flask",
+          "Gemini 2.5 Flash",
+          "SocketIO",
+          "React",
+          "Domo AppDB"
+        ]
+      },
+      {
+        "name": "Media Relations Platform",
+        "category": "displacement",
+        "kind": "system",
+        "description": "Proactive AI media relations replacing a PR platform. Scans 17 RSS feeds daily, scores stories for company angle credibility, auto-generates pitches in 3 formats (interview, byline, Q&A).",
+        "roi": "Five-figure PR license displaced",
+        "tech": [
+          "Python",
+          "Gemini",
+          "RSS",
+          "Domo Workflows"
+        ]
+      },
+      {
+        "name": "Knowledge Graph + Figma Plugin",
+        "category": "infrastructure",
+        "kind": "system",
+        "description": "Graph database storing product messaging, competitive intelligence, and industry data. 55-tool API powering all agents. Custom Figma plugin connecting designers directly to on-brand messaging.",
+        "roi": "$65K/yr license equivalent",
+        "tech": [
+          "Graph Database",
+          "Python",
+          "Flask",
+          "React",
+          "Figma Plugin API"
+        ]
+      },
+      {
+        "name": "MCP Servers (3)",
+        "category": "infrastructure",
+        "kind": "system",
+        "description": "Three Model Context Protocol servers: Creative (image/video generation with brand enforcement), Knowledge Graph (23 tools), and Data Platform (146 tools, 647 endpoints).",
+        "roi": "Powers all agent/creative systems",
+        "tech": [
+          "Python",
+          "MCP Protocol",
+          "Serverless Containers",
+          "OAuth"
+        ]
+      },
+      {
+        "name": "Domo Toolkit & Onboarding",
+        "category": "infrastructure",
+        "kind": "artifact",
+        "description": "Shared documentation platform and GitHub Pages onboarding site for the marketing team. Platform catalog, best practices, and getting-started guides.",
+        "roi": "Knowledge transfer scaled past 1:1",
+        "tech": [
+          "GitHub Pages",
+          "Markdown",
+          "Domo APIs"
+        ]
+      },
+      {
+        "name": "CEO Keynote (AI Graphics)",
+        "category": "creative",
+        "kind": "artifact",
+        "description": "All AI-generated graphics for the CEO's keynote presentation. 100+ slides of professional presentation graphics produced entirely with AI.",
+        "roi": "$20–50K/event agency cost avoided",
+        "tech": [
+          "Gemini",
+          "AI Image Generation",
+          "Presentation Design"
+        ],
+        "link": "https://youtu.be/7HvOlSnfubQ"
+      },
+      {
+        "name": "Build-First AI Agent (Video)",
+        "category": "creative",
+        "kind": "artifact",
+        "description": "Complete polished video tutorial teaching viewers to build their first AI agent. 15+ iterations refined to a final cut. Entirely AI-produced — script, visuals, voiceover.",
+        "roi": "Fraction of studio production cost",
+        "tech": [
+          "AI Video",
+          "HeyGen",
+          "Remotion",
+          "FFmpeg"
+        ]
+      },
+      {
+        "name": "One Health Solutions Video",
+        "category": "creative",
+        "kind": "artifact",
+        "description": "Client-facing video showcasing AI transformation results, presented at a major company event.",
+        "roi": "Client engagement + event content",
+        "tech": [
+          "AI Video Production",
+          "Remotion"
+        ]
+      },
+      {
+        "name": "Gemini Agent Animations",
+        "category": "creative",
+        "kind": "artifact",
+        "description": "Animated agent demonstrations featured in the Google Cloud partner keynote. Head of AI GTM at Google Cloud presented these on stage.",
+        "roi": "Google Cloud keynote feature",
+        "tech": [
+          "Remotion",
+          "React",
+          "Motion Graphics"
+        ],
+        "link": "https://www.domo.com/domopalooza/resources/partner-keynote-from-jim-fairweather-head-of-ai-gtm-google-cloud"
+      },
+      {
+        "name": "Video Pipeline",
+        "category": "creative",
+        "kind": "system",
+        "description": "Scalable AI-avatar video production system. Script generation via Knowledge Graph, AI avatar rendering, multi-format output (16:9, 9:16, vertical). Avatar registry for consistent branding.",
+        "roi": "Video: 16 hrs to 1 hr 15 min",
+        "tech": [
+          "HeyGen",
+          "Knowledge Graph",
+          "Python",
+          "FFmpeg"
+        ]
+      },
+      {
+        "name": "Board & Executive Presentations",
+        "category": "creative",
+        "kind": "artifact",
+        "description": "Countless AI-crafted presentations for board meetings, executive reviews, and stakeholder briefings. Strategy narratives, data visualizations, and talking points — all AI-assisted at scale.",
+        "roi": "Presentations at scale, no agency",
+        "tech": [
+          "Gemini",
+          "python-pptx",
+          "AI Image Generation",
+          "Domo"
+        ]
+      },
+      {
+        "name": "Sales Navigator",
+        "category": "revenue",
+        "kind": "system",
+        "description": "Real-time AI sales coaching desktop app. Captures two-channel audio (rep + prospect), streams to speech recognition, delivers real-time coaching via AI overlay invisible on screen-share.",
+        "roi": "AE ramp cut, close rates improved",
+        "tech": [
+          "Electron",
+          "React",
+          "Flask",
+          "Google Cloud STT",
+          "Gemini 2.5 Flash"
+        ]
+      },
+      {
+        "name": "AI Outbound Engine",
+        "category": "revenue",
+        "kind": "system",
+        "description": "Full automated outbound pipeline. Multi-stage: discover, enrich, sequence, agent feedback, converted prospect. Orchestrates data platform + Apollo for end-to-end prospecting.",
+        "roi": "End-to-end outbound orchestration",
+        "tech": [
+          "Domo",
+          "Apollo.io",
+          "Gemini",
+          "JavaScript"
+        ],
+        "screenshot": "screenshots/outbound-engine.png"
+      },
+      {
+        "name": "SAVOS Law Outreach",
+        "category": "personal",
+        "kind": "system",
+        "description": "Automated law firm outreach: Google Places + Apollo discovery, SEMrush audit, Claude Agent SDK mockup generation, Apollo cadence enrollment. 5-stage idempotent pipeline.",
+        "roi": "Automated client acquisition",
+        "tech": [
+          "Python",
+          "Claude Agent SDK",
+          "Apollo.io",
+          "SEMrush",
+          "Google Places"
+        ]
+      },
+      {
+        "name": "Deck Builder",
+        "category": "revenue",
+        "kind": "system",
+        "description": "Automated PowerPoint generation from templates + data. Turns structured data into polished presentation decks without manual slide creation.",
+        "roi": "Deck creation: hours to minutes",
+        "tech": [
+          "Python",
+          "python-pptx",
+          "Domo APIs"
+        ]
+      },
+      {
+        "name": "Weekly Executive Report",
+        "category": "operations",
+        "kind": "system",
+        "description": "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + Domo dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
+        "roi": "4–6 hrs/wk saved (~$15K/yr)",
+        "tech": [
+          "Python",
+          "Gemini",
+          "MSAL",
+          "SharePoint",
+          "Domo API",
+          "Playwright"
+        ]
+      },
+      {
+        "name": "Domo Monitoring Agents",
+        "category": "operations",
+        "kind": "system",
+        "description": "Autonomous system health monitoring. Checks service health, data quality, git repos, toolkit sync, and cookie expiration. Hourly via launchd, alerts via email.",
+        "roi": "Production incidents prevented",
+        "tech": [
+          "Python",
+          "launchd",
+          "Email",
+          "Domo APIs"
+        ]
+      },
+      {
+        "name": "Tracking Workflow (News Monitor)",
+        "category": "operations",
+        "kind": "system",
+        "description": "Two-workflow media monitoring system. Topic-continuity digest, airtight dedup, deterministic ticker-spam filter, SSRF host-resolution. 90-agent security audit remediated.",
+        "roi": "Zero manual media monitoring",
+        "tech": [
+          "Domo Workflows",
+          "Code Engine",
+          "Gemini"
+        ]
+      },
+      {
+        "name": "Marketing Bundle",
+        "category": "operations",
+        "kind": "artifact",
+        "description": "Bundled agent suite: Paid Search Agent + Competitive Intel + Knowledge Graph Assistant + MarketingHub router. Complete AI operating system for the marketing team.",
+        "roi": "Marketing's AI operating system",
+        "tech": [
+          "Gemini Enterprise",
+          "Vertex AI",
+          "Multi-agent"
+        ]
+      },
+      {
+        "name": "Team Onboarding Course (15 modules)",
+        "category": "education",
+        "kind": "artifact",
+        "description": "Complete interactive onboarding course for the team. 15 modules covering tooling, accounts, vocabulary, operations, deployments, visuals, and projects — so the marketing team runs the systems independently.",
+        "roi": "The team runs it independently",
+        "tech": [
+          "Interactive Docs",
+          "GitHub Pages",
+          "Try-it Checkpoints"
+        ]
+      },
+      {
+        "name": "575+ AI Skills & Workflows",
+        "category": "education",
+        "kind": "artifact",
+        "description": "The aggregate output of the education program. 575+ production AI workflows built and deployed across the team. Not ChatGPT prompts — specific, repeatable, role-based processes.",
+        "roi": "Education program scorecard",
+        "tech": [
+          "Claude Code",
+          "Gemini Enterprise",
+          "Domo",
+          "Various"
+        ]
+      },
+      {
+        "name": "AgentGuide",
+        "category": "education",
+        "kind": "artifact",
+        "description": "Framework and guide for building AI agents inside the data platform. Democratizes agent creation so anyone on the team can build, not just the AI lead.",
+        "roi": "Anyone can build agents",
+        "tech": [
+          "Domo",
+          "Documentation",
+          "Templates"
+        ]
+      },
+      {
+        "name": "Front-End Sites (14)",
+        "category": "education",
+        "kind": "system",
+        "description": "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more — fourteen in total. All React + Vite or Next.js.",
+        "roi": "$70–210K agency cost avoided",
+        "tech": [
+          "React",
+          "Next.js",
+          "Vite",
+          "Tailwind CSS",
+          "TypeScript"
+        ]
+      },
+      {
+        "name": "Claudeopedia",
+        "category": "personal",
+        "kind": "system",
+        "description": "Personal LLM-powered knowledge base with Obsidian frontend. RSS feed aggregation, wiki article generation, Q&A interface. 10+ automated jobs for continuous learning.",
+        "roi": "Personal knowledge system",
+        "tech": [
+          "Python",
+          "Obsidian",
+          "LLM",
+          "launchd",
+          "RSS"
+        ]
+      },
+      {
+        "name": "CrowdSync AI DJ",
+        "category": "personal",
+        "kind": "system",
+        "description": "Autonomous AI wedding DJ. Custom C++ Mixxx fork with state readback IPC, 126 MIDI mappings, 12 transition techniques, wedding brain (11 phases), crowd perception (YOLO + MediaPipe + Gemini). 4.77/5.0 rubric score.",
+        "roi": "Full C++ fork + real-time AI brain",
+        "tech": [
+          "C++",
+          "Python",
+          "MIDI",
+          "YOLO",
+          "MediaPipe",
+          "Gemini",
+          "Mixxx"
+        ]
+      },
+      {
+        "name": "Land Engine",
+        "category": "personal",
+        "kind": "system",
+        "description": "AI-powered property due diligence SaaS for Utah developers. Credit-based reports ($10–65), 60-second pipeline, 16 external data sources (UGRC, ATTOM, FEMA, EPA, Census). 209 tests.",
+        "roi": "Full SaaS: auth, payments, API",
+        "tech": [
+          "FastAPI",
+          "Next.js 16",
+          "Stripe",
+          "Vercel",
+          "GCP"
+        ]
+      }
+    ],
+    "systemCount": 26
+  },
+  "roster": {
+    "teamRoster": [
+      {
+        "role": "Creative Director",
+        "department": "Creative & Design",
+        "workflow": "Automated the entire PowerPoint presentation process for individuals across the organization",
+        "tool": "Claude Code"
+      },
+      {
+        "role": "Sr. Motion Designer",
+        "department": "Creative & Design",
+        "workflow": "Utilized AI for the entirety of a major opening video and animation creation",
+        "tool": "Claude Code + AI Video"
+      },
+      {
+        "role": "Sr. Designer",
+        "department": "Creative & Design",
+        "workflow": "Creating variations of graphics and videos at scale",
+        "tool": "Claude Code"
+      },
+      {
+        "role": "Design Lead",
+        "department": "Creative & Design",
+        "workflow": "Utilizing components, code connect, and Figma MCP to completely automate website design and creation",
+        "tool": "Figma MCP + Claude Code"
+      },
+      {
+        "role": "Production Designer",
+        "department": "Creative & Design",
+        "workflow": "Automating scalability of assets — reduced 50 speaker cards from 3 hours to 10 minutes",
+        "tool": "Claude Code"
+      },
+      {
+        "role": "Paid Media Manager",
+        "department": "Marketing Ops",
+        "workflow": "Optimizing paid media spend by connecting to GA4, Google Ads, and Search Console via AI",
+        "tool": "Claude Code"
+      },
+      {
+        "role": "SEO Specialist",
+        "department": "Marketing Ops",
+        "workflow": "Automated SEO optimization from 8 hours to 1 hour per batch using Webflow MCP",
+        "tool": "Webflow MCP + Claude Code"
+      },
+      {
+        "role": "CRO Specialist",
+        "department": "Marketing Ops",
+        "workflow": "Using an agent trained on CRO best practices and page data for conversion optimization",
+        "tool": "Custom AI Agent"
+      },
+      {
+        "role": "Events Manager",
+        "department": "Marketing Ops",
+        "workflow": "Automated the entire webinar process with daily follow-up from agents",
+        "tool": "Domo + AI Agents"
+      },
+      {
+        "role": "Event Coordinator",
+        "department": "Marketing Ops",
+        "workflow": "Built a scheduler to help attendees get scheduled for breakouts using AI",
+        "tool": "Domo + AI"
+      },
+      {
+        "role": "Digital Marketing Analyst",
+        "department": "Marketing Ops",
+        "workflow": "Utilizing AI in asset creation, event strategy, and overall research",
+        "tool": "Gemini Enterprise"
+      },
+      {
+        "role": "VP, Corporate Communications",
+        "department": "Content & Comms",
+        "workflow": "Created specific agents for each communication type with custom guidelines",
+        "tool": "Custom AI Agents"
+      },
+      {
+        "role": "Content Strategist",
+        "department": "Content & Comms",
+        "workflow": "Using AI and the Knowledge Graph to create and audit content",
+        "tool": "Knowledge Graph + AI"
+      },
+      {
+        "role": "Sr. Content Strategist",
+        "department": "Content & Comms",
+        "workflow": "Using AI and the Knowledge Graph to create and audit content",
+        "tool": "Knowledge Graph + AI"
+      },
+      {
+        "role": "Email Marketing Specialist",
+        "department": "Content & Comms",
+        "workflow": "Using AI to generate email copy, briefs, and campaign assets",
+        "tool": "Gemini Enterprise"
+      },
+      {
+        "role": "Product Marketing Manager",
+        "department": "Content & Comms",
+        "workflow": "Created and using multiple agents, optimizing the product launch content process",
+        "tool": "Custom AI Agents"
+      },
+      {
+        "role": "Sr. Web Developer",
+        "department": "Web & Digital",
+        "workflow": "Implemented Webflow MCP to automate website audits",
+        "tool": "Webflow MCP"
+      },
+      {
+        "role": "Web Developer",
+        "department": "Web & Digital",
+        "workflow": "Using code connect, Figma MCP, and Webflow MCP to ensure pages are built correctly",
+        "tool": "Figma + Webflow MCP"
+      },
+      {
+        "role": "Creative Technologist",
+        "department": "Web & Digital",
+        "workflow": "Using Claude Code to create animations and optimize the messaging knowledge base",
+        "tool": "Claude Code"
+      },
+      {
+        "role": "Sr. Brand Manager",
+        "department": "Brand & Community",
+        "workflow": "All major event creative assets were influenced and created with AI",
+        "tool": "AI Creative Tools"
+      },
+      {
+        "role": "Community Manager",
+        "department": "Brand & Community",
+        "workflow": "Utilizing AI in community responses and working with the AI team on customer insights",
+        "tool": "Gemini Enterprise"
+      },
+      {
+        "role": "Content Distribution Specialist",
+        "department": "Brand & Community",
+        "workflow": "Using Notebook LM for content distribution workflows",
+        "tool": "Notebook LM + AI"
+      },
+      {
+        "role": "Sr. Blog Manager",
+        "department": "Brand & Community",
+        "workflow": "Implemented AirOps, automating the blog creation process end-to-end",
+        "tool": "AirOps + AI"
+      },
+      {
+        "role": "CMO",
+        "department": "Leadership",
+        "workflow": "Orchestrated the design and implementation of the department-wide AI adoption strategy",
+        "tool": "Strategic Leadership"
+      },
+      {
+        "role": "Executive Assistant to CMO",
+        "department": "Leadership",
+        "workflow": "Utilizing Gemini Enterprise and Claude for calendar organization and communications",
+        "tool": "Gemini + Claude"
+      },
+      {
+        "role": "Presentation Specialist",
+        "department": "Leadership",
+        "workflow": "Utilizing AI to create complete slide decks end-to-end",
+        "tool": "AI Presentation Tools"
+      }
+    ]
+  }
+}
