@@ -140,6 +140,9 @@ export default function VisionPage() {
         </div>
       </section>
 
+      {/* ---- Companies I've worked with ---- */}
+      <LogoStrip />
+
       {/* ---- The problem ---- */}
       <section className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-20 md:py-28`}>
@@ -347,8 +350,8 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ---- Select engagements ---- */}
-      <EngagementsStrip />
+      {/* ---- Endorsement ---- */}
+      <BootheQuote />
 
       {/* ---- Close ---- */}
       <section className={`${SECTION} bg-surface`}>
@@ -409,13 +412,14 @@ const clients = [
   },
 ];
 
-function EngagementsStrip() {
+/** Simple logo bar, just under the hero. */
+function LogoStrip() {
   return (
     <section className={SECTION}>
-      <div className={`${WRAP} py-20 md:py-28`}>
+      <div className={`${WRAP} py-14 md:py-16`}>
         <Reveal>
-          <Eyebrow as="h2">Select engagements</Eyebrow>
-          <ul className="mt-12 flex list-none flex-wrap items-center justify-center gap-x-12 gap-y-10 p-0 md:justify-between md:gap-x-8">
+          <Eyebrow as="h2">Companies I&rsquo;ve worked with</Eyebrow>
+          <ul className="mt-10 flex list-none flex-wrap items-center justify-center gap-x-12 gap-y-10 p-0 md:justify-between md:gap-x-8">
             {clients.map((c) => (
               <li key={c.name} className="flex items-center">
                 <img
@@ -427,12 +431,18 @@ function EngagementsStrip() {
               </li>
             ))}
           </ul>
-          <p className="mt-10 max-w-[60ch] font-mono text-caption text-ink-soft">
-            Direct client engagements and Domo-guided engagements.
-          </p>
         </Reveal>
+      </div>
+    </section>
+  );
+}
 
-        <Reveal className="mt-20 md:mt-24">
+/** The Boothe endorsement, its own moment before the close. */
+function BootheQuote() {
+  return (
+    <section className={SECTION}>
+      <div className={`${WRAP} py-20 md:py-28`}>
+        <Reveal>
           <figure className="m-0">
             <blockquote className="m-0">
               <p className="max-w-[26ch] font-display text-h2 italic leading-[1.3] text-ink [hanging-punctuation:none] [text-indent:-0.45em] md:text-[2.125rem]">
@@ -441,8 +451,7 @@ function EngagementsStrip() {
               </p>
             </blockquote>
             <figcaption className="eyebrow mt-8 text-ink-soft">
-              <span aria-hidden>&mdash;&ensp;</span>Mark
-              Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
+              Mark Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
             </figcaption>
           </figure>
         </Reveal>
