@@ -81,8 +81,8 @@ export default function VisionPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.2 }}
           >
-            Most companies bolt AI on. I rebuild how the team works around it —
-            so they actually use it. Here&rsquo;s ninety seconds on what that
+            Everyone is selling AI transformation. I&rsquo;ve actually done it,
+            measured and itemized. Here&rsquo;s ninety seconds on what that
             looks like.
           </motion.p>
 
@@ -145,13 +145,13 @@ export default function VisionPage() {
         <div className={`${WRAP} py-20 md:py-28`}>
           <Header
             eyebrow="The problem"
-            title="AI is everywhere. None of it is connected."
-            frame="Every team is being pitched AI from every direction. Tools pile up. Almost none of it makes it into how the work actually gets done."
+            title="Everyone has an AI strategy. Almost no one has results they can show you."
+            frame="You&rsquo;re being pitched AI from every direction — decks, frameworks, big promises — mostly by people who&rsquo;ve never shipped it inside a real company. The rare thing isn&rsquo;t another opinion. It&rsquo;s someone who&rsquo;s done it and can hand you the receipts."
           />
           <Reveal className="mt-10">
             <VideoBlock
               src={VID.problem}
-              caption="Why most AI rollouts stall — and what they all get backwards."
+              caption="Why the market is full of AI advice and short on proof."
               title="The problem"
             />
           </Reveal>
