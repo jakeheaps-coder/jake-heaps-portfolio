@@ -163,25 +163,25 @@ export default function VisionPage() {
         <div className={`${WRAP} py-20 md:py-28`}>
           <Header
             eyebrow="The method"
-            title="Tools last. Not first."
-            frame="Every failed rollout I studied led with the tool. The sequence that works runs the other way:"
+            title="Strategy, implementation, education."
+            frame="The three parts of every engagement, in that order. Skip straight to the tools, the way most AI projects do, and it becomes shelfware."
           />
           <RevealGroup className="mt-10 border-b border-hairline">
             {[
               {
                 n: "01",
-                t: "Mindset",
-                d: "Shift the story from “AI will replace me” to “AI makes me dangerous.” Nothing adopts without this.",
+                t: "Strategy",
+                d: "Decide what to automate, in what order, and why. Most rollouts fail right here, by leading with the tool instead of the sequence.",
               },
               {
                 n: "02",
-                t: "Enablement",
-                d: "Sit with each person and build their real workflow together. This is the hard part — and the part everyone skips.",
+                t: "Implementation",
+                d: "Build the systems and ship them into production, inside the platforms the company already runs on.",
               },
               {
                 n: "03",
-                t: "Tools",
-                d: "Role-specific systems that solve a real problem. They come last; without the first two they become shelfware.",
+                t: "Education",
+                d: "Get the team building on their own. Sitting next to one person beats any training deck. It is how adoption reached ninety-three percent.",
               },
             ].map((s) => (
               <RevealItem
@@ -201,7 +201,7 @@ export default function VisionPage() {
           <Reveal className="mt-10">
             <VideoBlock
               src={VID.method}
-              caption="The three ingredients — and why the order is the whole secret."
+              caption="Strategy, implementation, education — and why the order is the whole secret."
               title="The method"
             />
           </Reveal>
