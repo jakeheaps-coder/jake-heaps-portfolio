@@ -350,9 +350,6 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ---- Endorsement ---- */}
-      <BootheQuote />
-
       {/* ---- Close ---- */}
       <section className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-24 md:py-32`}>
@@ -431,29 +428,6 @@ function LogoStrip() {
               </li>
             ))}
           </ul>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/** The Boothe endorsement, its own moment before the close. */
-function BootheQuote() {
-  return (
-    <section className={SECTION}>
-      <div className={`${WRAP} py-20 md:py-28`}>
-        <Reveal>
-          <figure className="m-0">
-            <blockquote className="m-0">
-              <p className="max-w-[26ch] font-display text-h2 italic leading-[1.3] text-ink [hanging-punctuation:none] [text-indent:-0.45em] md:text-[2.125rem]">
-                &ldquo;One of the best hires I&rsquo;ve made in my entire
-                career.&rdquo;
-              </p>
-            </blockquote>
-            <figcaption className="eyebrow mt-8 text-ink-soft">
-              Mark Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
-            </figcaption>
-          </figure>
         </Reveal>
       </div>
     </section>
