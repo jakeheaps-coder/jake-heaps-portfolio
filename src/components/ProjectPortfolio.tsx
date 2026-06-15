@@ -114,7 +114,7 @@ function CatalogRow({ project, quiet }: { project: Project; quiet: boolean }) {
         </span>
         <span className="text-ink-soft">
           {" "}
-          — {indexGloss(project.description)}
+          · {indexGloss(project.description)}
         </span>
       </p>
       <p className="mt-1 font-mono text-caption text-ink-soft md:mt-0.5 md:text-right">
@@ -184,7 +184,7 @@ export default function ProjectPortfolio() {
                 The rest of the record
               </h3>
               <p className="measure mt-4 text-body text-ink-soft">
-                One line per entry, returns set at the margin — production
+                One line per entry, returns set at the margin: production
                 systems first, then artifacts, then personal builds.
               </p>
             </div>
@@ -216,7 +216,7 @@ export default function ProjectPortfolio() {
             <Reveal>
               <h4 className="font-display text-h3">Selected artifacts</h4>
               <p className="measure mt-3 text-body text-ink-soft">
-                Not systems — the videos, courses, and presentations the systems
+                Not systems: the videos, courses, and presentations the systems
                 made possible.
               </p>
               <ul className="m-0 mt-6 list-none border-b border-hairline p-0">
@@ -230,7 +230,7 @@ export default function ProjectPortfolio() {
             <Reveal>
               <h4 className="font-display text-h3">Off the clock</h4>
               <p className="measure mt-3 text-body text-ink-soft">
-                Personal builds from nights and weekends — they sit outside the
+                Personal builds from nights and weekends. They sit outside the
                 record’s production stats.
               </p>
               <ul className="m-0 mt-6 list-none border-b border-hairline p-0">

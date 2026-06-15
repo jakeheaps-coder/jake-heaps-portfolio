@@ -12,7 +12,7 @@ const references = [
     kind: "Press",
     title: "Bissell’s AI workflows, built in two days",
     context:
-      "TechRepublic’s national coverage of the two-day Bissell build — the engagement I delivered. Attribution available on a reference call.",
+      "TechRepublic’s national coverage of the two-day Bissell build. This is the engagement I delivered. Attribution available on a reference call.",
     href: "https://www.techrepublic.com/article/news-bissell-ai-workflows-two-day-build-domo/",
     cta: "Read the article",
   },
@@ -21,16 +21,16 @@ const references = [
     kind: "Keynote",
     title: "Google Cloud partner keynote, Domopalooza",
     context:
-      "Jim Fairweather, Head of AI GTM at Google Cloud, presented the agent animations I produced — the keynote is public; my authorship is attested on request.",
+      "Jim Fairweather, Head of AI GTM at Google Cloud, presented the agent animations I produced. The keynote is public; my authorship is attested on request.",
     href: "https://www.domo.com/domopalooza/resources/partner-keynote-from-jim-fairweather-head-of-ai-gtm-google-cloud",
     cta: "Watch the keynote",
   },
   {
     n: "Ref 03",
     kind: "Keynote",
-    title: "CEO keynote — AI transformation showcase",
+    title: "CEO keynote · AI transformation showcase",
     context:
-      "Every graphic in the keynote was AI-generated — produced by my pipeline; 100+ slides, no design agency.",
+      "Every graphic in the keynote was AI-generated. Produced by my pipeline; 100+ slides, no design agency.",
     href: "https://youtu.be/7HvOlSnfubQ",
     cta: "Watch on YouTube",
   },
@@ -43,7 +43,7 @@ export default function ExternalValidation() {
         <Reveal>
           <Eyebrow as="h2">On the record</Eyebrow>
           <p className="measure mt-5 font-display text-lede text-ink">
-            The work described in this brief is on the public record — in
+            The work described in this brief is on the public record: in
             national press, in a Google Cloud partner keynote, and on the
             CEO&rsquo;s main stage.
           </p>
@@ -91,7 +91,7 @@ export default function ExternalValidation() {
             />
           </video>
           <figcaption className="mt-3 max-w-[72ch] font-mono text-eyebrow text-ink-soft">
-            Fig. 04 — &ldquo;Build your first AI agent&rdquo; tutorial · script,
+            Fig. 04 · &ldquo;Build your first AI agent&rdquo; tutorial · script,
             visuals, and voiceover produced entirely with AI · 15+ iterations to
             the final cut
           </figcaption>

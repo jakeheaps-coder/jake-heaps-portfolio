@@ -114,7 +114,7 @@ export const projects: Project[] = [
     category: "agents",
     kind: "system",
     description:
-      "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions — the single pane of glass for customer engagement.",
+      "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions: the single pane of glass for customer engagement.",
     roi: "Support channels consolidated",
     tech: ["Gemini", "Vertex AI ADK", "Knowledge Graph", "Domo"],
   },
@@ -245,7 +245,7 @@ export const projects: Project[] = [
     category: "creative",
     kind: "artifact",
     description:
-      "Complete polished video tutorial teaching viewers to build their first AI agent. 15+ iterations refined to a final cut. Entirely AI-produced — script, visuals, voiceover.",
+      "Complete polished video tutorial teaching viewers to build their first AI agent. 15+ iterations refined to a final cut. Entirely AI-produced: script, visuals, voiceover.",
     roi: "Fraction of studio production cost",
     tech: ["AI Video", "HeyGen", "Remotion", "FFmpeg"],
   },
@@ -282,7 +282,7 @@ export const projects: Project[] = [
     category: "creative",
     kind: "artifact",
     description:
-      "Countless AI-crafted presentations for board meetings, executive reviews, and stakeholder briefings. Strategy narratives, data visualizations, and talking points — all AI-assisted at scale.",
+      "Countless AI-crafted presentations for board meetings, executive reviews, and stakeholder briefings. Strategy narratives, data visualizations, and talking points, all AI-assisted at scale.",
     roi: "Presentations at scale, no agency",
     tech: ["Gemini", "python-pptx", "AI Image Generation", "Domo"],
   },
@@ -382,7 +382,7 @@ export const projects: Project[] = [
     category: "education",
     kind: "artifact",
     description:
-      "Complete interactive onboarding course for the team. 15 modules covering tooling, accounts, vocabulary, operations, deployments, visuals, and projects — so the marketing team runs the systems independently.",
+      "Complete interactive onboarding course for the team. 15 modules covering tooling, accounts, vocabulary, operations, deployments, visuals, and projects, so the marketing team runs the systems independently.",
     roi: "The team runs it independently",
     tech: ["Interactive Docs", "GitHub Pages", "Try-it Checkpoints"],
   },
@@ -391,7 +391,7 @@ export const projects: Project[] = [
     category: "education",
     kind: "artifact",
     description:
-      "The aggregate output of the education program. 575+ production AI workflows built and deployed across the team. Not ChatGPT prompts — specific, repeatable, role-based processes.",
+      "The aggregate output of the education program. 575+ production AI workflows built and deployed across the team. Not ChatGPT prompts. Specific, repeatable, role-based processes.",
     roi: "Education program scorecard",
     tech: ["Claude Code", "Gemini Enterprise", "Domo", "Various"],
   },
@@ -409,7 +409,7 @@ export const projects: Project[] = [
     category: "education",
     kind: "system",
     description:
-      "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more — fourteen in total. All React + Vite or Next.js.",
+      "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more, fourteen in total. All React + Vite or Next.js.",
     roi: "$70–210K agency cost avoided",
     tech: ["React", "Next.js", "Vite", "Tailwind CSS", "TypeScript"],
   },

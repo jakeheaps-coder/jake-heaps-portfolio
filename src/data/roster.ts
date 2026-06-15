@@ -38,7 +38,7 @@ export const teamRoster: TeamMember[] = [
     role: "Production Designer",
     department: "Creative & Design",
     workflow:
-      "Automating scalability of assets — reduced 50 speaker cards from 3 hours to 10 minutes",
+      "Automating scalability of assets, reduced 50 speaker cards from 3 hours to 10 minutes",
     tool: "Claude Code",
   },
 

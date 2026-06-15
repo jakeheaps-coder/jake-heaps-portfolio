@@ -56,8 +56,7 @@ export default function ClientLogos() {
               </p>
             </blockquote>
             <figcaption className="eyebrow mt-8 text-ink-soft">
-              <span aria-hidden>&mdash;&ensp;</span>Mark
-              Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
+              Mark Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
             </figcaption>
           </figure>
         </Reveal>

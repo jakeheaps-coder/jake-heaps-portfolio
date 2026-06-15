@@ -63,7 +63,7 @@ export default function VisionPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: EASE_CUBIC }}
           >
-            Jake Heaps&ensp;—&ensp;AI Strategy &amp; Transformation
+            Jake Heaps&ensp;·&ensp;AI Strategy &amp; Transformation
           </motion.p>
 
           <motion.h1
@@ -113,8 +113,8 @@ export default function VisionPage() {
           >
             <VideoBlock
               src={VID.overview}
-              caption="The overview — what I do, and why it works."
-              title="Overview — Jake Heaps"
+              caption="The overview. What I do, and why it works."
+              title="Overview · Jake Heaps"
             />
           </motion.div>
 
@@ -146,7 +146,7 @@ export default function VisionPage() {
           <Header
             eyebrow="The problem"
             title="Everyone has an AI strategy. Almost no one has results they can show you."
-            frame="You&rsquo;re being pitched AI from every direction — decks, frameworks, big promises — mostly by people who&rsquo;ve never shipped it inside a real company. The rare thing isn&rsquo;t another opinion. It&rsquo;s someone who&rsquo;s done it and can hand you the receipts."
+            frame="You&rsquo;re being pitched AI from every direction. Decks, frameworks, big promises, mostly from people who&rsquo;ve never shipped it inside a real company. The rare thing isn&rsquo;t another opinion. It&rsquo;s someone who&rsquo;s done it and can hand you the receipts."
           />
           <Reveal className="mt-10">
             <VideoBlock
@@ -201,7 +201,7 @@ export default function VisionPage() {
           <Reveal className="mt-10">
             <VideoBlock
               src={VID.method}
-              caption="Strategy, implementation, education — and why the order is the whole secret."
+              caption="Strategy, implementation, education. Why the order is everything."
               title="The method"
             />
           </Reveal>
@@ -265,7 +265,7 @@ export default function VisionPage() {
             <p className="mt-5 max-w-[72ch] text-caption text-ink-soft">
               Set the capacity line aside and the displaced, avoided, and closed
               figures are roughly <span className="text-ink">$840K</span> in
-              hard dollars — canceled invoices and a closed deal, not estimates.
+              hard dollars: canceled invoices and a closed deal, not estimates.
             </p>
             <p className="mt-3 max-w-[72ch] font-mono text-caption text-ink-soft">
               &ldquo;{attestation.quote}&rdquo;{" "}
@@ -278,7 +278,7 @@ export default function VisionPage() {
           <Reveal className="mt-12">
             <VideoBlock
               src={VID.proof}
-              caption="The numbers, in my own words — and how they were counted."
+              caption="The numbers, in my own words, and how they were counted."
               title="The proof"
             />
           </Reveal>
@@ -297,7 +297,7 @@ export default function VisionPage() {
                 </h3>
                 <div className="mt-6 space-y-5 text-body text-ink">
                   <p>
-                    I lead AI implementation at Domo today — full-time, in the
+                    I lead AI implementation at Domo today. Full-time, in the
                     operating seat. This discipline didn&rsquo;t exist three
                     years ago; nobody has decades of it. What I have is a year
                     of actually doing it, measured and itemized.
@@ -306,7 +306,7 @@ export default function VisionPage() {
                     The method comes from something I learned long before AI:
                     you change what people do by sitting next to them, not by
                     sending them a document. That&rsquo;s the whole secret of
-                    adoption — and it&rsquo;s why the systems kept running after
+                    adoption, and it&rsquo;s why the systems kept running after
                     I stepped back.
                   </p>
                   <p>
@@ -340,7 +340,7 @@ export default function VisionPage() {
           <Reveal className="mt-12">
             <VideoBlock
               src={VID.whoIAm}
-              caption="Why I do this — in my own words."
+              caption="Why I do this, in my own words."
               title="Who I am"
             />
           </Reveal>
@@ -360,7 +360,7 @@ export default function VisionPage() {
               reach out.
             </h2>
             <p className="measure mt-6 text-lede text-ink-soft">
-              Not a pilot on the edge — the operating layer. If that&rsquo;s the
+              Not a pilot on the edge. The operating layer. If that&rsquo;s the
               seat you&rsquo;re building toward, I&rsquo;d like to compare
               notes.
             </p>

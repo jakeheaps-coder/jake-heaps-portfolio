@@ -187,7 +187,7 @@ FORMULA = [
      "desc": "Shift the story from “AI will replace me” to “AI makes me "
              "dangerous.” Without this, nothing else matters."},
     {"n": "02", "title": "Enablement",
-     "desc": "One-on-one coaching rather than training — sit with each person "
+     "desc": "One-on-one coaching rather than training. Sit with each person "
              "and build their specific workflow together. This is the hard part."},
     {"n": "03", "title": "Tools",
      "desc": "Role-specific AI tools that solve real problems. Tools come "
@@ -215,14 +215,14 @@ STANDARDS = [
     {"framework": "NIST SP 800-53",
      "scope": "Selected controls from the catalog", "checks": "12"},
     {"framework": "GDPR / CCPA",
-     "scope": "Privacy obligations — applied when PII is present",
+     "scope": "Privacy obligations, applied when PII is present",
      "checks": "8"},
 ]
 
 # The first-year value ledger — transcribed from src/data/ledger.ts. Rows,
 # totals, attestation, and counting rules; vendor names withheld there too.
 LEDGER_ROWS = [
-    {"item": "Team capacity created — workload absorbed by AI systems "
+    {"item": "Team capacity created: workload absorbed by AI systems "
              "without additional hiring",
      "cls": "Capacity", "basis": "Yearly", "amount": "$1,500,000"},
     {"item": "Enterprise DAM platform license",
@@ -263,9 +263,9 @@ LEDGER_ATTESTATION = {
 LEDGER_COUNTING_RULES = [
     "Yearly amounts are annual run-rate as of fiscal year end; one-time "
     "amounts are counted once.",
-    "Displaced — a paid license canceled. Equivalent — a system built "
-    "in-house instead of buying. Avoided — external spend not incurred. "
-    "Capacity — measured hours returned, valued at fully-loaded cost of "
+    "Displaced: a paid license canceled. Equivalent: a system built "
+    "in-house instead of buying. Avoided: external spend not incurred. "
+    "Capacity: measured hours returned, valued at fully-loaded cost of "
     "equivalent roles.",
     "AI-attributed pipeline (seven figures, CRM-tracked) is excluded from "
     "every total above.",
@@ -277,7 +277,7 @@ REFERENCES = [
         "n": "Ref 01", "kind": "Press",
         "title": "Bissell’s AI workflows, built in two days",
         "context": "TechRepublic’s national coverage of the two-day Bissell "
-                   "build — the engagement I delivered. Attribution available "
+                   "build: the engagement I delivered. Attribution available "
                    "on a reference call.",
         "href": "https://www.techrepublic.com/article/news-bissell-ai-workflows-two-day-build-domo/",
         "display_url": "techrepublic.com/article/news-bissell-ai-workflows-two-day-build-domo",
@@ -286,15 +286,15 @@ REFERENCES = [
         "n": "Ref 02", "kind": "Keynote",
         "title": "Google Cloud partner keynote, Domopalooza",
         "context": "Jim Fairweather, Head of AI GTM at Google Cloud, presented "
-                   "the agent animations I produced — the keynote is public; "
+                   "the agent animations I produced. The keynote is public; "
                    "my authorship is attested on request.",
         "href": "https://www.domo.com/domopalooza/resources/partner-keynote-from-jim-fairweather-head-of-ai-gtm-google-cloud",
         "display_url": "domo.com/domopalooza/resources/partner-keynote-from-jim-fairweather",
     },
     {
         "n": "Ref 03", "kind": "Keynote",
-        "title": "CEO keynote — AI transformation showcase",
-        "context": "Every graphic in the keynote was AI-generated — produced "
+        "title": "CEO keynote · AI transformation showcase",
+        "context": "Every graphic in the keynote was AI-generated, produced "
                    "by my pipeline; 100+ slides, no design agency.",
         "href": "https://youtu.be/7HvOlSnfubQ",
         "display_url": "youtu.be/7HvOlSnfubQ",
@@ -311,7 +311,7 @@ FLAGSHIPS = [
         "title": "The enterprise DAM displacement",
         "body": "I replaced the marketing org’s enterprise DAM platform with a "
                 "Domo-native system built on infrastructure the company already "
-                "pays for. Browse, search, collections, permissions — the full "
+                "pays for. Browse, search, collections, permissions: the full "
                 "asset-management surface, rebuilt in-house. The migration moved "
                 "more than 35,000 documents with zero mismatches. Underneath, "
                 "87 Code Engine functions carry the workflow logic, and a complete "
@@ -327,13 +327,13 @@ FLAGSHIPS = [
         "controls": "Full ACL parity with the displaced platform; "
                     "security-reviewed before cutover; zero-mismatch migration "
                     "audit.",
-        "owner": "Marketing ops — documented runbook; maintained without me "
+        "owner": "Marketing ops: documented runbook; maintained without me "
                  "since May 2026.",
         "figure": {
             # 16:9 top window — mirrors the site's aspect-[16/9] object-top.
             "src": "asset-library.png", "crop": (0, 0, 1280, 720), "w": 112,
             "fig": "Fig. 01",
-            "alt": "The Domo-native DAM in production — asset browser with "
+            "alt": "The Domo-native DAM in production: asset browser with "
                    "filter rail and document grid.",
             "caption": "Asset browser in production: filters, collections, and "
                        "the migrated library.",
@@ -344,13 +344,13 @@ FLAGSHIPS = [
         "file": "File 02", "kind": "Sales & revenue",
         "title": "The AI outbound engine",
         "body": "A fully automated outbound pipeline, run as one system rather "
-                "than a stack of disconnected tools. Five stages — discover, "
-                "enrich, sequence, agent feedback, converted prospect — each hand "
+                "than a stack of disconnected tools. Five stages: discover, "
+                "enrich, sequence, agent feedback, converted prospect. Each hands "
                 "a cleaner record to the next. The data platform supplies "
                 "targeting and enrichment, Apollo carries the sequences, and the "
                 "agent feedback stage closes the loop. The architecture below is "
                 "the system as built.",
-        "roi": "In production — five-stage pipeline",
+        "roi": "In production, five-stage pipeline",
         "roi_label": "Status",
         "spec": [
             {"label": "Pipeline stages", "value": "5"},
@@ -375,7 +375,7 @@ FLAGSHIPS = [
                 "funnel analysis, and ROI modeling over the marketing data "
                 "estate. Questions that once waited in an analyst queue come back "
                 "in minutes. Twenty tools sit behind the conversation, and every "
-                "release runs a 110-question test suite before it ships — the "
+                "release runs a 110-question test suite before it ships. The "
                 "current pass rate is 100%.",
         "roi": "Consolidates 2–3 analyst functions; decision speed from days to minutes",
         "spec": [
@@ -431,7 +431,7 @@ FLAGSHIPS = [
             # 16:9 top window — mirrors the site's aspect-[16/9] object-top.
             "src": "recognition-feed.png", "crop": (0, 0, 1186, 667), "w": 112,
             "fig": "Fig. 03",
-            "alt": "The employee recognition platform in production — "
+            "alt": "The employee recognition platform in production: "
                    "recognition feed, milestones, and rewards.",
             "caption": "Recognition feed, milestones, and rewards in the live app.",
         },
@@ -443,7 +443,7 @@ FLAGSHIPS = [
         "body": "A paid media analyst that never leaves the account. The agent "
                 "reads Google Ads performance across six regional datasets, "
                 "generates keywords and ad copy, and runs competitor analysis on "
-                "demand — 24 tools in one conversational surface. The work it "
+                "demand: 24 tools in one conversational surface. The work it "
                 "absorbs is the work a dedicated analyst would otherwise be "
                 "hired to do.",
         "roi": "Equivalent to a dedicated paid media analyst ($80–120K/yr)",
@@ -451,7 +451,7 @@ FLAGSHIPS = [
             {"label": "Tools", "value": "24"},
             {"label": "Regional datasets", "value": "6"},
         ],
-        "controls": "Recommend-only — no autonomous spend changes; human "
+        "controls": "Recommend-only: no autonomous spend changes; human "
                     "approval on every action.",
         "owner": "Paid media team.",
         "figure": None,

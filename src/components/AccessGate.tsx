@@ -37,7 +37,7 @@ export default function AccessGate({ onEnter }: { onEnter: () => void }) {
         transition={{ duration: 0.7, ease: EASE_EXPO }}
       >
         <p className="eyebrow text-ink-soft">
-          Jake Heaps&ensp;—&ensp;AI Strategy &amp; Transformation
+          Jake Heaps&ensp;·&ensp;AI Strategy &amp; Transformation
         </p>
         <hr className="mt-5 mb-10 border-0 border-t border-hairline" />
 

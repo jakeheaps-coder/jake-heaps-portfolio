@@ -124,7 +124,7 @@ export default function Transformation() {
           stat="$2.3M"
           statLabel="first-year economic value, itemized below"
         >
-          Twenty-six production systems in twelve months — deployed, measured,
+          Twenty-six production systems in twelve months: deployed, measured,
           and running in the team’s daily work.
         </ChapterOpener>
 
@@ -158,7 +158,7 @@ export default function Transformation() {
             <div className="flex flex-col gap-8">
               <MarginNote label="Source">Self-reported team survey.</MarginNote>
               <MarginNote label="How to read">
-                Ink bar — time before. Sienna bar — time after, drawn to scale.
+                Ink bar: time before. Sienna bar: time after, drawn to scale.
                 Ranges take the lower bound; workflows with no measured
                 before-time are listed without bars.
               </MarginNote>
@@ -243,7 +243,8 @@ export default function Transformation() {
               />
               <div className="flex flex-col gap-8">
                 <MarginNote label="Attested">
-                  &ldquo;{attestation.quote}&rdquo; — {attestation.source}.
+                  &ldquo;{attestation.quote}&rdquo;&ensp;&middot;&ensp;
+                  {attestation.source}.
                 </MarginNote>
                 <MarginNote label="Counting rules">
                   {countingRules.map((rule) => (
@@ -258,7 +259,9 @@ export default function Transformation() {
         </Reveal>
         <Reveal className="mt-16 md:mt-20">
           <p className="font-mono text-caption text-ink-soft">
-            Every system in this chapter shipped through the gates — security-reviewed, eval-tested, and controlled before it touched production.&ensp;
+            Every system in this chapter shipped through the gates:
+            security-reviewed, eval-tested, and controlled before it touched
+            production.&ensp;
             <a href="#governance" className="text-cedar">
               How this runs safely →
             </a>

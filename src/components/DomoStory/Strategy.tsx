@@ -14,7 +14,7 @@ const formula = [
   {
     n: "02",
     title: "Enablement",
-    desc: "One-on-one coaching rather than training — sit with each person and build their specific workflow together. This is the hard part.",
+    desc: "One-on-one coaching rather than training. Sit with each person and build their specific workflow together. This is the hard part.",
   },
   {
     n: "03",
@@ -52,7 +52,7 @@ export default function Strategy() {
           stat="3"
           statLabel="ingredients, applied in fixed order"
         >
-          The framework behind 93% adoption — the reasoning, the decisions, and
+          The framework behind 93% adoption: the reasoning, the decisions, and
           the attempts that failed on the way there.
         </ChapterOpener>
 
@@ -65,8 +65,8 @@ export default function Strategy() {
             </h3>
             <MarginGrid className="mt-6">
               <p className="measure text-body text-ink-soft">
-                The strategy came from study — across AI strategy, adoption
-                patterns, implementation practice, and organizational change —
+                The strategy came from study, across AI strategy, adoption
+                patterns, implementation practice, and organizational change,
                 before I wrote a single line of code. The research kept
                 returning the same answer: adoption is a sequencing problem,
                 three ingredients in a fixed order.
@@ -115,7 +115,12 @@ export default function Strategy() {
                   className="mt-8"
                   caption="Support allocation · hub-and-spoke"
                   columns={[
-                    { key: "tier", label: "Tier", lead: true, width: "md:w-[26%]" },
+                    {
+                      key: "tier",
+                      label: "Tier",
+                      lead: true,
+                      width: "md:w-[26%]",
+                    },
                     { key: "mandate", label: "Mandate" },
                     {
                       key: "share",
@@ -155,7 +160,12 @@ export default function Strategy() {
                   className="mt-8"
                   caption="Decision log · five entries"
                   columns={[
-                    { key: "decision", label: "Decision", lead: true, width: "md:w-[38%]" },
+                    {
+                      key: "decision",
+                      label: "Decision",
+                      lead: true,
+                      width: "md:w-[38%]",
+                    },
                     { key: "rationale", label: "Rationale" },
                   ]}
                   rows={decisionLog.map((d) => ({
@@ -180,14 +190,19 @@ export default function Strategy() {
             <MarginGrid className="mt-6">
               <div className="measure">
                 <p className="text-body text-ink-soft">
-                  The failed attempts are published alongside the wins — they
-                  are the R&amp;D behind the framework.
+                  The failed attempts are published alongside the wins. They are
+                  the R&amp;D behind the framework.
                 </p>
                 <LedgerTable
                   className="mt-8"
                   caption="Post-mortem ledger · four attempts"
                   columns={[
-                    { key: "attempt", label: "Attempt", lead: true, width: "md:w-[38%]" },
+                    {
+                      key: "attempt",
+                      label: "Attempt",
+                      lead: true,
+                      width: "md:w-[38%]",
+                    },
                     { key: "lesson", label: "Lesson" },
                   ]}
                   rows={failures.map((f) => ({
@@ -206,7 +221,9 @@ export default function Strategy() {
         </div>
         <Reveal className="mt-16 md:mt-20">
           <p className="font-mono text-caption text-ink-soft">
-            Strategy is also where governance starts — every plan is threat-modeled, and the data boundaries are decided, before a line of code exists.&ensp;
+            Strategy is also where governance starts. Every plan is
+            threat-modeled, and the data boundaries are decided, before a line
+            of code exists.&ensp;
             <a href="#governance" className="text-cedar">
               How this runs safely →
             </a>

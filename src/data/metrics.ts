@@ -20,7 +20,7 @@ export const record: RecordMetric[] = [
     value: 2,
     prefix: "$",
     suffix: "M+",
-    label: "first-year economic value — itemized in the ledger",
+    label: "first-year economic value, itemized in the ledger",
   },
   { value: 280, label: "hours/week returned to the team" },
   {
@@ -85,7 +85,7 @@ export const transformationResults = [
   {
     category: "Cost eliminated",
     metric: "$495K/yr",
-    detail: "Software displaced, built-instead, or avoided — see the ledger",
+    detail: "Software displaced, built in-house, or avoided. See the ledger",
   },
   {
     category: "Economic value",
@@ -161,7 +161,7 @@ export const decisionLog = [
   {
     decision: "“Tools last” in the three-ingredient sequence",
     rationale:
-      "Every failed AI rollout I studied led with tools. Tools without mindset shift and enablement became shelfware. The sequence — mindset, enablement, then tools — is the core strategic insight.",
+      "Every failed AI rollout I studied led with tools. Tools without mindset shift and enablement became shelfware. The sequence is the core strategic insight: mindset first, enablement second, tools last.",
   },
 ];
 

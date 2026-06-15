@@ -17,7 +17,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: EASE_CUBIC }}
         >
-          Jake Heaps&ensp;—&ensp;AI Strategy &amp; Transformation
+          Jake Heaps&ensp;·&ensp;AI Strategy &amp; Transformation
         </motion.p>
 
         <motion.hr

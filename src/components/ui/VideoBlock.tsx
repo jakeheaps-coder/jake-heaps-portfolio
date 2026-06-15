@@ -33,7 +33,7 @@ export function VideoBlock({
       ) : (
         <div
           role="img"
-          aria-label={`${title} — video coming soon`}
+          aria-label={`${title}: video coming soon`}
           className="plate flex aspect-video w-full flex-col items-center justify-center gap-3 bg-surface"
         >
           <span
@@ -46,7 +46,7 @@ export function VideoBlock({
           </span>
           <span className="eyebrow text-ink-soft">{title}</span>
           <span className="font-mono text-eyebrow text-ink-soft/70">
-            Video — coming shortly
+            Video coming shortly
           </span>
         </div>
       )}

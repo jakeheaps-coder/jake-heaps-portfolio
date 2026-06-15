@@ -42,7 +42,7 @@ const standards = [
   },
   {
     framework: "GDPR / CCPA",
-    scope: "Privacy obligations — applied when PII is present",
+    scope: "Privacy obligations, applied when PII is present",
     checks: "8",
   },
 ];
@@ -61,7 +61,7 @@ export default function Governance() {
           stat="3"
           statLabel="gates before anything ships"
         >
-          Governance is not a fourth step — it runs through all three. Plan-time
+          Governance is not a fourth step. It runs through all three. Plan-time
           at strategy, controls shipped with every system, gates the team
           learned to run themselves.
         </ChapterOpener>
@@ -74,17 +74,17 @@ export default function Governance() {
             <MarginGrid className="mt-6">
               <div className="measure space-y-5">
                 <p className="text-body text-ink-soft">
-                  Governance here is shift-left — review moves to the earliest
+                  Governance here is shift-left. Review moves to the earliest
                   point where it can still change the design. Three gates.
                   Plan-time review reads the plan before any code exists: threat
                   model, PII handling, compliance posture, eval strategy. The
                   pre-deploy gate runs on every merge, four domains deep. And
-                  milestone review runs the full system — all 13 audit domains,
+                  milestone review runs the full system: all 13 audit domains,
                   roughly 43 specialist auditors working in parallel.
                 </p>
                 <p className="text-body text-ink-soft">
-                  Every review ends in one of three verdicts — block deploy,
-                  proceed with caveats, or ship — and severity is policy, not
+                  Every review ends in one of three verdicts: block deploy,
+                  proceed with caveats, or ship. Severity is policy, not
                   opinion. Critical and high findings block the merge. Medium
                   findings get scheduled. Low findings get logged. Nobody
                   negotiates with the gate.
@@ -107,7 +107,7 @@ export default function Governance() {
                 <p className="text-body text-ink-soft">
                   A finding that traces to a published framework survives an
                   audit; a finding that traces to my taste does not. Every check
-                  in the review system maps to one — the same standards an
+                  in the review system maps to one: the same standards an
                   external assessor would bring, run before the assessor
                   arrives.
                 </p>
@@ -138,7 +138,7 @@ export default function Governance() {
               </div>
               <MarginNote label="Why standards">
                 The 120 framework-mapped checks above are the core; the
-                remaining 32 are implementation-level — client-side AI surfaces,
+                remaining 32 are implementation-level: client-side AI surfaces,
                 platform specifics. Findings are defensible in audit, not taste.
               </MarginNote>
             </MarginGrid>
@@ -157,16 +157,16 @@ export default function Governance() {
                 Most of the rulebook predates AI; the newest checks exist
                 because agents are different. Software that reads, decides, and
                 acts needs controls ordinary code never did. Prompt injection,
-                direct and indirect — including tool descriptors poisoned to
-                turn an agent’s own instructions against it. Human-in-the-loop
-                gates on any tool that is destructive or irreversible. Agent
-                identity and confused-deputy prevention, so a system acting on
-                someone’s behalf can never borrow more authority than that
-                person holds. Memory poisoning. Cross-tenant context bleed. Cost
-                and turn caps, so no agent can run away with a loop or a budget.
+                direct and indirect, including tool descriptors poisoned to turn
+                an agent’s own instructions against it. Human-in-the-loop gates
+                on any tool that is destructive or irreversible. Agent identity
+                and confused-deputy prevention, so a system acting on someone’s
+                behalf can never borrow more authority than that person holds.
+                Memory poisoning. Cross-tenant context bleed. Cost and turn
+                caps, so no agent can run away with a loop or a budget.
               </p>
               <p className="text-body text-ink-soft">
-                Customer-facing agents carry the strictest set — they ship with
+                Customer-facing agents carry the strictest set. They ship with
                 approval gates, suppression lists, and disclosure.
               </p>
             </div>
@@ -183,21 +183,21 @@ export default function Governance() {
                 <p className="text-body text-ink-soft">
                   The verification rule is blunt: a check without a command run
                   is a skip. An auditor that reads code and nods has verified
-                  nothing — run the probe, capture the output, then judge. The
+                  nothing. Run the probe, capture the output, then judge. The
                   same rule covers fixes: reproduce the bug before trusting the
                   patch.
                 </p>
                 <p className="text-body text-ink-soft">
                   Evals are model-risk controls, not marketing. The CMO agent’s
-                  110-question suite gates its deploys — fail the suite, miss
-                  the release. And the honest number is the held-out one: the
-                  Agent Factory ships at a 91% pass rate, published because a
+                  110-question suite gates its deploys. Fail the suite, miss the
+                  release. And the honest number is the held-out one: the Agent
+                  Factory ships at a 91% pass rate, published because a
                   self-graded 100% means the test is too easy.
                 </p>
               </div>
               <MarginNote label="In practice">
                 The news-monitoring workflow shipped only after a 90-agent
-                security audit surfaced — and remediated — an SSRF class.
+                security audit surfaced, and remediated, an SSRF class.
               </MarginNote>
             </MarginGrid>
           </Reveal>
@@ -211,7 +211,7 @@ export default function Governance() {
             <div className="measure mt-6">
               <p className="text-body text-ink-soft">
                 Everything in this record runs inside the company’s existing
-                platform permissions — no system widens the aperture. Dataset
+                platform permissions. No system widens the aperture. Dataset
                 access controls are reproduced in full; the DAM migration
                 shipped with a complete ACL parity layer, granting exactly what
                 the old system granted and nothing more. MCP servers sit behind

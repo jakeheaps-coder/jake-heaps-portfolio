@@ -29,7 +29,7 @@ export const classLabels: Record<LedgerClass, string> = {
 
 export const ledger: LedgerRow[] = [
   {
-    item: "Team capacity created — workload absorbed by AI systems without additional hiring",
+    item: "Team capacity created, workload absorbed by AI systems without additional hiring",
     cls: "capacity",
     basis: "yearly",
     amount: 1_500_000,
@@ -82,7 +82,7 @@ export const ledger: LedgerRow[] = [
     cls: "avoided",
     basis: "one-time",
     amount: 50_000,
-    note: "agency spend not incurred — keynotes, landing-page agents",
+    note: "agency spend not incurred on keynotes and landing-page agents",
   },
   {
     item: "Enterprise customer deal, AI-attributed",
@@ -117,6 +117,6 @@ export const attestation = {
 
 export const countingRules = [
   "Yearly amounts are annual run-rate as of fiscal year end; one-time amounts are counted once.",
-  "Displaced — a paid license canceled. Equivalent — a system built in-house instead of buying. Avoided — external spend not incurred. Capacity — measured hours returned, valued at fully-loaded cost of equivalent roles.",
+  "Displaced: a paid license canceled. Equivalent: a system built in-house instead of buying. Avoided: external spend not incurred. Capacity: measured hours returned, valued at fully-loaded cost of equivalent roles.",
   "AI-attributed pipeline (seven figures, CRM-tracked) is excluded from every total above.",
 ];

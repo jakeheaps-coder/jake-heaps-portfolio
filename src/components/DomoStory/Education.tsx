@@ -26,8 +26,8 @@ export default function Education() {
           stat="575+"
           statLabel="AI skills built by the team"
         >
-          How a non-technical marketing team became AI builders — one person,
-          one bottleneck, one working system at a time.
+          How a non-technical marketing team became AI builders: one person, one
+          bottleneck, one working system at a time.
         </ChapterOpener>
 
         {/* 1 · The thesis */}
@@ -36,11 +36,11 @@ export default function Education() {
           <MarginGrid className="mt-8">
             <div className="measure">
               <p>
-                My first pass looked like every enterprise rollout —
-                announcement emails, documentation, office hours, a standing
-                invitation to experiment. People showed up. Then they went back
-                to their desks and worked exactly as before. Measured honestly,
-                adoption was near zero.
+                My first pass looked like every enterprise rollout: announcement
+                emails, documentation, office hours, a standing invitation to
+                experiment. People showed up. Then they went back to their desks
+                and worked exactly as before. Measured honestly, adoption was
+                near zero.
               </p>
             </div>
             <MarginNote label="First pass">
@@ -51,10 +51,10 @@ export default function Education() {
               <p>
                 So I stopped teaching the tool and started building the
                 workflow. I sat down with each person on the team, asked to see
-                the worst bottleneck in their week, and built the fix with them
-                — in their files, on their accounts, against their real
-                deadlines. A session ended when the system ran, and the only
-                measure I kept was whether it was still running a month later.
+                the worst bottleneck in their week, and built the fix with them,
+                in their files, on their accounts, against their real deadlines.
+                A session ended when the system ran, and the only measure I kept
+                was whether it was still running a month later.
               </p>
               <p>
                 The order never changed: mindset first, enablement second, tools
@@ -77,9 +77,9 @@ export default function Education() {
               The roster, by department
             </h3>
             <p className="measure mt-4 text-ink-soft">
-              Selected entries from the roster — each one a workflow now
-              running in production, built or co-built during enablement,
-              documented, and in daily use.
+              Selected entries from the roster: each one a workflow now running
+              in production, built or co-built during enablement, documented,
+              and in daily use.
             </p>
             <p className="measure mt-3 font-mono text-caption text-ink-soft">
               Published with the consent of those named; roles are generalized
@@ -137,8 +137,8 @@ export default function Education() {
                     single video cost sixteen working hours. We rebuilt the
                     pipeline in his enablement sessions; creative now ships the
                     same day, and a video takes him just over an hour. He is
-                    clear about the trade — most of the hand-finished quality at
-                    ten times the speed — and he calls it the right one.
+                    clear about the trade: most of the hand-finished quality at
+                    ten times the speed. And he calls it the right one.
                   </p>
                 </div>
                 <MarginNote label="Video production">
@@ -159,8 +159,8 @@ export default function Education() {
                   </p>
                   <p className="mt-4">
                     Milo had never written a line of code. His webinar program
-                    ran on roughly twenty hours a week of manual administration
-                    — scheduling, logistics, follow-up. With AI as his coach, he
+                    ran on roughly twenty hours a week of manual administration:
+                    scheduling, logistics, follow-up. With AI as his coach, he
                     automated the entire sequence himself, and agents now handle
                     the daily follow-up on their own. The same program takes
                     about two hours of his week.
@@ -196,7 +196,8 @@ export default function Education() {
         </div>
         <Reveal className="mt-16 md:mt-20">
           <p className="font-mono text-caption text-ink-soft">
-            The team didn’t just learn the tools — they learned the gates, so the discipline scales without me in the room.&ensp;
+            The team didn’t just learn the tools. They learned the gates, so the
+            discipline scales without me in the room.&ensp;
             <a href="#governance" className="text-cedar">
               How this runs safely →
             </a>

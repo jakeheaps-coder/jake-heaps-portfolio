@@ -19,7 +19,7 @@
       },
       {
         "decision": "“Tools last” in the three-ingredient sequence",
-        "rationale": "Every failed AI rollout I studied led with tools. Tools without mindset shift and enablement became shelfware. The sequence — mindset, enablement, then tools — is the core strategic insight."
+        "rationale": "Every failed AI rollout I studied led with tools. Tools without mindset shift and enablement became shelfware. The sequence is the core strategic insight: mindset first, enablement second, tools last."
       }
     ],
     "failures": [
@@ -54,7 +54,7 @@
         "value": 2,
         "prefix": "$",
         "suffix": "M+",
-        "label": "first-year economic value — itemized in the ledger"
+        "label": "first-year economic value, itemized in the ledger"
       },
       {
         "value": 280,
@@ -152,7 +152,7 @@
       {
         "category": "Cost eliminated",
         "metric": "$495K/yr",
-        "detail": "Software displaced, built-instead, or avoided — see the ledger"
+        "detail": "Software displaced, built in-house, or avoided. See the ledger"
       },
       {
         "category": "Economic value",
@@ -285,7 +285,7 @@
         "name": "One Chat Agent",
         "category": "agents",
         "kind": "system",
-        "description": "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions — the single pane of glass for customer engagement.",
+        "description": "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions: the single pane of glass for customer engagement.",
         "roi": "Support channels consolidated",
         "tech": [
           "Gemini",
@@ -524,7 +524,7 @@
         "name": "Front-End Sites (14)",
         "category": "education",
         "kind": "system",
-        "description": "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more — fourteen in total. All React + Vite or Next.js.",
+        "description": "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more, fourteen in total. All React + Vite or Next.js.",
         "roi": "$70–210K agency cost avoided",
         "tech": [
           "React",
@@ -628,7 +628,7 @@
         "name": "One Chat Agent",
         "category": "agents",
         "kind": "system",
-        "description": "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions — the single pane of glass for customer engagement.",
+        "description": "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions: the single pane of glass for customer engagement.",
         "roi": "Support channels consolidated",
         "tech": [
           "Gemini",
@@ -799,7 +799,7 @@
         "name": "Build-First AI Agent (Video)",
         "category": "creative",
         "kind": "artifact",
-        "description": "Complete polished video tutorial teaching viewers to build their first AI agent. 15+ iterations refined to a final cut. Entirely AI-produced — script, visuals, voiceover.",
+        "description": "Complete polished video tutorial teaching viewers to build their first AI agent. 15+ iterations refined to a final cut. Entirely AI-produced: script, visuals, voiceover.",
         "roi": "Fraction of studio production cost",
         "tech": [
           "AI Video",
@@ -849,7 +849,7 @@
         "name": "Board & Executive Presentations",
         "category": "creative",
         "kind": "artifact",
-        "description": "Countless AI-crafted presentations for board meetings, executive reviews, and stakeholder briefings. Strategy narratives, data visualizations, and talking points — all AI-assisted at scale.",
+        "description": "Countless AI-crafted presentations for board meetings, executive reviews, and stakeholder briefings. Strategy narratives, data visualizations, and talking points, all AI-assisted at scale.",
         "roi": "Presentations at scale, no agency",
         "tech": [
           "Gemini",
@@ -968,7 +968,7 @@
         "name": "Team Onboarding Course (15 modules)",
         "category": "education",
         "kind": "artifact",
-        "description": "Complete interactive onboarding course for the team. 15 modules covering tooling, accounts, vocabulary, operations, deployments, visuals, and projects — so the marketing team runs the systems independently.",
+        "description": "Complete interactive onboarding course for the team. 15 modules covering tooling, accounts, vocabulary, operations, deployments, visuals, and projects, so the marketing team runs the systems independently.",
         "roi": "The team runs it independently",
         "tech": [
           "Interactive Docs",
@@ -980,7 +980,7 @@
         "name": "575+ AI Skills & Workflows",
         "category": "education",
         "kind": "artifact",
-        "description": "The aggregate output of the education program. 575+ production AI workflows built and deployed across the team. Not ChatGPT prompts — specific, repeatable, role-based processes.",
+        "description": "The aggregate output of the education program. 575+ production AI workflows built and deployed across the team. Not ChatGPT prompts. Specific, repeatable, role-based processes.",
         "roi": "Education program scorecard",
         "tech": [
           "Claude Code",
@@ -1005,7 +1005,7 @@
         "name": "Front-End Sites (14)",
         "category": "education",
         "kind": "system",
-        "description": "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more — fourteen in total. All React + Vite or Next.js.",
+        "description": "Internal tools: operations consoles, agent showcases, monitoring dashboards, an executive reporting app, a messaging knowledge base, and more, fourteen in total. All React + Vite or Next.js.",
         "roi": "$70–210K agency cost avoided",
         "tech": [
           "React",
@@ -1091,7 +1091,7 @@
       {
         "role": "Production Designer",
         "department": "Creative & Design",
-        "workflow": "Automating scalability of assets — reduced 50 speaker cards from 3 hours to 10 minutes",
+        "workflow": "Automating scalability of assets, reduced 50 speaker cards from 3 hours to 10 minutes",
         "tool": "Claude Code"
       },
       {
