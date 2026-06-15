@@ -214,7 +214,7 @@ export default function VisionPage() {
           <Header
             eyebrow="The proof"
             title="Measured, not estimated."
-            frame="One year, one ~30-person organization. Every dollar itemized — not a projection."
+            frame="One year, inside a publicly traded company. Every dollar itemized, not a projection."
           />
 
           <RevealGroup className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
@@ -268,7 +268,7 @@ export default function VisionPage() {
               hard dollars — canceled invoices and a closed deal, not estimates.
             </p>
             <p className="mt-3 max-w-[72ch] font-mono text-caption text-ink-soft">
-              &ldquo;{attestation.quote}&rdquo; — {attestation.source}.{" "}
+              &ldquo;{attestation.quote}&rdquo;{" "}
               <a href="#/brief" className="text-cedar">
                 See the full ledger and counting rules →
               </a>
