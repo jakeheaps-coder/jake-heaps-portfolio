@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AccessGate from "./components/AccessGate";
 import { hasAccess } from "./lib/access";
 import Nav from "./components/Nav";
+import VisionNav from "./components/VisionNav";
+import VisionPage from "./components/VisionPage";
 import Hero from "./components/Hero";
 import Record from "./components/Record";
+import AboutStrip from "./components/AboutStrip";
 import ClientLogos from "./components/ClientLogos";
 import Strategy from "./components/DomoStory/Strategy";
 import Governance from "./components/DomoStory/Governance";
@@ -16,11 +19,52 @@ import TechStack from "./components/TechStack";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
+/** Empty hash or #/vision → vision; anything else (incl. brief #section
+    anchors like #record) → the brief. */
+function currentView(): "vision" | "brief" {
+  const h = window.location.hash.replace(/^#\/?/, "");
+  return h === "" || h === "vision" ? "vision" : "brief";
+}
+
 export default function App() {
   const [entered, setEntered] = useState(hasAccess);
+  const [view, setView] = useState<"vision" | "brief">(currentView);
+
+  useEffect(() => {
+    const onHash = () => {
+      const next = currentView();
+      setView(next);
+      /* Route-level hashes (#/vision, #/brief) have no target element — jump
+         to top. Section anchors (#record …) keep native scroll. */
+      const h = window.location.hash;
+      if (h === "" || h === "#/vision" || h === "#/brief") {
+        window.scrollTo(0, 0);
+      }
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
 
   if (!entered) {
     return <AccessGate onEnter={() => setEntered(true)} />;
+  }
+
+  if (view === "vision") {
+    return (
+      <>
+        <a
+          href="#vision"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-cedar focus:px-4 focus:py-2 focus:text-paper"
+        >
+          Skip to content
+        </a>
+        <VisionNav />
+        <main>
+          <VisionPage />
+        </main>
+        <Footer />
+      </>
+    );
   }
 
   return (
@@ -35,12 +79,13 @@ export default function App() {
       <main>
         <Hero />
         <Record />
+        <AboutStrip />
         <ClientLogos />
         <Strategy />
+        <Governance />
         <Transformation />
         <Education />
         <Interlude />
-        <Governance />
         <ProjectPortfolio />
         <ExternalValidation />
         <TechStack />

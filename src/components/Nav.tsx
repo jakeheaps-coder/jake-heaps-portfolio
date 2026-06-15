@@ -83,9 +83,17 @@ export default function Nav() {
       }
     >
       <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-6">
-        <a href="#brief" className="font-display text-h3 italic no-underline">
-          Jake Heaps
-        </a>
+        <div className="flex items-baseline gap-4">
+          <a href="#brief" className="font-display text-h3 italic no-underline">
+            Jake Heaps
+          </a>
+          <a
+            href="#/vision"
+            className="hidden font-mono text-eyebrow uppercase tracking-[0.08em] text-ink-soft no-underline transition-colors duration-200 hover:text-ink sm:inline"
+          >
+            ← Overview
+          </a>
+        </div>
 
         <div className="hidden h-full items-stretch gap-7 md:flex">
           {sections.map((s) => (
