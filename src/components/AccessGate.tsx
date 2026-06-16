@@ -45,8 +45,9 @@ export default function AccessGate({ onEnter }: { onEnter: () => void }) {
           A private brief.
         </h1>
         <p className="measure mt-5 text-body text-ink-soft">
-          This is a working record of twelve months of enterprise AI
-          transformation. Enter your work email to read it.
+          This is a working record of an AI transformation: twelve months of
+          itemized proof, now going company-wide. Enter your work email to read
+          it.
         </p>
 
         <form onSubmit={submit} className="mt-10">

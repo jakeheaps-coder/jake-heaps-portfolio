@@ -60,8 +60,8 @@ export default function Hero() {
             93%
           </span>
           <p className="mt-3 max-w-[60ch] font-mono text-caption text-ink-soft">
-            team adoption&ensp;·&ensp;12-month enterprise
-            transformation&ensp;·&ensp;26 production systems
+            team adoption&ensp;·&ensp;26 production systems&ensp;·&ensp;the
+            first phase of a company-wide transformation
           </p>
         </motion.div>
       </div>

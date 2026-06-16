@@ -279,7 +279,7 @@ export default function VisionPage() {
           <Header
             eyebrow="The proof"
             title="Measured, not estimated."
-            frame="One year, inside a publicly traded company. Every dollar itemized, not a projection."
+            frame="The first phase, inside a publicly traded company. One year, every dollar itemized, not a projection."
           />
 
           <RevealGroup className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
@@ -338,6 +338,20 @@ export default function VisionPage() {
                 See the full ledger and counting rules →
               </a>
             </p>
+          </Reveal>
+
+          <Reveal className="mt-12">
+            <div className="border-t-2 border-ink pt-8">
+              <Eyebrow as="h3">
+                Where it&rsquo;s going&ensp;·&ensp;FY27 projection
+              </Eyebrow>
+              <p className="measure mt-4 text-lede text-ink">
+                Marketing was where this started. The same system is now rolling
+                across the whole company, roughly 850 people and $300M in
+                operating spend, on track to about 2x that efficiency rate. That
+                is the FY27 projection, built on the phase one results above.
+              </p>
+            </div>
           </Reveal>
 
           <Reveal className="mt-12">

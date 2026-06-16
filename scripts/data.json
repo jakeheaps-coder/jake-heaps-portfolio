@@ -3,7 +3,7 @@
     "decisionLog": [
       {
         "decision": "Marketing as the proving ground",
-        "rationale": "Marketing had the highest density of repetitive, AI-automatable tasks combined with a CMO willing to sponsor the experiment. Engineering and Sales had neither."
+        "rationale": "Marketing had the highest density of repetitive, AI-automatable tasks combined with a CMO willing to sponsor the experiment. Engineering and Sales had neither. The plan was always company-wide: marketing was the proving ground to build and validate the system before scaling it across the org."
       },
       {
         "decision": "Enablement over training",
@@ -140,7 +140,12 @@
       {
         "period": "May 2026",
         "name": "Transfer",
-        "desc": "Team operates independently. Playbook ready for enterprise rollout."
+        "desc": "First team operates independently. The playbook is ready, and the company-wide rollout begins."
+      },
+      {
+        "period": "FY27 · projected",
+        "name": "Company-wide",
+        "desc": "Same system across the whole company, ~850 people and ~$300M in spend, on track to about 2x the first-phase efficiency rate."
       }
     ],
     "transformationResults": [

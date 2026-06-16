@@ -125,7 +125,8 @@ export default function Transformation() {
           statLabel="first-year economic value, itemized below"
         >
           Twenty-six production systems in twelve months: deployed, measured,
-          and running in the team’s daily work.
+          and running in the team’s daily work. That was the first phase; the
+          same system is now rolling company-wide.
         </ChapterOpener>
 
         {/* Block 1 — the twelve months */}

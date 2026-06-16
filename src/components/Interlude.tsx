@@ -18,8 +18,9 @@ export default function Interlude() {
           </p>
           <p className="mt-8 max-w-[52ch] text-body text-night-soft">
             Transfer completed May 2026. That was the design. Enablement, not
-            dependency: a marketing organization that builds its own AI systems,
-            and a playbook ready for the next one.
+            dependency: the first team builds its own AI systems now, and the
+            playbook is ready for the next one. The next one is the whole
+            company.
           </p>
         </Reveal>
       </div>

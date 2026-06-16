@@ -45,6 +45,11 @@ FORBIDDEN=(
   'Built himself'
   'for successor'
   'course for successor'
+  '\$35M'
+  '\$35 million'
+  '30-person'
+  '50-person'
+  'fifty-person'
 )
 
 FAIL=0

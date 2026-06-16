@@ -56,6 +56,9 @@ FORBIDDEN_TERMS = [
     "backfill", "attrition", "headcount reduction",
     "Minky", "Clanker", "NLC Mutual", "awardco", "BankSouth",
     "10 people", "replaced 10", "people replaced",
+    # Genericized: marketing-phase spend + headcount (keep $300M / 850 — public).
+    # Note: hyphenated forms only — bare "50 people" would match "850 people".
+    "$35M", "$35 million", "30-person", "50-person", "fifty-person",
 ]
 
 # ---------------------------------------------------------------------------

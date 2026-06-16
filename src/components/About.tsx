@@ -31,13 +31,15 @@ export default function About() {
                 </p>
                 <p>
                   I lead AI implementation at Domo today, full-time, in the
-                  operating seat. This brief is that seat&rsquo;s output: 26
-                  production systems, a first-year value ledger that closed at
-                  $2.3M, and a ~30-person marketing organization where 93% of
-                  the team now builds with AI independently. The transfer
-                  completed in May 2026, and the systems have run without my
-                  daily hands since, by design. Enablement, not dependency, is
-                  the product.
+                  operating seat. We started in marketing, and that first phase
+                  is this brief&rsquo;s proof: 26 production systems, a
+                  first-year value ledger that closed at $2.3M, and a team where
+                  93% now build with AI independently. The transfer completed in
+                  May 2026, and the systems have run without my daily hands
+                  since. That is what freed me to take the same system
+                  company-wide: roughly 850 people and $300M in operating spend,
+                  on track to about 2x that efficiency rate, projected for FY27.
+                  Enablement, not dependency, is the product.
                 </p>
                 <p>
                   I&rsquo;ll name the question this document raises rather than

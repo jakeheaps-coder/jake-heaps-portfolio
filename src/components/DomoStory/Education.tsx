@@ -27,7 +27,8 @@ export default function Education() {
           statLabel="AI skills built by the team"
         >
           How a non-technical marketing team became AI builders: one person, one
-          bottleneck, one working system at a time.
+          bottleneck, one working system at a time. It is where the company-wide
+          rollout started.
         </ChapterOpener>
 
         {/* 1 · The thesis */}
