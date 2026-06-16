@@ -1,48 +1,58 @@
-import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 /**
- * Minimal nav for the vision page — logo, the full-brief link, email.
- * No section tracking; fades in after the hero like the brief's nav.
+ * Vision-page nav — a persistent top bar: the name, in-page section links,
+ * the full-brief link, and email. Visible the whole time; section links
+ * scroll within the page (the router keeps these anchors on the vision view).
  */
-export default function VisionNav() {
-  const [shown, setShown] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
-  const reduced = useReducedMotion();
+const SECTIONS = [
+  { href: "#who", label: "Who I am" },
+  { href: "#problem", label: "Problem" },
+  { href: "#method", label: "Method" },
+  { href: "#proof", label: "Proof" },
+];
 
-  useEffect(() => {
-    const onScroll = () => setShown(window.scrollY > window.innerHeight * 0.7);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+const LINK =
+  "flex items-center font-mono text-eyebrow uppercase tracking-[0.08em] no-underline transition-colors duration-200";
+
+export default function VisionNav() {
+  const reduced = useReducedMotion();
 
   return (
     <motion.nav
-      ref={navRef}
       aria-label="Primary"
-      inert={!shown}
       className="fixed inset-x-0 top-0 z-50 border-b border-hairline bg-paper/85 backdrop-blur-md"
-      initial={false}
-      animate={{ y: shown ? 0 : -64, opacity: shown ? 1 : 0 }}
-      transition={
-        reduced ? { duration: 0 } : { duration: 0.4, ease: [0.33, 1, 0.68, 1] }
-      }
+      initial={reduced ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
     >
-      <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-6">
-        <a href="#/vision" className="font-display text-h3 italic no-underline">
+      <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between gap-6 px-6">
+        <a
+          href="#/vision"
+          className="shrink-0 font-display text-h3 italic no-underline"
+        >
           Jake Heaps
         </a>
-        <div className="flex h-full items-stretch gap-6">
-          <a
-            href="#/brief"
-            className="flex items-center font-mono text-eyebrow uppercase tracking-[0.08em] text-ink-soft no-underline transition-colors duration-200 hover:text-ink"
-          >
+
+        <div className="hidden items-stretch gap-6 md:flex">
+          {SECTIONS.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              className={`${LINK} text-ink-soft hover:text-ink`}
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex h-full shrink-0 items-stretch gap-6">
+          <a href="#/brief" className={`${LINK} text-ink-soft hover:text-ink`}>
             The full brief →
           </a>
           <a
             href="mailto:jakeheaps@me.com"
-            className="flex items-center font-mono text-eyebrow uppercase tracking-[0.08em] text-cedar no-underline transition-colors duration-200 hover:text-ink"
+            className={`${LINK} text-cedar hover:text-ink`}
           >
             Email
           </a>

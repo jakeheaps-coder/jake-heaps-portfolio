@@ -181,17 +181,17 @@ CLIENTS = [
      "fade": 0.85},
 ]
 
-# The three-ingredient formula — src/components/DomoStory/Strategy.tsx.
+# The method — src/components/DomoStory/Strategy.tsx.
 FORMULA = [
-    {"n": "01", "title": "Mindset",
-     "desc": "Shift the story from “AI will replace me” to “AI makes me "
-             "dangerous.” Without this, nothing else matters."},
-    {"n": "02", "title": "Enablement",
-     "desc": "One-on-one coaching rather than training. Sit with each person "
-             "and build their specific workflow together. This is the hard part."},
-    {"n": "03", "title": "Tools",
-     "desc": "Role-specific AI tools that solve real problems. Tools come "
-             "last; without the first two ingredients they become shelfware."},
+    {"n": "01", "title": "Strategy",
+     "desc": "Decide what to automate, in what order, and why. Most rollouts "
+             "fail right here, by leading with the tool instead of the sequence."},
+    {"n": "02", "title": "Implementation",
+     "desc": "Build the systems and ship them into production, inside the "
+             "platforms the company already runs on."},
+    {"n": "03", "title": "Education",
+     "desc": "Get the team building on their own. Sitting next to one person "
+             "beats any training deck. It is how adoption reached 93%."},
 ]
 
 # The standards ledger — src/components/DomoStory/Governance.tsx. Every

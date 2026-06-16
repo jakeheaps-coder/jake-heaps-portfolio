@@ -140,11 +140,73 @@ export default function VisionPage() {
         </div>
       </section>
 
+      {/* ---- Who I am — lead with the person ---- */}
+      <section id="who" className={SECTION}>
+        <div className={`${WRAP} py-20 md:py-28`}>
+          <Reveal>
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,58ch)_minmax(180px,220px)] lg:gap-x-16">
+              <div>
+                <Eyebrow as="h2">Who I am</Eyebrow>
+                <h3 className="mt-4 font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
+                  This is all I do.
+                </h3>
+                <div className="mt-6 space-y-5 text-body text-ink">
+                  <p>
+                    I lead AI implementation at Domo today. Full-time, in the
+                    operating seat. This discipline didn&rsquo;t exist three
+                    years ago; nobody has decades of it. What I have is a year
+                    of actually doing it, measured and itemized.
+                  </p>
+                  <p>
+                    The method comes from something I learned long before AI:
+                    you change what people do by sitting next to them, not by
+                    sending them a document. That&rsquo;s the whole secret of
+                    adoption, and it&rsquo;s why the systems kept running after
+                    I stepped back.
+                  </p>
+                  <p>
+                    I&rsquo;m the youngest of three brothers, so I&rsquo;ve
+                    never been allowed to win anything easily. This August
+                    I&rsquo;m marrying Ella. And I build things on nights and
+                    weekends because I genuinely cannot help it.
+                  </p>
+                </div>
+                <img
+                  src={signature}
+                  alt="Jake Heaps signature"
+                  className="mt-8 h-14 w-auto md:h-16"
+                />
+              </div>
+              <figure className="order-first m-0 lg:order-none lg:pt-12">
+                <img
+                  src={headshot}
+                  alt="Jake Heaps"
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  className="plate aspect-square w-40 object-cover lg:w-full"
+                />
+                <figcaption className="eyebrow mt-3 text-ink-soft">
+                  Jake Heaps · Lehi, Utah
+                </figcaption>
+              </figure>
+            </div>
+          </Reveal>
+          <Reveal className="mt-12">
+            <VideoBlock
+              src={VID.whoIAm}
+              caption="Why I do this, in my own words."
+              title="Who I am"
+            />
+          </Reveal>
+        </div>
+      </section>
+
       {/* ---- Companies I've worked with ---- */}
       <LogoStrip />
 
       {/* ---- The problem ---- */}
-      <section className={`${SECTION} bg-surface`}>
+      <section id="problem" className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-20 md:py-28`}>
           <Header
             eyebrow="The problem"
@@ -162,7 +224,7 @@ export default function VisionPage() {
       </section>
 
       {/* ---- The method ---- */}
-      <section className={SECTION}>
+      <section id="method" className={SECTION}>
         <div className={`${WRAP} py-20 md:py-28`}>
           <Header
             eyebrow="The method"
@@ -212,7 +274,7 @@ export default function VisionPage() {
       </section>
 
       {/* ---- The proof = the ledger ---- */}
-      <section className={`${SECTION} bg-surface`}>
+      <section id="proof" className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-20 md:py-28`}>
           <Header
             eyebrow="The proof"
@@ -288,70 +350,8 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ---- Who I am ---- */}
-      <section className={SECTION}>
-        <div className={`${WRAP} py-20 md:py-28`}>
-          <Reveal>
-            <div className="grid gap-12 lg:grid-cols-[minmax(0,58ch)_minmax(180px,220px)] lg:gap-x-16">
-              <div>
-                <Eyebrow as="h2">Who I am</Eyebrow>
-                <h3 className="mt-4 font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
-                  This is all I do.
-                </h3>
-                <div className="mt-6 space-y-5 text-body text-ink">
-                  <p>
-                    I lead AI implementation at Domo today. Full-time, in the
-                    operating seat. This discipline didn&rsquo;t exist three
-                    years ago; nobody has decades of it. What I have is a year
-                    of actually doing it, measured and itemized.
-                  </p>
-                  <p>
-                    The method comes from something I learned long before AI:
-                    you change what people do by sitting next to them, not by
-                    sending them a document. That&rsquo;s the whole secret of
-                    adoption, and it&rsquo;s why the systems kept running after
-                    I stepped back.
-                  </p>
-                  <p>
-                    I&rsquo;m the youngest of three brothers, so I&rsquo;ve
-                    never been allowed to win anything easily. This August
-                    I&rsquo;m marrying Ella. And I build things on nights and
-                    weekends because I genuinely cannot help it.
-                  </p>
-                </div>
-                <img
-                  src={signature}
-                  alt="Jake Heaps signature"
-                  className="mt-8 h-14 w-auto md:h-16"
-                />
-              </div>
-              <figure className="order-first m-0 lg:order-none lg:pt-12">
-                <img
-                  src={headshot}
-                  alt="Jake Heaps"
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  className="plate aspect-square w-40 object-cover lg:w-full"
-                />
-                <figcaption className="eyebrow mt-3 text-ink-soft">
-                  Jake Heaps · Lehi, Utah
-                </figcaption>
-              </figure>
-            </div>
-          </Reveal>
-          <Reveal className="mt-12">
-            <VideoBlock
-              src={VID.whoIAm}
-              caption="Why I do this, in my own words."
-              title="Who I am"
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ---- Close ---- */}
-      <section className={`${SECTION} bg-surface`}>
+      {/* ---- Contact / close ---- */}
+      <section id="contact" className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-24 md:py-32`}>
           <Reveal>
             <hr className="m-0 border-0 border-t-2 border-ink" />
@@ -409,7 +409,7 @@ const clients = [
   },
 ];
 
-/** Simple logo bar, just under the hero. */
+/** Simple client logo bar, near the top of the page. */
 function LogoStrip() {
   return (
     <section className={SECTION}>

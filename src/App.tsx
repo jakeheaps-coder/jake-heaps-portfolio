@@ -19,11 +19,21 @@ import TechStack from "./components/TechStack";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
-/** Empty hash or #/vision → vision; anything else (incl. brief #section
-    anchors like #record) → the brief. */
+/** Empty hash, #/vision, or a vision section anchor (#who, #method …) →
+    vision; anything else (incl. brief #section anchors like #record) → the
+    brief. */
+const VISION_ANCHORS = new Set([
+  "",
+  "vision",
+  "who",
+  "problem",
+  "method",
+  "proof",
+  "contact",
+]);
 function currentView(): "vision" | "brief" {
   const h = window.location.hash.replace(/^#\/?/, "");
-  return h === "" || h === "vision" ? "vision" : "brief";
+  return VISION_ANCHORS.has(h) ? "vision" : "brief";
 }
 
 export default function App() {

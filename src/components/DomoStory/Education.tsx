@@ -57,8 +57,8 @@ export default function Education() {
                 was whether it was still running a month later.
               </p>
               <p>
-                The order never changed: mindset first, enablement second, tools
-                third.
+                The order never changed: strategy, then implementation, then
+                education.
               </p>
             </div>
             <MarginNote label="Second pass">

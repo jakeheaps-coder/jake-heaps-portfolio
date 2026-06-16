@@ -7,10 +7,6 @@ export default function Footer() {
           <p className="font-mono text-caption text-ink-soft">
             © {new Date().getFullYear()} Jake Heaps
           </p>
-          <p className="font-mono text-caption text-ink-soft">
-            Set in Newsreader, General Sans &amp; IBM Plex Mono · Built with
-            React, Tailwind &amp; Vite
-          </p>
         </div>
       </div>
     </footer>

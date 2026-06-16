@@ -159,9 +159,9 @@ export const decisionLog = [
       "Vertex AI ADK provided enterprise-grade deployment, Google Cloud integration, and Gemini Enterprise gave every employee agent access without per-seat licensing friction.",
   },
   {
-    decision: "“Tools last” in the three-ingredient sequence",
+    decision: "Strategy, implementation, education, in that order",
     rationale:
-      "Every failed AI rollout I studied led with tools. Tools without mindset shift and enablement became shelfware. The sequence is the core strategic insight: mindset first, enablement second, tools last.",
+      "Every failed AI rollout I studied led with the tool. A system shipped without strategy, or without the people to adopt it, becomes shelfware. The order is the core strategic insight: decide what to build, build it, then bring the team, never reversed.",
   },
 ];
 

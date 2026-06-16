@@ -4,22 +4,22 @@ import { Eyebrow } from "../ui/Eyebrow";
 import { LedgerTable } from "../ui/LedgerTable";
 import { Reveal, RevealGroup, RevealItem } from "../ui/Reveal";
 
-/** The core framework — sequence is the point, so it reads as a sequence. */
-const formula = [
+/** The method — three parts in a fixed order, so it reads as a sequence. */
+const method = [
   {
     n: "01",
-    title: "Mindset",
-    desc: "Shift the story from “AI will replace me” to “AI makes me dangerous.” Without this, nothing else matters.",
+    title: "Strategy",
+    desc: "Decide what to automate, in what order, and why. Most rollouts fail right here, by leading with the tool instead of the sequence.",
   },
   {
     n: "02",
-    title: "Enablement",
-    desc: "One-on-one coaching rather than training. Sit with each person and build their specific workflow together. This is the hard part.",
+    title: "Implementation",
+    desc: "Build the systems and ship them into production, inside the platforms the company already runs on.",
   },
   {
     n: "03",
-    title: "Tools",
-    desc: "Role-specific AI tools that solve real problems. Tools come last; without the first two ingredients they become shelfware.",
+    title: "Education",
+    desc: "Get the team building on their own. Sitting next to one person beats any training deck. It is how adoption reached 93%.",
   },
 ];
 
@@ -50,36 +50,38 @@ export default function Strategy() {
           n="01"
           title="Strategy"
           stat="3"
-          statLabel="ingredients, applied in fixed order"
+          statLabel="parts to the method, in fixed order"
         >
-          The framework behind 93% adoption: the reasoning, the decisions, and
-          the attempts that failed on the way there.
+          The method runs in three parts: strategy, implementation, education.
+          This is the first. The reasoning and the decisions behind 93%
+          adoption, and the attempts that failed on the way there.
         </ChapterOpener>
 
-        {/* — The three-ingredient formula — */}
+        {/* — The method — */}
         <div className="mt-16 md:mt-20">
           <Reveal>
-            <Eyebrow>The core framework</Eyebrow>
+            <Eyebrow>The method</Eyebrow>
             <h3 className="mt-4 font-display text-h2">
-              The three-ingredient formula
+              Three parts, one order
             </h3>
             <MarginGrid className="mt-6">
               <p className="measure text-body text-ink-soft">
-                The strategy came from study, across AI strategy, adoption
+                The method came from study, across AI strategy, adoption
                 patterns, implementation practice, and organizational change,
                 before I wrote a single line of code. The research kept
-                returning the same answer: adoption is a sequencing problem,
-                three ingredients in a fixed order.
+                returning the same answer: this is a sequencing problem. Decide
+                what to build, build it, then bring the people, in that order.
+                Skip a step and you get shelfware.
               </p>
               <MarginNote label="Sequence">
-                mindset → enablement → tools · applied in that order, never
-                reversed
+                strategy → implementation → education · applied in that order,
+                never reversed
               </MarginNote>
             </MarginGrid>
           </Reveal>
 
           <RevealGroup className="mt-12 border-b border-hairline">
-            {formula.map((f) => (
+            {method.map((f) => (
               <RevealItem
                 key={f.n}
                 className="grid gap-x-10 gap-y-3 border-t border-hairline py-9 md:grid-cols-[72px_200px_minmax(0,1fr)] md:items-baseline"
@@ -212,9 +214,9 @@ export default function Strategy() {
                 />
               </div>
               <MarginNote label="The pattern">
-                Every failure was an attempt to scale without human readiness
-                first. The three-ingredient formula was designed around that
-                pattern.
+                Every failure shipped a system without bringing the people.
+                Education is the last part of the method, and the one that
+                decides whether the first two survive.
               </MarginNote>
             </MarginGrid>
           </Reveal>
