@@ -168,12 +168,6 @@ export default function VisionPage() {
                     adoption, and it&rsquo;s why the systems kept running after
                     I stepped back.
                   </p>
-                  <p>
-                    I&rsquo;m the youngest of three brothers, so I&rsquo;ve
-                    never been allowed to win anything easily. This August
-                    I&rsquo;m marrying Ella. And I build things on nights and
-                    weekends because I genuinely cannot help it.
-                  </p>
                 </div>
                 <img
                   src={signature}
