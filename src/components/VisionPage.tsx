@@ -11,12 +11,14 @@ import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Reveal, RevealGroup, RevealItem } from "./ui/Reveal";
-import { VideoBlock } from "./ui/VideoBlock";
+// Videos removed 2026-06-18 (between shoots). Restore steps: docs/VIDEO-PLACEMENT.md
+// import { VideoBlock } from "./ui/VideoBlock";
 import { LedgerTable } from "./ui/LedgerTable";
 
 const BASE = import.meta.env.BASE_URL;
-/** Video sources — files land in public/video/ as Jake films. Until then,
-    leaving these undefined renders the on-brand placeholder. */
+/* Video sources — kept for restore after filming (see docs/VIDEO-PLACEMENT.md).
+   To restore: uncomment the VideoBlock import above, this map, and each video
+   block below, then set the .mp4 paths.
 const VID = {
   overview: undefined as string | undefined, // `${BASE}video/overview.mp4`
   problem: undefined as string | undefined,
@@ -24,6 +26,7 @@ const VID = {
   proof: undefined as string | undefined,
   whoIAm: undefined as string | undefined,
 };
+*/
 
 const SECTION = "scroll-mt-24 px-6";
 const WRAP = "mx-auto max-w-[1100px]";
@@ -82,8 +85,7 @@ export default function VisionPage() {
             transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.2 }}
           >
             Everyone is selling AI transformation. I&rsquo;ve actually done it,
-            measured and itemized. Here&rsquo;s ninety seconds on what that
-            looks like.
+            measured and itemized.
           </motion.p>
 
           {/* Byline — a face in the first eyeful, before the video plays */}
@@ -105,6 +107,7 @@ export default function VisionPage() {
             </span>
           </motion.div>
 
+          {/* Overview video removed 2026-06-18 — restore: uncomment + set VID.overview (docs/VIDEO-PLACEMENT.md)
           <motion.div
             className="mt-8"
             initial={reduced ? false : { opacity: 0, y: 20 }}
@@ -117,6 +120,7 @@ export default function VisionPage() {
               title="Overview · Jake Heaps"
             />
           </motion.div>
+          */}
 
           <motion.div
             className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4"
@@ -192,6 +196,7 @@ export default function VisionPage() {
               </figure>
             </div>
           </Reveal>
+          {/* Who-I-am video removed 2026-06-18 — restore: uncomment + set VID.whoIAm (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-12">
             <VideoBlock
               src={VID.whoIAm}
@@ -199,6 +204,7 @@ export default function VisionPage() {
               title="Who I am"
             />
           </Reveal>
+          */}
         </div>
       </section>
 
@@ -213,6 +219,7 @@ export default function VisionPage() {
             title="Everyone has an AI strategy. Almost no one has results they can show you."
             frame="You&rsquo;re being pitched AI from every direction. Decks, frameworks, big promises, mostly from people who&rsquo;ve never shipped it inside a real company. The rare thing isn&rsquo;t another opinion. It&rsquo;s someone who&rsquo;s done it and can hand you the receipts."
           />
+          {/* Problem video removed 2026-06-18 — restore: uncomment + set VID.problem (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-10">
             <VideoBlock
               src={VID.problem}
@@ -220,6 +227,7 @@ export default function VisionPage() {
               title="The problem"
             />
           </Reveal>
+          */}
         </div>
       </section>
 
@@ -263,6 +271,7 @@ export default function VisionPage() {
               </RevealItem>
             ))}
           </RevealGroup>
+          {/* Method video removed 2026-06-18 — restore: uncomment + set VID.method (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-10">
             <VideoBlock
               src={VID.method}
@@ -270,6 +279,7 @@ export default function VisionPage() {
               title="The method"
             />
           </Reveal>
+          */}
         </div>
       </section>
 
@@ -354,6 +364,7 @@ export default function VisionPage() {
             </div>
           </Reveal>
 
+          {/* Proof video removed 2026-06-18 — restore: uncomment + set VID.proof (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-12">
             <VideoBlock
               src={VID.proof}
@@ -361,6 +372,7 @@ export default function VisionPage() {
               title="The proof"
             />
           </Reveal>
+          */}
         </div>
       </section>
 
