@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AccessGate from "./components/AccessGate";
-import { hasAccess } from "./lib/access";
+import { hasAccess, trackTimeOnPage } from "./lib/access";
 import Nav from "./components/Nav";
 import VisionNav from "./components/VisionNav";
 import VisionPage from "./components/VisionPage";
@@ -54,6 +54,12 @@ export default function App() {
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
+
+  /* Engagement tracking starts once a visitor is past the gate. */
+  useEffect(() => {
+    if (!entered) return;
+    return trackTimeOnPage();
+  }, [entered]);
 
   if (!entered) {
     return <AccessGate onEnter={() => setEntered(true)} />;
