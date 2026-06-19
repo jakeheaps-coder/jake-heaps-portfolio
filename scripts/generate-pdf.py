@@ -178,8 +178,6 @@ CLIENTS = [
     {"name": "Cox Automotive", "file": "cox-automotive.webp", "h": 8.0},
     {"name": "Thryv", "file": "thryv.png", "h": 6.5},
     {"name": "Carvana", "file": "carvana.png", "h": 6.0},
-    {"name": "Roku", "file": "roku.png", "h": 6.5},
-    {"name": "Foot Locker", "file": "foot-locker.png", "h": 9.5},
     {"name": "One Health Solutions", "file": "one-health-solutions.png", "h": 7.0,
      "fade": 0.85},
 ]

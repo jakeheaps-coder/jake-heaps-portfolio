@@ -11,8 +11,6 @@ const clients = [
   { name: "Cox Automotive", logo: `${BASE}/cox-automotive.webp`, h: "h-8" },
   { name: "Thryv", logo: `${BASE}/thryv.png`, h: "h-6" },
   { name: "Carvana", logo: `${BASE}/carvana.png`, h: "h-9" },
-  { name: "Roku", logo: `${BASE}/roku.png`, h: "h-6" },
-  { name: "Foot Locker", logo: `${BASE}/foot-locker.png`, h: "h-8" },
   {
     name: "One Health Solutions",
     logo: `${BASE}/one-health-solutions.png`,

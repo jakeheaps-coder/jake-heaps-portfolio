@@ -423,8 +423,6 @@ const clients = [
   },
   { name: "Thryv", logo: `${BASE_LOGOS}/thryv.png`, h: "h-6" },
   { name: "Carvana", logo: `${BASE_LOGOS}/carvana.png`, h: "h-9" },
-  { name: "Roku", logo: `${BASE_LOGOS}/roku.png`, h: "h-6" },
-  { name: "Foot Locker", logo: `${BASE_LOGOS}/foot-locker.png`, h: "h-8" },
   {
     name: "Regional One Health",
     logo: `${BASE_LOGOS}/one-health-solutions.png`,
