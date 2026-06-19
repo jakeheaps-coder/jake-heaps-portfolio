@@ -228,14 +228,14 @@ export default function VisionPage() {
           <Header
             eyebrow="How we'd work together"
             title="Custom, never improvised."
-            frame="Every engagement is custom — but it runs on three gears, weighted to where you need them. Most start in strategy and education; we build where it earns its keep."
+            frame="Every engagement is custom, but it runs on three gears, weighted to where you need them. Most start in strategy and education; we build where it earns its keep."
           />
           <RevealGroup className="mt-10 border-b border-hairline">
             {[
               {
                 n: "01",
                 t: "Strategy",
-                d: "Find where AI actually pays off — and where it doesn't — as a prioritized, sequenced plan you can act on.",
+                d: "Find where AI actually pays off (and where it doesn't), as a prioritized, sequenced plan you can act on.",
               },
               {
                 n: "02",
@@ -245,7 +245,7 @@ export default function VisionPage() {
               {
                 n: "03",
                 t: "Implementation",
-                d: "Build what earns its keep, alongside your people. Not a dev shop — capability that stays after I step back.",
+                d: "Build what earns its keep, alongside your people. Not a dev shop; capability that stays after I step back.",
               },
             ].map((s) => (
               <RevealItem
@@ -280,7 +280,7 @@ export default function VisionPage() {
           <Header
             eyebrow="The proof"
             title="Measured, not estimated."
-            frame="The first phase, with one client. One year, every dollar itemized — not a projection."
+            frame="The first phase, with one client. One year, every dollar itemized, not a projection."
           />
 
           <RevealGroup className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
@@ -379,7 +379,7 @@ export default function VisionPage() {
             </h3>
             <p className="measure mt-6 text-lede text-ink-soft">
               This is for leaders who want real change, not a pilot on the
-              shelf. Engagements are custom — usually a monthly partnership in
+              shelf. Engagements are custom, usually a monthly partnership in
               senior strategy and hands-on enablement that leaves your team
               self-sufficient. We&rsquo;d start with a short call: where you
               are, where AI pays off, and whether I&rsquo;m the right partner.
@@ -398,9 +398,9 @@ export default function VisionPage() {
               </Button>
             </div>
             <p className="mt-5 max-w-[60ch] font-mono text-eyebrow leading-relaxed text-ink-soft">
-              A 30-minute call &mdash; no pitch, just whether there&rsquo;s a
-              fit and where to start. The full transformation record is
-              available on request.
+              A 30-minute call: no pitch, just whether there&rsquo;s a fit and
+              where to start. The full transformation record is available on
+              request.
             </p>
           </Reveal>
         </div>
