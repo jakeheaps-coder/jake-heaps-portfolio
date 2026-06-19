@@ -4,5 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/jake-heaps-portfolio/",
+  /* Root for the Vercel / custom-domain build (jakeheaps.com); subpath for the
+     GitHub Pages build. Vercel sets VERCEL=1 in its build environment. */
+  base: process.env.VERCEL ? "/" : "/jake-heaps-portfolio/",
 });
