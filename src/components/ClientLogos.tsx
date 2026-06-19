@@ -41,7 +41,7 @@ export default function ClientLogos() {
             ))}
           </ul>
           <p className="mt-10 max-w-[60ch] font-mono text-caption text-ink-soft">
-            Direct client engagements and Domo-guided engagements.
+            Direct client engagements and partner-guided engagements.
           </p>
         </Reveal>
 

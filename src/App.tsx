@@ -19,41 +19,45 @@ import TechStack from "./components/TechStack";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
-/** Empty hash, #/vision, or a vision section anchor (#who, #method …) →
-    vision; anything else (incl. brief #section anchors like #record) → the
-    brief. */
-const VISION_ANCHORS = new Set([
-  "",
-  "vision",
-  "who",
-  "problem",
-  "method",
-  "proof",
-  "contact",
-]);
+const BASE = import.meta.env.BASE_URL;
+
+/** Path-based view: `<base>brief` → the brief; everything else → vision.
+    The two are standalone pages with no cross-links between them. In-page
+    section anchors (#who, #record …) are plain hashes and don't switch view. */
 function currentView(): "vision" | "brief" {
-  const h = window.location.hash.replace(/^#\/?/, "");
-  return VISION_ANCHORS.has(h) ? "vision" : "brief";
+  const path = window.location.pathname;
+  const rel = (
+    path.startsWith(BASE) ? path.slice(BASE.length) : path.replace(/^\//, "")
+  ).replace(/\/$/, "");
+  return rel === "brief" ? "brief" : "vision";
 }
 
 export default function App() {
   const [entered, setEntered] = useState(hasAccess);
   const [view, setView] = useState<"vision" | "brief">(currentView);
 
+  /* View is determined by path; keep it in sync on browser back/forward. */
   useEffect(() => {
-    const onHash = () => {
-      const next = currentView();
-      setView(next);
-      /* Route-level hashes (#/vision, #/brief) have no target element — jump
-         to top. Section anchors (#record …) keep native scroll. */
-      const h = window.location.hash;
-      if (h === "" || h === "#/vision" || h === "#/brief") {
-        window.scrollTo(0, 0);
-      }
-    };
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    const onPop = () => setView(currentView());
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
+
+  /* The brief is unlisted. robots.txt blocks crawl; this runtime tag is
+     belt-and-suspenders for any renderer that reaches it directly. */
+  useEffect(() => {
+    const ID = "robots-noindex";
+    const present = document.getElementById(ID);
+    if (view === "brief" && !present) {
+      const m = document.createElement("meta");
+      m.id = ID;
+      m.name = "robots";
+      m.content = "noindex, nofollow";
+      document.head.appendChild(m);
+    } else if (view !== "brief" && present) {
+      present.remove();
+    }
+  }, [view]);
 
   /* Engagement tracking starts once a visitor is past the gate. */
   useEffect(() => {

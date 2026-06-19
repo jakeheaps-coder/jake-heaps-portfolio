@@ -34,7 +34,7 @@ export default function Record() {
           <a href="#ledger" className="text-cedar">
             the ledger
           </a>
-          . Adoption measured on live workflows; hours per the FY26 Q3 quarterly
+          . Adoption measured on live workflows; hours per a recent quarterly
           business review; pipeline tracked separately from P&amp;L.
         </p>
       </div>

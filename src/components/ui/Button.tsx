@@ -17,9 +17,11 @@ export function Button({
     return (
       <a
         {...rest}
-        className={`group -my-1.5 inline-flex items-baseline gap-1.5 py-1.5 font-medium text-cedar underline decoration-cedar/30 decoration-1 underline-offset-4 transition-colors duration-200 hover:decoration-cedar ${className}`}
+        className={`group -my-1.5 inline-flex items-baseline gap-1.5 py-1.5 font-medium text-cedar transition-colors duration-200 ${className}`}
       >
-        {children}
+        <span className="underline decoration-cedar/30 decoration-1 underline-offset-4 transition-colors duration-200 group-hover:decoration-cedar">
+          {children}
+        </span>
         <span
           aria-hidden
           className="inline-block transition-transform duration-300 ease-(--ease-out-expo) group-hover:translate-x-0.5"

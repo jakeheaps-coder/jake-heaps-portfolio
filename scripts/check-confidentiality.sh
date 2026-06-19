@@ -23,19 +23,17 @@ FORBIDDEN=(
   'Cloud Run'
   'board of directors'
   'Finance review'
-  'backfill'
-  'attrition'
-  'headcount reduction'
+  # NOTE: headcount/attrition OUTCOME terms (backfill, attrition, headcount
+  # reduction, "10 people", "replaced 10", "people replaced", "full-time
+  # employees") are intentionally ALLOWED now — the client is anonymized, so
+  # those claims are no longer attributable. Org-SIZE descriptors (28/30/50-
+  # person) and internal codenames below stay blocked.
   'Minky'
   'Clanker'
   'NLC Mutual'
   'awardco'
   'BankSouth'
   'AirOps'
-  '10 people'
-  'replaced 10'
-  'people replaced'
-  'full-time employees'
   'Mission Control'
   'Gemini Showcase'
   'MCP Hub'

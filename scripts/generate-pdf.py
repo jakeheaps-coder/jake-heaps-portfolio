@@ -56,9 +56,17 @@ FORBIDDEN_TERMS = [
     "backfill", "attrition", "headcount reduction",
     "Minky", "Clanker", "NLC Mutual", "awardco", "BankSouth",
     "10 people", "replaced 10", "people replaced",
-    # Genericized: marketing-phase spend + headcount (keep $300M / 850 — public).
+    # Genericized: marketing-phase spend + headcount.
     # Note: hyphenated forms only — bare "50 people" would match "850 people".
     "$35M", "$35 million", "30-person", "50-person", "fifty-person",
+    # Genericized: client scale specifics (was public; now anonymized).
+    "$300M", "$300 million", "850 people", "~850", "FY26", "FY27",
+    # Genericized: client product names that describe the work. NOT bare "Domo"
+    # — the kept Mark Boothe employer caption and the first-person bio line
+    # legitimately read "Domo".
+    "Domo-native", "Domo Code Engine", "Domo AppDB", "Domo Fileset",
+    "Domo Workflows", "Domo DataFlows", "Domo Custom Apps", "Domo Datasets",
+    "Domo APIs", "Domo-guided",
 ]
 
 # ---------------------------------------------------------------------------
@@ -258,7 +266,7 @@ LEDGER_TOTALS = [
 LEDGER_ATTESTATION = {
     "quote": "Right around 280 hours each week are being saved using AI "
              "across the marketing team.",
-    "source": "FY26 Q3 quarterly business review",
+    "source": "Quarterly business review",
 }
 
 LEDGER_COUNTING_RULES = [
@@ -311,11 +319,12 @@ FLAGSHIPS = [
         "file": "File 01", "kind": "Vendor displacement",
         "title": "The enterprise DAM displacement",
         "body": "I replaced the marketing org’s enterprise DAM platform with a "
-                "Domo-native system built on infrastructure the company already "
-                "pays for. Browse, search, collections, permissions: the full "
+                "system built on the company’s internal platform, on "
+                "infrastructure the company already pays for. Browse, search, "
+                "collections, permissions: the full "
                 "asset-management surface, rebuilt in-house. The migration moved "
                 "more than 35,000 documents with zero mismatches. Underneath, "
-                "87 Code Engine functions carry the workflow logic, and a complete "
+                "87 serverless functions carry the workflow logic, and a complete "
                 "ACL layer reproduces the access model the vendor charged for. "
                 "The displacement was run like a procurement exit: access parity "
                 "proven, data egress verified, contract wound down on schedule.",
@@ -323,7 +332,7 @@ FLAGSHIPS = [
         "spec": [
             {"label": "Documents migrated", "value": "35,000+"},
             {"label": "Migration mismatches", "value": "0"},
-            {"label": "Code Engine functions", "value": "87"},
+            {"label": "Serverless functions", "value": "87"},
         ],
         "controls": "Full ACL parity with the displaced platform; "
                     "security-reviewed before cutover; zero-mismatch migration "
@@ -334,7 +343,7 @@ FLAGSHIPS = [
             # 16:9 top window — mirrors the site's aspect-[16/9] object-top.
             "src": "asset-library.png", "crop": (0, 0, 1280, 720), "w": 112,
             "fig": "Fig. 01",
-            "alt": "The Domo-native DAM in production: asset browser with "
+            "alt": "The internal DAM in production: asset browser with "
                    "filter rail and document grid.",
             "caption": "Asset browser in production: filters, collections, and "
                        "the migrated library.",
@@ -414,8 +423,9 @@ FLAGSHIPS = [
         "source": "Employee Recognition Platform",
         "file": "File 05", "kind": "Vendor displacement",
         "title": "The employee recognition platform",
-        "body": "A second displacement, this one for HR: a Domo-native employee "
-                "recognition and rewards platform covering nomination approvals, "
+        "body": "A second displacement, this one for HR: an employee "
+                "recognition and rewards platform built on the company’s internal "
+                "platform, covering nomination approvals, "
                 "spot-bonus routing, anniversary tiers, and budget management. It "
                 "administers 125 live budgets in production, and its 34-test "
                 "suite passes clean on every release. Compensation-adjacent "

@@ -128,7 +128,7 @@ export default function VisionPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.5 }}
           >
-            <Button href="mailto:jakeheaps@me.com">Start a conversation</Button>
+            <Button href="mailto:jakeheaps@me.com">Book a consultation</Button>
             <Button
               variant="quiet"
               href="https://www.linkedin.com/in/jakeheaps/"
@@ -136,9 +136,6 @@ export default function VisionPage() {
               rel="noopener noreferrer"
             >
               LinkedIn
-            </Button>
-            <Button variant="quiet" href="#/brief">
-              Read the full brief
             </Button>
           </motion.div>
         </div>
@@ -152,7 +149,7 @@ export default function VisionPage() {
               <div>
                 <Eyebrow as="h2">Who I am</Eyebrow>
                 <h3 className="mt-4 font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
-                  This is all I do.
+                  This is what I do.
                 </h3>
                 <div className="mt-6 space-y-5 text-body text-ink">
                   <p>
@@ -229,26 +226,26 @@ export default function VisionPage() {
       <section id="method" className={SECTION}>
         <div className={`${WRAP} py-20 md:py-28`}>
           <Header
-            eyebrow="The method"
-            title="Strategy, implementation, education."
-            frame="The three parts of every engagement, in that order. Skip straight to the tools, the way most AI projects do, and it becomes shelfware."
+            eyebrow="How we'd work together"
+            title="Custom, never improvised."
+            frame="Every engagement is custom — but it runs on three gears, weighted to where you need them. Most start in strategy and education; we build where it earns its keep."
           />
           <RevealGroup className="mt-10 border-b border-hairline">
             {[
               {
                 n: "01",
                 t: "Strategy",
-                d: "Decide what to automate, in what order, and why. Most rollouts fail right here, by leading with the tool instead of the sequence.",
+                d: "Find where AI actually pays off — and where it doesn't — as a prioritized, sequenced plan you can act on.",
               },
               {
                 n: "02",
-                t: "Implementation",
-                d: "Build the systems and ship them into production, inside the platforms the company already runs on.",
+                t: "Education",
+                d: "Turn your team into builders. Sitting next to people, not sending decks, is why adoption stuck at ninety-three percent.",
               },
               {
                 n: "03",
-                t: "Education",
-                d: "Get the team building on their own. Sitting next to one person beats any training deck. It is how adoption reached ninety-three percent.",
+                t: "Implementation",
+                d: "Build what earns its keep, alongside your people. Not a dev shop — capability that stays after I step back.",
               },
             ].map((s) => (
               <RevealItem
@@ -283,7 +280,7 @@ export default function VisionPage() {
           <Header
             eyebrow="The proof"
             title="Measured, not estimated."
-            frame="The first phase, inside a publicly traded company. One year, every dollar itemized, not a projection."
+            frame="The first phase, with one client. One year, every dollar itemized — not a projection."
           />
 
           <RevealGroup className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
@@ -337,23 +334,19 @@ export default function VisionPage() {
               hard dollars: canceled invoices and a closed deal, not estimates.
             </p>
             <p className="mt-3 max-w-[72ch] font-mono text-caption text-ink-soft">
-              &ldquo;{attestation.quote}&rdquo;{" "}
-              <a href="#/brief" className="text-cedar">
-                See the full ledger and counting rules →
-              </a>
+              &ldquo;{attestation.quote}&rdquo;
             </p>
           </Reveal>
 
           <Reveal className="mt-12">
             <div className="border-t-2 border-ink pt-8">
               <Eyebrow as="h3">
-                Where it&rsquo;s going&ensp;·&ensp;FY27 projection
+                Where it&rsquo;s going&ensp;·&ensp;the next phase
               </Eyebrow>
               <p className="measure mt-4 text-lede text-ink">
-                Marketing was where this started. The same system is now rolling
-                across the whole company, roughly 850 people and $300M in
-                operating spend, on track to about 2x that efficiency rate. That
-                is the FY27 projection, built on the phase one results above.
+                One team was where this started. The same system is now rolling
+                out company-wide, on track to roughly 2x that efficiency rate.
+                That is the projection, built on the phase-one results above.
               </p>
             </div>
           </Reveal>
@@ -378,18 +371,22 @@ export default function VisionPage() {
         <div className={`${WRAP} py-24 md:py-32`}>
           <Reveal>
             <hr className="m-0 border-0 border-t-2 border-ink" />
-            <h2 className="mt-8 max-w-[24ch] font-display text-h1 md:text-[3rem] md:leading-[1.05]">
-              If you&rsquo;re serious about making AI how your company runs,
-              reach out.
-            </h2>
+            <Eyebrow as="h2" className="mt-8">
+              What to expect
+            </Eyebrow>
+            <h3 className="mt-4 max-w-[24ch] font-display text-h1 md:text-[3rem] md:leading-[1.05]">
+              If you want AI to be how your company runs, let&rsquo;s talk.
+            </h3>
             <p className="measure mt-6 text-lede text-ink-soft">
-              Not a pilot on the edge. The operating layer. If that&rsquo;s the
-              seat you&rsquo;re building toward, I&rsquo;d like to compare
-              notes.
+              This is for leaders who want real change, not a pilot on the
+              shelf. Engagements are custom — usually a monthly partnership in
+              senior strategy and hands-on enablement that leaves your team
+              self-sufficient. We&rsquo;d start with a short call: where you
+              are, where AI pays off, and whether I&rsquo;m the right partner.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Button href="mailto:jakeheaps@me.com">
-                Start a conversation
+                Book a consultation
               </Button>
               <Button
                 variant="quiet"
@@ -399,10 +396,12 @@ export default function VisionPage() {
               >
                 LinkedIn
               </Button>
-              <Button variant="quiet" href="#/brief">
-                Read the full brief
-              </Button>
             </div>
+            <p className="mt-5 max-w-[60ch] font-mono text-eyebrow leading-relaxed text-ink-soft">
+              A 30-minute call &mdash; no pitch, just whether there&rsquo;s a
+              fit and where to start. The full transformation record is
+              available on request.
+            </p>
           </Reveal>
         </div>
       </section>

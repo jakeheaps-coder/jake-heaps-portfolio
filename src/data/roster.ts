@@ -69,14 +69,14 @@ export const teamRoster: TeamMember[] = [
     department: "Marketing Ops",
     workflow:
       "Automated the entire webinar process with daily follow-up from agents",
-    tool: "Domo + AI Agents",
+    tool: "Data platform + AI Agents",
   },
   {
     role: "Event Coordinator",
     department: "Marketing Ops",
     workflow:
       "Built a scheduler to help attendees get scheduled for breakouts using AI",
-    tool: "Domo + AI",
+    tool: "Data platform + AI",
   },
   {
     role: "Digital Marketing Analyst",

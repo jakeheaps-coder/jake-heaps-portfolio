@@ -2,6 +2,14 @@
 
 > This document is the self-contained reference for continuing work on Jake Heaps' AI portfolio site and PDF. It assumes partial Claude Code setup (CLI installed, but not all custom skills/agents/playbooks from the original machine).
 
+> **⚠️ CURRENT STATE & POLICY (2026-06-19) — supersedes the stale sections below.**
+> - **Live:** https://jakeheaps.com (Vercel, auto-deploys from `main`). GitHub Pages is a secondary mirror.
+> - **Two standalone pages, no cross-links:** vision at `/` (public, indexable); brief at `/brief` (**unlisted** — runtime `noindex` + `robots.txt` Disallow; reachable only by direct link). Routing is path-based in `src/App.tsx` (`vercel.json` rewrites `/brief` → `index.html`).
+> - **Brand is "Manuscript"** (the Brand System section below is STALE — ignore its colors/fonts): paper `#f7f4ee`, surface `#efeae0`, ink `#1a1714`, ink-soft `#5f594f`, hairline `#e2dccf`, cedar `#2d4a3a`, sienna `#8a4226`; Newsreader (display), General Sans (body), IBM Plex Mono (mono). Favicon = serif "JH" monogram.
+> - **Anonymization policy:** the WORK / proof / case studies are anonymized off the client ("a client" / "one organization") — *this decoupling is exactly what lets the strong claims (displaced costs, headcount/capacity cuts, attrition, the ~$2.3M first-year ledger) be published.* KEEP, separately: the current-role line "lead AI implementation at Domo" (bio/identity only) and the named Mark Boothe endorsement — those are not confidential. Do NOT name the client inside case-study/proof copy. Drop identifying scale specifics ($300M, ~850 people, fiscal-year tags).
+> - **Offer:** no packages, no prices. "How we'd work together" (strategy + education forward; implementation = "build what earns its keep, not a dev shop") + "What to expect" → single CTA **"Book a consultation"** (`mailto:jakeheaps@me.com`).
+> - **Confidentiality gate** (`scripts/check-confidentiality.sh`): still blocks internal $ codes, external vendor names, internal codenames, and org-size descriptors. Headcount/attrition OUTCOME terms are now ALLOWED (client is anonymized).
+
 ## Project Overview
 
 **What:** Personal portfolio/resume showcasing Jake Heaps' AI transformation work — strategy, implementation, and education across 9 enterprise clients with 40+ production systems.

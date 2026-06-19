@@ -37,8 +37,7 @@ export default function About() {
                   93% now build with AI independently. The transfer completed in
                   May 2026, and the systems have run without my daily hands
                   since. That is what freed me to take the same system
-                  company-wide: roughly 850 people and $300M in operating spend,
-                  on track to about 2x that efficiency rate, projected for FY27.
+                  company-wide, on track to roughly 2x that efficiency rate.
                   Enablement, not dependency, is the product.
                 </p>
                 <p>
@@ -86,7 +85,7 @@ export default function About() {
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <Button href="mailto:jakeheaps@me.com">
-                  Start a conversation
+                  Book a consultation
                 </Button>
                 <Button
                   variant="quiet"

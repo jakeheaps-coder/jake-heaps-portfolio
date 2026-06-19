@@ -33,7 +33,7 @@ export const ledger: LedgerRow[] = [
     cls: "capacity",
     basis: "yearly",
     amount: 1_500_000,
-    note: "Valued at fully-loaded role cost · 280 hrs/week attested at FY26 Q3",
+    note: "Valued at fully-loaded role cost · 280 hrs/week attested in a recent quarterly review",
   },
   {
     item: "Enterprise DAM platform license",
@@ -111,8 +111,8 @@ export const firstYearTotal = yearlyRunRate + oneTimeCosts + closedRevenue; // 2
 /** The attestation — quoted verbatim from the internal review. */
 export const attestation = {
   quote:
-    "Right around 280 hours each week are being saved using AI across the marketing team.",
-  source: "FY26 Q3 quarterly business review",
+    "Right around 280 hours each week are being saved using AI across the team.",
+  source: "Quarterly business review",
 };
 
 export const countingRules = [

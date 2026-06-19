@@ -54,13 +54,13 @@ export const flagships: Flagship[] = [
     file: "File 01",
     kind: "Vendor displacement",
     title: "The enterprise DAM displacement",
-    body: "I replaced the marketing org’s enterprise DAM platform with a Domo-native system built on infrastructure the company already pays for. Browse, search, collections, permissions: the full asset-management surface, rebuilt in-house. The migration moved more than 35,000 documents with zero mismatches. Underneath, 87 Code Engine functions carry the workflow logic, and a complete ACL layer reproduces the access model the vendor charged for. The displacement was run like a procurement exit: access parity proven, data egress verified, contract wound down on schedule.",
+    body: "I replaced the marketing org’s enterprise DAM platform with a system built on the company’s internal platform, on infrastructure the company already pays for. Browse, search, collections, permissions: the full asset-management surface, rebuilt in-house. The migration moved more than 35,000 documents with zero mismatches. Underneath, 87 serverless functions carry the workflow logic, and a complete ACL layer reproduces the access model the vendor charged for. The displacement was run like a procurement exit: access parity proven, data egress verified, contract wound down on schedule.",
     roi: "Mid-five-figure annual license displaced",
     stack: stackOf("DAM Platform (Vendor Replacement)"),
     spec: [
       { label: "Documents migrated", value: "35,000+" },
       { label: "Migration mismatches", value: "0" },
-      { label: "Code Engine functions", value: "87" },
+      { label: "Serverless functions", value: "87" },
     ],
     controls:
       "Full ACL parity with the displaced platform; security-reviewed before cutover; zero-mismatch migration audit.",
@@ -68,7 +68,7 @@ export const flagships: Flagship[] = [
       "Marketing ops. Documented runbook, maintained without me since May 2026.",
     figure: {
       src: `${SHOTS}/asset-library.png`,
-      alt: "The Domo-native DAM in production: asset browser with filter rail and document grid.",
+      alt: "The internal DAM in production: asset browser with filter rail and document grid.",
       caption:
         "Fig. 01 · Asset browser in production: filters, collections, and the migrated library.",
     },
@@ -134,7 +134,7 @@ export const flagships: Flagship[] = [
     file: "File 05",
     kind: "Vendor displacement",
     title: "The employee recognition platform",
-    body: "A second displacement, this one for HR: a Domo-native employee recognition and rewards platform covering nomination approvals, spot-bonus routing, anniversary tiers, and budget management. It administers 125 live budgets in production, and its 34-test suite passes clean on every release. Compensation-adjacent routing shipped under finance’s approval rules from day one.",
+    body: "A second displacement, this one for HR: an employee recognition and rewards platform built on the company’s internal platform, covering nomination approvals, spot-bonus routing, anniversary tiers, and budget management. It administers 125 live budgets in production, and its 34-test suite passes clean on every release. Compensation-adjacent routing shipped under finance’s approval rules from day one.",
     roi: "Five-figure annual license displaced",
     stack: stackOf("Employee Recognition Platform"),
     spec: [

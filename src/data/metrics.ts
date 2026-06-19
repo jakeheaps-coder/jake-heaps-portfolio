@@ -10,8 +10,8 @@ export interface RecordMetric {
 /**
  * The Record — five numerals, each derivable: adoption (measured on live
  * workflows), system count (computed from the catalog), P&L (itemized in
- * the ledger, first-year total $2.34M), hours (FY26 Q3 QBR), pipeline
- * (CRM-tracked, excluded from P&L).
+ * the ledger, first-year total $2.34M), hours (a recent quarter's QBR),
+ * pipeline (CRM-tracked, excluded from P&L).
  */
 export const record: RecordMetric[] = [
   { value: 93, suffix: "%", label: "team adoption in 12 months" },
@@ -136,9 +136,9 @@ export const timelinePhases = [
     desc: "First team operates independently. The playbook is ready, and the company-wide rollout begins.",
   },
   {
-    period: "FY27 · projected",
+    period: "Next phase · projected",
     name: "Company-wide",
-    desc: "Same system across the whole company, ~850 people and ~$300M in spend, on track to about 2x the first-phase efficiency rate.",
+    desc: "Same system across the whole company, on track to about 2x the first-phase efficiency rate.",
   },
 ];
 

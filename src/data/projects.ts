@@ -53,7 +53,12 @@ export const projects: Project[] = [
     description:
       "Paid media analyst and optimization specialist. Google Ads analysis, keyword generation, ad copy, competitor analysis. 24 tools across 6 regional datasets.",
     roi: "$80–120K/yr analyst equivalent",
-    tech: ["Gemini 2.5 Flash", "Vertex AI ADK", "Google Ads API", "Domo"],
+    tech: [
+      "Gemini 2.5 Flash",
+      "Vertex AI ADK",
+      "Google Ads API",
+      "Data platform",
+    ],
   },
   {
     name: "CMO Marketing Intelligence",
@@ -62,7 +67,7 @@ export const projects: Project[] = [
     description:
       "Executive marketing brain for the CMO. Strategic reasoning engine with attribution, funnel analysis, and ROI modeling. 20 tools, 110-question regression suite gating every deploy.",
     roi: "2–3 analyst functions consolidated",
-    tech: ["Gemini 2.5 Flash", "Vertex AI ADK", "Domo", "Salesforce"],
+    tech: ["Gemini 2.5 Flash", "Vertex AI ADK", "Data platform", "Salesforce"],
   },
   {
     name: "Competitive Intel Agent",
@@ -71,7 +76,7 @@ export const projects: Project[] = [
     description:
       "AI competitive intelligence analyst. Battle cards, M&A tracking, sales enablement. 23 tools, 18 competitors tracked daily with live internet research.",
     roi: "$100K+/yr analyst displaced",
-    tech: ["Gemini 2.5 Flash", "Vertex AI ADK", "Domo AppDB"],
+    tech: ["Gemini 2.5 Flash", "Vertex AI ADK", "Document store"],
   },
   {
     name: "Sales Discovery Agent",
@@ -105,9 +110,14 @@ export const projects: Project[] = [
     category: "agents",
     kind: "system",
     description:
-      "AI agent inside Domo that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
+      "AI agent inside the internal platform that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
     roi: "Agent creation: weeks to hours",
-    tech: ["Domo Code Engine", "Domo Workflows", "AppDB", "Custom Apps"],
+    tech: [
+      "Serverless functions",
+      "Workflow automation",
+      "Document store",
+      "Internal apps",
+    ],
   },
   {
     name: "One Chat Agent",
@@ -116,7 +126,7 @@ export const projects: Project[] = [
     description:
       "Unified front-line agent connecting knowledge base, community, website, CRM, and support. One interface for all customer-facing interactions: the single pane of glass for customer engagement.",
     roi: "Support channels consolidated",
-    tech: ["Gemini", "Vertex AI ADK", "Knowledge Graph", "Domo"],
+    tech: ["Gemini", "Vertex AI ADK", "Knowledge Graph", "Data platform"],
   },
   {
     name: "Stock Distribution Agent",
@@ -125,7 +135,7 @@ export const projects: Project[] = [
     description:
       "Built for the HR and finance teams under their access controls: monitors employee stock distributions, departures, tax-document deadlines, and compliance events. Automated tracking of equity-related workflows.",
     roi: "Manual equity tracking automated",
-    tech: ["Gemini", "Vertex AI ADK", "Domo Workflows"],
+    tech: ["Gemini", "Vertex AI ADK", "Workflow automation"],
   },
   {
     name: "AI Onboarding Experience",
@@ -134,7 +144,7 @@ export const projects: Project[] = [
     description:
       "Onboards new customers with AI-guided training checklists, product tours, and personalized enablement paths. Adapts to each customer's use case and maturity level.",
     roi: "Onboarding scaled, no added roles",
-    tech: ["Gemini", "Vertex AI ADK", "Domo", "Custom Apps"],
+    tech: ["Gemini", "Vertex AI ADK", "Data platform", "Internal apps"],
   },
   {
     name: "Rooster IQ",
@@ -143,7 +153,7 @@ export const projects: Project[] = [
     description:
       "Brand intelligence watcher for the executive team. Monitors market trends, brand sentiment, competitor moves, voice of customer, and AI industry developments in real time.",
     roi: "Always-on brand intelligence",
-    tech: ["Gemini", "Vertex AI ADK", "Domo AppDB", "Web Scraping"],
+    tech: ["Gemini", "Vertex AI ADK", "Document store", "Web Scraping"],
   },
   {
     name: "Live Translator Agent",
@@ -161,14 +171,14 @@ export const projects: Project[] = [
     category: "displacement",
     kind: "system",
     description:
-      "Domo-native Digital Asset Management platform replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 Code Engine functions, full ACL permission layer.",
+      "Digital Asset Management platform built on the company’s internal platform, replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 serverless functions, full ACL permission layer.",
     roi: "Mid-five-figure license displaced",
     tech: [
-      "Domo Fileset",
-      "AppDB",
-      "Code Engine",
-      "Custom Apps",
-      "SQL DataFlows",
+      "Object storage",
+      "Document store",
+      "Serverless functions",
+      "Internal apps",
+      "Data pipelines",
     ],
     screenshot: "screenshots/asset-library.png",
   },
@@ -177,9 +187,14 @@ export const projects: Project[] = [
     category: "displacement",
     kind: "system",
     description:
-      "Domo-native employee recognition and rewards platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
+      "Employee recognition and rewards platform built on the company’s internal platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
     roi: "Five-figure license displaced",
-    tech: ["Domo Custom Apps", "Code Engine", "Workflows", "AppDB"],
+    tech: [
+      "Internal apps",
+      "Serverless functions",
+      "Workflow automation",
+      "Document store",
+    ],
   },
   {
     name: "Signal Platform (AI SDR)",
@@ -188,7 +203,7 @@ export const projects: Project[] = [
     description:
       "AI-powered SDR platform replacing a six-figure sales engagement tool. Chat widget, form interceptor, calendar booking, AI avatar modal. Full prospect qualification and meeting scheduling.",
     roi: "$36K–130K/yr platform displaced",
-    tech: ["Flask", "Gemini 2.5 Flash", "SocketIO", "React", "Domo AppDB"],
+    tech: ["Flask", "Gemini 2.5 Flash", "SocketIO", "React", "Document store"],
   },
   {
     name: "Media Relations Platform",
@@ -197,7 +212,7 @@ export const projects: Project[] = [
     description:
       "Proactive AI media relations replacing a PR platform. Scans 17 RSS feeds daily, scores stories for company angle credibility, auto-generates pitches in 3 formats (interview, byline, Q&A).",
     roi: "Five-figure PR license displaced",
-    tech: ["Python", "Gemini", "RSS", "Domo Workflows"],
+    tech: ["Python", "Gemini", "RSS", "Workflow automation"],
   },
 
   // Knowledge & Infrastructure
@@ -220,13 +235,13 @@ export const projects: Project[] = [
     tech: ["Python", "MCP Protocol", "Serverless Containers", "OAuth"],
   },
   {
-    name: "Domo Toolkit & Onboarding",
+    name: "Platform Toolkit & Onboarding",
     category: "infrastructure",
     kind: "artifact",
     description:
       "Shared documentation platform and GitHub Pages onboarding site for the marketing team. Platform catalog, best practices, and getting-started guides.",
     roi: "Knowledge transfer scaled past 1:1",
-    tech: ["GitHub Pages", "Markdown", "Domo APIs"],
+    tech: ["GitHub Pages", "Markdown", "Platform APIs"],
   },
 
   // Creative & Media Production
@@ -284,7 +299,7 @@ export const projects: Project[] = [
     description:
       "Countless AI-crafted presentations for board meetings, executive reviews, and stakeholder briefings. Strategy narratives, data visualizations, and talking points, all AI-assisted at scale.",
     roi: "Presentations at scale, no agency",
-    tech: ["Gemini", "python-pptx", "AI Image Generation", "Domo"],
+    tech: ["Gemini", "python-pptx", "AI Image Generation", "Data platform"],
   },
 
   // Sales & Revenue
@@ -310,7 +325,7 @@ export const projects: Project[] = [
     description:
       "Full automated outbound pipeline. Multi-stage: discover, enrich, sequence, agent feedback, converted prospect. Orchestrates data platform + Apollo for end-to-end prospecting.",
     roi: "End-to-end outbound orchestration",
-    tech: ["Domo", "Apollo.io", "Gemini", "JavaScript"],
+    tech: ["Data platform", "Apollo.io", "Gemini", "JavaScript"],
     screenshot: "screenshots/outbound-engine.png",
   },
   {
@@ -335,7 +350,7 @@ export const projects: Project[] = [
     description:
       "Automated PowerPoint generation from templates + data. Turns structured data into polished presentation decks without manual slide creation.",
     roi: "Deck creation: hours to minutes",
-    tech: ["Python", "python-pptx", "Domo APIs"],
+    tech: ["Python", "python-pptx", "Platform APIs"],
   },
 
   // Operations & Automation
@@ -344,18 +359,25 @@ export const projects: Project[] = [
     category: "operations",
     kind: "system",
     description:
-      "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + Domo dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
+      "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + the data platform’s dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
     roi: "4–6 hrs/wk saved (~$15K/yr)",
-    tech: ["Python", "Gemini", "MSAL", "SharePoint", "Domo API", "Playwright"],
+    tech: [
+      "Python",
+      "Gemini",
+      "MSAL",
+      "SharePoint",
+      "Platform APIs",
+      "Playwright",
+    ],
   },
   {
-    name: "Domo Monitoring Agents",
+    name: "Platform Monitoring Agents",
     category: "operations",
     kind: "system",
     description:
       "Autonomous system health monitoring. Checks service health, data quality, git repos, toolkit sync, and cookie expiration. Hourly via launchd, alerts via email.",
     roi: "Production incidents prevented",
-    tech: ["Python", "launchd", "Email", "Domo APIs"],
+    tech: ["Python", "launchd", "Email", "Platform APIs"],
   },
   {
     name: "Tracking Workflow (News Monitor)",
@@ -364,7 +386,7 @@ export const projects: Project[] = [
     description:
       "Two-workflow media monitoring system. Topic-continuity digest, airtight dedup, deterministic ticker-spam filter, SSRF host-resolution. 90-agent security audit remediated.",
     roi: "Zero manual media monitoring",
-    tech: ["Domo Workflows", "Code Engine", "Gemini"],
+    tech: ["Workflow automation", "Serverless functions", "Gemini"],
   },
   {
     name: "Marketing Bundle",
@@ -393,7 +415,7 @@ export const projects: Project[] = [
     description:
       "The aggregate output of the education program. 575+ production AI workflows built and deployed across the team. Not ChatGPT prompts. Specific, repeatable, role-based processes.",
     roi: "Education program scorecard",
-    tech: ["Claude Code", "Gemini Enterprise", "Domo", "Various"],
+    tech: ["Claude Code", "Gemini Enterprise", "Data platform", "Various"],
   },
   {
     name: "AgentGuide",
@@ -402,7 +424,7 @@ export const projects: Project[] = [
     description:
       "Framework and guide for building AI agents inside the data platform. Democratizes agent creation so anyone on the team can build, not just the AI lead.",
     roi: "Anyone can build agents",
-    tech: ["Domo", "Documentation", "Templates"],
+    tech: ["Data platform", "Documentation", "Templates"],
   },
   {
     name: "Front-End Sites (14)",

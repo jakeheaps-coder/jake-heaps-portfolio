@@ -143,9 +143,9 @@
         "desc": "First team operates independently. The playbook is ready, and the company-wide rollout begins."
       },
       {
-        "period": "FY27 · projected",
+        "period": "Next phase · projected",
         "name": "Company-wide",
-        "desc": "Same system across the whole company, ~850 people and ~$300M in spend, on track to about 2x the first-phase efficiency rate."
+        "desc": "Same system across the whole company, on track to about 2x the first-phase efficiency rate."
       }
     ],
     "transformationResults": [
@@ -208,7 +208,7 @@
           "Gemini 2.5 Flash",
           "Vertex AI ADK",
           "Google Ads API",
-          "Domo"
+          "Data platform"
         ]
       },
       {
@@ -220,7 +220,7 @@
         "tech": [
           "Gemini 2.5 Flash",
           "Vertex AI ADK",
-          "Domo",
+          "Data platform",
           "Salesforce"
         ]
       },
@@ -233,7 +233,7 @@
         "tech": [
           "Gemini 2.5 Flash",
           "Vertex AI ADK",
-          "Domo AppDB"
+          "Document store"
         ]
       },
       {
@@ -277,13 +277,13 @@
         "name": "Agent Factory",
         "category": "agents",
         "kind": "system",
-        "description": "AI agent inside Domo that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
+        "description": "AI agent inside the internal platform that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
         "roi": "Agent creation: weeks to hours",
         "tech": [
-          "Domo Code Engine",
-          "Domo Workflows",
-          "AppDB",
-          "Custom Apps"
+          "Serverless functions",
+          "Workflow automation",
+          "Document store",
+          "Internal apps"
         ]
       },
       {
@@ -296,7 +296,7 @@
           "Gemini",
           "Vertex AI ADK",
           "Knowledge Graph",
-          "Domo"
+          "Data platform"
         ]
       },
       {
@@ -308,7 +308,7 @@
         "tech": [
           "Gemini",
           "Vertex AI ADK",
-          "Domo Workflows"
+          "Workflow automation"
         ]
       },
       {
@@ -320,8 +320,8 @@
         "tech": [
           "Gemini",
           "Vertex AI ADK",
-          "Domo",
-          "Custom Apps"
+          "Data platform",
+          "Internal apps"
         ]
       },
       {
@@ -333,7 +333,7 @@
         "tech": [
           "Gemini",
           "Vertex AI ADK",
-          "Domo AppDB",
+          "Document store",
           "Web Scraping"
         ]
       },
@@ -354,14 +354,14 @@
         "name": "DAM Platform (Vendor Replacement)",
         "category": "displacement",
         "kind": "system",
-        "description": "Domo-native Digital Asset Management platform replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 Code Engine functions, full ACL permission layer.",
+        "description": "Digital Asset Management platform built on the company’s internal platform, replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 serverless functions, full ACL permission layer.",
         "roi": "Mid-five-figure license displaced",
         "tech": [
-          "Domo Fileset",
-          "AppDB",
-          "Code Engine",
-          "Custom Apps",
-          "SQL DataFlows"
+          "Object storage",
+          "Document store",
+          "Serverless functions",
+          "Internal apps",
+          "Data pipelines"
         ],
         "screenshot": "screenshots/asset-library.png"
       },
@@ -369,13 +369,13 @@
         "name": "Employee Recognition Platform",
         "category": "displacement",
         "kind": "system",
-        "description": "Domo-native employee recognition and rewards platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
+        "description": "Employee recognition and rewards platform built on the company’s internal platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
         "roi": "Five-figure license displaced",
         "tech": [
-          "Domo Custom Apps",
-          "Code Engine",
-          "Workflows",
-          "AppDB"
+          "Internal apps",
+          "Serverless functions",
+          "Workflow automation",
+          "Document store"
         ]
       },
       {
@@ -389,7 +389,7 @@
           "Gemini 2.5 Flash",
           "SocketIO",
           "React",
-          "Domo AppDB"
+          "Document store"
         ]
       },
       {
@@ -402,7 +402,7 @@
           "Python",
           "Gemini",
           "RSS",
-          "Domo Workflows"
+          "Workflow automation"
         ]
       },
       {
@@ -466,7 +466,7 @@
         "description": "Full automated outbound pipeline. Multi-stage: discover, enrich, sequence, agent feedback, converted prospect. Orchestrates data platform + Apollo for end-to-end prospecting.",
         "roi": "End-to-end outbound orchestration",
         "tech": [
-          "Domo",
+          "Data platform",
           "Apollo.io",
           "Gemini",
           "JavaScript"
@@ -482,26 +482,26 @@
         "tech": [
           "Python",
           "python-pptx",
-          "Domo APIs"
+          "Platform APIs"
         ]
       },
       {
         "name": "Weekly Executive Report",
         "category": "operations",
         "kind": "system",
-        "description": "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + Domo dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
+        "description": "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + the data platform’s dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
         "roi": "4–6 hrs/wk saved (~$15K/yr)",
         "tech": [
           "Python",
           "Gemini",
           "MSAL",
           "SharePoint",
-          "Domo API",
+          "Platform APIs",
           "Playwright"
         ]
       },
       {
-        "name": "Domo Monitoring Agents",
+        "name": "Platform Monitoring Agents",
         "category": "operations",
         "kind": "system",
         "description": "Autonomous system health monitoring. Checks service health, data quality, git repos, toolkit sync, and cookie expiration. Hourly via launchd, alerts via email.",
@@ -510,7 +510,7 @@
           "Python",
           "launchd",
           "Email",
-          "Domo APIs"
+          "Platform APIs"
         ]
       },
       {
@@ -520,8 +520,8 @@
         "description": "Two-workflow media monitoring system. Topic-continuity digest, airtight dedup, deterministic ticker-spam filter, SSRF host-resolution. 90-agent security audit remediated.",
         "roi": "Zero manual media monitoring",
         "tech": [
-          "Domo Workflows",
-          "Code Engine",
+          "Workflow automation",
+          "Serverless functions",
           "Gemini"
         ]
       },
@@ -551,7 +551,7 @@
           "Gemini 2.5 Flash",
           "Vertex AI ADK",
           "Google Ads API",
-          "Domo"
+          "Data platform"
         ]
       },
       {
@@ -563,7 +563,7 @@
         "tech": [
           "Gemini 2.5 Flash",
           "Vertex AI ADK",
-          "Domo",
+          "Data platform",
           "Salesforce"
         ]
       },
@@ -576,7 +576,7 @@
         "tech": [
           "Gemini 2.5 Flash",
           "Vertex AI ADK",
-          "Domo AppDB"
+          "Document store"
         ]
       },
       {
@@ -620,13 +620,13 @@
         "name": "Agent Factory",
         "category": "agents",
         "kind": "system",
-        "description": "AI agent inside Domo that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
+        "description": "AI agent inside the internal platform that builds other AI agents. Meta-tool: describe what you need, and it designs, builds, tests, and deploys the agent. 91% test pass rate.",
         "roi": "Agent creation: weeks to hours",
         "tech": [
-          "Domo Code Engine",
-          "Domo Workflows",
-          "AppDB",
-          "Custom Apps"
+          "Serverless functions",
+          "Workflow automation",
+          "Document store",
+          "Internal apps"
         ]
       },
       {
@@ -639,7 +639,7 @@
           "Gemini",
           "Vertex AI ADK",
           "Knowledge Graph",
-          "Domo"
+          "Data platform"
         ]
       },
       {
@@ -651,7 +651,7 @@
         "tech": [
           "Gemini",
           "Vertex AI ADK",
-          "Domo Workflows"
+          "Workflow automation"
         ]
       },
       {
@@ -663,8 +663,8 @@
         "tech": [
           "Gemini",
           "Vertex AI ADK",
-          "Domo",
-          "Custom Apps"
+          "Data platform",
+          "Internal apps"
         ]
       },
       {
@@ -676,7 +676,7 @@
         "tech": [
           "Gemini",
           "Vertex AI ADK",
-          "Domo AppDB",
+          "Document store",
           "Web Scraping"
         ]
       },
@@ -697,14 +697,14 @@
         "name": "DAM Platform (Vendor Replacement)",
         "category": "displacement",
         "kind": "system",
-        "description": "Domo-native Digital Asset Management platform replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 Code Engine functions, full ACL permission layer.",
+        "description": "Digital Asset Management platform built on the company’s internal platform, replacing an enterprise DAM vendor. 35K+ documents migrated with zero mismatches. 87 serverless functions, full ACL permission layer.",
         "roi": "Mid-five-figure license displaced",
         "tech": [
-          "Domo Fileset",
-          "AppDB",
-          "Code Engine",
-          "Custom Apps",
-          "SQL DataFlows"
+          "Object storage",
+          "Document store",
+          "Serverless functions",
+          "Internal apps",
+          "Data pipelines"
         ],
         "screenshot": "screenshots/asset-library.png"
       },
@@ -712,13 +712,13 @@
         "name": "Employee Recognition Platform",
         "category": "displacement",
         "kind": "system",
-        "description": "Domo-native employee recognition and rewards platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
+        "description": "Employee recognition and rewards platform built on the company’s internal platform. Nomination approvals, spot-bonus routing, anniversary tiers, budget management. 125 live budgets, 34/34 tests passing.",
         "roi": "Five-figure license displaced",
         "tech": [
-          "Domo Custom Apps",
-          "Code Engine",
-          "Workflows",
-          "AppDB"
+          "Internal apps",
+          "Serverless functions",
+          "Workflow automation",
+          "Document store"
         ]
       },
       {
@@ -732,7 +732,7 @@
           "Gemini 2.5 Flash",
           "SocketIO",
           "React",
-          "Domo AppDB"
+          "Document store"
         ]
       },
       {
@@ -745,7 +745,7 @@
           "Python",
           "Gemini",
           "RSS",
-          "Domo Workflows"
+          "Workflow automation"
         ]
       },
       {
@@ -776,7 +776,7 @@
         ]
       },
       {
-        "name": "Domo Toolkit & Onboarding",
+        "name": "Platform Toolkit & Onboarding",
         "category": "infrastructure",
         "kind": "artifact",
         "description": "Shared documentation platform and GitHub Pages onboarding site for the marketing team. Platform catalog, best practices, and getting-started guides.",
@@ -784,7 +784,7 @@
         "tech": [
           "GitHub Pages",
           "Markdown",
-          "Domo APIs"
+          "Platform APIs"
         ]
       },
       {
@@ -860,7 +860,7 @@
           "Gemini",
           "python-pptx",
           "AI Image Generation",
-          "Domo"
+          "Data platform"
         ]
       },
       {
@@ -884,7 +884,7 @@
         "description": "Full automated outbound pipeline. Multi-stage: discover, enrich, sequence, agent feedback, converted prospect. Orchestrates data platform + Apollo for end-to-end prospecting.",
         "roi": "End-to-end outbound orchestration",
         "tech": [
-          "Domo",
+          "Data platform",
           "Apollo.io",
           "Gemini",
           "JavaScript"
@@ -914,26 +914,26 @@
         "tech": [
           "Python",
           "python-pptx",
-          "Domo APIs"
+          "Platform APIs"
         ]
       },
       {
         "name": "Weekly Executive Report",
         "category": "operations",
         "kind": "system",
-        "description": "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + Domo dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
+        "description": "Automated CMO Friday report. Collects from SharePoint (Excel, Word) + the data platform’s dashboards (cards + screenshots), generates Word + PowerPoint output via AI.",
         "roi": "4–6 hrs/wk saved (~$15K/yr)",
         "tech": [
           "Python",
           "Gemini",
           "MSAL",
           "SharePoint",
-          "Domo API",
+          "Platform APIs",
           "Playwright"
         ]
       },
       {
-        "name": "Domo Monitoring Agents",
+        "name": "Platform Monitoring Agents",
         "category": "operations",
         "kind": "system",
         "description": "Autonomous system health monitoring. Checks service health, data quality, git repos, toolkit sync, and cookie expiration. Hourly via launchd, alerts via email.",
@@ -942,7 +942,7 @@
           "Python",
           "launchd",
           "Email",
-          "Domo APIs"
+          "Platform APIs"
         ]
       },
       {
@@ -952,8 +952,8 @@
         "description": "Two-workflow media monitoring system. Topic-continuity digest, airtight dedup, deterministic ticker-spam filter, SSRF host-resolution. 90-agent security audit remediated.",
         "roi": "Zero manual media monitoring",
         "tech": [
-          "Domo Workflows",
-          "Code Engine",
+          "Workflow automation",
+          "Serverless functions",
           "Gemini"
         ]
       },
@@ -990,7 +990,7 @@
         "tech": [
           "Claude Code",
           "Gemini Enterprise",
-          "Domo",
+          "Data platform",
           "Various"
         ]
       },
@@ -1001,7 +1001,7 @@
         "description": "Framework and guide for building AI agents inside the data platform. Democratizes agent creation so anyone on the team can build, not just the AI lead.",
         "roi": "Anyone can build agents",
         "tech": [
-          "Domo",
+          "Data platform",
           "Documentation",
           "Templates"
         ]
@@ -1121,13 +1121,13 @@
         "role": "Events Manager",
         "department": "Marketing Ops",
         "workflow": "Automated the entire webinar process with daily follow-up from agents",
-        "tool": "Domo + AI Agents"
+        "tool": "Data platform + AI Agents"
       },
       {
         "role": "Event Coordinator",
         "department": "Marketing Ops",
         "workflow": "Built a scheduler to help attendees get scheduled for breakouts using AI",
-        "tool": "Domo + AI"
+        "tool": "Data platform + AI"
       },
       {
         "role": "Digital Marketing Analyst",
