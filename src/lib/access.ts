@@ -91,7 +91,6 @@ export async function logAccess(email: string, domain: string): Promise<void> {
   if (!ACCESS_LOG_ENDPOINT) return;
   try {
     const body = new URLSearchParams({
-      event: "entry",
       email,
       domain,
       referrer: document.referrer || "direct",
@@ -106,107 +105,4 @@ export async function logAccess(email: string, domain: string): Promise<void> {
   } catch {
     /* logging is best-effort; never gate on it */
   }
-}
-
-/**
- * Best-effort log post that survives page unload. Prefers sendBeacon (queued
- * by the browser even as the tab closes); falls back to a keepalive fetch.
- * no-CORS form encoding matches the Apps Script handler.
- */
-function sendLog(body: URLSearchParams): void {
-  if (!ACCESS_LOG_ENDPOINT) return;
-  try {
-    if (navigator.sendBeacon) {
-      const blob = new Blob([body.toString()], {
-        type: "application/x-www-form-urlencoded",
-      });
-      if (navigator.sendBeacon(ACCESS_LOG_ENDPOINT, blob)) return;
-    }
-  } catch {
-    /* fall through to fetch */
-  }
-  try {
-    void fetch(ACCESS_LOG_ENDPOINT, {
-      method: "POST",
-      mode: "no-cors",
-      keepalive: true,
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
-    });
-  } catch {
-    /* best-effort; never throw on the way out */
-  }
-}
-
-/**
- * Engagement tracking — how long a visitor actively reads. Counts only the
- * time the tab is visible (so a backgrounded tab doesn't inflate the number)
- * and flushes the running total via {@link sendLog} on tab-hide and pagehide,
- * the reliable "leaving" signals that fire even when the tab is closed.
- *
- * Each flush carries the gate email plus a per-visit session id, so the Sheet
- * may hold several rows for one visit — the max `seconds` per session is the
- * time on page. Returns a cleanup that detaches the listeners.
- */
-export function trackTimeOnPage(): () => void {
-  let email = "";
-  try {
-    email = localStorage.getItem(STORAGE_KEY) || "";
-  } catch {
-    /* private mode — track without an email */
-  }
-  const domain = email.split("@")[1] || "";
-  const session =
-    Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
-
-  let activeMs = 0;
-  let lastStart = performance.now();
-  let counting = document.visibilityState === "visible";
-  let lastSent = -1;
-
-  /** Fold the current visible stretch into the running total. */
-  const accrue = () => {
-    if (counting) {
-      const now = performance.now();
-      activeMs += now - lastStart;
-      lastStart = now;
-    }
-  };
-
-  const flush = () => {
-    accrue();
-    const seconds = Math.round(activeMs / 1000);
-    if (seconds <= 0 || seconds === lastSent) return;
-    lastSent = seconds;
-    const h = window.location.hash.replace(/^#\/?/, "");
-    sendLog(
-      new URLSearchParams({
-        event: "duration",
-        email,
-        domain,
-        session,
-        seconds: String(seconds),
-        view: h || "vision",
-      }),
-    );
-  };
-
-  const onVisibility = () => {
-    if (document.visibilityState === "hidden") {
-      accrue();
-      counting = false;
-      flush();
-    } else if (!counting) {
-      counting = true;
-      lastStart = performance.now();
-    }
-  };
-
-  document.addEventListener("visibilitychange", onVisibility);
-  window.addEventListener("pagehide", flush);
-
-  return () => {
-    document.removeEventListener("visibilitychange", onVisibility);
-    window.removeEventListener("pagehide", flush);
-  };
 }
