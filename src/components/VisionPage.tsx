@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE_CUBIC, EASE_EXPO } from "../lib/motion";
 import {
@@ -30,6 +31,9 @@ const VID = {
 
 const SECTION = "scroll-mt-24 px-6";
 const WRAP = "mx-auto max-w-[1100px]";
+/** Subtle inline citation link — quiet underline that darkens on hover. */
+const CITE =
+  "underline decoration-ink/30 underline-offset-2 transition-colors hover:decoration-ink";
 
 /** A consistent section frame: eyebrow, headline, optional one-line frame. */
 function Header({
@@ -39,7 +43,7 @@ function Header({
 }: {
   eyebrow: string;
   title: string;
-  frame?: string;
+  frame?: ReactNode;
 }) {
   return (
     <Reveal>
@@ -70,12 +74,13 @@ export default function VisionPage() {
           </motion.p>
 
           <motion.h1
-            className="mt-6 max-w-[18ch] font-display text-[2.625rem] leading-[1.08] tracking-[-0.01em] md:text-[4rem] md:leading-[1.04]"
+            className="mt-6 max-w-[22ch] font-display text-[2.625rem] leading-[1.08] tracking-[-0.01em] md:text-[4rem] md:leading-[1.04]"
             initial={reduced ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE_EXPO, delay: 0.1 }}
           >
-            I build AI operating systems that people <em>actually</em> use.
+            I build AI operating systems that <em>actually</em> work, and that
+            your people know how to run.
           </motion.h1>
 
           <motion.p
@@ -84,8 +89,20 @@ export default function VisionPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.2 }}
           >
-            Everyone is selling AI transformation. I&rsquo;ve actually done it,
-            measured and itemized.
+            Most companies have AI.{" "}
+            <a
+              href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={CITE}
+            >
+              Fewer than four in ten get it to the bottom line.
+            </a>{" "}
+            Mine deliver{" "}
+            <span className="text-ink">1.65x employee productivity</span>,{" "}
+            <span className="text-ink">93% adoption</span>, and{" "}
+            <span className="text-ink">$2.3M in measured value</span> in year
+            one.
           </motion.p>
 
           {/* Byline — a face in the first eyeful, before the video plays */}
@@ -208,7 +225,34 @@ export default function VisionPage() {
           <Header
             eyebrow="The problem"
             title="Everyone has an AI strategy. Almost no one has results they can show you."
-            frame="You&rsquo;re being pitched AI from every direction. Decks, frameworks, big promises, mostly from people who&rsquo;ve never shipped it inside a real company. The rare thing isn&rsquo;t another opinion. It&rsquo;s someone who&rsquo;s done it and can hand you the receipts."
+            frame={
+              <>
+                You&rsquo;re being pitched AI from every direction, mostly by
+                people who&rsquo;ve never shipped it inside a real company. And
+                the results show it: the companies that win don&rsquo;t buy a
+                better tool, they{" "}
+                <a
+                  href="https://digitaleconomy.stanford.edu/app/uploads/2026/03/EnterpriseAIPlaybook_PereiraGraylinBrynjolfsson.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={CITE}
+                >
+                  redesign the work, and are three times more likely to do it
+                </a>
+                .{" "}
+                <a
+                  href="https://fortune.com/2026/05/11/what-microsoft-research-tells-cfo-roi-ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={CITE}
+                >
+                  Two-thirds of AI&rsquo;s impact is organizational
+                </a>
+                , not technical. The rare thing isn&rsquo;t another opinion.
+                It&rsquo;s someone who&rsquo;s done it and can hand you the
+                receipts.
+              </>
+            }
           />
           {/* Problem video removed 2026-06-18 — restore: uncomment + set VID.problem (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-10">
@@ -240,7 +284,22 @@ export default function VisionPage() {
               {
                 n: "02",
                 t: "Education",
-                d: "Turn your team into builders. Sitting next to people, not sending decks, is why adoption stuck at ninety-three percent.",
+                d: (
+                  <>
+                    Turn your team into builders. Sitting next to people, not
+                    sending decks, is why adoption stuck at ninety-three
+                    percent, and{" "}
+                    <a
+                      href="https://www.gallup.com/workplace/704225/rising-adoption-spurs-workforce-changes.aspx"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={CITE}
+                    >
+                      active use, not training, is what makes the gains stick
+                    </a>
+                    .
+                  </>
+                ),
               },
               {
                 n: "03",
@@ -287,7 +346,7 @@ export default function VisionPage() {
             {[
               { v: "93%", l: "team adoption in 12 months" },
               { v: "$2.3M", l: "first-year economic value" },
-              { v: "280", l: "hours/week returned to the team" },
+              { v: "1.65x", l: "average employee productivity" },
               { v: "26", l: "production systems in daily use" },
             ].map((m, i) => (
               <RevealItem
