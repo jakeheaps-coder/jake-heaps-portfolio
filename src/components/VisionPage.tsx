@@ -272,7 +272,16 @@ export default function VisionPage() {
           <Header
             eyebrow="How we'd work together"
             title="Custom, never improvised."
-            frame="Every engagement is custom, but it runs on three gears, weighted to where you need them. Most start in strategy and education; we build where it earns its keep."
+            frame={
+              <>
+                Every engagement is custom, but it runs on three gears, weighted
+                to where you need them. Most start in strategy and education; we
+                build where it earns its keep. And we don&rsquo;t start from a
+                blank page: the core systems already exist and are proven, so
+                your build is adaptation, not invention, in a fraction of the
+                time it took to build the first time.
+              </>
+            }
           />
           <RevealGroup className="mt-10 border-b border-hairline">
             {[
@@ -304,7 +313,7 @@ export default function VisionPage() {
               {
                 n: "03",
                 t: "Implementation",
-                d: "Build what earns its keep, alongside your people. Not a dev shop; capability that stays after I step back.",
+                d: "Build what earns its keep, alongside your people. Most of it already exists, so it goes in fast. Not a dev shop; capability that stays after I step back.",
               },
             ].map((s) => (
               <RevealItem
