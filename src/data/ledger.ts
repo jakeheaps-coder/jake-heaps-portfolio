@@ -108,12 +108,8 @@ export const closedRevenue = ledger
 
 export const firstYearTotal = yearlyRunRate + oneTimeCosts + closedRevenue; // 2,340,000
 
-/** The attestation — quoted verbatim from the internal review. */
-export const attestation = {
-  quote:
-    "Right around 280 hours each week are being saved using AI across the team.",
-  source: "December quarterly business review",
-};
+/* Attestation pull-quote removed — proof now leads with 1.65x; the December
+   280-hrs/week basis is noted inline in the Transformation chapter. */
 
 export const countingRules = [
   "Yearly amounts are annual run-rate as of fiscal year end; one-time amounts are counted once.",

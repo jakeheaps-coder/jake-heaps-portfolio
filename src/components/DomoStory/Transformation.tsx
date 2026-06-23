@@ -5,7 +5,6 @@ import {
   transformationResults,
 } from "../../data/metrics";
 import {
-  attestation,
   classLabels,
   closedRevenue,
   countingRules,
@@ -244,9 +243,10 @@ export default function Transformation() {
                 ]}
               />
               <div className="flex flex-col gap-8">
-                <MarginNote label="Attested">
-                  &ldquo;{attestation.quote}&rdquo;&ensp;&middot;&ensp;
-                  {attestation.source}.
+                <MarginNote label="Measured">
+                  Today the team runs at 1.65x average employee productivity,
+                  measured on live work. December baseline, attested in the QBR:
+                  ~280 hrs/week saved.
                 </MarginNote>
                 <MarginNote label="Counting rules">
                   {countingRules.map((rule) => (
