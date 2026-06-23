@@ -91,7 +91,7 @@ export default function VisionPage() {
           >
             Most companies have AI.{" "}
             <a
-              href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+              href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value"
               target="_blank"
               rel="noopener noreferrer"
               className={CITE}

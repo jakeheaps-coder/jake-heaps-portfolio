@@ -35,7 +35,7 @@ export default function Hero() {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, ease: EASE_EXPO, delay: 0.15 }}
             >
-              I build AI operating systems
+              I build AI operating systems that <em>actually</em> work,
             </motion.span>
           </span>
           <span className="block overflow-hidden">
@@ -45,7 +45,7 @@ export default function Hero() {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, ease: EASE_EXPO, delay: 0.24 }}
             >
-              that people <em>actually</em> use.
+              and that your people know how to run.
             </motion.span>
           </span>
         </h1>
@@ -59,9 +59,18 @@ export default function Hero() {
           <span className="numeral block text-[4rem] leading-none text-sienna md:text-[4.5rem]">
             93%
           </span>
-          <p className="mt-3 max-w-[60ch] font-mono text-caption text-ink-soft">
-            team adoption&ensp;·&ensp;26 production systems&ensp;·&ensp;the
-            first phase of a company-wide transformation
+          <p className="mt-3 max-w-[64ch] font-mono text-caption text-ink-soft">
+            team adoption&ensp;·&ensp;1.65x employee productivity&ensp;·&ensp;26
+            production systems. Most companies can&rsquo;t:{" "}
+            <a
+              href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-ink/30 underline-offset-2 transition-colors hover:decoration-ink"
+            >
+              fewer than four in ten get AI to the bottom line
+            </a>
+            .
           </p>
         </motion.div>
       </div>
