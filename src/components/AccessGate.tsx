@@ -28,6 +28,14 @@ export default function AccessGate({ onEnter }: { onEnter: () => void }) {
     onEnter();
   }
 
+  /* Hidden bypass: double-click the name in the eyebrow to enter without the
+     email step (owner / quick-demo access). Intentionally silent — no Sheet
+     log. The gate is lead capture, not real access control, so this is fine. */
+  function bypass() {
+    grantAccess("owner-bypass");
+    onEnter();
+  }
+
   return (
     <div className="flex min-h-screen items-center bg-paper px-6">
       <motion.div
@@ -37,7 +45,10 @@ export default function AccessGate({ onEnter }: { onEnter: () => void }) {
         transition={{ duration: 0.7, ease: EASE_EXPO }}
       >
         <p className="eyebrow text-ink-soft">
-          Jake Heaps&ensp;·&ensp;AI Strategy &amp; Transformation
+          <span onDoubleClick={bypass} className="select-none">
+            Jake Heaps
+          </span>
+          &ensp;·&ensp;AI Strategy &amp; Transformation
         </p>
         <hr className="mt-5 mb-10 border-0 border-t border-hairline" />
 
