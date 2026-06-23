@@ -34,9 +34,8 @@ export default function Record() {
           <a href="#ledger" className="text-cedar">
             the ledger
           </a>
-          . Adoption measured on live workflows; productivity is current, while
-          the December business review logged ~280 hrs/week saved; pipeline
-          tracked separately from P&amp;L.
+          . Adoption measured on live workflows; productivity is current (1.65x
+          average); pipeline tracked separately from P&amp;L.
         </p>
       </div>
     </section>

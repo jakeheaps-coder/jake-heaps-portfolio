@@ -1,12 +1,7 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE_CUBIC, EASE_EXPO } from "../lib/motion";
-import {
-  attestation,
-  classLabels,
-  firstYearTotal,
-  ledger,
-} from "../data/ledger";
+import { classLabels, firstYearTotal, ledger } from "../data/ledger";
 import signature from "../assets/signature.svg";
 import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
@@ -402,7 +397,8 @@ export default function VisionPage() {
               hard dollars: canceled invoices and a closed deal, not estimates.
             </p>
             <p className="mt-3 max-w-[72ch] font-mono text-caption text-ink-soft">
-              &ldquo;{attestation.quote}&rdquo;
+              Today that capacity runs at 1.65x average employee productivity,
+              measured on live work.
             </p>
           </Reveal>
 
