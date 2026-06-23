@@ -178,7 +178,8 @@ export default function Transformation() {
             <MarginNote label="Sourcing">
               Pipeline figures are Salesforce-tracked. Time savings converge
               across two instruments: team survey (264–273 hrs/week) and the
-              quarterly business review (280 hrs/week).
+              December quarterly business review (280 hrs/week). Current
+              efficiency is tracked separately as 1.65x average productivity.
             </MarginNote>
           </MarginGrid>
         </Reveal>

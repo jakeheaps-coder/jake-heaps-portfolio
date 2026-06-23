@@ -22,7 +22,7 @@ export const record: RecordMetric[] = [
     suffix: "M+",
     label: "first-year economic value, itemized in the ledger",
   },
-  { value: 280, label: "hours/week returned to the team" },
+  { value: 1.65, suffix: "x", label: "average employee productivity, today" },
   {
     value: 1,
     prefix: "$",
