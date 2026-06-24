@@ -264,9 +264,10 @@ LEDGER_TOTALS = [
 ]
 
 LEDGER_ATTESTATION = {
-    "quote": "Right around 280 hours each week are being saved using AI "
-             "across the marketing team.",
-    "source": "Quarterly business review",
+    "quote": "Today the team runs at 1.65x average employee productivity, "
+             "measured on live work. December baseline, attested in the QBR: "
+             "~280 hrs/week saved.",
+    "source": "",
 }
 
 LEDGER_COUNTING_RULES = [
