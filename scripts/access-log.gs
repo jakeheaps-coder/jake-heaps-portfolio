@@ -25,7 +25,20 @@
  */
 
 // Where consult-request notifications are sent. Change if your inbox changes.
-var NOTIFY_EMAIL = "jakeheaps@me.com";
+var NOTIFY_EMAIL = "jakeheaps7@gmail.com";
+
+/**
+ * Run this once from the editor (select testEmail in the dropdown → Run) to
+ * grant the MailApp "send email" permission and confirm delivery. After it
+ * works, redeploy the Web app so the live /exec uses the same authorization.
+ */
+function testEmail() {
+  MailApp.sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: "Portfolio lead notifications — test",
+    body: "If you got this, lead-notification emails are working. Safe to ignore.",
+  });
+}
 
 function doPost(e) {
   return handle(e);
