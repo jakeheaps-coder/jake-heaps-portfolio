@@ -1,7 +1,12 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE_CUBIC, EASE_EXPO } from "../lib/motion";
-import { classLabels, firstYearTotal, ledger } from "../data/ledger";
+import {
+  classLabels,
+  firstYearTotal,
+  hardDollarTotal,
+  ledger,
+} from "../data/ledger";
 import signature from "../assets/signature.svg";
 import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
@@ -364,8 +369,10 @@ export default function VisionPage() {
               <div className="flex flex-col gap-8">
                 <MarginNote label="Hard dollars">
                   Set the capacity line aside and the rest is roughly{" "}
-                  <span className="text-ink">$840K</span> in hard dollars:
-                  canceled invoices and a closed deal.
+                  <span className="text-ink">
+                    ${Math.round(hardDollarTotal / 1000)}K
+                  </span>{" "}
+                  in hard dollars: canceled invoices and a closed deal.
                 </MarginNote>
                 <MarginNote label="Measured">
                   Today that capacity runs at 1.65x average employee

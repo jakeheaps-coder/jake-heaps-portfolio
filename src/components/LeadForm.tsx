@@ -228,7 +228,8 @@ export function LeadForm({
         </div>
 
         <p className="mt-4 max-w-[52ch] font-mono text-eyebrow leading-relaxed text-ink-soft">
-          Used only so I can reach out. No list, no forwarding.
+          Used only so I can reach out. It lands in a private spreadsheet, never
+          a list, and is never forwarded or sold. Want it removed? Just ask.
         </p>
       </form>
     </div>

@@ -41,18 +41,24 @@ function testEmail() {
 }
 
 function doPost(e) {
-  return handle(e);
+  return handle(e, "POST");
 }
 
-// GET is used by the no-CORS form post fallback; same handler.
+// GET is allowed for the harmless entry/duration pings, but NOT for consult:
+// a consult on GET would let a drive-by link spawn a lead row + email. The
+// real form always POSTs (see lib/access.ts logConsultRequest).
 function doGet(e) {
-  return handle(e);
+  return handle(e, "GET");
 }
 
-function handle(e) {
+function handle(e, method) {
   try {
     var params = (e && e.parameter) || {};
     var event = String(params.event || "entry").trim().toLowerCase();
+    // Reject consult unless it arrived by POST — blocks GET-link abuse.
+    if (event === "consult" && method !== "POST") {
+      return json({ ok: false, error: "consult requires POST" });
+    }
     var email = String(params.email || "").trim().toLowerCase();
     if (!email || email.indexOf("@") < 1) {
       return json({ ok: false, error: "invalid email" });
