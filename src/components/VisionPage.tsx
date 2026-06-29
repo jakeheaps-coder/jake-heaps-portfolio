@@ -1,15 +1,26 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE_CUBIC, EASE_EXPO } from "../lib/motion";
-import { classLabels, firstYearTotal, ledger } from "../data/ledger";
+import {
+  classLabels,
+  firstYearTotal,
+  hardDollarTotal,
+  ledger,
+} from "../data/ledger";
 import signature from "../assets/signature.svg";
 import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Reveal, RevealGroup, RevealItem } from "./ui/Reveal";
-// Videos removed 2026-06-18 (between shoots). Restore steps: docs/VIDEO-PLACEMENT.md
-// import { VideoBlock } from "./ui/VideoBlock";
+import { VideoSlot } from "./ui/VideoSlot";
 import { LedgerTable } from "./ui/LedgerTable";
+import { LedgerWaterfall } from "./ui/LedgerWaterfall";
+import { MarginGrid, MarginNote } from "./ui/Chapter";
+import { LeadForm } from "./LeadForm";
+import { OperatingSystemExplainer } from "./vision/OperatingSystemExplainer";
+import { Method } from "./vision/Method";
+import { HowToWorkTogether } from "./vision/HowToWorkTogether";
+import { FAQ } from "./FAQ";
 
 const BASE = import.meta.env.BASE_URL;
 /* Video sources — kept for restore after filming (see docs/VIDEO-PLACEMENT.md).
@@ -56,105 +67,132 @@ export default function VisionPage() {
 
   return (
     <>
-      {/* ---- Hero: headline + overview video ---- */}
+      {/* ---- Hero: the pitch left, proof numerals in the right rail ---- */}
       <section id="vision" className="scroll-mt-24 px-6">
         <div className={`${WRAP} pt-32 pb-20 md:pt-40 md:pb-28`}>
-          <motion.p
-            className="eyebrow text-ink-soft"
-            initial={reduced ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: EASE_CUBIC }}
-          >
-            Jake Heaps&ensp;·&ensp;AI Strategy &amp; Transformation
-          </motion.p>
+          <div className="grid gap-x-16 gap-y-12 lg:grid-cols-[minmax(0,1fr)_minmax(220px,260px)] lg:items-start">
+            <div>
+              <motion.p
+                className="eyebrow text-ink-soft"
+                initial={reduced ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: EASE_CUBIC }}
+              >
+                Jake Heaps&ensp;·&ensp;AI Strategy &amp; Transformation
+              </motion.p>
 
-          <motion.h1
-            className="mt-6 max-w-[22ch] font-display text-[2.625rem] leading-[1.08] tracking-[-0.01em] md:text-[4rem] md:leading-[1.04]"
-            initial={reduced ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE_EXPO, delay: 0.1 }}
-          >
-            I build AI operating systems that <em>actually</em> work, and that
-            your people know how to run.
-          </motion.h1>
+              <motion.h1
+                className="mt-6 max-w-[20ch] font-display text-[2.25rem] leading-[1.1] tracking-[-0.01em] sm:text-[2.75rem] md:text-[4rem] md:leading-[1.04]"
+                initial={reduced ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: EASE_EXPO, delay: 0.1 }}
+              >
+                I build AI operating systems that <em>actually</em> work, and
+                that your people know how to run.
+              </motion.h1>
 
-          <motion.p
-            className="measure mt-6 text-lede text-ink-soft"
-            initial={reduced ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.2 }}
-          >
-            Most companies have AI.{" "}
-            <a
-              href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={CITE}
+              <motion.p
+                className="measure mt-6 text-lede text-ink-soft"
+                initial={reduced ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.2 }}
+              >
+                Most companies have AI.{" "}
+                <a
+                  href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={CITE}
+                >
+                  Fewer than four in ten get it to the bottom line.
+                </a>{" "}
+                Mine deliver measured results in the first year.
+              </motion.p>
+
+              {/* Byline — a face in the first eyeful, before the video plays */}
+              <motion.div
+                className="mt-8 flex items-center gap-3"
+                initial={reduced ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.28 }}
+              >
+                <img
+                  src={headshot}
+                  alt="Jake Heaps"
+                  width={96}
+                  height={96}
+                  className="h-12 w-12 rounded-full object-cover ring-hairline"
+                />
+                <span className="font-mono text-eyebrow uppercase tracking-[0.08em] text-ink-soft">
+                  Jake Heaps&ensp;·&ensp;AI transformation practice
+                </span>
+              </motion.div>
+
+              {/* Reserved overview video — hidden until SHOW_VIDEOS is flipped
+                  on (src/lib/flags.ts) and a src is set. */}
+              <VideoSlot
+                className="mt-8"
+                caption="The overview. What I do, and why it works."
+                title="Overview · Jake Heaps"
+              />
+
+              <motion.div
+                className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4"
+                initial={reduced ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.5 }}
+              >
+                <Button href="mailto:jakeheaps@me.com">
+                  Book a consultation
+                </Button>
+                <Button
+                  variant="quiet"
+                  href="https://www.linkedin.com/in/jakeheaps/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* Proof rail — stacked on phones (long mono labels need the room),
+                a 3-up row on tablet, a vertical rail on desktop. */}
+            <motion.aside
+              aria-label="First-year results"
+              className="lg:pt-2"
+              initial={reduced ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.42 }}
             >
-              Fewer than four in ten get it to the bottom line.
-            </a>{" "}
-            Mine deliver{" "}
-            <span className="text-ink">1.65x employee productivity</span>,{" "}
-            <span className="text-ink">93% adoption</span>, and{" "}
-            <span className="text-ink">$2.3M in measured value</span> in year
-            one.
-          </motion.p>
-
-          {/* Byline — a face in the first eyeful, before the video plays */}
-          <motion.div
-            className="mt-8 flex items-center gap-3"
-            initial={reduced ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.28 }}
-          >
-            <img
-              src={headshot}
-              alt="Jake Heaps"
-              width={96}
-              height={96}
-              className="h-12 w-12 rounded-full object-cover ring-hairline"
-            />
-            <span className="font-mono text-eyebrow uppercase tracking-[0.08em] text-ink-soft">
-              Jake Heaps&ensp;·&ensp;leads AI implementation at Domo
-            </span>
-          </motion.div>
-
-          {/* Overview video removed 2026-06-18 — restore: uncomment + set VID.overview (docs/VIDEO-PLACEMENT.md)
-          <motion.div
-            className="mt-8"
-            initial={reduced ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE_CUBIC, delay: 0.34 }}
-          >
-            <VideoBlock
-              src={VID.overview}
-              caption="The overview. What I do, and why it works."
-              title="Overview · Jake Heaps"
-            />
-          </motion.div>
-          */}
-
-          <motion.div
-            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4"
-            initial={reduced ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: EASE_CUBIC, delay: 0.5 }}
-          >
-            <Button href="mailto:jakeheaps@me.com">Book a consultation</Button>
-            <Button
-              variant="quiet"
-              href="https://www.linkedin.com/in/jakeheaps/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Button>
-          </motion.div>
+              <ul className="m-0 grid list-none grid-cols-1 gap-y-6 border-t border-hairline p-0 pt-6 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-0 lg:grid-cols-1 lg:gap-x-0 lg:gap-y-0 lg:border-t-0 lg:pt-0">
+                {[
+                  { v: "1.65x", l: "employee productivity" },
+                  { v: "93%", l: "team adoption" },
+                  { v: "$2.3M", l: "measured value, year one" },
+                ].map((s, i) => (
+                  <li
+                    key={s.l}
+                    className={`lg:border-hairline lg:py-5 ${
+                      i > 0 ? "lg:border-t" : "lg:pt-0"
+                    }`}
+                  >
+                    <span className="numeral block text-[2rem] leading-none text-ink md:text-[2.5rem]">
+                      {s.v}
+                    </span>
+                    <span className="mt-2 block font-mono text-eyebrow uppercase tracking-[0.08em] text-ink-soft">
+                      {s.l}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.aside>
+          </div>
         </div>
       </section>
 
       {/* ---- Who I am — lead with the person ---- */}
-      <section id="who" className={SECTION}>
+      <section id="who" className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-20 md:py-28`}>
           <Reveal>
             <div className="grid gap-12 lg:grid-cols-[minmax(0,58ch)_minmax(180px,220px)] lg:gap-x-16">
@@ -165,14 +203,17 @@ export default function VisionPage() {
                 </h3>
                 <div className="mt-6 space-y-5 text-body text-ink">
                   <p>
-                    I lead AI implementation at Domo today. Full-time, in the
-                    operating seat. This discipline didn&rsquo;t exist three
-                    years ago; nobody has decades of it. What I have is a year
-                    of actually doing it, measured and itemized.
+                    I run an AI transformation practice, and I build the
+                    operating systems companies use to put AI into their real
+                    work. I led the transformation at Domo, and that year is my
+                    flagship case. I built the systems, then spent a year
+                    getting people to actually use them. The discipline is
+                    young, so nobody has decades of it. What I have is a year of
+                    doing it inside a real company, measured and itemized.
                   </p>
                   <p>
-                    The method comes from something I learned long before AI:
-                    you change what people do by sitting next to them, not by
+                    The method came from something I learned long before AI. You
+                    change what people do by sitting next to them, not by
                     sending them a document. That&rsquo;s the whole secret of
                     adoption, and it&rsquo;s why the systems kept running after
                     I stepped back.
@@ -211,44 +252,57 @@ export default function VisionPage() {
         </div>
       </section>
 
+      {/* ---- What an AI operating system actually is ---- */}
+      <OperatingSystemExplainer />
+
       {/* ---- Companies I've worked with ---- */}
       <LogoStrip />
 
       {/* ---- The problem ---- */}
-      <section id="problem" className={`${SECTION} bg-surface`}>
+      <section id="problem" className={SECTION}>
         <div className={`${WRAP} py-20 md:py-28`}>
-          <Header
-            eyebrow="The problem"
-            title="Everyone has an AI strategy. Almost no one has results they can show you."
-            frame={
-              <>
-                You&rsquo;re being pitched AI from every direction, mostly by
-                people who&rsquo;ve never shipped it inside a real company. And
-                the results show it: the companies that win don&rsquo;t buy a
-                better tool, they{" "}
+          <Reveal>
+            <Eyebrow as="h2">The problem</Eyebrow>
+            {/* Adversarial opener — kept verbatim by request. */}
+            <h3 className="mt-4 max-w-[24ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
+              Everyone has an AI strategy. Almost no one has results they can
+              show you.
+            </h3>
+          </Reveal>
+          <MarginGrid className="mt-8">
+            <p className="text-lede text-ink-soft">
+              You&rsquo;re being pitched AI from every direction, mostly by
+              people who have never shipped it inside a real company. The
+              companies that actually capture the value redesign how the work
+              gets done, and most of that is organizational. The rare thing is
+              someone who has done it, and can hand you the receipts.
+            </p>
+            <div className="flex flex-col gap-8">
+              <MarginNote label="Stanford">
+                Teams that redesign the work are{" "}
                 <a
                   href="https://digitaleconomy.stanford.edu/app/uploads/2026/03/EnterpriseAIPlaybook_PereiraGraylinBrynjolfsson.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={CITE}
                 >
-                  redesign the work, and are three times more likely to do it
-                </a>
-                .{" "}
+                  three times more likely
+                </a>{" "}
+                to capture AI&rsquo;s value.
+              </MarginNote>
+              <MarginNote label="Fortune · Microsoft">
                 <a
                   href="https://fortune.com/2026/05/11/what-microsoft-research-tells-cfo-roi-ai/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={CITE}
                 >
-                  Two-thirds of AI&rsquo;s impact is organizational
-                </a>
-                , not technical. The rare thing isn&rsquo;t another opinion.
-                It&rsquo;s someone who&rsquo;s done it and can hand you the
-                receipts.
-              </>
-            }
-          />
+                  Two-thirds of AI&rsquo;s impact
+                </a>{" "}
+                is organizational rather than technical.
+              </MarginNote>
+            </div>
+          </MarginGrid>
           {/* Problem video removed 2026-06-18 — restore: uncomment + set VID.problem (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-10">
             <VideoBlock
@@ -261,81 +315,11 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ---- The method ---- */}
-      <section id="method" className={SECTION}>
-        <div className={`${WRAP} py-20 md:py-28`}>
-          <Header
-            eyebrow="How we'd work together"
-            title="Custom, never improvised."
-            frame={
-              <>
-                Every engagement is custom, but it runs on three gears, weighted
-                to where you need them. Most start in strategy and education; we
-                build where it earns its keep. And we don&rsquo;t start from a
-                blank page: the core systems already exist and are proven, so
-                your build is adaptation, not invention, in a fraction of the
-                time it took to build the first time.
-              </>
-            }
-          />
-          <RevealGroup className="mt-10 border-b border-hairline">
-            {[
-              {
-                n: "01",
-                t: "Strategy",
-                d: "Find where AI actually pays off (and where it doesn't), as a prioritized, sequenced plan you can act on.",
-              },
-              {
-                n: "02",
-                t: "Education",
-                d: (
-                  <>
-                    Turn your team into builders. Sitting next to people, not
-                    sending decks, is why adoption stuck at ninety-three
-                    percent, and{" "}
-                    <a
-                      href="https://www.gallup.com/workplace/704225/rising-adoption-spurs-workforce-changes.aspx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={CITE}
-                    >
-                      active use, not training, is what makes the gains stick
-                    </a>
-                    .
-                  </>
-                ),
-              },
-              {
-                n: "03",
-                t: "Implementation",
-                d: "Build what earns its keep, alongside your people. Most of it already exists, so it goes in fast. Not a dev shop; capability that stays after I step back.",
-              },
-            ].map((s) => (
-              <RevealItem
-                key={s.n}
-                className="grid gap-x-10 gap-y-2 border-t border-hairline py-7 md:grid-cols-[64px_180px_minmax(0,1fr)] md:items-baseline"
-              >
-                <span className="numeral text-[1.75rem] leading-none text-sienna">
-                  {s.n}
-                </span>
-                <h4 className="m-0 font-display text-h3">{s.t}</h4>
-                <p className="m-0 max-w-[52ch] text-body text-ink-soft">
-                  {s.d}
-                </p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-          {/* Method video removed 2026-06-18 — restore: uncomment + set VID.method (docs/VIDEO-PLACEMENT.md)
-          <Reveal className="mt-10">
-            <VideoBlock
-              src={VID.method}
-              caption="Strategy, implementation, education. Why the order is everything."
-              title="The method"
-            />
-          </Reveal>
-          */}
-        </div>
-      </section>
+      {/* ---- The method, named: "The Working System" + the diagram ---- */}
+      <Method />
+
+      {/* ---- How to work together: the three tiers ---- */}
+      <HowToWorkTogether />
 
       {/* ---- The proof = the ledger ---- */}
       <section id="proof" className={`${SECTION} bg-surface`}>
@@ -346,60 +330,98 @@ export default function VisionPage() {
             frame="The first phase, with one client. One year, every dollar itemized, not a projection."
           />
 
-          <RevealGroup className="mt-12 grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
+          {/* Anchor stats — the money and the productivity big; adoption and
+              system count as supporting figures below. */}
+          <RevealGroup className="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-12">
             {[
-              { v: "93%", l: "team adoption in 12 months" },
-              { v: "$2.3M", l: "first-year economic value" },
-              { v: "1.65x", l: "average employee productivity" },
-              { v: "26", l: "production systems in daily use" },
-            ].map((m, i) => (
-              <RevealItem
-                key={m.l}
-                className={`md:px-8 ${i > 0 ? "md:border-l md:border-hairline" : "md:pl-0"}`}
-              >
-                <span className="numeral block text-[2.5rem] leading-none text-ink md:text-[2.75rem]">
+              { v: "$2.3M", l: "first-year economic value, itemized below" },
+              { v: "1.65x", l: "average employee productivity, on live work" },
+            ].map((m) => (
+              <RevealItem key={m.l}>
+                <span className="numeral block text-[3rem] leading-none text-ink md:text-[4rem]">
                   {m.v}
                 </span>
-                <p className="mt-3 text-caption text-ink-soft">{m.l}</p>
+                <p className="mt-3 max-w-[28ch] text-caption text-ink-soft">
+                  {m.l}
+                </p>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+          <RevealGroup className="mt-10 grid grid-cols-2 gap-x-8 border-t border-hairline pt-8">
+            {[
+              { v: "93%", l: "team adoption in 12 months" },
+              { v: "26", l: "production systems in daily use" },
+            ].map((m) => (
+              <RevealItem key={m.l}>
+                <span className="numeral block text-[1.75rem] leading-none text-ink">
+                  {m.v}
+                </span>
+                <p className="mt-2 text-caption text-ink-soft">{m.l}</p>
               </RevealItem>
             ))}
           </RevealGroup>
 
-          <Reveal className="mt-14">
-            <LedgerTable
-              caption="First-year value ledger"
-              columns={[
-                { key: "item", label: "Item", lead: true },
-                { key: "cls", label: "Class", width: "md:w-[14%]" },
-                {
-                  key: "amount",
-                  label: "Amount",
-                  numeric: true,
-                  width: "md:w-[16%]",
-                },
-              ]}
-              rows={[
-                ...ledger.map((r) => ({
-                  item: r.item,
-                  cls: classLabels[r.cls],
-                  amount: `$${r.amount.toLocaleString("en-US")}`,
-                })),
-                {
-                  item: "First-year total",
-                  cls: "",
-                  amount: `$${firstYearTotal.toLocaleString("en-US")}`,
-                },
-              ]}
-            />
-            <p className="mt-5 max-w-[72ch] text-caption text-ink-soft">
-              Set the capacity line aside and the displaced, avoided, and closed
-              figures are roughly <span className="text-ink">$840K</span> in
-              hard dollars: canceled invoices and a closed deal, not estimates.
-            </p>
-            <p className="mt-3 max-w-[72ch] font-mono text-caption text-ink-soft">
-              Today that capacity runs at 1.65x average employee productivity,
-              measured on live work.
-            </p>
+          {/* The value, built up class by class — the centerpiece. */}
+          <Reveal className="mt-16">
+            <Eyebrow>First-year value, by class</Eyebrow>
+            <MarginGrid className="mt-6">
+              <LedgerWaterfall />
+              <div className="flex flex-col gap-8">
+                <MarginNote label="Hard dollars">
+                  Set the capacity line aside and the rest is roughly{" "}
+                  <span className="text-ink">
+                    ${Math.round(hardDollarTotal / 1000)}K
+                  </span>{" "}
+                  in hard dollars: canceled invoices and a closed deal.
+                </MarginNote>
+                <MarginNote label="Measured">
+                  Today that capacity runs at 1.65x average employee
+                  productivity, measured on live work.
+                </MarginNote>
+              </div>
+            </MarginGrid>
+
+            {/* The itemized ledger, demoted to a disclosure. */}
+            <details className="group mt-10 border-t border-hairline">
+              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
+                <span className="font-display text-h3 text-ink">
+                  The full ledger, line by line
+                </span>
+                <span
+                  aria-hidden
+                  className="mt-1 shrink-0 font-mono text-h3 leading-none text-sienna transition-transform duration-200 group-open:rotate-45"
+                >
+                  +
+                </span>
+              </summary>
+              <div className="pb-2">
+                <LedgerTable
+                  caption="First-year value ledger"
+                  columns={[
+                    { key: "item", label: "Item", lead: true },
+                    { key: "cls", label: "Class", width: "md:w-[14%]" },
+                    {
+                      key: "amount",
+                      label: "Amount",
+                      numeric: true,
+                      width: "md:w-[16%]",
+                    },
+                  ]}
+                  rows={[
+                    ...ledger.map((r) => ({
+                      item: r.item,
+                      cls: classLabels[r.cls],
+                      amount: `$${r.amount.toLocaleString("en-US")}`,
+                    })),
+                    {
+                      item: "First-year total",
+                      cls: "",
+                      amount: `$${firstYearTotal.toLocaleString("en-US")}`,
+                    },
+                  ]}
+                />
+              </div>
+            </details>
           </Reveal>
 
           <Reveal className="mt-12">
@@ -415,6 +437,15 @@ export default function VisionPage() {
             </div>
           </Reveal>
 
+          <Reveal className="mt-12">
+            <p className="font-mono text-caption text-ink-soft">
+              When you&rsquo;re ready to build this in your company,&ensp;
+              <a href="#work-together" className="text-cedar">
+                here&rsquo;s how we&rsquo;d start →
+              </a>
+            </p>
+          </Reveal>
+
           {/* Proof video removed 2026-06-18 — restore: uncomment + set VID.proof (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-12">
             <VideoBlock
@@ -427,8 +458,8 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ---- Endorsement ---- */}
-      <BootheQuote />
+      {/* ---- FAQ ---- */}
+      <FAQ />
 
       {/* ---- Contact / close ---- */}
       <section id="contact" className={`${SECTION} bg-surface`}>
@@ -442,30 +473,22 @@ export default function VisionPage() {
               If you want AI to be how your company runs, let&rsquo;s talk.
             </h3>
             <p className="measure mt-6 text-lede text-ink-soft">
-              This is for leaders who want real change, not a pilot on the
-              shelf. Engagements are custom, usually a monthly partnership in
-              senior strategy and hands-on enablement that leaves your team
-              self-sufficient. We&rsquo;d start with a short call: where you
-              are, where AI pays off, and whether I&rsquo;m the right partner.
+              This is for leaders who want AI to be how the company runs, not a
+              pilot on the shelf. We&rsquo;d start with a short call: where you
+              are, where AI pays off, and whether I&rsquo;m the right person to
+              build it with you. No pitch.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Button href="mailto:jakeheaps@me.com">
-                Book a consultation
-              </Button>
+            <LeadForm variant="panel" className="mt-10 max-w-[44rem]" />
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Button
                 variant="quiet"
                 href="https://www.linkedin.com/in/jakeheaps/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn
+                Or find me on LinkedIn
               </Button>
             </div>
-            <p className="mt-5 max-w-[60ch] font-mono text-eyebrow leading-relaxed text-ink-soft">
-              A 30-minute call: no pitch, just whether there&rsquo;s a fit and
-              where to start. The full transformation record is available on
-              request.
-            </p>
           </Reveal>
         </div>
       </section>
@@ -473,7 +496,7 @@ export default function VisionPage() {
   );
 }
 
-/* Reuse the brand's grayscale logo strip + Boothe pull quote. */
+/* The client logo strip, near the top of the page. */
 const BASE_LOGOS = `${BASE}logos`;
 const clients = [
   { name: "Domo", logo: `${BASE_LOGOS}/domo.svg`, h: "h-6" },
@@ -493,48 +516,54 @@ const clients = [
   },
 ];
 
-/** Simple client logo bar, near the top of the page. */
+/**
+ * Client logo bar — the proof the practice exists beyond Domo, so it gets a
+ * banded section, named logos, and one talked-through case (Bissell, public).
+ */
 function LogoStrip() {
   return (
-    <section className={SECTION}>
-      <div className={`${WRAP} py-14 md:py-16`}>
+    <section id="engagements" className={`${SECTION} bg-surface`}>
+      <div className={`${WRAP} py-20 md:py-24`}>
         <Reveal>
           <Eyebrow as="h2">Companies I&rsquo;ve worked with</Eyebrow>
-          <ul className="mt-10 flex list-none flex-wrap items-center justify-center gap-x-12 gap-y-10 p-0 md:justify-between md:gap-x-8">
+          <ul className="mt-10 grid list-none grid-cols-2 gap-x-8 gap-y-10 p-0 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
             {clients.map((c) => (
-              <li key={c.name} className="flex items-center">
-                <img
-                  src={c.logo}
-                  alt={c.name}
-                  loading="lazy"
-                  className={`${c.h} w-auto max-w-[150px] object-contain opacity-65 mix-blend-multiply grayscale transition-opacity duration-200 hover:opacity-100`}
-                />
+              <li
+                key={c.name}
+                className="flex flex-col items-center gap-3 text-center"
+              >
+                <span className="flex h-10 items-center">
+                  <img
+                    src={c.logo}
+                    alt={c.name}
+                    loading="lazy"
+                    className={`${c.h} w-auto max-w-[140px] object-contain opacity-80 mix-blend-multiply grayscale transition-opacity duration-200 hover:opacity-100`}
+                  />
+                </span>
+                <span className="font-mono text-eyebrow uppercase tracking-[0.06em] text-ink-soft">
+                  {c.name}
+                </span>
               </li>
             ))}
           </ul>
         </Reveal>
-      </div>
-    </section>
-  );
-}
 
-/** The Boothe endorsement, its own moment before the close. */
-function BootheQuote() {
-  return (
-    <section className={SECTION}>
-      <div className={`${WRAP} py-20 md:py-28`}>
-        <Reveal>
-          <figure className="m-0">
-            <blockquote className="m-0">
-              <p className="max-w-[26ch] font-display text-h2 italic leading-[1.3] text-ink [hanging-punctuation:none] [text-indent:-0.45em] md:text-[2.125rem]">
-                &ldquo;One of the best hires I&rsquo;ve made in my entire
-                career.&rdquo;
-              </p>
-            </blockquote>
-            <figcaption className="eyebrow mt-8 text-ink-soft">
-              Mark Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
-            </figcaption>
-          </figure>
+        <Reveal className="mt-12 border-t border-hairline pt-8">
+          <p className="measure text-body text-ink">
+            Bissell needed working AI in their team&rsquo;s hands fast. I built
+            their first AI workflows alongside them in two days, and
+            TechRepublic covered it.
+          </p>
+          <div className="mt-4">
+            <Button
+              variant="quiet"
+              href="https://www.techrepublic.com/article/news-bissell-ai-workflows-two-day-build-domo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See more about this
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>

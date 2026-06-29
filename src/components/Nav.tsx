@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { BrandLockup } from "./ui/Brandmark";
 
 const sections = [
   { id: "record", label: "Record" },
@@ -83,9 +84,13 @@ export default function Nav() {
       }
     >
       <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-6">
-        <div className="flex items-baseline gap-4">
-          <a href="#brief" className="font-display text-h3 italic no-underline">
-            Jake Heaps
+        <div className="flex items-center gap-4">
+          <a
+            href="#brief"
+            aria-label="Jake Heaps"
+            className="text-ink no-underline"
+          >
+            <BrandLockup />
           </a>
         </div>
 

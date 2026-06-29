@@ -1,45 +1,74 @@
 /**
- * Access log endpoint for the Jake Heaps portfolio email gate.
+ * Access + lead-capture endpoint for the Jake Heaps portfolio.
  *
  * ONE-TIME SETUP (≈2 minutes):
  * 1. Open the Sheet:
  *    https://docs.google.com/spreadsheets/d/1L66N5vmaqJFDq8vGrrnC0-hTWchIKMBykysVns4BmqE/edit
  * 2. Extensions → Apps Script. Delete any boilerplate, paste this whole file, Save.
- * 3. Deploy → New deployment → gear icon → "Web app".
- *    - Description: "portfolio access log"
+ * 3. Deploy → Manage deployments → edit the existing Web app deployment →
+ *    "New version" → Deploy. (Re-using the deployment keeps the same /exec URL,
+ *    so the site needs no change.) Authorize when prompted — the new MailApp
+ *    scope (sending you lead emails) requires re-consent.
  *    - Execute as: Me
  *    - Who has access: Anyone
- *    - Deploy. Authorize when prompted (it's your own script).
- * 4. Copy the "Web app URL" it gives you (ends in /exec) and send it to me.
- *    I'll paste it into the site as the logging endpoint.
  *
- * Sheet columns: Timestamp | Email | Domain | Referrer | User Agent | Event | Session | Seconds | View
- *   - event "entry"    : a visitor passed the email gate (Referrer/UA filled).
- *   - event "duration" : engagement ping — Seconds = active time on page,
- *                        grouped by Session; take MAX(Seconds) per Session for
- *                        the total time on page, and View = hash/section.
- * The first 5 columns are unchanged from the original schema, so historical
- * rows stay aligned; columns F–I were appended.
+ * Sheet columns:
+ *   Timestamp | Email | Domain | Referrer | User Agent | Event | Session |
+ *   Seconds | View | Name | Phone | Message | Tier
+ *   - event "entry"    : a visitor passed the brief's email gate.
+ *   - event "duration" : engagement ping (Seconds active, by Session, View=hash).
+ *   - event "consult"  : a "Let's work together" submission. Name/Phone/Message/
+ *                        Tier are filled, and an email is sent to NOTIFY_EMAIL so
+ *                        a lead is never missed.
+ * The first 9 columns are unchanged, so historical rows stay aligned; J–M were
+ * appended.
  */
 
+// Where consult-request notifications are sent. Change if your inbox changes.
+var NOTIFY_EMAIL = "jakeheaps@me.com";
+
+/**
+ * Run this once from the editor (select testEmail in the dropdown → Run) to
+ * grant the MailApp "send email" permission and confirm delivery. After it
+ * works, redeploy the Web app so the live /exec uses the same authorization.
+ */
+function testEmail() {
+  MailApp.sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: "Portfolio lead notifications — test",
+    body: "If you got this, lead-notification emails are working. Safe to ignore.",
+  });
+}
+
 function doPost(e) {
-  return handle(e);
+  return handle(e, "POST");
 }
 
-// GET is used by the no-CORS form post fallback; same handler.
+// GET is allowed for the harmless entry/duration pings, but NOT for consult:
+// a consult on GET would let a drive-by link spawn a lead row + email. The
+// real form always POSTs (see lib/access.ts logConsultRequest).
 function doGet(e) {
-  return handle(e);
+  return handle(e, "GET");
 }
 
-function handle(e) {
+function handle(e, method) {
   try {
     var params = (e && e.parameter) || {};
     var event = String(params.event || "entry").trim().toLowerCase();
+    // Reject consult unless it arrived by POST — blocks GET-link abuse.
+    if (event === "consult" && method !== "POST") {
+      return json({ ok: false, error: "consult requires POST" });
+    }
     var email = String(params.email || "").trim().toLowerCase();
     if (!email || email.indexOf("@") < 1) {
       return json({ ok: false, error: "invalid email" });
     }
     var domain = email.split("@")[1] || "";
+    var name = String(params.name || "").trim();
+    var phone = String(params.phone || "").trim();
+    var message = String(params.message || "").trim();
+    var tier = String(params.tier || "").trim();
+
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
     ensureHeader(sheet);
     sheet.appendRow([
@@ -52,20 +81,62 @@ function handle(e) {
       String(params.session || ""),
       params.seconds ? Number(params.seconds) : "",
       String(params.view || ""),
+      name,
+      phone,
+      message,
+      tier,
     ]);
+
+    if (event === "consult") {
+      notifyConsult({
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        tier: tier,
+      });
+    }
+
     return json({ ok: true });
   } catch (err) {
     return json({ ok: false, error: String(err) });
   }
 }
 
-// Header labels for the 9-column schema. On a brand-new Sheet, write the full
-// row; on an existing Sheet, only append the new column labels (F–I) so legacy
-// data is left untouched.
+// Email Jake on every consult request so a lead is never silently lost.
+function notifyConsult(r) {
+  try {
+    var who = r.name || r.email;
+    var lines = [
+      "New consult request from the site.",
+      "",
+      "Name:    " + (r.name || "—"),
+      "Email:   " + (r.email || "—"),
+      "Phone:   " + (r.phone || "—"),
+      "Tier:    " + (r.tier || "—"),
+      "",
+      "Message:",
+      r.message || "—",
+    ];
+    MailApp.sendEmail({
+      to: NOTIFY_EMAIL,
+      subject: "New consult request — " + who,
+      body: lines.join("\n"),
+      replyTo: r.email || NOTIFY_EMAIL,
+    });
+  } catch (err) {
+    // Never let a notification failure break the logging response.
+  }
+}
+
+// Header labels for the 13-column schema. On a brand-new Sheet, write the full
+// row; on an existing Sheet, only append the new column labels so legacy data
+// is left untouched.
 function ensureHeader(sheet) {
   var header = [
     "Timestamp", "Email", "Domain", "Referrer", "User Agent",
     "Event", "Session", "Seconds", "View",
+    "Name", "Phone", "Message", "Tier",
   ];
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(header);

@@ -44,20 +44,6 @@ export default function ClientLogos() {
             Direct client engagements and partner-guided engagements.
           </p>
         </Reveal>
-
-        <Reveal className="mt-24 md:mt-32">
-          <figure className="m-0">
-            <blockquote className="m-0">
-              <p className="max-w-[26ch] font-display text-h2 italic leading-[1.3] text-ink [hanging-punctuation:none] [text-indent:-0.45em] md:text-[2.125rem]">
-                &ldquo;One of the best hires I&rsquo;ve made in my entire
-                career.&rdquo;
-              </p>
-            </blockquote>
-            <figcaption className="eyebrow mt-8 text-ink-soft">
-              Mark Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
-            </figcaption>
-          </figure>
-        </Reveal>
       </div>
     </section>
   );

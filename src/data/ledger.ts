@@ -5,11 +5,7 @@
  */
 
 export type LedgerClass =
-  | "capacity"
-  | "displaced"
-  | "equivalent"
-  | "avoided"
-  | "revenue";
+  "capacity" | "displaced" | "equivalent" | "avoided" | "revenue";
 
 export interface LedgerRow {
   item: string;
@@ -107,6 +103,15 @@ export const closedRevenue = ledger
   .reduce((n, r) => n + r.amount, 0); // 275,000
 
 export const firstYearTotal = yearlyRunRate + oneTimeCosts + closedRevenue; // 2,340,000
+
+/* Created capacity is real value but not cash. The proof copy quotes the
+   non-capacity ("hard dollar") figure separately, so derive both here rather
+   than hand-typing them anywhere. */
+export const capacityTotal = ledger
+  .filter((r) => r.cls === "capacity")
+  .reduce((n, r) => n + r.amount, 0); // 1,500,000
+
+export const hardDollarTotal = firstYearTotal - capacityTotal; // 840,000
 
 /* Attestation pull-quote removed — proof now leads with 1.65x; the December
    280-hrs/week basis is noted inline in the Transformation chapter. */

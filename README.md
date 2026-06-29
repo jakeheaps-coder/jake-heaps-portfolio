@@ -2,7 +2,7 @@
 
 Personal portfolio showcasing 40+ production AI systems, 9 enterprise engagements, $300K+ in vendor displacement, and 93% team AI adoption across a 12-month transformation.
 
-**Live:** https://jakeheaps-coder.github.io/jake-heaps-portfolio/
+**Live:** https://jakeheaps.com (Vercel, auto-deploys `main`; GitHub Pages is a fallback mirror)
 
 ## Quick Start
 
@@ -27,13 +27,24 @@ uv pip install weasyprint jinja2
 python scripts/generate-pdf.py          # Output: jake-heaps-portfolio.pdf
 ```
 
+## Architecture
+
+Two surfaces, selected by pathname (no router lib — see `currentView()` in `App.tsx`):
+
+- **Vision** (`/`) — the public landing page (`components/VisionPage.tsx`): practice positioning, the "Working System" method, tiers, proof/ledger, FAQ, and the lead form. Always open.
+- **Brief** (`/brief`) — the deep Domo flagship case study (the `App.tsx` section stack). Email-gated (lead capture, not access control — content still ships in the bundle).
+
+**Lead capture:** `components/LeadForm.tsx` → `lib/access.ts` (`logConsultRequest` / `logAccess`, fire-and-forget no-cors form POST) → external Google Apps Script web app (`scripts/access-log.gs`, deployed separately) → Google Sheet + an email notification to the owner.
+
 ## Project Structure
 
 ```
 src/
-  components/         # React components (Hero, Nav, DomoStory/, ProjectPortfolio, etc.)
-  data/               # Project catalog (projects.ts), metrics, team roster
-  App.tsx             # Main app — single-page scroll layout
+  components/         # Vision page + Brief (DomoStory/), shared ui/, LeadForm, FAQ
+  components/vision/  # Vision-only sections (Method, OperatingSystemExplainer, HowToWorkTogether)
+  data/               # ledger.ts (single source for $ figures), tiers, faq, metrics, roster
+  lib/                # access.ts (lead logging), motion, flags (SHOW_VIDEOS)
+  App.tsx             # Pathname-routed: Vision (public) vs Brief (email-gated)
 public/
   logos/              # 9 company logos (SVG, PNG, WebP)
   screenshots/        # Project screenshots
@@ -50,7 +61,7 @@ CONTEXT.md            # Full handoff doc (brand, confidentiality, architecture, 
 
 ## Stack
 
-React 19, TypeScript, Vite, Tailwind CSS v4, Framer Motion, WeasyPrint
+React 19, TypeScript, Vite 8, Tailwind CSS v4, Motion (motion/react), WeasyPrint
 
 ## Documentation
 

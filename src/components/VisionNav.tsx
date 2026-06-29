@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
+import { BrandLockup } from "./ui/Brandmark";
 
 /**
  * Vision-page nav — a persistent top bar: the name, in-page section links,
@@ -6,10 +7,11 @@ import { motion, useReducedMotion } from "motion/react";
  * Standalone page: no link to the brief.
  */
 const SECTIONS = [
-  { href: "#who", label: "Who I am" },
-  { href: "#problem", label: "Problem" },
+  { href: "#what-it-is", label: "What it is" },
   { href: "#method", label: "Approach" },
+  { href: "#work-together", label: "Work together" },
   { href: "#proof", label: "Proof" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 const LINK =
@@ -29,9 +31,10 @@ export default function VisionNav() {
       <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between gap-6 px-6">
         <a
           href="#vision"
-          className="shrink-0 font-display text-h3 italic no-underline"
+          aria-label="Jake Heaps"
+          className="shrink-0 text-ink no-underline"
         >
-          Jake Heaps
+          <BrandLockup />
         </a>
 
         <div className="hidden items-stretch gap-6 md:flex">
