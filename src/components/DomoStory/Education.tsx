@@ -177,14 +177,17 @@ export default function Education() {
             <Reveal>
               <MarginGrid className="border-t border-hairline pt-8">
                 <div className="measure">
-                  <p className="eyebrow text-sienna">Mark Boothe · CMO</p>
+                  <p className="eyebrow text-sienna">
+                    The executive sponsor · CMO
+                  </p>
                   <p className="mt-4">
                     Before the program, AI inside the department was a set of
-                    individual experiments with no coordinated strategy. Mark
-                    made adoption an operating priority: he orchestrated the
+                    individual experiments with no coordinated strategy. An
+                    executive sponsor made adoption an operating priority: the
                     design and implementation of the department-wide strategy
-                    and held the results to measurement. The roster above is as
-                    long as it is because the program had an owner at the top.
+                    was orchestrated from the top, and the results were held to
+                    measurement. The roster above is as long as it is because
+                    the program had an owner at the top.
                   </p>
                 </div>
                 <MarginNote label="Sponsorship">

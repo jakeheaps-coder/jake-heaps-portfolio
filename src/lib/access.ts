@@ -66,6 +66,59 @@ export function validateWorkEmail(raw: string): EmailCheck {
   return { ok: true, email, domain };
 }
 
+/**
+ * Looser email check for the consult form. A buyer's personal address is
+ * still a real lead, so we only require a valid shape — no consumer-domain
+ * rejection (that's the gate's job, not the lead form's).
+ */
+export function validateEmailShape(raw: string): EmailCheck {
+  const email = raw.trim().toLowerCase();
+  if (!EMAIL_RE.test(email)) {
+    return { ok: false, reason: "Enter a valid email address." };
+  }
+  return { ok: true, email, domain: email.split("@")[1] ?? "" };
+}
+
+export interface ConsultRequest {
+  name: string;
+  email: string;
+  phone?: string;
+  message?: string;
+  /** Closed set, set by the tier CTAs — never free user text. */
+  tier?: "analysis" | "consultancy" | "hours" | "";
+}
+
+/**
+ * Log a "Let's work together" submission to the same Sheet, tagged
+ * event="consult". The Apps Script emails Jake on these so a lead is never
+ * silently lost (see scripts/access-log.gs). Same no-CORS form POST as the
+ * gate; resolves regardless so the form's success state is honest.
+ */
+export async function logConsultRequest(req: ConsultRequest): Promise<void> {
+  if (!ACCESS_LOG_ENDPOINT) return;
+  try {
+    const body = new URLSearchParams({
+      event: "consult",
+      name: req.name,
+      email: req.email,
+      domain: req.email.split("@")[1] ?? "",
+      phone: req.phone ?? "",
+      message: req.message ?? "",
+      tier: req.tier ?? "",
+      referrer: document.referrer || "direct",
+      ua: navigator.userAgent || "",
+    });
+    await fetch(ACCESS_LOG_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+    });
+  } catch {
+    /* best-effort; the form still confirms + shows the email fallback */
+  }
+}
+
 export function hasAccess(): boolean {
   try {
     return localStorage.getItem(STORAGE_KEY) != null;

@@ -6,10 +6,11 @@ import { motion, useReducedMotion } from "motion/react";
  * Standalone page: no link to the brief.
  */
 const SECTIONS = [
-  { href: "#who", label: "Who I am" },
-  { href: "#problem", label: "Problem" },
+  { href: "#what-it-is", label: "What it is" },
   { href: "#method", label: "Approach" },
+  { href: "#work-together", label: "Work together" },
   { href: "#proof", label: "Proof" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 const LINK =

@@ -7,9 +7,12 @@ import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Reveal, RevealGroup, RevealItem } from "./ui/Reveal";
-// Videos removed 2026-06-18 (between shoots). Restore steps: docs/VIDEO-PLACEMENT.md
-// import { VideoBlock } from "./ui/VideoBlock";
+import { VideoSlot } from "./ui/VideoSlot";
 import { LedgerTable } from "./ui/LedgerTable";
+import { LeadForm } from "./LeadForm";
+import { OperatingSystemExplainer } from "./vision/OperatingSystemExplainer";
+import { HowToWorkTogether } from "./vision/HowToWorkTogether";
+import { FAQ } from "./FAQ";
 
 const BASE = import.meta.env.BASE_URL;
 /* Video sources — kept for restore after filming (see docs/VIDEO-PLACEMENT.md).
@@ -115,24 +118,17 @@ export default function VisionPage() {
               className="h-12 w-12 rounded-full object-cover ring-hairline"
             />
             <span className="font-mono text-eyebrow uppercase tracking-[0.08em] text-ink-soft">
-              Jake Heaps&ensp;·&ensp;leads AI implementation at Domo
+              Jake Heaps&ensp;·&ensp;AI transformation practice
             </span>
           </motion.div>
 
-          {/* Overview video removed 2026-06-18 — restore: uncomment + set VID.overview (docs/VIDEO-PLACEMENT.md)
-          <motion.div
+          {/* Reserved overview video — hidden until SHOW_VIDEOS is flipped
+              on (src/lib/flags.ts) and a src is set. */}
+          <VideoSlot
             className="mt-8"
-            initial={reduced ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE_CUBIC, delay: 0.34 }}
-          >
-            <VideoBlock
-              src={VID.overview}
-              caption="The overview. What I do, and why it works."
-              title="Overview · Jake Heaps"
-            />
-          </motion.div>
-          */}
+            caption="The overview. What I do, and why it works."
+            title="Overview · Jake Heaps"
+          />
 
           <motion.div
             className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4"
@@ -165,14 +161,17 @@ export default function VisionPage() {
                 </h3>
                 <div className="mt-6 space-y-5 text-body text-ink">
                   <p>
-                    I lead AI implementation at Domo today. Full-time, in the
-                    operating seat. This discipline didn&rsquo;t exist three
-                    years ago; nobody has decades of it. What I have is a year
-                    of actually doing it, measured and itemized.
+                    I run an AI transformation practice, and I build the
+                    operating systems companies use to put AI into their real
+                    work. I led the transformation at Domo, and that year is my
+                    flagship case. I built the systems, then spent a year
+                    getting people to actually use them. The discipline is
+                    young, so nobody has decades of it. What I have is a year of
+                    doing it inside a real company, measured and itemized.
                   </p>
                   <p>
-                    The method comes from something I learned long before AI:
-                    you change what people do by sitting next to them, not by
+                    The method came from something I learned long before AI. You
+                    change what people do by sitting next to them, not by
                     sending them a document. That&rsquo;s the whole secret of
                     adoption, and it&rsquo;s why the systems kept running after
                     I stepped back.
@@ -210,6 +209,9 @@ export default function VisionPage() {
           */}
         </div>
       </section>
+
+      {/* ---- What an AI operating system actually is ---- */}
+      <OperatingSystemExplainer />
 
       {/* ---- Companies I've worked with ---- */}
       <LogoStrip />
@@ -337,6 +339,9 @@ export default function VisionPage() {
         </div>
       </section>
 
+      {/* ---- How to work together: the three tiers ---- */}
+      <HowToWorkTogether />
+
       {/* ---- The proof = the ledger ---- */}
       <section id="proof" className={`${SECTION} bg-surface`}>
         <div className={`${WRAP} py-20 md:py-28`}>
@@ -415,6 +420,15 @@ export default function VisionPage() {
             </div>
           </Reveal>
 
+          <Reveal className="mt-12">
+            <p className="font-mono text-caption text-ink-soft">
+              When you&rsquo;re ready to build this in your company,&ensp;
+              <a href="#work-together" className="text-cedar">
+                here&rsquo;s how we&rsquo;d start →
+              </a>
+            </p>
+          </Reveal>
+
           {/* Proof video removed 2026-06-18 — restore: uncomment + set VID.proof (docs/VIDEO-PLACEMENT.md)
           <Reveal className="mt-12">
             <VideoBlock
@@ -427,8 +441,8 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ---- Endorsement ---- */}
-      <BootheQuote />
+      {/* ---- FAQ ---- */}
+      <FAQ />
 
       {/* ---- Contact / close ---- */}
       <section id="contact" className={`${SECTION} bg-surface`}>
@@ -442,30 +456,22 @@ export default function VisionPage() {
               If you want AI to be how your company runs, let&rsquo;s talk.
             </h3>
             <p className="measure mt-6 text-lede text-ink-soft">
-              This is for leaders who want real change, not a pilot on the
-              shelf. Engagements are custom, usually a monthly partnership in
-              senior strategy and hands-on enablement that leaves your team
-              self-sufficient. We&rsquo;d start with a short call: where you
-              are, where AI pays off, and whether I&rsquo;m the right partner.
+              This is for leaders who want AI to be how the company runs, not a
+              pilot on the shelf. We&rsquo;d start with a short call: where you
+              are, where AI pays off, and whether I&rsquo;m the right person to
+              build it with you. No pitch.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Button href="mailto:jakeheaps@me.com">
-                Book a consultation
-              </Button>
+            <LeadForm variant="panel" className="mt-10 max-w-[44rem]" />
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Button
                 variant="quiet"
                 href="https://www.linkedin.com/in/jakeheaps/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn
+                Or find me on LinkedIn
               </Button>
             </div>
-            <p className="mt-5 max-w-[60ch] font-mono text-eyebrow leading-relaxed text-ink-soft">
-              A 30-minute call: no pitch, just whether there&rsquo;s a fit and
-              where to start. The full transformation record is available on
-              request.
-            </p>
           </Reveal>
         </div>
       </section>
@@ -473,7 +479,7 @@ export default function VisionPage() {
   );
 }
 
-/* Reuse the brand's grayscale logo strip + Boothe pull quote. */
+/* The client logo strip, near the top of the page. */
 const BASE_LOGOS = `${BASE}logos`;
 const clients = [
   { name: "Domo", logo: `${BASE_LOGOS}/domo.svg`, h: "h-6" },
@@ -493,48 +499,54 @@ const clients = [
   },
 ];
 
-/** Simple client logo bar, near the top of the page. */
+/**
+ * Client logo bar — the proof the practice exists beyond Domo, so it gets a
+ * banded section, named logos, and one talked-through case (Bissell, public).
+ */
 function LogoStrip() {
   return (
-    <section className={SECTION}>
-      <div className={`${WRAP} py-14 md:py-16`}>
+    <section id="engagements" className={`${SECTION} bg-surface`}>
+      <div className={`${WRAP} py-20 md:py-24`}>
         <Reveal>
           <Eyebrow as="h2">Companies I&rsquo;ve worked with</Eyebrow>
-          <ul className="mt-10 flex list-none flex-wrap items-center justify-center gap-x-12 gap-y-10 p-0 md:justify-between md:gap-x-8">
+          <ul className="mt-10 grid list-none grid-cols-2 gap-x-8 gap-y-10 p-0 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
             {clients.map((c) => (
-              <li key={c.name} className="flex items-center">
-                <img
-                  src={c.logo}
-                  alt={c.name}
-                  loading="lazy"
-                  className={`${c.h} w-auto max-w-[150px] object-contain opacity-65 mix-blend-multiply grayscale transition-opacity duration-200 hover:opacity-100`}
-                />
+              <li
+                key={c.name}
+                className="flex flex-col items-center gap-3 text-center"
+              >
+                <span className="flex h-10 items-center">
+                  <img
+                    src={c.logo}
+                    alt={c.name}
+                    loading="lazy"
+                    className={`${c.h} w-auto max-w-[140px] object-contain opacity-80 mix-blend-multiply grayscale transition-opacity duration-200 hover:opacity-100`}
+                  />
+                </span>
+                <span className="font-mono text-eyebrow uppercase tracking-[0.06em] text-ink-soft">
+                  {c.name}
+                </span>
               </li>
             ))}
           </ul>
         </Reveal>
-      </div>
-    </section>
-  );
-}
 
-/** The Boothe endorsement, its own moment before the close. */
-function BootheQuote() {
-  return (
-    <section className={SECTION}>
-      <div className={`${WRAP} py-20 md:py-28`}>
-        <Reveal>
-          <figure className="m-0">
-            <blockquote className="m-0">
-              <p className="max-w-[26ch] font-display text-h2 italic leading-[1.3] text-ink [hanging-punctuation:none] [text-indent:-0.45em] md:text-[2.125rem]">
-                &ldquo;One of the best hires I&rsquo;ve made in my entire
-                career.&rdquo;
-              </p>
-            </blockquote>
-            <figcaption className="eyebrow mt-8 text-ink-soft">
-              Mark Boothe&ensp;&middot;&ensp;Chief Marketing Officer, Domo
-            </figcaption>
-          </figure>
+        <Reveal className="mt-12 border-t border-hairline pt-8">
+          <p className="measure text-body text-ink">
+            Bissell needed working AI in their team&rsquo;s hands fast. I built
+            their first AI workflows alongside them in two days, and
+            TechRepublic covered it.
+          </p>
+          <div className="mt-4">
+            <Button
+              variant="quiet"
+              href="https://www.techrepublic.com/article/news-bissell-ai-workflows-two-day-build-domo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See more about this
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>

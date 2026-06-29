@@ -3,6 +3,7 @@ import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Reveal } from "./ui/Reveal";
+import { LeadForm } from "./LeadForm";
 
 /** The closing letter — signed, first person, one personal paragraph. */
 export default function About() {
@@ -30,15 +31,15 @@ export default function About() {
                   adoption.
                 </p>
                 <p>
-                  I lead AI implementation at Domo today, full-time, in the
-                  operating seat. We started in marketing, and that first phase
-                  is this brief&rsquo;s proof: 26 production systems, a
-                  first-year value ledger that closed at $2.3M, and a team where
-                  93% now build with AI independently. The transfer completed in
-                  May 2026, and the systems have run without my daily hands
-                  since. That is what freed me to take the same system
-                  company-wide, on track to roughly 2x that efficiency rate.
-                  Enablement, not dependency, is the product.
+                  I led the AI transformation at Domo, and Domo is my flagship
+                  case. We started in marketing, and that first phase is this
+                  brief&rsquo;s proof: 26 production systems, a first-year value
+                  ledger that closed at $2.3M, and a team where 93% now build
+                  with AI on their own. The transfer completed in May 2026, and
+                  the systems have run without my daily hands since. That is
+                  what let me take the same system company-wide, on track to
+                  roughly 2x that efficiency rate. The product is a team that
+                  keeps building after I step back.
                 </p>
                 <p>
                   I&rsquo;ll name the question this document raises rather than
@@ -102,6 +103,11 @@ export default function About() {
                 >
                   Download the brief
                 </Button>
+              </div>
+
+              <div className="mt-12 border-t border-hairline pt-10">
+                <Eyebrow>Start a conversation</Eyebrow>
+                <LeadForm variant="inline" className="mt-6" />
               </div>
             </div>
 

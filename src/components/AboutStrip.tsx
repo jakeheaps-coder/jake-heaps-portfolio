@@ -27,10 +27,11 @@ export default function AboutStrip() {
             <div>
               <Eyebrow>The author</Eyebrow>
               <p className="measure mt-3 text-lede text-ink">
-                I&rsquo;m Jake. I lead AI implementation at Domo, full-time, in
-                the operating seat. This brief is that work, measured and
-                itemized: marketing first, the whole company now. The full
-                letter is at the end; the proof is in between.
+                I&rsquo;m Jake. I build AI operating systems for companies, and
+                Domo is my flagship case. I led the transformation there, and
+                this brief is that work, measured and itemized. I built the
+                systems, then spent a year getting people to actually use them.
+                The full letter is at the end; the proof is in between.
               </p>
               <img
                 src={signature}

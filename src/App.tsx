@@ -59,10 +59,7 @@ export default function App() {
     }
   }, [view]);
 
-  if (!entered) {
-    return <AccessGate onEnter={() => setEntered(true)} />;
-  }
-
+  /* The Vision page is the public front door — always open. */
   if (view === "vision") {
     return (
       <>
@@ -79,6 +76,11 @@ export default function App() {
         <Footer />
       </>
     );
+  }
+
+  /* The Brief stays gated — email required, remembered per device. */
+  if (!entered) {
+    return <AccessGate onEnter={() => setEntered(true)} />;
   }
 
   return (
