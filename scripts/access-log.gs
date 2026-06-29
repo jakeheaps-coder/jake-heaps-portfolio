@@ -25,7 +25,7 @@
  */
 
 // Where consult-request notifications are sent. Change if your inbox changes.
-var NOTIFY_EMAIL = "jakeheaps7@gmail.com";
+var NOTIFY_EMAIL = "jakeheaps@me.com";
 
 /**
  * Run this once from the editor (select testEmail in the dropdown → Run) to
