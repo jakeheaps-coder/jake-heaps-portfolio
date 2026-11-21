@@ -8,7 +8,7 @@ import { logos } from "../../data/logos";
 export function LogoRow({ className = "" }: { className?: string }) {
   return (
     <ul
-      className={`m-0 flex list-none flex-wrap items-center gap-x-10 gap-y-8 p-0 md:gap-x-14 ${className}`}
+      className={`m-0 flex list-none flex-wrap items-center gap-x-8 gap-y-7 p-0 sm:gap-x-10 md:gap-x-14 ${className}`}
     >
       {logos.map((l) => (
         <li key={l.name}>

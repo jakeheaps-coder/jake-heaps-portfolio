@@ -4,17 +4,20 @@ type Tone = "paper" | "surface" | "night";
 
 const TONE_BG: Record<Tone, string> = {
   paper: "bg-paper",
+  surface: "bg-surface",
   // `night` also carries the `.night` token scope (defined in index.css) so
   // ink/hairline/accent tokens flip to their dark values for descendants.
-  surface: "bg-surface",
   night: "night bg-night",
 };
 
 /**
- * A full-bleed section band with a centered measure. Replaces the SECTION/WRAP
- * class strings that were copy-pasted across the legacy page. `tone` sets the
- * background and (for night) the dark token scope; sections must alternate
- * tones so two colored bands never stack.
+ * A full-bleed section band with a centered measure. `tone` sets the
+ * background; sections alternate tones so two colored bands never stack.
+ *
+ * Vertical rhythm comes from the `section` spacing token (56px on a phone,
+ * 112px on a laptop, fluid between). The scroll margin matches the sticky
+ * nav bar (44px on phones, 56px from sm), so an anchor jump lands with the
+ * band's top edge just under the bar.
  */
 export function Section({
   id,
@@ -35,14 +38,12 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 px-6 ${TONE_BG[tone]} ${className}`}
+      className={`scroll-mt-11 px-6 sm:scroll-mt-14 ${TONE_BG[tone]} ${className}`}
     >
       {bleed ? (
         children
       ) : (
-        <div
-          className={`mx-auto max-w-[1100px] py-20 md:py-28 ${innerClassName}`}
-        >
+        <div className={`mx-auto max-w-[1100px] py-section ${innerClassName}`}>
           {children}
         </div>
       )}

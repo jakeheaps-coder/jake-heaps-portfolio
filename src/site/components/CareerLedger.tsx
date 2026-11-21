@@ -7,12 +7,12 @@ import { RevealGroup, RevealItem } from "../../components/ui/Reveal";
  */
 export function CareerLedger({ detail = false }: { detail?: boolean }) {
   return (
-    <RevealGroup as="ol" className="m-0 list-none border-t-2 border-ink p-0">
+    <RevealGroup as="ol" className="m-0 list-none rule-strong p-0">
         {career.map((r, i) => (
           <RevealItem
             as="li"
             key={r.org}
-            className="grid gap-x-8 gap-y-1 border-b border-hairline py-5 md:grid-cols-[96px_minmax(0,220px)_minmax(0,1fr)] md:items-baseline"
+            className="grid gap-x-8 gap-y-1.5 border-b border-hairline py-5 md:grid-cols-[96px_minmax(0,220px)_minmax(0,1fr)] md:items-baseline"
           >
               <span className="font-mono text-caption text-ink-soft tabular-nums">
                 {r.years}

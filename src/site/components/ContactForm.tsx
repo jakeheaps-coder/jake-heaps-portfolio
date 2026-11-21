@@ -1,12 +1,12 @@
 import { useId, useState, type FormEvent } from "react";
 import { logConsultRequest, validateEmailShape } from "../../lib/access";
 import { CONTACT } from "../../data/contact";
+import { PRIMARY_CLASS } from "../../components/ui/buttonStyles";
 
 const FIELD =
-  "mt-2 w-full rounded-md bg-paper px-4 py-3 font-body text-body text-ink ring-hairline outline-none placeholder:text-ink-soft focus-visible:[box-shadow:inset_0_0_0_1.5px_var(--color-cedar)]";
+  "mt-2 block min-h-12 w-full rounded-[3px] bg-paper px-4 py-3 font-body text-body text-ink ring-hairline outline-none placeholder:text-ink-soft focus-visible:[box-shadow:inset_0_0_0_1.5px_var(--color-cedar)]";
 
-const SUBMIT =
-  "inline-flex items-center justify-center gap-2 rounded-md bg-cedar px-6 py-3 font-medium text-paper transition-[transform,box-shadow] duration-150 ease-(--ease-out-cubic) [box-shadow:inset_0_1px_0_rgb(255_255_255/0.12),inset_0_-1px_0_rgb(0_0_0/0.18),0_0_0_1px_rgb(45_74_58/0.9),0_2px_6px_rgb(26_23_20/0.18)] hover:[box-shadow:inset_0_1px_0_rgb(255_255_255/0.16),inset_0_-1px_0_rgb(0_0_0/0.18),0_0_0_1px_rgb(45_74_58/0.9),0_4px_12px_rgb(26_23_20/0.22)] active:translate-y-px disabled:opacity-60";
+const SUBMIT = `${PRIMARY_CLASS} min-w-32`;
 
 /**
  * A short note form. Posts to the same Apps Script logger the brief uses
@@ -44,7 +44,7 @@ export function ContactForm({ className = "" }: { className?: string }) {
 
   if (status === "done") {
     return (
-      <div className={`rounded-md bg-paper p-6 ring-hairline md:p-8 ${className}`} role="status">
+      <div className={`rounded-[3px] bg-paper p-5 ring-hairline sm:p-6 md:p-8 ${className}`} role="status">
         <p className="font-display text-h2 text-ink">Got it. Thanks for writing.</p>
         <p className="mt-3 text-body text-ink-soft">
           I read these myself and usually answer within a few days. If it&rsquo;s
@@ -62,7 +62,7 @@ export function ContactForm({ className = "" }: { className?: string }) {
     <form
       onSubmit={submit}
       noValidate
-      className={`rounded-md bg-paper p-6 ring-hairline md:p-8 ${className}`}
+      className={`rounded-[3px] bg-paper p-5 ring-hairline sm:p-6 md:p-8 ${className}`}
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
@@ -125,7 +125,7 @@ export function ContactForm({ className = "" }: { className?: string }) {
         <button type="submit" disabled={status === "busy"} className={SUBMIT}>
           {status === "busy" ? "Sending…" : "Send"}
         </button>
-        <p role="alert" aria-live="polite" className="text-caption text-sienna">
+        <p role="alert" aria-live="polite" className="text-body text-sienna sm:text-caption">
           {error}
         </p>
       </div>
