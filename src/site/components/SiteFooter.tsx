@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { BrandLockup } from "../../components/ui/Brandmark";
 import { CONTACT } from "../../data/contact";
+import signature from "../../../brand-kit/logo/signature.svg";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -9,15 +10,15 @@ const LINKS = [
   { to: "/approach", label: "Approach" },
 ];
 
-/* Footer links are full 44px hit areas; on phones they stack as a short
-   ledger, from sm they run in a line. */
+/* Footer links are full 44px hit areas; on phones they sit in a two-column
+   grid, from sm they run in a line. */
 const LINK =
   "tap-inline text-caption text-ink-soft no-underline transition-colors hover:text-ink";
 
 /**
  * The colophon. Closes every page the way it opens: a 2px ink rule, the
- * nameplate, then the page list and the ways to reach me. The last line says
- * what the site is set in, which is the kind of thing a kept notebook notes.
+ * nameplate, the page list, then a signed line with the one way to reach me
+ * (LinkedIn, per CONTRACT.md rule 12) and what the site is set in.
  */
 export default function SiteFooter() {
   const year = new Date().getFullYear();
@@ -45,21 +46,32 @@ export default function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-6 flex flex-col border-t border-hairline pt-4 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8">
-          <a href={`mailto:${CONTACT.email}`} className={`${LINK} break-all`}>
-            {CONTACT.email}
-          </a>
-          <a
-            href={CONTACT.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={LINK}
-          >
-            LinkedIn
-          </a>
-          <span className="tap-inline text-caption text-ink-soft">
-            {CONTACT.location}
-          </span>
+        <div className="mt-6 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 border-t border-hairline pt-5 sm:mt-8">
+          <img
+            src={signature}
+            alt="Jake Heaps signature"
+            width={112}
+            height={80}
+            className="h-auto w-24 opacity-90 sm:w-28"
+            decoding="async"
+          />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-x-8">
+            <a
+              href={CONTACT.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${LINK} gap-1 font-medium text-cedar hover:text-cedar`}
+            >
+              <span className="underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar">
+                LinkedIn
+              </span>
+              <span aria-hidden>&#8599;</span>
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            <span className="tap-inline text-caption text-ink-soft">
+              {CONTACT.location}
+            </span>
+          </div>
         </div>
 
         <p className="mt-4 flex flex-col gap-1 font-mono text-eyebrow text-ink-soft sm:flex-row sm:justify-between sm:gap-6">

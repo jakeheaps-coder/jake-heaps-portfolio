@@ -5,9 +5,16 @@ ink, a serif voice, and a mono ledger for every number. The register is quiet
 confidence and a real person: photo, signature, career ledger. The data does
 the talking.
 
+Jake's official kit lives in `brand-kit/` (tokens, marks, signature, type
+scale, `logo/LOGO-USAGE.md`); this file is how the site applies it. The
+direction is "the old jakeheaps system, modernized": same palette and type,
+fresher rhythm, spacing, nav and components.
+
 The signature is the **masthead**: the JH monogram set between two sienna
-rules. It is the nav mark, the favicon, the closing mark of every page's
-running head, and the footer nameplate. Rules are the brand's material: a 2px
+rules. It is the nav and footer nameplate; the favicon is the kit's cedar
+tile version. The kit sets a ~72px minimum for the rule-and-initials mark, so
+it is never used as a small ornament inside pages. The hand signature
+(`brand-kit/logo/signature.svg`) signs the footer. Rules are the brand's material: a 2px
 ink rule opens every page and ledger, hairlines divide what's inside.
 
 ## Palette
@@ -82,7 +89,7 @@ Designed at 360 and 390 first, then 768 and 1440.
   (56px on a phone, fluid to 112px). No horizontal scroll at 360.
 - **Nav.** Phones: a nameplate row (JH mark + "Jake Heaps") that scrolls
   away, then a pinned 44px section bar with Work, About, Approach and Contact
-  in four equal columns. No hamburger: four destinations fit, and a hidden
+  in four equal columns (Contact jumps to the LinkedIn contact band). No hamburger: four destinations fit, and a hidden
   menu would cost a tap on every visit. From 640px: one sticky 56px row.
   The active page gets a 2px sienna rule. "Contact" jumps to `#contact` and
   falls back to `/#contact` on a page without a contact band.
@@ -117,7 +124,7 @@ Designed at 360 and 390 first, then 768 and 1440.
 
 | Component | Notes |
 |---|---|
-| `PageHeader` | 2px ink rule, running head (kicker left, JH mark right, hairline under), `text-display` title as the one h1, optional lede and sienna stat. Optional `mark={false}` drops the JH mark. `children` is optional. |
+| `PageHeader` | 2px ink rule, running head (the kicker, hairline under), `text-display` title as the one h1, optional lede and sienna stat. Optional `mark` adds a small JH mark to the running head (off by default, see the kit's minimum size). `children` is optional. |
 | `Section` | `tone` paper / surface / night; `py-section`; scroll margin matches the sticky bar. |
 | `Button` | `variant` primary (cedar, 3px corners) or quiet (underlined cedar with an arrow); `to` for internal routes. Class strings live in `buttonStyles.ts` for native `<button>`s. |
 | `MarginGrid`, `MarginNote` | Scholar's margin; `MarginNote` takes an optional `className`. |
@@ -148,14 +155,14 @@ turns to a minus when open.
 
 Site-level pieces live in `src/site/components/` (`SiteNav`, `SiteFooter`,
 `CareerLedger`, `LogoRow`, `ContactBand`, `ContactForm`). The footer is a
-colophon: rule, nameplate, page list, contact line, and the typefaces the
-site is set in.
+colophon: rule, nameplate, page list, the hand signature, LinkedIn (the only
+public contact, CONTRACT.md rule 12) and the typefaces the site is set in.
+`ContactForm` stays for `/brief` only.
 
-## Favicon
+## Favicon and app icon
 
-`public/favicon.svg` is the masthead mark drawn as outlines (Newsreader at
-weight 560, optical size 10), ink on paper between sienna rules, so it
-renders the same with no fonts available.
+From the kit: `public/favicon.svg` (JH reversed in a cedar tile) and
+`public/apple-touch-icon.png` (180px). `index.html` links both.
 
 ## Confidentiality
 

@@ -76,3 +76,50 @@ sessions' branches (not pushed yet when I checked).
   page's band. Fine, or should the 404 get one?
 - PRODUCT.md still says Jake "isn't taking consulting work" (contract rule 2);
   coordinator owns that file.
+
+## 2026-11-21, second pass after the coordinator update (kit + LinkedIn only)
+
+**What I did**
+- Merged `origin/claude/charming-cori-j61y86` (contract items 4, 11-15, brand-kit/).
+- Favicon: replaced my outlined version with the kit's `favicon.svg` (cedar
+  tile). Added `public/apple-touch-icon.png` (kit's 180px icon).
+- `PageHeader`: the small JH mark in the running head is now off by default
+  (`mark` prop, default false). LOGO-USAGE.md sets a ~72px minimum for the
+  rule-and-initials mark, and the running-head mark was 11px.
+- `SiteFooter`: email removed. LinkedIn is the one contact link (cedar,
+  underlined, with an arrow and "(opens in a new tab)" for screen readers).
+  The kit's hand signature signs the footer (imported from
+  `brand-kit/logo/signature.svg`, so it's one file, not a copy).
+- `SiteNav`: Contact still goes to `#contact`. I kept it internal so all four
+  bar items behave the same and the band can say a line before linking out.
+  If the 404 page has no band it falls back to `/#contact`.
+- DESIGN.md updated for the kit, footer, favicon and PageHeader change.
+
+**For the coordinator: add to `index.html` `<head>`** (the existing
+`<link rel="icon" type="image/svg+xml" href="/favicon.svg" />` stays):
+```html
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#f7f4ee" />
+```
+
+**For pages-copy:** `ContactBand` must keep `id="contact"` (via
+`<Section id="contact">`), since the nav's Contact item and its 404 fallback
+jump there.
+
+**Notes**
+- `brand-kit/logo/social-icons.svg` has no LinkedIn glyph (bluesky,
+  discord, documentation, github, a generic purple "social" and x; it looks
+  like the Vite starter sprite). I didn't draw one; LinkedIn is a text link.
+- The kit README says em dashes are welcome; CONTRACT.md rule 6 bans them.
+  I followed the contract.
+- The nav and footer nameplate mark is ~20px wide, under the kit's ~72px
+  minimum. That's how the old site used it, and the lockup with the wordmark
+  reads clearly at that size. Flagging it in case Jake wants the cedar tile
+  there instead.
+
+**Verified**: build passes; lint only the known Nav.tsx error; confidentiality
+passes; Playwright 360/390/768/1440 on all five routes: no horizontal scroll,
+no overflow, footer signature renders.
+
+**Not verified**: real devices; the pages from the other sessions' branches
+(screenshots are of the pages as they are on this branch after the merge).

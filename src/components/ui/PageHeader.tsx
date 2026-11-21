@@ -6,15 +6,15 @@ import { Reveal } from "./Reveal";
  * The page opener, set like the first page of a chapter in a kept notebook.
  *
  *   ─────────────────────────────────────── 2px ink rule
- *   About                               JH   running head: kicker + masthead mark
+ *   About                                    running head: the page's one kicker
  *   ─────────────────────────────────────── hairline
  *   Page title at display scale (the single <h1>)
  *   One lede that owns its whitespace.                       sienna stat (optional)
  *
- * The running head is the site's recurring signature: the same JH masthead
- * mark that sits in the nav closes the head of every page, and the double
- * rule echoes the two rules inside the mark. The kicker is the page's one
- * small mono label (CONTRACT.md rule 7); `n` adds a sienna folio number.
+ * The double rule (2px ink, hairline) echoes the two rules inside the JH
+ * masthead mark, so every page opens the way the nameplate does. The kicker
+ * is the page's one small mono label (CONTRACT.md rule 7); `n` adds a sienna
+ * folio number.
  */
 export function PageHeader({
   n,
@@ -24,7 +24,7 @@ export function PageHeader({
   statLabel,
   level = "h1",
   id,
-  mark = true,
+  mark = false,
   children,
 }: {
   n?: string;
@@ -34,12 +34,15 @@ export function PageHeader({
   statLabel?: string;
   level?: "h1" | "h2";
   id?: string;
-  /** Show the JH mark at the right end of the running head. Default true. */
+  /** Show the JH mark at the right end of the running head. Off by default:
+   *  the kit sets a ~72px minimum for the masthead mark, so it belongs in the
+   *  nav and footer at full size, not as a small ornament. */
   mark?: boolean;
   children?: ReactNode;
 }) {
   const Heading = level;
   const runningHead = Boolean(kicker || n || mark);
+
   return (
     <header id={id} className="scroll-mt-16">
       <Reveal>
