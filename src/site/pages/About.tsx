@@ -50,16 +50,13 @@ export default function About() {
               practice at losing and trying again.
             </p>
             <p>
-              I played baseball, basketball, soccer, and football through high
-              school. Somewhere in there a phrase got stuck in my head and it
-              never left: love the challenge, love your teammates, love the
-              process.
+              I played every sport I could growing up. In high school it was
+              football, and that&rsquo;s where a phrase got stuck in my head
+              that never left: love the challenge, love your teammates, love
+              the process.
             </p>
-            {/* TODO(jake): hometown, and which sport or position you played longest, if you want them here. */}
             <p>
-              I&rsquo;m also an Eagle Scout.
-              {/* TODO(jake): one line on your Eagle project would help. */}{" "}
-              Between scouting and sports I spent most of my childhood on
+              I&rsquo;m also an Eagle Scout. Between scouting and sports I spent most of my childhood on
               teams, and I still do my best work with other people around me.
             </p>
           </div>
@@ -78,9 +75,9 @@ export default function About() {
         <MarginGrid className="mt-8">
           <div className="space-y-5 text-body text-ink">
             <p>
-              After high school I spent two years, from 2020 to 2022, in
-              full-time volunteer service in San Bernardino, California. I
-              learned Spanish there.
+              After high school I served a two-year mission for The Church of
+              Jesus Christ of Latter-day Saints in San Bernardino, California,
+              from 2020 to 2022. I learned Spanish there.
             </p>
             <p>
               I also learned how people change what they do. Handing someone a
@@ -137,19 +134,15 @@ export default function About() {
               comes from that year.
             </p>
             <p>
-              In 2026 I also started Naitive, a small consulting practice. The
-              biggest project there was an outbound system I built for a client
-              that runs on its own.
-            </p>
-            <p>
-              Now I&rsquo;m {NOW.title} at {NOW.company}. The company
-              hasn&rsquo;t launched publicly yet, so that&rsquo;s all I&rsquo;ll
-              say about it for now.
+              Now I&rsquo;m {NOW.title} at{" "}
+              <a href={NOW.href} target="_blank" rel="noopener noreferrer" className="text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar">
+                {NOW.company}
+              </a>
+              .
             </p>
           </div>
           <MarginNote label="School">
             B.S. in Marketing at Utah Valley University, still in progress.
-            {/* TODO(jake): expected graduation date. */}
           </MarginNote>
         </MarginGrid>
 
@@ -164,20 +157,17 @@ export default function About() {
           <Reveal>
             <h2 className={H2}>Outside of work.</h2>
             <div className="mt-8 space-y-5 text-body text-ink">
-              {/* TODO(jake): confirm */}
               <p>
                 Family comes first. Ella and I got married in August 2026. We
                 met through my mom, who works with her.
               </p>
               <p>
-                Otherwise I&rsquo;m playing or watching sports, at the gym, or
-                building something late at night because I can&rsquo;t leave an
-                idea alone.
+                I follow college football and the NFL. The rest of my free time
+                goes to the gym and to building things late at night, because I
+                can&rsquo;t leave an idea alone.
               </p>
-              {/* TODO(jake): teams you follow, or a side project you'd want named here. */}
               <p>
-                If you want to talk about AI or baseball, I&rsquo;m easy to
-                find.
+                If you want to talk about AI or football, find me on LinkedIn.
               </p>
             </div>
             <img src={signature} alt="Jake Heaps signature" className="mt-10 h-16 w-auto md:h-20" />
@@ -186,7 +176,7 @@ export default function About() {
             <dl className="m-0 border-t-2 border-ink">
               {[
                 ["Lives in", CONTACT.location],
-                ["Works at", `${NOW.company}, ${NOW.title}`],
+                ["Works at", `${NOW.title} at ${NOW.company}`],
                 ["Studying", "B.S. Marketing, Utah Valley University"],
                 ["Speaks", "English, Spanish"],
                 ["Also", "Eagle Scout"],

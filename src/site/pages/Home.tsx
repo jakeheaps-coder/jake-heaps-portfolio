@@ -10,6 +10,7 @@ import { CareerLedger } from "../components/CareerLedger";
 import { ContactBand } from "../components/ContactBand";
 import { LogoRow } from "../components/LogoRow";
 import { NOW, CONTACT } from "../../data/contact";
+import { firstYearTotal } from "../../data/ledger";
 import headshot from "../../assets/jake-headshot.jpeg";
 
 /** The hero headline, one entry per masked line. Short enough to hold at 360px. */
@@ -19,6 +20,14 @@ const LINES: React.ReactNode[] = [
   <>
     <em className="text-sienna">use</em> every day.
   </>,
+];
+
+/** The four numbers Jake wants up front. The dollar figure is computed from the ledger. */
+const DOMO_YEAR: [string, string][] = [
+  ["93%", "of the team building with AI on their own"],
+  ["26", "AI systems in production"],
+  [`$${(firstYearTotal / 1_000_000).toFixed(1)}M`, "in first-year value"],
+  ["1.65x", "team productivity"],
 ];
 
 function Hero() {
@@ -53,7 +62,7 @@ function Hero() {
           </h1>
 
           <motion.p className="mt-8 max-w-[44ch] text-lede text-ink-soft" {...rise(0.5)}>
-            I run internal AI projects at{" "}
+            I&rsquo;m {NOW.title} at{" "}
             <a
               href={NOW.href}
               target="_blank"
@@ -89,9 +98,6 @@ function Hero() {
             fetchPriority="high"
             className="plate aspect-[4/5] w-full object-cover object-[50%_20%]"
           />
-          <figcaption className="mt-3 font-mono text-eyebrow text-ink-soft">
-            {NOW.title}&ensp;·&ensp;{NOW.company}
-          </figcaption>
         </motion.figure>
       </div>
     </section>
@@ -125,16 +131,26 @@ export default function Home() {
       </Section>
 
       <Section tone="paper">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:items-end lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:items-start lg:gap-16">
           <Reveal>
             <h2 className="max-w-[16ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
-              My year at Domo, in dollars.
+              What my year at Domo added up to.
             </h2>
             <p className="measure mt-5 text-lede text-ink-soft">
-              It came to $2.3M in value in the first year. Most of that was
-              software we canceled and tools we built ourselves instead of
-              buying. I kept a line for every dollar.
+              Most of the value came from software we canceled and tools we
+              built ourselves instead of buying. I kept a line for every dollar.
             </p>
+            <dl className="m-0 mt-8 border-t-2 border-ink">
+              {DOMO_YEAR.map(([fig, label]) => (
+                <div
+                  key={label}
+                  className="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-4 border-b border-hairline py-4 sm:grid-cols-[8rem_minmax(0,1fr)]"
+                >
+                  <dt className="numeral text-[2rem] leading-none text-ink sm:text-[2.5rem]">{fig}</dt>
+                  <dd className="m-0 text-body text-ink-soft">{label}</dd>
+                </div>
+              ))}
+            </dl>
             <div className="mt-6">
               <Button variant="quiet" to="/work#ledger">
                 See the full list
@@ -162,7 +178,7 @@ export default function Home() {
         <Reveal>
           <div className="grid gap-px border-y border-hairline sm:grid-cols-3">
             {[
-              { to: "/work", label: "Work", blurb: "What I built at Domo and for clients, and what each one was worth." },
+              { to: "/work", label: "Work", blurb: "What I built at Domo and what each piece was worth." },
               { to: "/about", label: "About", blurb: "Two older brothers, a lot of sports, and two years in San Bernardino." },
               { to: "/approach", label: "Approach", blurb: "How I pick what to build and how I get people to use it." },
             ].map((r) => (

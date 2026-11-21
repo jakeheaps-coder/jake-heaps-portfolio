@@ -5,7 +5,6 @@ import { MarginGrid, MarginNote } from "../../components/ui/Chapter";
 import { Reveal, RevealGroup, RevealItem } from "../../components/ui/Reveal";
 import { ContactBand } from "../components/ContactBand";
 import { citations } from "../../data/citations";
-import { NOW } from "../../data/contact";
 
 const H2 = "max-w-[22ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]";
 const CITE =
@@ -40,10 +39,6 @@ const RULES = [
 
 const FAQ = [
   {
-    q: `What do you do at ${NOW.company}?`,
-    a: `I'm ${NOW.title}. The company hasn't launched publicly yet, so I'll leave it there for now.`,
-  },
-  {
     q: "What do you build with?",
     a: "Mostly Claude and Claude Code. I use Gemini on Google Cloud and OpenAI models when they fit better, with Python, TypeScript, and SQL around all of it. I'd rather use what a company already pays for than add another tool.",
   },
@@ -57,7 +52,7 @@ const FAQ = [
   },
   {
     q: "Will you speak to my team or at my event?",
-    a: "Sometimes, if the timing works. Email me with who the audience is and the date.",
+    a: "Sometimes, if the timing works. Message me on LinkedIn with who the audience is and the date.",
   },
 ];
 
@@ -123,7 +118,7 @@ export default function Approach() {
               Small systems, mostly. Each one takes a repetitive piece of
               somebody&rsquo;s job off their plate. At Domo one of them scanned
               17 news feeds every day for media relations. Another took a video
-              from 16 hours of work down to an hour and fifteen minutes.
+              from 8 to 16 hours of work down to an hour and fifteen minutes.
             </p>
             <p>
               They hook into the company&rsquo;s own data and the tools people

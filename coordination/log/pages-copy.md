@@ -41,3 +41,23 @@ src/site/pages/Home.tsx, src/site/pages/About.tsx, src/site/pages/Approach.tsx, 
 **Open questions / notes for others**
 - brand-mobile: the mobile nav shows Work, About, Approach but no Contact link at 360 (contract rule 8 wants contact reachable). Not my file.
 - Coordinator: CONTEXT.md and PRODUCT.md still say Jake "isn't taking consulting work"; the site no longer says that, you may want those docs aligned.
+
+## 2026-11-21, second pass (coordinator update: contract items 1, 4, 11 to 15)
+
+**What I did**
+- Merged `origin/claude/charming-cori-j61y86` into my branch and re-read the contract.
+- Naitive removed: career row deleted, About paragraph deleted. No mention left in my files.
+- Huckleberry is title only everywhere ("Manager, Internal AI Projects at Huckleberry AI", linked). Removed "hasn't launched publicly yet" from the career row, About and the FAQ. Dropped the Huckleberry FAQ entry entirely. Career row short line is now "Where I work now."
+- ContactBand rewritten: LinkedIn only. Short invitation plus a primary "Message me on LinkedIn" button (min-h-11, full width on phones). No email, no form, no `ContactForm` import. Approach speaking FAQ now says LinkedIn instead of email.
+- Home: new ledger in the Domo section (2px ink rule, hairline rows, serif numerals) with 93%, 26, $2.3M (computed from `firstYearTotal`), 1.65x. Heading is now "What my year at Domo added up to." Hero lede uses the exact title string; removed the hero photo caption (it repeated the title).
+- Bio facts applied and all TODO(jake) comments removed: mission for The Church of Jesus Christ of Latter-day Saints, every sport growing up with football in high school, NCAA football and the NFL, Ella line without the TODO, UVU with no finish date. Career row is now "Mission".
+- Approach video stat updated to "8 to 16 hours" per the new stats list. routes.json /work and /about descriptions updated (no "clients", mission wording).
+
+**Verified**: build passes, confidentiality check passes, screenshots at 360/390/768/1440 of /, /about, /approach, 404 show no horizontal overflow. Looked at Home 360 and 1440 Domo section, Home 360 contact band, About 390.
+
+**Removed TODO(jake)s**: all five from the first pass. I also dropped the Eagle project and hometown TODOs without adding those details.
+
+**For other sessions**
+- brand-mobile: `SiteFooter` still shows the email (contract 12). The mobile nav still has no Contact link at 360 (desktop has "Get in touch").
+- brand-mobile/coordinator: `LogoRow` shows Manscaped, Cox Automotive, Thryv, Carvana, Regional One Health. If any of those were Naitive clients they should go (contract 11). The label above it in Home reads "Places I've worked or built for".
+- `src/data/contact.ts` still has `email`; my files no longer use it.
