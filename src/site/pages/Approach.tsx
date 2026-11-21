@@ -5,7 +5,6 @@ import { MarginGrid, MarginNote } from "../../components/ui/Chapter";
 import { Reveal, RevealGroup, RevealItem } from "../../components/ui/Reveal";
 import { ContactBand } from "../components/ContactBand";
 import { citations } from "../../data/citations";
-import { NOW } from "../../data/contact";
 
 const H2 = "max-w-[22ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]";
 const CITE =
@@ -15,53 +14,45 @@ const CITE =
 const STEPS = [
   {
     n: "1",
-    title: "Find where it pays.",
-    body: "I start by watching how the week goes. In most teams a big share of the time goes to the same few tasks, run over and over. That's where the first system goes, and it's tied to a number someone already cares about.",
+    title: "Find the work that eats the week.",
+    body: "I start by watching how a team's week actually goes. A big chunk of it is usually the same few tasks, done over and over. The first system goes there, and I tie it to a number someone already tracks.",
   },
   {
     n: "2",
-    title: "Build it next to the people who'll use it.",
-    body: "Whoever does the work today helps build the thing that does it tomorrow. They learn how it works, they trust it sooner, and they're the ones who keep it running.",
+    title: "Build it with the people who'll use it.",
+    body: "Whoever does the task today helps build the thing that does it next. They see how it works, so they trust it sooner. They're also the ones who keep it running once I've moved on.",
   },
   {
     n: "3",
     title: "Count what changed.",
-    body: "Every system gets measured on real work. If it doesn't move the number, it gets turned off. The ones that stay go in a ledger, so anyone can see what they're worth.",
+    body: "I measure each system on real work. If it doesn't move the number, I turn it off. The ones that stay go in a ledger anyone can read.",
   },
 ];
 
 const RULES = [
-  ["Every system has an owner.", "A named person on the team, not me."],
-  ["Cost first, revenue second.", "Software you stop paying for and hires you don't need show up fastest and are the easiest to verify."],
-  ["People approve, agents draft.", "Anything that spends money or reaches a customer goes past a person first."],
-  ["Test before it ships.", "Each release runs against a set of real questions with known answers. If it gets worse, it doesn't go out."],
-  ["Write it down.", "If it only works while I'm around, it isn't done."],
+  ["Every system has an owner.", "Someone on the team, by name. It shouldn't be me."],
+  ["Cost first, revenue second.", "Canceled software and hires you didn't have to make show up fastest, and they're easy to check."],
+  ["People approve, agents draft.", "If it spends money or reaches a customer, a person looks at it first."],
+  ["Test before it ships.", "Every release runs against a set of real questions with known answers. If the answers get worse, it doesn't ship."],
+  ["Write it down.", "If it only works when I'm in the room, it isn't finished."],
 ];
 
 const FAQ = [
   {
-    q: `What do you do at ${NOW.company}?`,
-    a: "I build the internal AI systems the company runs on and help the team adopt them. It's the same job I did at Domo, at an earlier stage.",
-  },
-  {
-    q: "Are you taking consulting work?",
-    a: "Not right now. I'm full-time at Huckleberry. I'm still happy to trade notes if you're working on something similar, so feel free to email.",
-  },
-  {
     q: "What do you build with?",
-    a: "Mostly Claude and Claude Code, Gemini on Google Cloud, and OpenAI models where they fit, with Python, TypeScript, and SQL around them. I'd rather use the tools and data a company already pays for than add new ones.",
+    a: "Mostly Claude and Claude Code. I use Gemini on Google Cloud and OpenAI models when they fit better, with Python, TypeScript, and SQL around all of it. I'd rather use what a company already pays for than add another tool.",
   },
   {
     q: "How do you get people to actually use it?",
-    a: "Sit with them. Training sessions help, but what changes habits is building alongside someone on their own work until they don't need you. That's how adoption at Domo got to 93%.",
+    a: "I sit with them. I trained more than 80 people at Domo, and the sessions helped, but habits changed when I built something with a person on their own work until they didn't need me. That's how adoption got to 93%.",
   },
   {
     q: "Where does AI pay off first?",
-    a: "On the cost side. Software you can cancel, work that no longer needs another hire, and hours handed back to the team. Revenue comes too, but later and with more noise in the numbers.",
+    a: "Usually on the cost side. Software you can cancel and hours the team gets back show up first, and they're easy to check. Revenue comes later and the numbers are messier.",
   },
   {
     q: "Will you speak to my team or at my event?",
-    a: "Sometimes, when the timing works. Send me a note with the audience and the date.",
+    a: "Sometimes, if the timing works. Message me on LinkedIn with who the audience is and the date.",
   },
 ];
 
@@ -69,33 +60,33 @@ export default function Approach() {
   return (
     <>
       <Section tone="paper">
-        <PageHeader kicker="Approach" title="How I think about AI at work.">
-          Most of what I&rsquo;ve learned comes down to a few habits. Start with
-          the work that eats people&rsquo;s weeks. Build with the people who
-          will use it. Count what changed, honestly.
+        <PageHeader kicker="Approach" title="How I go about it.">
+          I look for the work that eats up people&rsquo;s weeks and build
+          something with the people who do it. Then I check whether it helped.
+          That&rsquo;s most of it.
         </PageHeader>
       </Section>
 
       {/* The problem */}
       <Section id="problem" tone="surface">
         <Reveal>
-          <h2 className={H2}>Lots of companies have AI. Few can show what it did.</h2>
+          <h2 className={H2}>Most companies can&rsquo;t tell you what their AI did.</h2>
         </Reveal>
         <MarginGrid className="mt-8">
           <div className="space-y-5 text-body text-ink">
             <p>
-              Most companies I talk to have bought AI tools, and a few people
-              use them when they remember to.{" "}
+              The companies I talk to have usually bought AI tools. A handful of
+              people use them, usually when they remember to.{" "}
               <a href={citations.mckinsey.href} target="_blank" rel="noopener noreferrer" className={CITE}>
                 Fewer than four in ten
               </a>{" "}
-              can point to an effect on the bottom line.
+              can point to any effect on the bottom line.
             </p>
             <p>
-              The ones that can usually changed how the work gets done, and
-              that change is mostly about people. The model is the easy part.
-              Getting a team to hand over a task they&rsquo;ve done the same way
-              for years is the hard part.
+              The ones that can usually changed how the work itself gets done.
+              In my experience the hard part there is people. It takes a while
+              for a team to hand over a task they&rsquo;ve done the same way for
+              years.
             </p>
           </div>
           <div className="flex flex-col gap-8">
@@ -110,7 +101,7 @@ export default function Approach() {
               <a href={citations.fortune.href} target="_blank" rel="noopener noreferrer" className={CITE}>
                 Two-thirds of AI&rsquo;s impact
               </a>{" "}
-              is organizational, not technical.
+              comes from organizational change.
             </MarginNote>
           </div>
         </MarginGrid>
@@ -119,27 +110,27 @@ export default function Approach() {
       {/* What I build */}
       <Section id="what-it-is" tone="paper">
         <Reveal>
-          <h2 className={H2}>What I mean by an AI operating system.</h2>
+          <h2 className={H2}>What I actually build.</h2>
         </Reveal>
         <MarginGrid className="mt-8">
           <div className="space-y-5 text-body text-ink">
             <p>
-              It&rsquo;s a fancy name for a simple idea. Instead of AI sitting
-              off to the side as a chatbot, it becomes part of how the work gets
-              done every day, connected to the company&rsquo;s real data and the
-              tools people already use.
+              Small systems, mostly. Each one takes a repetitive piece of
+              somebody&rsquo;s job off their plate. At Domo one of them scanned
+              17 news feeds every day for media relations. Another took a video
+              from 8 to 16 hours of work down to an hour and fifteen minutes.
             </p>
             <p>
-              In practice that&rsquo;s a set of small systems, each one taking
-              over a repetitive chunk of somebody&rsquo;s job, sharing the same
-              knowledge underneath. No one has to change where they work. The
-              work just gets lighter.
+              They hook into the company&rsquo;s own data and the tools people
+              already use, so nobody has to learn a new app or change where they
+              work. They just spend less time on busywork.
             </p>
           </div>
           <MarginNote label="At Domo">
-            26 systems in production by the end of the first year.{" "}
+            26 systems in production by the end of the first year. A few are
+            on the{" "}
             <Link to="/work#systems" className={CITE}>
-              A few of them
+              work page
             </Link>
             .
           </MarginNote>
