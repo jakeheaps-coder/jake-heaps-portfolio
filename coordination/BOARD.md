@@ -18,10 +18,8 @@ branch (listed below). The coordinator merges them.
 
 ## Waiting on the user
 
-- Domopalooza scheduler: what it did, who used it, any number.
-- Messaging Brain naming confirmed by "talk about the messaging brain"; coordinator is publishing the name.
-- Whether the screenshots should also come out of /brief.
-- Bio details (hometown, Ella line, sports, side projects, UVU finish date).
+- Confirm the mission wording (church named) once the copy is in.
+- GoDaddy nameserver switch for jakeheaps.com (zone pending in Cloudflare).
 
 ## Done and verified by the coordinator
 
