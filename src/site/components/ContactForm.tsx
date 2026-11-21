@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from "react";
 import { logConsultRequest, validateEmailShape } from "../../lib/access";
-import { CONTACT } from "../../data/contact";
+/* Used only by /brief (lazy chunk), so the address stays out of the public bundle. */
+const BRIEF_EMAIL = "jakeheaps@me.com";
 import { PRIMARY_CLASS } from "../../components/ui/buttonStyles";
 
 const FIELD =
@@ -49,8 +50,8 @@ export function ContactForm({ className = "" }: { className?: string }) {
         <p className="mt-3 text-body text-ink-soft">
           I read these myself and usually answer within a few days. If it&rsquo;s
           time-sensitive, email me at{" "}
-          <a href={`mailto:${CONTACT.email}`} className="text-cedar underline">
-            {CONTACT.email}
+          <a href={`mailto:${BRIEF_EMAIL}`} className="text-cedar underline">
+            {BRIEF_EMAIL}
           </a>
           .
         </p>

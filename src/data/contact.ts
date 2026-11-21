@@ -1,6 +1,5 @@
 /** Public contact details. One place, so the footer, contact band, and About agree. */
 export const CONTACT = {
-  email: "jakeheaps@me.com",
   linkedin: "https://www.linkedin.com/in/jakeheaps/",
   location: "American Fork, Utah",
 } as const;

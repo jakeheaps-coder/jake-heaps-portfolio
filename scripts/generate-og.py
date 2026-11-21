@@ -57,14 +57,12 @@ d.text((M + mw + 18, M + 6), "JAKE HEAPS", font=mono, fill=INK_SOFT)
 head = newsreader(68)
 head_i = newsreader(68, italic=True)
 y = 200
-d.text((M, y), "I build AI systems,", font=head, fill=INK)
-d.text((M, y + 82), "then teach people", font=head, fill=INK)
+d.text((M, y), "I build the AI", font=head, fill=INK)
+d.text((M, y + 82), "my coworkers", font=head, fill=INK)
 x = M
-d.text((x, y + 164), "to ", font=head, fill=INK)
-x += d.textlength("to ", font=head)
-d.text((x, y + 164), "run", font=head_i, fill=SIENNA)
-x += d.textlength("run", font=head_i)
-d.text((x, y + 164), " them.", font=head, fill=INK)
+d.text((x, y + 164), "use", font=head_i, fill=SIENNA)
+x += d.textlength("use", font=head_i)
+d.text((x, y + 164), " every day.", font=head, fill=INK)
 
 # Footer line
 d.line([(M, H - M - 40), (text_right, H - M - 40)], fill=HAIRLINE, width=2)

@@ -146,7 +146,7 @@ export default function Home() {
                   key={label}
                   className="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-4 border-b border-hairline py-4 sm:grid-cols-[8rem_minmax(0,1fr)]"
                 >
-                  <dt className="numeral text-[2rem] leading-none text-ink sm:text-[2.5rem]">{fig}</dt>
+                  <dt className="numeral text-[2rem] leading-none text-sienna sm:text-[2.5rem]">{fig}</dt>
                   <dd className="m-0 text-body text-ink-soft">{label}</dd>
                 </div>
               ))}

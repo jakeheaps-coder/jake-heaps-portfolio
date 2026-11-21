@@ -156,8 +156,8 @@ export default function Work() {
         <Reveal>
           <h2 className={H2}>Some of what I built.</h2>
           <p className="measure mt-5 text-lede text-ink-soft">
-            These are the ones I&rsquo;d show you first. I built all but the
-            last one at Domo. The last one is my own.
+            These are the ones I&rsquo;d show you first, all from my year at
+            Domo.
           </p>
         </Reveal>
 

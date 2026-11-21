@@ -15,40 +15,40 @@ const STEPS = [
   {
     n: "1",
     title: "Find the work that eats the week.",
-    body: "I start by watching how a team's week actually goes. A big chunk of it is usually the same few tasks, done over and over. The first system goes there, and I tie it to a number someone already tracks.",
+    body: "I start by watching how a team’s week actually goes. A big chunk of it is usually the same few tasks, done over and over. The first system goes there, and I tie it to a number someone already tracks.",
   },
   {
     n: "2",
-    title: "Build it with the people who'll use it.",
-    body: "Whoever does the task today helps build the thing that does it next. They see how it works, so they trust it sooner. They're also the ones who keep it running once I've moved on.",
+    title: "Build it with the people who’ll use it.",
+    body: "Whoever does the task today helps build the thing that does it next. They see how it works, so they trust it sooner. They’re also the ones who keep it running once I’ve moved on.",
   },
   {
     n: "3",
     title: "Count what changed.",
-    body: "I measure each system on real work. If it doesn't move the number, I turn it off. The ones that stay go in a ledger anyone can read.",
+    body: "I measure each system on real work. If it doesn’t move the number, I turn it off. The ones that stay go in a ledger anyone can read.",
   },
 ];
 
 const RULES = [
-  ["Every system has an owner.", "Someone on the team, by name. It shouldn't be me."],
-  ["Cost first, revenue second.", "Canceled software and hires you didn't have to make show up fastest, and they're easy to check."],
+  ["Every system has an owner.", "Someone on the team, by name. It shouldn’t be me."],
+  ["Cost first, revenue second.", "Canceled software and hires you didn’t have to make show up fastest, and they’re easy to check."],
   ["People approve, agents draft.", "If it spends money or reaches a customer, a person looks at it first."],
-  ["Test before it ships.", "Every release runs against a set of real questions with known answers. If the answers get worse, it doesn't ship."],
-  ["Write it down.", "If it only works when I'm in the room, it isn't finished."],
+  ["Test before it ships.", "Every release runs against a set of real questions with known answers. If the answers get worse, it doesn’t ship."],
+  ["Write it down.", "If it only works when I’m in the room, it isn’t finished."],
 ];
 
 const FAQ = [
   {
     q: "What do you build with?",
-    a: "Mostly Claude and Claude Code. I use Gemini on Google Cloud and OpenAI models when they fit better, with Python, TypeScript, and SQL around all of it. I'd rather use what a company already pays for than add another tool.",
+    a: "Mostly Claude and Claude Code. I use Gemini on Google Cloud and OpenAI models when they fit better, with Python, TypeScript, and SQL around all of it. I’d rather use what a company already pays for than add another tool.",
   },
   {
     q: "How do you get people to actually use it?",
-    a: "I sit with them. I trained more than 80 people at Domo, and the sessions helped, but habits changed when I built something with a person on their own work until they didn't need me. That's how adoption got to 93%.",
+    a: "I sit with them. I trained more than 80 people at Domo, and the sessions helped, but habits changed when I built something with a person on their own work until they didn’t need me. That’s how adoption got to 93%.",
   },
   {
     q: "Where does AI pay off first?",
-    a: "Usually on the cost side. Software you can cancel and hours the team gets back show up first, and they're easy to check. Revenue comes later and the numbers are messier.",
+    a: "Usually on the cost side. Software you can cancel and hours the team gets back show up first, and they’re easy to check. Revenue comes later and the numbers are messier.",
   },
   {
     q: "Will you speak to my team or at my event?",
@@ -181,8 +181,8 @@ export default function Approach() {
         </Reveal>
         <div className="mt-10 border-t border-hairline">
           {FAQ.map((item) => (
-            <details key={item.q} className="group border-b border-hairline py-5">
-              <summary className="flex cursor-pointer items-baseline justify-between gap-4 font-display text-h3 text-ink marker:content-none">
+            <details key={item.q} className="group border-b border-hairline">
+              <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 font-display text-h3 text-ink marker:content-none">
                 {item.q}
                 <span aria-hidden className="font-mono text-body text-sienna transition-transform group-open:rotate-45">
                   +

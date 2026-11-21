@@ -52,10 +52,10 @@ export default function SiteNav() {
         </Link>
       </div>
 
-      <header data-site-nav="" className={BAR}>
+      <header data-site-nav="" className={`${BAR} sm:px-6`}>
         <nav
           aria-label="Primary"
-          className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-3 sm:px-6"
+          className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-3 sm:px-0"
         >
           <Link
             to="/"
