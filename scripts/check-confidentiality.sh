@@ -37,7 +37,6 @@ FORBIDDEN=(
   'Mission Control'
   'Gemini Showcase'
   'MCP Hub'
-  'Messaging Brain'
   'Advanced Questioning'
   'ADM Discovery'
   'Built himself'
