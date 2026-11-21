@@ -18,12 +18,11 @@ branch (listed below). The coordinator merges them.
 
 ## Waiting on the user
 
-- Logos (Manscaped, Cox, Thryv, Carvana, Regional One Health): confirm none were Naitive-only clients.
-- Remove jakeheaps.com from the old Vercel project (after a day, once DNS caches expire).
-- Logos (Manscaped, Cox, Thryv, Carvana, Regional One Health): confirm none were Naitive-only clients.
+- Optional: disconnect the GitHub repo from the old Vercel project to stop duplicate builds and PR comments.
 
 ## Done and verified by the coordinator
 
+- Jake confirmed: no logos were Naitive clients (kept); /uvu unchanged; sessions not archived (2026-11-21).
 - 2026-11-21: PR #1 merged; production deployed by Workers Builds; jakeheaps.com + www attached as Workers custom domains; verified HTTPS via Cloudflare (server: cloudflare, cf-ray) and public DNS → Cloudflare IPs.
 - Blind review: pass 1 4.0 Ready, pass 2 4.4 Ready (reviews/site-pass-1.md, site-pass-2.md).
 - Integration merged and checked at 360/390/1440; build, confidentiality pass.
