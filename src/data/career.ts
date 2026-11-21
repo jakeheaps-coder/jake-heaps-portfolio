@@ -18,7 +18,7 @@ export const career: CareerRow[] = [
     years: "2026–",
     org: "Huckleberry AI",
     role: "Manager, Internal AI Projects",
-    short: "Where I'm leading AI implementation now.",
+    short: "Where I'm leading AI strategy, education, and implementation now.",
     href: "https://huckleberry.ai",
   },
   {
