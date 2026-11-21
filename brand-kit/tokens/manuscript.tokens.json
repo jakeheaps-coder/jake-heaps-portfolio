@@ -1,0 +1,56 @@
+{
+  "$name": "Manuscript",
+  "$description": "Jake Heaps personal brand (jakeheaps.com). Editorial: warm paper, ink, serif display, a mono ledger carrying every number. Canonical token set.",
+  "color": {
+    "manuscript": {
+      "paper":    { "value": "#F7F4EE", "use": "canvas" },
+      "surface":  { "value": "#EFEAE0", "use": "stat band, panel fills" },
+      "ink":      { "value": "#1A1714", "use": "text" },
+      "ink-soft": { "value": "#5F594F", "use": "secondary text" },
+      "hairline": { "value": "#E2DCCF", "use": "rules" },
+      "cedar":    { "value": "#2D4A3A", "use": "links, CTA, active states" },
+      "sienna":   { "value": "#8A4226", "use": "display numerals, accents in rules" }
+    },
+    "nightfall": {
+      "$use": "PDF cover/dividers + the single dark site interlude only — nowhere else",
+      "night":          { "value": "#131210" },
+      "night-surface":  { "value": "#1C1A17" },
+      "night-ink":      { "value": "#ECE7DD" },
+      "night-soft":     { "value": "#A39B8B" },
+      "night-hairline": { "value": "#2A2722" },
+      "amber":          { "value": "#E09B62" }
+    }
+  },
+  "font": {
+    "display": { "family": "Newsreader", "stack": "\"Newsreader\", \"Iowan Old Style\", Georgia, serif", "weights": [400, 500], "styles": ["normal", "italic"], "role": "display, serif numerals; opsz auto" },
+    "body":    { "family": "General Sans", "stack": "\"General Sans\", \"Avenir Next\", system-ui, sans-serif", "weights": [400, 500, 600], "styles": ["normal", "italic"], "role": "body / UI" },
+    "mono":    { "family": "IBM Plex Mono", "stack": "\"IBM Plex Mono\", ui-monospace, \"SF Mono\", monospace", "weights": [400, 500], "role": "eyebrows, labels, every numeric annotation" }
+  },
+  "typeScale": {
+    "eyebrow": { "size": "0.75rem",   "px": 12, "lineHeight": 1.4,  "note": "mono caps only, tracked 0.08em" },
+    "caption": { "size": "0.875rem",  "px": 14, "lineHeight": 1.6 },
+    "body":    { "size": "1.0625rem", "px": 17, "lineHeight": 1.65, "note": "base" },
+    "h3":      { "size": "1.1875rem", "px": 19, "lineHeight": 1.35 },
+    "lede":    { "size": "1.3125rem", "px": 21, "lineHeight": 1.55 },
+    "h2":      { "size": "1.75rem",   "px": 28, "lineHeight": 1.2 },
+    "h1":      { "size": "2.5rem",    "px": 40, "lineHeight": 1.1 },
+    "hero":    { "size": "4rem",      "px": 64, "lineHeight": 1.05, "note": "approximate; hero display" }
+  },
+  "shadow": {
+    "hairline": "inset 0 1px 0 rgb(255 255 255 / 0.85), 0 0 0 1px rgb(26 23 20 / 0.06), 0 1px 2px rgb(26 23 20 / 0.04)",
+    "low":      "0 1px 2px rgb(26 23 20 / 0.05), 0 2px 4px rgb(26 23 20 / 0.04)",
+    "medium":   "0 1px 2px rgb(26 23 20 / 0.05), 0 2px 4px rgb(26 23 20 / 0.05), 0 4px 8px rgb(26 23 20 / 0.05), 0 8px 16px rgb(26 23 20 / 0.04)",
+    "high":     "0 1px 2px rgb(26 23 20 / 0.06), 0 2px 4px rgb(26 23 20 / 0.05), 0 4px 8px rgb(26 23 20 / 0.05), 0 8px 16px rgb(26 23 20 / 0.05), 0 16px 32px rgb(26 23 20 / 0.06), 0 32px 64px rgb(26 23 20 / 0.05)",
+    "$note": "Hue-matched to warm ink (26 23 20), never pure black."
+  },
+  "easing": {
+    "out-expo":    "cubic-bezier(0.16, 1, 0.3, 1)",
+    "out-cubic":   "cubic-bezier(0.33, 1, 0.68, 1)",
+    "in-out-circ": "cubic-bezier(0.85, 0, 0.15, 1)"
+  },
+  "layout": {
+    "containerMax": "1100px",
+    "measure": "58ch",
+    "measureNarrow": "45ch"
+  }
+}
