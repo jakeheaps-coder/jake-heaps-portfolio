@@ -18,14 +18,14 @@ export const career: CareerRow[] = [
     years: "2026–",
     org: "Huckleberry AI",
     role: "Manager, Internal AI Projects",
-    short: "Where I work now.",
+    short: "Where I'm leading AI implementation now.",
     href: "https://huckleberry.ai",
   },
   {
     years: "2025–26",
     org: "Domo",
     role: "AI Marketing Operations Manager, then Manager, Internal AI Projects",
-    short: "A year with the marketing team, then six months across the whole company. 26 AI systems in production, and 93% of marketing building on their own.",
+    short: "A year implementing AI with the marketing team, then six months across the whole company. 26 AI systems in production, and 93% of marketing building on their own.",
   },
   {
     years: "2024–25",
