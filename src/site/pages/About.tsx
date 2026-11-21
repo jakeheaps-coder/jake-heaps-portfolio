@@ -18,8 +18,8 @@ export default function About() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,300px)] lg:items-end lg:gap-16">
           <PageHeader kicker="About" title="Hi, I’m Jake.">
             I grew up playing every sport I could and got into AI through
-            marketing. Now building with it is my job. Here&rsquo;s the longer
-            version.
+            marketing. Now building with it is my job, and in August I married
+            my wife, Ella. Here&rsquo;s the longer version.
           </PageHeader>
           <Reveal as="figure" className="m-0 w-full max-w-[200px] lg:max-w-none">
             <img

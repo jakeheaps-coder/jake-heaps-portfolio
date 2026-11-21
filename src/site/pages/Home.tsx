@@ -179,7 +179,7 @@ export default function Home() {
           <div className="grid gap-px border-y border-hairline sm:grid-cols-3">
             {[
               { to: "/work", label: "Work", blurb: "What I built at Domo and what each piece was worth." },
-              { to: "/about", label: "About", blurb: "Two older brothers, a lot of sports, and two years in San Bernardino." },
+              { to: "/about", label: "About", blurb: "Two older brothers, a lot of sports, two years in San Bernardino, and my wife, Ella." },
               { to: "/approach", label: "Approach", blurb: "How I pick what to build and how I get people to use it." },
             ].map((r) => (
               <Link
