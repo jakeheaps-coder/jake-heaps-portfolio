@@ -8,7 +8,7 @@ Overall: **4.0 · Ready.** Brand 4, Voice 4, Story and stats 4, Work page 4, Mob
 |---|---|---|---|---|
 | 1 | should fix | Straight apostrophes on Approach | coordinator (pages-copy stopped) | Fixed: converted to ’ |
 | 2 | should fix | Work intro "the last one is my own" points 15 rows down | coordinator (work-page stopped) | Fixed: line now says all are from Domo |
-| 3 | should fix | 1.65x arithmetic not shown | — | **Declined for now.** The methodology note has an open 10-vs-7 FTE question; showing arithmetic that gives 1.625 would conflict with the published 1.65x. Asked Jake. |
+| 3 | should fix | 1.65x arithmetic not shown | — | **Declined.** Jake: keep 1.65x as is (2026-11-21). |
 | 4 | should fix | FAQ summary tap target 27px | coordinator | Fixed: padding on summary, min-h-11 (now 58 to 81px) |
 | 5a | should fix | Email string in public JS bundle | coordinator | Fixed: email moved into ContactForm (only loaded by /brief) |
 | 5b | should fix | /screenshots/* reachable by URL | — | **Declined.** Jake said leave /brief as is; those files serve /brief. |
