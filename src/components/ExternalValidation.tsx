@@ -86,7 +86,7 @@ export default function ExternalValidation() {
             className="plate block w-full"
           >
             <source
-              src="/jake-heaps-portfolio/video/build-first-agent-v14.mp4"
+              src="/video/build-first-agent-v14.mp4"
               type="video/mp4"
             />
           </video>

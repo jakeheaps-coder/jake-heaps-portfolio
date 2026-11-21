@@ -29,3 +29,4 @@ scripts/portfolio-rendered.html
 public/screenshots/aprimo-browse.png
 .gstack/
 .vercel
+.wrangler/

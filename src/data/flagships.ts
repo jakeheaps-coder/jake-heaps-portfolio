@@ -46,7 +46,7 @@ function stackOf(name: string): string[] {
   return p.tech;
 }
 
-const SHOTS = "/jake-heaps-portfolio/screenshots";
+const SHOTS = "/screenshots";
 
 export const flagships: Flagship[] = [
   {

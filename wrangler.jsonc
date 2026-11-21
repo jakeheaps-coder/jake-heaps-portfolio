@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jakeheaps-site",
+  "compatibility_date": "2026-11-01",
+  // Static site: no Worker script, just assets. Vite builds to dist/,
+  // scripts/prerender.mjs writes one index.html per route.
+  "assets": {
+    "directory": "./dist",
+    // /work serves dist/work/index.html; /work/ redirects to /work.
+    "html_handling": "drop-trailing-slash",
+    // Unknown paths get dist/404.html with a 404 status. The client router
+    // renders the not-found page inside it.
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+
+  // Custom domains. Uncomment once the jakeheaps.com zone shows "Active" in
+  // Cloudflare (after the GoDaddy nameservers point at Cloudflare), then
+  // deploy again. Wrangler creates the DNS records and certificates.
+  // "routes": [
+  //   { "pattern": "jakeheaps.com", "custom_domain": true },
+  //   { "pattern": "www.jakeheaps.com", "custom_domain": true }
+  // ]
+}

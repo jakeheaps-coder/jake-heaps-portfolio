@@ -1,9 +1,9 @@
 # DESIGN.md — The Manuscript Brief
 
-Jake Heaps' portfolio is typeset as a **private intelligence briefing**: Stripe
-Press meets The Economist. Warm paper, ink, serif display, a mono ledger
-carrying every number. The audience is C-suite; the register is quiet
-confidence. The data does the talking.
+Jake Heaps' site is typeset like a well-kept notebook and ledger: warm paper,
+ink, a serif voice, and a mono ledger for every number. Warm paper, ink, serif display, a mono ledger
+carrying every number. The register is quiet confidence and a real person: photo, signature, career
+ledger. The data does the talking.
 
 ## Palette
 
@@ -48,8 +48,11 @@ idea, zero loops.
   bespoke animation must respect `useReducedMotion`. No loops, no parallax,
   no hover scale beyond 1.02.
 - Real typography: em dashes, curly quotes, middle dots, en-dash ranges.
-- Voice: first-person operator. Declarative. No hype adjectives, no
-  "Not X. Not Y. Z." constructions, no exclamation marks.
+- Voice: first person, plain, specific. No hype adjectives, no em dashes in new
+  copy, no "Not X. Not Y. Z." constructions, no exclamation marks.
+- Kickers: one mono kicker per page header at most. Section headings stand on
+  their own; numbered markers only where the content is a real sequence (the
+  three steps on /approach).
 
 ## Layout
 
@@ -61,8 +64,10 @@ stat). Reading column ≤66ch with a scholar's margin rail (`MarginGrid` +
 ## Primitives (src/components/ui/)
 
 `Reveal/RevealGroup/RevealItem`, `Eyebrow`, `BigNumeral`, `Button`
-(primary cedar / quiet underline — the only two), `LedgerTable`,
-`ChapterOpener`, `MarginGrid`, `MarginNote`.
+(primary cedar / quiet underline, the only two; pass `to` for internal routes),
+`LedgerTable`, `LedgerWaterfall`, `ChapterOpener`, `PageHeader`, `Section`,
+`MarginGrid`, `MarginNote`. Site-level pieces live in `src/site/components/`
+(`SiteNav`, `SiteFooter`, `CareerLedger`, `LogoRow`, `ContactBand`, `ContactForm`).
 
 ## Confidentiality
 

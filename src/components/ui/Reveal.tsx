@@ -30,12 +30,15 @@ export function Reveal({
 export function RevealGroup({
   children,
   className,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
+  as?: "div" | "ol" | "ul";
 }) {
+  const Tag = motion[as];
   return (
-    <motion.div
+    <Tag
       className={className}
       variants={fadeRiseGroup}
       initial="hidden"
@@ -43,20 +46,23 @@ export function RevealGroup({
       viewport={VIEWPORT}
     >
       {children}
-    </motion.div>
+    </Tag>
   );
 }
 
 export function RevealItem({
   children,
   className,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
+  as?: "div" | "li";
 }) {
+  const Tag = motion[as];
   return (
-    <motion.div className={className} variants={fadeRise}>
+    <Tag className={className} variants={fadeRise}>
       {children}
-    </motion.div>
+    </Tag>
   );
 }

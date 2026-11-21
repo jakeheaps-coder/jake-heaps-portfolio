@@ -1,0 +1,192 @@
+import { motion, useReducedMotion } from "motion/react";
+import { Link } from "react-router";
+import { Section } from "../../components/ui/Section";
+import { Reveal } from "../../components/ui/Reveal";
+import { Button } from "../../components/ui/Button";
+import { LedgerWaterfall } from "../../components/ui/LedgerWaterfall";
+import { EASE_CUBIC, EASE_EXPO } from "../../lib/motion";
+import { CareerLedger } from "../components/CareerLedger";
+import { ContactBand } from "../components/ContactBand";
+import { LogoRow } from "../components/LogoRow";
+import { NOW, CONTACT } from "../../data/contact";
+import headshot from "../../assets/jake-headshot.jpeg";
+
+const LINES = ["I build AI systems,", "then teach people", "to run them."];
+
+function Hero() {
+  const reduced = useReducedMotion();
+  const rise = (delay: number) => ({
+    initial: reduced ? false : { opacity: 0, y: 14 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: EASE_CUBIC, delay },
+  });
+
+  return (
+    <section className="px-6">
+      <div className="mx-auto grid max-w-[1100px] gap-12 pt-14 pb-20 md:pt-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:items-end lg:gap-16 lg:pb-24">
+        <div className="lg:pb-4">
+          <motion.p className="font-mono text-caption text-ink-soft" {...rise(0)}>
+            Jake Heaps&ensp;·&ensp;{CONTACT.location}
+          </motion.p>
+
+          <h1 className="mt-6 font-display text-[2.25rem] leading-[1.06] tracking-[-0.015em] min-[400px]:text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem]">
+            {LINES.map((line, i) => (
+              <span key={line} className="block overflow-hidden pb-[0.06em]">
+                <motion.span
+                  className="block"
+                  initial={reduced ? false : { y: "105%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.75, ease: EASE_EXPO, delay: 0.12 + i * 0.09 }}
+                >
+                  {i === 2 ? (
+                    <>
+                      to <em className="text-sienna">run</em> them.
+                    </>
+                  ) : (
+                    line
+                  )}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
+
+          <motion.p className="mt-8 max-w-[44ch] text-lede text-ink-soft" {...rise(0.5)}>
+            I run internal AI projects at{" "}
+            <a
+              href={NOW.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink"
+            >
+              {NOW.company}
+            </a>
+            . Before that I led the AI transformation at Domo, where 26 systems
+            went into production and 93% of the team ended up building with AI on
+            their own.
+          </motion.p>
+
+          <motion.div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4" {...rise(0.62)}>
+            <Button to="/about">Read my story</Button>
+            <Button variant="quiet" to="/work">
+              See the work
+            </Button>
+          </motion.div>
+        </div>
+
+        <motion.figure
+          className="m-0 max-w-[400px]"
+          initial={reduced ? false : { opacity: 0, clipPath: "inset(8% 0 0 0)" }}
+          animate={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
+          transition={{ duration: 0.9, ease: EASE_EXPO, delay: 0.2 }}
+        >
+          <img
+            src={headshot}
+            alt="Jake Heaps, against a concrete wall, in a black shirt."
+            width={800}
+            height={800}
+            fetchPriority="high"
+            className="plate aspect-[4/5] w-full object-cover object-[50%_20%]"
+          />
+          <figcaption className="mt-3 font-mono text-eyebrow text-ink-soft">
+            {NOW.title}&ensp;·&ensp;{NOW.company}
+          </figcaption>
+        </motion.figure>
+      </div>
+    </section>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+
+      <Section tone="surface">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:gap-16">
+          <Reveal>
+            <h2 className="font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
+              Where I&rsquo;ve been.
+            </h2>
+            <p className="mt-5 text-body text-ink-soft">
+              Marketing first, then AI. Every job since 2022 has pulled me a
+              little closer to the systems underneath the work.
+            </p>
+            <div className="mt-6">
+              <Button variant="quiet" to="/about">
+                The longer version
+              </Button>
+            </div>
+          </Reveal>
+          <CareerLedger />
+        </div>
+      </Section>
+
+      <Section tone="paper">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:items-end lg:gap-16">
+          <Reveal>
+            <h2 className="max-w-[16ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
+              The Domo year, counted.
+            </h2>
+            <p className="measure mt-5 text-lede text-ink-soft">
+              In twelve months the work added up to $2.3M in first-year value.
+              I wrote down every line of it: software we stopped paying for,
+              tools we built instead of bought, and the time it gave back.
+            </p>
+            <div className="mt-6">
+              <Button variant="quiet" to="/work#ledger">
+                Every line of the ledger
+              </Button>
+            </div>
+          </Reveal>
+          <Reveal>
+            <LedgerWaterfall />
+          </Reveal>
+        </div>
+      </Section>
+
+      <Section tone="paper" innerClassName="!pt-0">
+        <Reveal>
+          <div className="border-t border-hairline pt-10">
+            <p className="text-caption text-ink-soft">
+              Companies I&rsquo;ve built for or alongside
+            </p>
+            <LogoRow className="mt-8" />
+          </div>
+        </Reveal>
+      </Section>
+
+      <Section tone="paper" innerClassName="!pt-0">
+        <Reveal>
+          <div className="grid gap-px border-y border-hairline sm:grid-cols-3">
+            {[
+              { to: "/work", label: "Work", blurb: "What I built at Domo and for clients, with the numbers." },
+              { to: "/about", label: "About", blurb: "Brothers, baseball, two years in San Bernardino, and how I got here." },
+              { to: "/approach", label: "Approach", blurb: "How I decide what to build and how I get people to use it." },
+            ].map((r) => (
+              <Link
+                key={r.to}
+                to={r.to}
+                className="group block py-6 no-underline sm:px-5 sm:first:pl-0"
+              >
+                <span className="font-display text-h2 text-ink">
+                  {r.label}
+                  <span
+                    aria-hidden
+                    className="ml-2 inline-block text-sienna transition-transform duration-300 ease-(--ease-out-expo) group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </span>
+                <span className="mt-2 block max-w-[30ch] text-caption text-ink-soft">
+                  {r.blurb}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Reveal>
+      </Section>
+
+      <ContactBand />
+    </>
+  );
+}

@@ -1,0 +1,134 @@
+import { useId, useState, type FormEvent } from "react";
+import { logConsultRequest, validateEmailShape } from "../../lib/access";
+import { CONTACT } from "../../data/contact";
+
+const FIELD =
+  "mt-2 w-full rounded-md bg-paper px-4 py-3 font-body text-body text-ink ring-hairline outline-none placeholder:text-ink-soft focus-visible:[box-shadow:inset_0_0_0_1.5px_var(--color-cedar)]";
+
+const SUBMIT =
+  "inline-flex items-center justify-center gap-2 rounded-md bg-cedar px-6 py-3 font-medium text-paper transition-[transform,box-shadow] duration-150 ease-(--ease-out-cubic) [box-shadow:inset_0_1px_0_rgb(255_255_255/0.12),inset_0_-1px_0_rgb(0_0_0/0.18),0_0_0_1px_rgb(45_74_58/0.9),0_2px_6px_rgb(26_23_20/0.18)] hover:[box-shadow:inset_0_1px_0_rgb(255_255_255/0.16),inset_0_-1px_0_rgb(0_0_0/0.18),0_0_0_1px_rgb(45_74_58/0.9),0_4px_12px_rgb(26_23_20/0.22)] active:translate-y-px disabled:opacity-60";
+
+/**
+ * A short note form. Posts to the same Apps Script logger the brief uses
+ * (best-effort, no-CORS), which emails Jake. It never blocks on the network,
+ * and the confirmation always repeats the email address as a fallback.
+ */
+export function ContactForm({ className = "" }: { className?: string }) {
+  const uid = useId();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [honey, setHoney] = useState("");
+  const [error, setError] = useState("");
+  const [status, setStatus] = useState<"idle" | "busy" | "done">("idle");
+
+  async function submit(e: FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (honey) {
+      setStatus("done");
+      return;
+    }
+    if (!name.trim()) return setError("Add your name so I know who's writing.");
+    const check = validateEmailShape(email);
+    if (!check.ok) return setError(check.reason);
+    if (!message.trim()) return setError("Add a line about what's on your mind.");
+    setStatus("busy");
+    await logConsultRequest({
+      name: name.trim(),
+      email: check.email,
+      message: message.trim(),
+    });
+    setStatus("done");
+  }
+
+  if (status === "done") {
+    return (
+      <div className={`rounded-md bg-paper p-6 ring-hairline md:p-8 ${className}`} role="status">
+        <p className="font-display text-h2 text-ink">Got it. Thanks for writing.</p>
+        <p className="mt-3 text-body text-ink-soft">
+          I read these myself and usually answer within a few days. If it&rsquo;s
+          time-sensitive, email me at{" "}
+          <a href={`mailto:${CONTACT.email}`} className="text-cedar underline">
+            {CONTACT.email}
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={submit}
+      noValidate
+      className={`rounded-md bg-paper p-6 ring-hairline md:p-8 ${className}`}
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor={`${uid}-name`} className="text-caption font-medium text-ink">
+            Name
+          </label>
+          <input
+            id={`${uid}-name`}
+            type="text"
+            autoComplete="name"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className={FIELD}
+          />
+        </div>
+        <div>
+          <label htmlFor={`${uid}-email`} className="text-caption font-medium text-ink">
+            Email
+          </label>
+          <input
+            id={`${uid}-email`}
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={FIELD}
+          />
+        </div>
+      </div>
+      <div className="mt-4">
+        <label htmlFor={`${uid}-message`} className="text-caption font-medium text-ink">
+          Message
+        </label>
+        <textarea
+          id={`${uid}-message`}
+          rows={4}
+          required
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className={`${FIELD} resize-y`}
+        />
+      </div>
+
+      <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor={`${uid}-company-url`}>Company URL</label>
+        <input
+          id={`${uid}-company-url`}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honey}
+          onChange={(e) => setHoney(e.target.value)}
+        />
+      </div>
+
+      <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <button type="submit" disabled={status === "busy"} className={SUBMIT}>
+          {status === "busy" ? "Sending…" : "Send"}
+        </button>
+        <p role="alert" aria-live="polite" className="text-caption text-sienna">
+          {error}
+        </p>
+      </div>
+    </form>
+  );
+}
