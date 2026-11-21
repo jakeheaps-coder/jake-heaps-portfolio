@@ -18,8 +18,8 @@ export default function About() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,300px)] lg:items-end lg:gap-16">
           <PageHeader kicker="About" title="Hi, I’m Jake.">
             I grew up playing every sport I could and got into AI through
-            marketing. Now building with it is my job. Here&rsquo;s the longer
-            version.
+            marketing. Now building with it is my job, and in August I married
+            my wife, Ella. Here&rsquo;s the longer version.
           </PageHeader>
           <Reveal as="figure" className="m-0 w-full max-w-[200px] lg:max-w-none">
             <img
@@ -125,13 +125,13 @@ export default function About() {
               Marketing Operations Manager. Over the next year we put 26 systems
               into production, and I spent most of my time teaching people on
               the team to build their own. In May 2026 I became Manager, Internal
-              AI Projects, the same title I have now at Huckleberry, and started
-              doing the same thing across the company.
+              AI Projects, the same title I have now at Huckleberry, and spent
+              six months doing the same thing across the whole company.
               Most of the{" "}
               <Link to="/work" className="text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar">
                 work page
               </Link>{" "}
-              comes from that year.
+              comes from those 18 months.
             </p>
             <p>
               Now I&rsquo;m {NOW.title} at{" "}

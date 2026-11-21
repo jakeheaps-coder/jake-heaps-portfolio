@@ -71,9 +71,11 @@ function Hero() {
             >
               {NOW.company}
             </a>
-            . Before that I spent a year at Domo building AI systems with the
-            marketing team. We got 26 of them into production, and by the end
-            93% of the team was building with AI on their own.
+            . Before that I spent 18 months at Domo. The first year I built AI
+            systems with the marketing team. We got 26 of them into production,
+            and by the end 93% of the team was building with AI on their own.
+            Then I spent six months doing the same thing across the whole
+            company.
           </motion.p>
 
           <motion.div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4" {...rise(0.62)}>
@@ -134,7 +136,7 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:items-start lg:gap-16">
           <Reveal>
             <h2 className="max-w-[16ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
-              What my year at Domo added up to.
+              What my first year at Domo added up to.
             </h2>
             <p className="measure mt-5 text-lede text-ink-soft">
               Most of the value came from software we canceled and tools we
@@ -179,7 +181,7 @@ export default function Home() {
           <div className="grid gap-px border-y border-hairline sm:grid-cols-3">
             {[
               { to: "/work", label: "Work", blurb: "What I built at Domo and what each piece was worth." },
-              { to: "/about", label: "About", blurb: "Two older brothers, a lot of sports, and two years in San Bernardino." },
+              { to: "/about", label: "About", blurb: "Two older brothers, a lot of sports, two years in San Bernardino, and my wife, Ella." },
               { to: "/approach", label: "Approach", blurb: "How I pick what to build and how I get people to use it." },
             ].map((r) => (
               <Link

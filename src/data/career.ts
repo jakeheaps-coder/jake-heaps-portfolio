@@ -25,7 +25,7 @@ export const career: CareerRow[] = [
     years: "2025–26",
     org: "Domo",
     role: "AI Marketing Operations Manager, then Manager, Internal AI Projects",
-    short: "Got 26 AI systems into production. By the end, 93% of the team was building with AI on their own.",
+    short: "A year with the marketing team, then six months across the whole company. 26 AI systems in production, and 93% of marketing building on their own.",
   },
   {
     years: "2024–25",

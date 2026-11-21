@@ -45,7 +45,7 @@ export default function Work() {
           stat="26"
           statLabel="Production systems at Domo"
         >
-          Nearly all of this is from my year at Domo, plus a few things that
+          Nearly all of this is from my 18 months at Domo, plus a few things that
           ended up on stage or in print. Every number has a note on where it
           came from.
         </PageHeader>
@@ -54,7 +54,7 @@ export default function Work() {
       {/* Domo */}
       <Section id="domo" tone="surface">
         <Reveal>
-          <h2 className={H2}>My year at Domo.</h2>
+          <h2 className={H2}>My time at Domo.</h2>
         </Reveal>
         <MarginGrid className="mt-8">
           <div className="space-y-5 text-body text-ink">
@@ -69,8 +69,8 @@ export default function Work() {
               I started with the most repetitive work and built systems for
               that first. Then I sat with people while they learned to build
               their own. By May 2026 those systems ran without me touching them
-              every day, so I took the same approach to the whole company as
-              Manager, Internal AI Projects.
+              every day, so I spent the next six months taking the same
+              approach to the whole company as Manager, Internal AI Projects.
             </p>
           </div>
           <MarginNote label="My role">
@@ -156,7 +156,7 @@ export default function Work() {
         <Reveal>
           <h2 className={H2}>Some of what I built.</h2>
           <p className="measure mt-5 text-lede text-ink-soft">
-            These are the ones I&rsquo;d show you first, all from my year at
+            These are the ones I&rsquo;d show you first, all from my time at
             Domo.
           </p>
         </Reveal>
