@@ -8,7 +8,6 @@ import { CareerLedger } from "../components/CareerLedger";
 import { ContactBand } from "../components/ContactBand";
 import { CONTACT, NOW } from "../../data/contact";
 import headshot from "../../assets/jake-headshot.jpeg";
-import signature from "../../assets/signature.svg";
 
 const H2 = "max-w-[22ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]";
 
@@ -126,7 +125,8 @@ export default function About() {
               Marketing Operations Manager. Over the next year we put 26 systems
               into production, and I spent most of my time teaching people on
               the team to build their own. In May 2026 I became Manager, Internal
-              AI Projects and started doing the same thing across the company.
+              AI Projects, the same title I have now at Huckleberry, and started
+              doing the same thing across the company.
               Most of the{" "}
               <Link to="/work" className="text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar">
                 work page
@@ -170,7 +170,6 @@ export default function About() {
                 If you want to talk about AI or football, find me on LinkedIn.
               </p>
             </div>
-            <img src={signature} alt="Jake Heaps signature" className="mt-10 h-16 w-auto md:h-20" />
           </Reveal>
           <Reveal className="lg:pt-24">
             <dl className="m-0 border-t-2 border-ink">

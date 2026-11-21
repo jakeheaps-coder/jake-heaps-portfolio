@@ -81,7 +81,7 @@ export const FEATURED: WorkProject[] = [
   {
     name: "Domopalooza scheduler",
     body: [
-      "Domopalooza is Domo’s annual conference. I built an AI scheduler that set up breakout sessions for more than 6,000 registrants, along with the sessions, meetings and speakers around them.",
+      "Domopalooza is Domo’s annual conference. I built an AI scheduler that placed more than 6,000 registrants into breakout sessions and kept the meetings and speaker slots around them lined up.",
     ],
     note: "6,000+ registrants scheduled",
   },
