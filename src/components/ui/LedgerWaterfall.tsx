@@ -1,6 +1,7 @@
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { ledger, firstYearTotal, type LedgerClass } from "../../data/ledger";
 import { EASE_EXPO } from "../../lib/motion";
+import { useStillMotion } from "./useStillMotion";
 
 /**
  * LedgerWaterfall — the first-year value, built up class by class to the
@@ -18,7 +19,7 @@ import { EASE_EXPO } from "../../lib/motion";
  *
  * role="img" + a spoken summary; the inner bars are aria-hidden.
  */
-const VIEW = { once: true, amount: 0.4 } as const;
+const VIEW = { once: true, amount: 0.25 } as const;
 
 /* Display order (foundation first, then the hard-dollar steps) + how each
    class reads against the palette. Labels/tone live here; dollar amounts come
@@ -45,7 +46,7 @@ const ROW =
   "grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 gap-y-2.5 sm:grid-cols-[13rem_minmax(0,1fr)_6rem] sm:items-center";
 
 export function LedgerWaterfall({ className = "" }: { className?: string }) {
-  const reduced = useReducedMotion();
+  const reduced = useStillMotion();
 
   /* Each bar starts where the previous ones ended: its offset is the prefix
      sum of the amounts before it (computed functionally, no mutable carry). */

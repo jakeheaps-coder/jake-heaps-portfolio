@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
-import { animate, useInView, useReducedMotion } from "motion/react";
+import { animate, useInView } from "motion/react";
 import { EASE_CUBIC } from "../../lib/motion";
+import { useStillMotion } from "./useStillMotion";
 
 /**
  * Serif display numeral that eases up and settles hard at the real value.
@@ -20,7 +21,7 @@ export function BigNumeral({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
-  const reduced = useReducedMotion();
+  const reduced = useStillMotion();
 
   useEffect(() => {
     const el = ref.current;

@@ -96,21 +96,32 @@
   --font-body: "General Sans", "Avenir Next", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
 
-  /* Type scale — body 17px, editorial contrast at the top end */
-  --text-eyebrow: 0.75rem; /* 12 — mono caps only */
+  /* Type scale. Body is 16px at 360px and settles at 17px by ~1000px; the
+     display steps are fluid so headings never overflow a phone and still
+     carry editorial contrast on a laptop. Caption and eyebrow stay fixed:
+     they are labels, and labels should not grow. */
+  --text-eyebrow: 0.75rem; /* 12, mono caps only */
   --text-eyebrow--line-height: 1.4;
   --text-caption: 0.875rem; /* 14 */
   --text-caption--line-height: 1.6;
-  --text-body: 1.0625rem; /* 17 */
+  --text-note: 0.9375rem; /* 15, margin notes and figure captions */
+  --text-note--line-height: 1.6;
+  --text-body: clamp(1rem, 0.96rem + 0.12vw, 1.0625rem); /* 16 to 17 */
   --text-body--line-height: 1.65;
-  --text-h3: 1.1875rem; /* 19 */
+  --text-h3: clamp(1.125rem, 1.09rem + 0.15vw, 1.1875rem); /* 18 to 19 */
   --text-h3--line-height: 1.35;
-  --text-lede: 1.3125rem; /* 21 */
+  --text-lede: clamp(1.125rem, 1.04rem + 0.4vw, 1.3125rem); /* 18 to 21 */
   --text-lede--line-height: 1.55;
-  --text-h2: 1.75rem; /* 28 */
+  --text-h2: clamp(1.5rem, 1.4rem + 0.45vw, 1.75rem); /* 24 to 28 */
   --text-h2--line-height: 1.2;
-  --text-h1: 2.5rem; /* 40 */
+  --text-h1: clamp(2rem, 1.8rem + 0.9vw, 2.5rem); /* 32 to 40 */
   --text-h1--line-height: 1.1;
+  --text-display: clamp(2.25rem, 1.75rem + 2.3vw, 3.5rem); /* 36 to 56, page titles */
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.015em;
+
+  /* Section rhythm: tighter on phones, generous on desktop */
+  --spacing-section: clamp(3.5rem, 2.6rem + 4vw, 7rem); /* 56 to 112 */
 
   /* Shadows — hue-matched to warm ink, never pure black */
   --shadow-hairline:
@@ -139,6 +150,15 @@
   html {
     scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
+    /* Browser surfaces carry the palette too: scrollbar, caret, tap flash */
+    scrollbar-color: color-mix(in srgb, var(--color-ink) 28%, transparent)
+      var(--color-paper);
+    caret-color: var(--color-cedar);
+    -webkit-tap-highlight-color: color-mix(
+      in srgb,
+      var(--color-cedar) 12%,
+      transparent
+    );
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -189,6 +209,20 @@
     color: inherit;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.16em;
+  }
+
+  /* Disclosure rows (FAQ, "how it was counted") drop the browser triangle */
+  summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  hr {
+    border: 0;
+    margin: 0;
   }
 
   :focus-visible {
@@ -249,3 +283,83 @@
 @utility measure-narrow {
   max-width: 45ch;
 }
+
+/* Ledger rules. The 2px ink rule opens a page or a ledger; hairlines divide
+   rows inside it. Use these instead of ad hoc border classes so the weights
+   stay identical everywhere. */
+@utility rule-strong {
+  border-top: 2px solid var(--color-ink);
+}
+@utility rule-hair {
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* Touch target: at least 44px tall, content vertically centered. Put it on
+   any link, summary or control that stands on its own (nav, footer, FAQ
+   summaries, disclosure toggles). */
+@utility tap {
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+}
+@utility tap-inline {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* FAQ / disclosure summary: the shared jakeheaps treatment. A serif question,
+   a mono plus sign that turns to a minus, a full 44px+ hit area. Pair with
+   <details class="group rule-hair"> and put the sign in a
+   <span class="faq-sign" aria-hidden></span> inside the summary. */
+@utility faq-summary {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: var(--text-h3--line-height);
+  color: var(--color-ink);
+}
+@utility faq-sign {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--color-sienna);
+  &::before {
+    content: "+";
+  }
+  details[open] > summary &::before {
+    content: "\2212";
+  }
+}
+
+/* Dark token scope for Section tone="night" (the brief's single interlude).
+   Re-points the Manuscript tokens so descendants flip without new classes. */
+.night {
+  --color-paper: #131210;
+  --color-surface: #1c1a17;
+  --color-ink: #ece7dd;
+  --color-ink-soft: #a39b8b;
+  --color-hairline: #2a2722;
+  --color-sienna: #e09b62;
+  --color-cedar: #e09b62;
+  color: var(--color-ink);
+}
+
+/* Reveal content is never left hidden on paper or in a print preview. */
+@media print {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  header[data-site-nav],
+  nav[data-site-nav] {
+    position: static !important;
+  }
+}
+

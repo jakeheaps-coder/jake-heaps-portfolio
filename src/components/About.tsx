@@ -3,7 +3,7 @@ import headshot from "../assets/jake-headshot.jpeg";
 import { Button } from "./ui/Button";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Reveal } from "./ui/Reveal";
-import { LeadForm } from "./LeadForm";
+import { ContactForm } from "../site/components/ContactForm";
 
 /** The closing letter — signed, first person, one personal paragraph. */
 export default function About() {
@@ -25,8 +25,8 @@ export default function About() {
                   The longer I ran them, the more I was pulled toward the
                   systems underneath: why work flowed the way it did, and what
                   would happen if the repetitive ninety percent of it simply
-                  went away. That question became my career. Today I design AI
-                  operating systems for enterprises: the strategy, the
+                  went away. That question became my career. Today I run
+                  internal AI projects at Huckleberry AI: the strategy, the
                   production systems, and the part almost everyone skips, the
                   adoption.
                 </p>
@@ -62,16 +62,15 @@ export default function About() {
                   also the entire secret of enterprise AI adoption.
                 </p>
                 <p>
-                  Outside of work: family first. This August I&rsquo;m marrying
-                  Ella. We met through my mom, who she works with. The rest of
+                  Outside of work: family first. Ella and I got married in
+                  August 2026. We met through my mom, who she works with. The rest of
                   my time goes to sports, the gym, and building things on nights
                   and weekends because I genuinely cannot help it.
                 </p>
                 <p>
-                  The proof of concept is complete. If you&rsquo;re building
-                  toward the seat this record describes, where AI becomes how
-                  the company operates, not a pilot program on its edge,
-                  I&rsquo;d like to talk.
+                  I&rsquo;m doing the same work now at Huckleberry AI. If
+                  you&rsquo;re building something like it, I&rsquo;d be glad
+                  to compare notes.
                 </p>
               </div>
 
@@ -81,13 +80,11 @@ export default function About() {
                 className="mt-12 h-16 w-auto md:h-20"
               />
               <p className="eyebrow mt-2 text-ink-soft">
-                Jake Heaps · Lehi, Utah
+                Jake Heaps · American Fork, Utah
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
-                <Button href="mailto:jakeheaps@me.com">
-                  Book a consultation
-                </Button>
+                <Button href="mailto:jakeheaps@me.com">Email me</Button>
                 <Button
                   variant="quiet"
                   href="https://www.linkedin.com/in/jakeheaps/"
@@ -98,7 +95,7 @@ export default function About() {
                 </Button>
                 <Button
                   variant="quiet"
-                  href="/jake-heaps-portfolio/jake-heaps-portfolio.pdf"
+                  href="/jake-heaps-portfolio.pdf"
                   download
                 >
                   Download the brief
@@ -107,7 +104,7 @@ export default function About() {
 
               <div className="mt-12 border-t border-hairline pt-10">
                 <Eyebrow>Start a conversation</Eyebrow>
-                <LeadForm variant="inline" className="mt-6" />
+                <ContactForm className="mt-6" />
               </div>
             </div>
 

@@ -1,70 +1,78 @@
-# Jake Heaps — AI Strategy & Transformation Portfolio
+# jakeheaps.com
 
-Personal portfolio showcasing 40+ production AI systems, 9 enterprise engagements, $300K+ in vendor displacement, and 93% team AI adoption across a 12-month transformation.
+Jake Heaps' personal site. Who I am, what I've built, and how I approach AI work.
+Hosted on Cloudflare Workers (static assets).
 
-**Live:** https://jakeheaps.com (Vercel, auto-deploys `main`; GitHub Pages is a fallback mirror)
+## Pages
 
-## Quick Start
+| Path | What it is | Source |
+|---|---|---|
+| `/` | Home: intro, career ledger, the Domo ledger, contact | `src/site/pages/Home.tsx` |
+| `/work` | Domo transformation (figures, ledger, systems), Bissell, client outbound system, talks | `src/site/pages/Work.tsx` |
+| `/about` | The longer personal story | `src/site/pages/About.tsx` |
+| `/approach` | How I think about AI at work, rules, FAQ | `src/site/pages/Approach.tsx` |
+| `/brief` | The long Domo case study. Unlisted, email-gated | `src/brief/BriefPage.tsx` + `src/components/*` |
+| `/uvu` | UVU marketing capstone page, plain static HTML | `public/uvu/` |
+
+The structure of the four public pages started from the `/new` staged pages in
+`jakeheaps-coder/naitive-website`, rebranded to the jakeheaps "Manuscript" system
+(see DESIGN.md) and rewritten as a personal profile.
+
+## Develop
 
 ```bash
 npm install
-npm run dev          # Local dev server at localhost:5173
+npm run dev        # Vite at localhost:5173
+npm run build      # tsc + vite build + head prerender (one index.html per route)
+npm run preview    # build, then serve dist/ through wrangler dev (real Worker behavior)
+npm run check      # confidentiality check (forbidden terms)
 ```
 
-## Build & Deploy
+## Deploy (Cloudflare)
 
-```bash
-npm run build                           # Vite build -> dist/
-./scripts/check-confidentiality.sh      # Pre-deploy safety check (REQUIRED)
-npx gh-pages -d dist                    # Deploy to GitHub Pages
-```
+`wrangler.jsonc` describes an assets-only Worker named `jakeheaps-site`. It is
+connected to this GitHub repo through Cloudflare Workers Builds, so you never
+deploy by hand:
 
-## PDF Generation
+| Push to | What happens |
+|---|---|
+| `main` | Production deploy (`npx wrangler deploy`) to `jakeheaps-site` |
+| any other branch | Preview version (`npx wrangler versions upload`) with its own preview URL |
 
-```bash
-uv venv && source .venv/bin/activate
-uv pip install weasyprint jinja2
-python scripts/generate-pdf.py          # Output: jake-heaps-portfolio.pdf
-```
+Both run `npm ci && npm run build && ./scripts/check-confidentiality.sh` first, so a
+confidentiality hit fails the build. Build logs are in the Cloudflare dashboard under
+Workers & Pages → jakeheaps-site → Deployments.
 
-## Architecture
+`npm run deploy` still works from a laptop with `wrangler login` if you ever need it.
 
-Two surfaces, selected by pathname (no router lib — see `currentView()` in `App.tsx`):
+Routing details:
 
-- **Vision** (`/`) — the public landing page (`components/VisionPage.tsx`): practice positioning, the "Working System" method, tiers, proof/ledger, FAQ, and the lead form. Always open.
-- **Brief** (`/brief`) — the deep Domo flagship case study (the `App.tsx` section stack). Email-gated (lead capture, not access control — content still ships in the bundle).
+- `html_handling: drop-trailing-slash` serves `dist/work/index.html` at `/work`.
+- `not_found_handling: 404-page` returns `dist/404.html` with a 404 status; the
+  client router renders the not-found page.
+- `public/_headers` sets the CSP and security headers. The CSP is self-only plus
+  the Google Apps Script host the contact form posts to. Add hosts there if you
+  embed anything external.
 
-**Lead capture:** `components/LeadForm.tsx` → `lib/access.ts` (`logConsultRequest` / `logAccess`, fire-and-forget no-cors form POST) → external Google Apps Script web app (`scripts/access-log.gs`, deployed separately) → Google Sheet + an email notification to the owner.
+### Custom domain
 
-## Project Structure
+The `jakeheaps.com` zone has been added to Cloudflare (pending). To cut over:
 
-```
-src/
-  components/         # Vision page + Brief (DomoStory/), shared ui/, LeadForm, FAQ
-  components/vision/  # Vision-only sections (Method, OperatingSystemExplainer, HowToWorkTogether)
-  data/               # ledger.ts (single source for $ figures), tiers, faq, metrics, roster
-  lib/                # access.ts (lead logging), motion, flags (SHOW_VIDEOS)
-  App.tsx             # Pathname-routed: Vision (public) vs Brief (email-gated)
-public/
-  logos/              # 9 company logos (SVG, PNG, WebP)
-  screenshots/        # Project screenshots
-  charts/             # Case study charts (4 PNGs)
-  video/              # build-first-agent-v14.mp4 (11MB)
-scripts/
-  generate-pdf.py     # WeasyPrint PDF generator (data embedded as Python dicts)
-  check-confidentiality.sh  # Pre-deploy safety check for forbidden terms
-docs/
-  PLAN.md             # Original portfolio specification (500+ lines)
-  QUOTES.md           # Endorsement quote tracking (9 people)
-CONTEXT.md            # Full handoff doc (brand, confidentiality, architecture, setup)
-```
+1. At GoDaddy, change the nameservers to `alfred.ns.cloudflare.com` and
+   `arely.ns.cloudflare.com`.
+2. Wait for the zone to show Active in Cloudflare.
+3. Uncomment `routes` in `wrangler.jsonc` and deploy. Wrangler creates the DNS
+   records and certificates for `jakeheaps.com` and `www.jakeheaps.com`.
+4. Remove the domain from the old Vercel project.
 
-## Stack
+## Contact form
 
-React 19, TypeScript, Vite 8, Tailwind CSS v4, Motion (motion/react), WeasyPrint
+`src/site/components/ContactForm.tsx` → `logConsultRequest()` in `src/lib/access.ts`
+→ a Google Apps Script web app (`scripts/access-log.gs`, deployed separately) that
+writes a row to a private Sheet and emails Jake. Best-effort, no-CORS POST.
 
-## Documentation
+## Other scripts
 
-- [CONTEXT.md](CONTEXT.md) — Full project context, brand system, confidentiality rules, data provenance, deployment, setup
-- [docs/PLAN.md](docs/PLAN.md) — Original portfolio specification from planning phase
-- [docs/QUOTES.md](docs/QUOTES.md) — Endorsement quote tracking for 9 people
+- `scripts/generate-og.py`: builds `public/og.png` (Pillow).
+- `scripts/generate-pdf.py`: the brief PDF (WeasyPrint).
+- `scripts/check-confidentiality.sh`: run before every deploy (`npm run deploy` does).

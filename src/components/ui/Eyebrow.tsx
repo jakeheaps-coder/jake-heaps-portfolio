@@ -1,5 +1,7 @@
 /**
  * Mono ledger label. Optionally numbered: <Eyebrow n="03">Education</Eyebrow>
+ * Use sparingly: one per page header at most (PageHeader already renders its
+ * kicker this way). Section headings stand on their own without one.
  * Pass as="h2" on nav-target sections so the document outline includes them.
  */
 export function Eyebrow({

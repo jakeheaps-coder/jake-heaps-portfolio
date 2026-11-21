@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/brief", "destination": "/index.html" },
-    { "source": "/uvu", "destination": "/uvu/index.html" }
-  ]
-}

@@ -1,8 +1,19 @@
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
-import { fadeRise, fadeRiseGroup, VIEWPORT } from "../../lib/motion";
+import { fadeRise, fadeRiseGroup } from "../../lib/motion";
+import { useStillMotion } from "./useStillMotion";
 
-/** The one shared entrance. Wrap a block; it rises 16px once, on view. */
+/* Fire as soon as the top of a block clears the bottom tenth of the screen.
+   An amount of 0 matters on phones: a tall block (a long letter, a ledger)
+   can never reach a 15% intersection ratio on a 640px screen, which used to
+   leave it invisible until the reader was halfway through it. */
+const VIEW = { once: true, amount: 0, margin: "0px 0px -10% 0px" } as const;
+
+/**
+ * The one shared entrance. Wrap a block; it rises 16px once, on view.
+ * Content is never hidden from print, reduced-motion visitors, or automated
+ * captures (see useStillMotion): those render the final state directly.
+ */
 export function Reveal({
   children,
   className,
@@ -12,14 +23,16 @@ export function Reveal({
   className?: string;
   as?: "div" | "section" | "li" | "figure";
 }) {
+  const still = useStillMotion();
   const Tag = motion[as];
   return (
     <Tag
+      data-reveal=""
       className={className}
       variants={fadeRise}
-      initial="hidden"
+      initial={still ? false : "hidden"}
       whileInView="visible"
-      viewport={VIEWPORT}
+      viewport={VIEW}
     >
       {children}
     </Tag>
@@ -30,33 +43,40 @@ export function Reveal({
 export function RevealGroup({
   children,
   className,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
+  as?: "div" | "ol" | "ul";
 }) {
+  const still = useStillMotion();
+  const Tag = motion[as];
   return (
-    <motion.div
+    <Tag
       className={className}
       variants={fadeRiseGroup}
-      initial="hidden"
+      initial={still ? false : "hidden"}
       whileInView="visible"
-      viewport={VIEWPORT}
+      viewport={VIEW}
     >
       {children}
-    </motion.div>
+    </Tag>
   );
 }
 
 export function RevealItem({
   children,
   className,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
+  as?: "div" | "li";
 }) {
+  const Tag = motion[as];
   return (
-    <motion.div className={className} variants={fadeRise}>
+    <Tag data-reveal="" className={className} variants={fadeRise}>
       {children}
-    </motion.div>
+    </Tag>
   );
 }
