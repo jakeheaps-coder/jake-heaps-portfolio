@@ -13,9 +13,8 @@ export function ContactBand({ tone = "surface" }: { tone?: "paper" | "surface" }
             Say hello.
           </h2>
           <p className="measure mt-5 text-lede text-ink-soft">
-            I&rsquo;m not taking consulting work right now. I&rsquo;m still glad
-            to compare notes with people putting AI to work inside their
-            companies, and I say yes to speaking when I can.
+            Email is the fastest way to reach me. The form works too, or you
+            can find me on LinkedIn.
           </p>
           <dl className="mt-8 grid gap-4 text-body">
             <div>
@@ -23,22 +22,22 @@ export function ContactBand({ tone = "surface" }: { tone?: "paper" | "surface" }
               <dd className="m-0 mt-1">
                 <a
                   href={`mailto:${CONTACT.email}`}
-                  className="font-display text-h2 text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar"
+                  className="inline-block py-1 font-display text-h2 text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar"
                 >
                   {CONTACT.email}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="eyebrow text-ink-soft">Elsewhere</dt>
+              <dt className="eyebrow text-ink-soft">LinkedIn</dt>
               <dd className="m-0 mt-1">
                 <a
                   href={CONTACT.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar"
+                  className="inline-block py-2 text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar"
                 >
-                  LinkedIn
+                  {CONTACT.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
                 </a>
               </dd>
             </div>

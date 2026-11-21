@@ -1,26 +1,26 @@
 [
   {
     "path": "/",
-    "title": "Jake Heaps · I build AI systems people use",
-    "description": "I'm Jake Heaps, Manager of Internal AI Projects at Huckleberry AI. I build AI systems and teach the people around me to run them. Before this I led the AI transformation at Domo.",
+    "title": "Jake Heaps · I build the AI my coworkers use",
+    "description": "I'm Jake Heaps, Manager, Internal AI Projects at Huckleberry AI. Before that I spent a year at Domo building AI systems with the marketing team and teaching them to build their own.",
     "noindex": false
   },
   {
     "path": "/work",
     "title": "Work · Jake Heaps",
-    "description": "The AI transformation I led at Domo, itemized line by line, plus the Bissell two-day build, client work, and talks.",
+    "description": "What I built at Domo and for clients, what each piece was worth, and how I counted it.",
     "noindex": false
   },
   {
     "path": "/about",
     "title": "About · Jake Heaps",
-    "description": "Where I come from, how a marketing job turned into building AI systems, and what I care about outside of work.",
+    "description": "The longer version: growing up the youngest of three brothers, two years of service in San Bernardino, and how a marketing job turned into building AI.",
     "noindex": false
   },
   {
     "path": "/approach",
     "title": "Approach · Jake Heaps",
-    "description": "How I put AI into a company's real work: start with the work that eats people's weeks, build it with them, and count what changed.",
+    "description": "How I pick what to build, how I get people to use it, and how I check whether it helped.",
     "noindex": false
   },
   {

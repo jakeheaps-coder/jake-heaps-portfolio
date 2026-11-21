@@ -1,3 +1,4 @@
+import type React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Link } from "react-router";
 import { Section } from "../../components/ui/Section";
@@ -11,7 +12,14 @@ import { LogoRow } from "../components/LogoRow";
 import { NOW, CONTACT } from "../../data/contact";
 import headshot from "../../assets/jake-headshot.jpeg";
 
-const LINES = ["I build AI systems,", "then teach people", "to run them."];
+/** The hero headline, one entry per masked line. Short enough to hold at 360px. */
+const LINES: React.ReactNode[] = [
+  "I build the AI",
+  "my coworkers",
+  <>
+    <em className="text-sienna">use</em> every day.
+  </>,
+];
 
 function Hero() {
   const reduced = useReducedMotion();
@@ -31,20 +39,14 @@ function Hero() {
 
           <h1 className="mt-6 font-display text-[2.25rem] leading-[1.06] tracking-[-0.015em] min-[400px]:text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem]">
             {LINES.map((line, i) => (
-              <span key={line} className="block overflow-hidden pb-[0.06em]">
+              <span key={i} className="block overflow-hidden pb-[0.06em]">
                 <motion.span
                   className="block"
                   initial={reduced ? false : { y: "105%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.75, ease: EASE_EXPO, delay: 0.12 + i * 0.09 }}
                 >
-                  {i === 2 ? (
-                    <>
-                      to <em className="text-sienna">run</em> them.
-                    </>
-                  ) : (
-                    line
-                  )}
+                  {line}
                 </motion.span>
               </span>
             ))}
@@ -60,21 +62,21 @@ function Hero() {
             >
               {NOW.company}
             </a>
-            . Before that I led the AI transformation at Domo, where 26 systems
-            went into production and 93% of the team ended up building with AI on
-            their own.
+            . Before that I spent a year at Domo building AI systems with the
+            marketing team. We got 26 of them into production, and by the end
+            93% of the team was building with AI on their own.
           </motion.p>
 
           <motion.div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4" {...rise(0.62)}>
-            <Button to="/about">Read my story</Button>
+            <Button to="/about">About me</Button>
             <Button variant="quiet" to="/work">
-              See the work
+              What I&rsquo;ve built
             </Button>
           </motion.div>
         </div>
 
         <motion.figure
-          className="m-0 max-w-[400px]"
+          className="m-0 w-full max-w-[240px] sm:max-w-[320px] lg:max-w-[400px]"
           initial={reduced ? false : { opacity: 0, clipPath: "inset(8% 0 0 0)" }}
           animate={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
           transition={{ duration: 0.9, ease: EASE_EXPO, delay: 0.2 }}
@@ -108,12 +110,13 @@ export default function Home() {
               Where I&rsquo;ve been.
             </h2>
             <p className="mt-5 text-body text-ink-soft">
-              Marketing first, then AI. Every job since 2022 has pulled me a
-              little closer to the systems underneath the work.
+              I started in marketing, building funnels and running campaigns.
+              What kept pulling at me was the repetitive work underneath, and
+              whether something else could do it.
             </p>
             <div className="mt-6">
               <Button variant="quiet" to="/about">
-                The longer version
+                How I got here
               </Button>
             </div>
           </Reveal>
@@ -125,16 +128,16 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:items-end lg:gap-16">
           <Reveal>
             <h2 className="max-w-[16ch] font-display text-h1 md:text-[2.75rem] md:leading-[1.08]">
-              The Domo year, counted.
+              My year at Domo, in dollars.
             </h2>
             <p className="measure mt-5 text-lede text-ink-soft">
-              In twelve months the work added up to $2.3M in first-year value.
-              I wrote down every line of it: software we stopped paying for,
-              tools we built instead of bought, and the time it gave back.
+              It came to $2.3M in value in the first year. Most of that was
+              software we canceled and tools we built ourselves instead of
+              buying. I kept a line for every dollar.
             </p>
             <div className="mt-6">
               <Button variant="quiet" to="/work#ledger">
-                Every line of the ledger
+                See the full list
               </Button>
             </div>
           </Reveal>
@@ -148,7 +151,7 @@ export default function Home() {
         <Reveal>
           <div className="border-t border-hairline pt-10">
             <p className="text-caption text-ink-soft">
-              Companies I&rsquo;ve built for or alongside
+              Places I&rsquo;ve worked or built for
             </p>
             <LogoRow className="mt-8" />
           </div>
@@ -159,9 +162,9 @@ export default function Home() {
         <Reveal>
           <div className="grid gap-px border-y border-hairline sm:grid-cols-3">
             {[
-              { to: "/work", label: "Work", blurb: "What I built at Domo and for clients, with the numbers." },
-              { to: "/about", label: "About", blurb: "Brothers, baseball, two years in San Bernardino, and how I got here." },
-              { to: "/approach", label: "Approach", blurb: "How I decide what to build and how I get people to use it." },
+              { to: "/work", label: "Work", blurb: "What I built at Domo and for clients, and what each one was worth." },
+              { to: "/about", label: "About", blurb: "Two older brothers, a lot of sports, and two years in San Bernardino." },
+              { to: "/approach", label: "Approach", blurb: "How I pick what to build and how I get people to use it." },
             ].map((r) => (
               <Link
                 key={r.to}
