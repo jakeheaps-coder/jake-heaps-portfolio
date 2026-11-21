@@ -36,3 +36,27 @@
 - `src/data/projects.ts` still references `screenshots/asset-library.png` and `outbound-engine.png`, and `public/screenshots/*` still exists. /work no longer uses them; /brief may. Coordinator to decide whether to delete them.
 - The /work description in `src/site/routes.json` (owned by pages-copy) may mention screenshots or the old framing. Worth checking.
 - Mono notes in the secondary list are `text-caption` (14px). That's within the "small labels" exception, but flagging it.
+
+## 2026-11-21, second pass (after the contract update)
+
+**What I did**
+- Merged `origin/claude/charming-cori-j61y86` (contract update, `coordination/notes/projects.md`, `brand-kit/`).
+- Took Naitive out completely: the client paragraph in the Apollo entry, its mono note, and the "client work" wording in the header and projects ledes. The Apollo outbound engine is now the Domo version only: signal rule (2+ opens, 2+ clicks, any reply), personalized landing page, lead score, and an honest line that it has taken over only part of what the paid tools did.
+- Removed the AI SDR and the live translator (the translator isn't in the notes, and the notes say to use only what's written there).
+- Messaging Brain now carries "55 tools connected across the agents" plus the $65K ledger line.
+- Media monitoring rewritten as Domo's tracking workflow: daily news on Domo and competitors, alerts, an email update, dedup, ticker-spam filtering, and the security audit before rollout.
+- Domopalooza scheduler: breakout scheduling for 6,000+ registrants plus sessions, meetings and speakers. TODO removed.
+- "And a few more" now holds the 11 projects from the notes, in the notes' order, ending with jake-heaps-os (personal). The layout is unchanged: compact hairline rows that stack at 360.
+- Video pipeline stat updated to "8 to 16 hours down to 1 hour 15 minutes".
+
+**Files:** `src/data/work.ts`, `src/site/pages/Work.tsx`, this log.
+
+**Decisions**
+- The CMO (20 tools, 110 test questions) and paid search (24 tools, 6 regional datasets) numbers are in projects.md but not in the contract's stats list. I used them because contract item 15 makes the notes the source for the projects section. If the stats list should win, they're two strings to remove in `MORE` in `src/data/work.ts`.
+- The page has no email address and no form. ContactBand is left in place for pages-copy.
+
+**Verified:** build passes, confidentiality check passes, and Playwright screenshots at 360, 390, 768 and 1440 show no horizontal overflow. I looked at the projects section at 360 and 1440.
+
+**Not verified / open**
+- `LogoRow` (owned by brand-mobile) shows Manscaped, Cox Automotive, Thryv, Carvana and Regional One Health under "Companies I've built for or with". If any of those were Naitive-era clients, that conflicts with contract item 11. Coordinator or brand-mobile to check.
+- The "Bucked Up 30+ funnels" stat isn't used on /work.

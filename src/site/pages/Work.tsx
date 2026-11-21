@@ -45,9 +45,9 @@ export default function Work() {
           stat="26"
           statLabel="Production systems at Domo"
         >
-          Most of this is from my year at Domo. There&rsquo;s some client work
-          too, and a few things that ended up on stage or in print. Every number
-          has a note on where it came from.
+          Nearly all of this is from my year at Domo, plus a few things that
+          ended up on stage or in print. Every number has a note on where it
+          came from.
         </PageHeader>
       </Section>
 
@@ -156,9 +156,8 @@ export default function Work() {
         <Reveal>
           <h2 className={H2}>Some of what I built.</h2>
           <p className="measure mt-5 text-lede text-ink-soft">
-            These are the ones I&rsquo;d show you first. Most ran at Domo, each
-            with an owner on the team who runs it now. One I rebuilt later for a
-            client.
+            These are the ones I&rsquo;d show you first. I built all but the
+            last one at Domo. The last one is my own.
           </p>
         </Reveal>
 

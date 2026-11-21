@@ -49,84 +49,99 @@ export interface WorkProject {
   note: string;
 }
 
-/** The four the user asked to lead with, in this order. */
+/**
+ * The four Jake asked to lead with, in this order. Facts and order come from
+ * coordination/notes/projects.md; don't add details that aren't there.
+ */
 export const FEATURED: WorkProject[] = [
   {
     name: "Messaging Brain",
     body: [
-      "Our product messaging and competitive research lived in scattered documents, so everyone paraphrased it a little differently. I moved all of it into a graph database and gave every agent on the team a way to query it.",
+      "Domo’s product messaging, competitive research and industry data lived in scattered documents, so everyone paraphrased it a little differently. I moved it into a knowledge graph that every agent on the team queries, and it feeds the content we write.",
       "Then I built a Figma plugin on top, so designers pull the approved line straight onto the canvas instead of retyping it from a deck.",
     ],
-    note: `Built instead of bought · ${usd(ledgerAmount("Messaging intelligence system"))} a year in the ledger`,
+    note: `55 tools connected across the agents · built instead of bought, ${usd(ledgerAmount("Messaging intelligence system"))} a year in the ledger`,
   },
   {
     name: "Apollo outbound engine",
     body: [
-      "One pipeline for outbound instead of a pile of separate tools. It finds accounts, enriches them, runs the sequences in Apollo, and feeds what the agent learns back into the next round. Nothing sends until a person approves it.",
-      "Later, through Naitive, I built a version for a client. Theirs warms accounts up and waits for someone to engage. Then a research agent writes that person a hosted account plan, they can start a trial on their own, and the system books the meeting. It runs inside tools the client already paid for and needs a person a few times a month.",
+      "One pipeline for outbound. It finds accounts, enriches them, runs the sequences in Apollo, and feeds what an agent learns back in until a prospect converts.",
+      "It only reacts to repeated interest: two opens, two clicks, or any reply. A single open is noise and gets ignored. When someone does engage, they get a landing page written for them and their lead score updates. It’s running now, and it has taken over part of what we paid outside tools for, though not all of it yet.",
     ],
-    note: "Domo first, then a client through Naitive",
+    note: "Signal · 2+ opens, 2+ clicks, or a reply",
   },
   {
     name: "Media monitoring agent",
     body: [
-      "Keeping up with press coverage used to be a manual job. Two workflows now read the news and send a daily digest that follows a story from one day to the next, instead of repeating it every morning.",
-      "The tedious parts were duplicate stories and stock-ticker spam. I handled those with plain rules rather than asking a model to guess.",
+      "Every day it watches news about Domo and its competitors, sends alerts when something matters, and emails a daily update. It follows a story from one day to the next instead of repeating it.",
+      "The tedious parts were duplicate stories and stock-ticker spam, and it filters both. It went through a large security audit before anyone else used it.",
     ],
     note: "Replaced · manual media monitoring",
   },
-  // TODO(jake): add what it did and a number
   {
     name: "Domopalooza scheduler",
     body: [
-      "A scheduling tool I built for Domopalooza, Domo’s annual conference.",
+      "Domopalooza is Domo’s annual conference. I built an AI scheduler that set up breakout sessions for more than 6,000 registrants, along with the sessions, meetings and speakers around them.",
     ],
-    note: "Conference tooling",
+    note: "6,000+ registrants scheduled",
   },
 ];
 
 export const MORE: WorkProject[] = [
   {
+    name: "Competitive intel agent",
+    body: ["Watches what competitors do every day and keeps the battle cards current."],
+    note: "Daily collector",
+  },
+  {
+    name: "Executive assistants",
+    body: ["A custom AI assistant for each C-suite leader, set up around how that person writes and what they care about."],
+    note: "11 C-suite leaders",
+  },
+  {
+    name: "Weekly executive report",
+    body: ["Pulls from SharePoint, Domo and Gemini and builds the PowerPoint every Friday without anyone touching it."],
+    note: "Every Friday",
+  },
+  {
+    name: "CMO marketing analysis",
+    body: ["Attribution, funnel and ROI questions for the CMO, answered in minutes. A release doesn’t ship until it passes the full test set."],
+    note: "20 tools · 110 test questions",
+  },
+  {
+    name: "Paid search agent",
+    body: ["Reads Google Ads performance by region and drafts keywords and ad copy. It only recommends. A person approves every change."],
+    note: "24 tools · 6 regional datasets",
+  },
+  {
+    name: "Sales Navigator",
+    body: ["Coaches reps during live sales calls, using speech to text and Gemini."],
+    note: "Live calls",
+  },
+  {
     name: "Media relations platform",
-    body: [
-      "Reads the news every morning, scores each story on whether Domo has a credible angle, and drafts a pitch for the ones that do. It replaced a paid PR platform.",
-    ],
+    body: ["Scores each day’s stories for a Domo angle and drafts pitches in three formats. It replaced a paid PR tool."],
     note: "17 news feeds scanned daily",
   },
   {
     name: "Video pipeline",
-    body: [
-      "Writes scripts from the Messaging Brain, renders them with AI avatars, and cuts each one for widescreen and vertical.",
-    ],
-    note: "16 hours to 1 hour 15 minutes per video",
+    body: ["Produces videos with AI avatars, from script to finished cut."],
+    note: "8 to 16 hours down to 1 hour 15 minutes",
   },
   {
-    name: "AI SDR",
-    body: [
-      "A chat widget and form handler that qualifies prospects and books meetings. I built it to replace a sales engagement tool we were paying a lot for.",
-    ],
-    note: "Replaced · a sales engagement platform",
+    name: "Domopalooza keynote creative",
+    body: ["The keynote visuals, the opening video and the speaker cards, all generated with AI."],
+    note: "100+ slides in the CEO keynote",
   },
   {
-    name: "Live translator agent",
-    body: [
-      "Translates both sides of a live call as it happens, so two people without a shared language can just talk.",
-    ],
-    note: "Used on meetings and customer calls",
+    name: "Skills library",
+    body: ["Claude Code skills for the marketing team’s functions and workflows, each one owned and changed through pull requests."],
+    note: "575+ skills",
   },
   {
-    name: "CMO marketing analysis",
-    body: [
-      "Attribution, funnel and ROI questions that used to wait in an analyst’s queue come back in minutes. A fixed set of test questions has to pass before any release goes out.",
-    ],
-    note: "Replaced · the analyst queue",
-  },
-  {
-    name: "Paid search agent",
-    body: [
-      "Reads Google Ads performance for every region, drafts keywords and ad copy, and checks competitors when someone asks. It only recommends. A person approves every change.",
-    ],
-    note: "Does the work of a paid media analyst",
+    name: "jake-heaps-os",
+    body: ["My own setup in one private repo: every skill, agent, hook and config, so a new machine is ready after one clone."],
+    note: "Personal",
   },
 ];
 
