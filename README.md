@@ -56,20 +56,16 @@ Routing details:
 
 ### Custom domain
 
-The `jakeheaps.com` zone has been added to Cloudflare (pending). To cut over:
+`jakeheaps.com` and `www.jakeheaps.com` are Workers custom domains on `jakeheaps-site`
+(attached 2026-11-21). DNS for the zone is on Cloudflare (nameservers
+`alfred.ns.cloudflare.com`, `arely.ns.cloudflare.com`); Cloudflare manages the records
+and certificates for both hostnames. The only other record is the `_dmarc` TXT.
 
-1. At GoDaddy, change the nameservers to `alfred.ns.cloudflare.com` and
-   `arely.ns.cloudflare.com`.
-2. Wait for the zone to show Active in Cloudflare.
-3. Uncomment `routes` in `wrangler.jsonc` and deploy. Wrangler creates the DNS
-   records and certificates for `jakeheaps.com` and `www.jakeheaps.com`.
-4. Remove the domain from the old Vercel project.
+## Contact
 
-## Contact form
-
+Public pages link to LinkedIn only. `/brief` still has a short form:
 `src/site/components/ContactForm.tsx` → `logConsultRequest()` in `src/lib/access.ts`
-→ a Google Apps Script web app (`scripts/access-log.gs`, deployed separately) that
-writes a row to a private Sheet and emails Jake. Best-effort, no-CORS POST.
+→ a Google Apps Script web app (`scripts/access-log.gs`, deployed separately).
 
 ## Other scripts
 
