@@ -125,13 +125,13 @@ export default function About() {
               Marketing Operations Manager. Over the next year we put 26 systems
               into production, and I spent most of my time teaching people on
               the team to build their own. In May 2026 I became Manager, Internal
-              AI Projects, the same title I have now at Huckleberry, and started
-              doing the same thing across the company.
+              AI Projects, the same title I have now at Huckleberry, and spent
+              six months doing the same thing across the whole company.
               Most of the{" "}
               <Link to="/work" className="text-cedar underline decoration-cedar/30 underline-offset-4 hover:decoration-cedar">
                 work page
               </Link>{" "}
-              comes from that year.
+              comes from those 18 months.
             </p>
             <p>
               Now I&rsquo;m {NOW.title} at{" "}
