@@ -15,18 +15,20 @@ Page outline stays: `/` Home, `/work`, `/about`, `/approach`, plus `/brief`
 
 ## Constraints
 
-1. **Huckleberry: public info only.** The only public facts are the company name
-   "Huckleberry AI", its site huckleberry.ai (which says "More information coming
-   soon"), and Jake's title "Manager, Internal AI Projects" (from Jake). Say nothing
-   about what Huckleberry does, its customers, product, team, or internal projects.
-   (User.)
+1. **Huckleberry: title only.** Say "Manager, Internal AI Projects at Huckleberry
+   AI" (link huckleberry.ai) and nothing else: not what it does, not that it
+   hasn't launched, no customers, product, team, or projects. (User, updated.)
 2. **No "not taking consulting work" messaging anywhere.** Remove the FAQ entry and
    any other line saying so, including the contact section lede. Do not replace it
    with a sales pitch either. (User.)
 3. **No Domo internal screenshots on the public pages.** The asset-library and
    recognition-feed screenshots come off /work. (User.) /brief is untouched unless
    the user says otherwise.
-4. **Brand is jakeheaps "Manuscript"** (DESIGN.md). Tokens in `src/index.css`
+4. **Brand is jakeheaps "Manuscript", modernized.** Jake's official kit is now in
+   `brand-kit/` (tokens, JH brandmark SVGs, favicon, signature, social icons,
+   type scale, usage rules). Follow it; "modernize" means fresher layout, rhythm,
+   and craft inside the same palette and type, not new colors or fonts. (User.)
+   Details: (DESIGN.md). Tokens in `src/index.css`
    `@theme`: paper, surface, ink, ink-soft, hairline, cedar, sienna. Fonts:
    Newsreader (display), General Sans (body), IBM Plex Mono (numbers, small
    labels). JH masthead mark (`Brandmark`). No amber CTA, no woven-thread motif, no
@@ -58,14 +60,30 @@ Page outline stays: `/` Home, `/work`, `/about`, `/approach`, plus `/brief`
     list (e.g. the old DAM or sales-engagement vendor names), no client "Minky",
     no internal dollar codes. Apollo (Apollo.io) may be named. (User + coordinator.)
 
+11. **Naitive is out entirely.** No career row, no client work, no mention. (User.)
+12. **Contact is LinkedIn only.** No email address and no form on the public pages
+    (footer, contact band, nav, About). `/brief` stays as it is. (User.)
+13. **Stats:** keep the story *and* keep 93%, 26 systems, $2.3M, 1.65x prominent.
+    (User.)
+14. **Bio facts confirmed by Jake:** married Ella in August 2026 (they met through
+    Jake's mom, who she works with); played every sport growing up, football in
+    high school; follows NCAA football and the NFL; served a two-year mission for
+    The Church of Jesus Christ of Latter-day Saints in San Bernardino, California
+    (2020 to 2022), where he learned Spanish; UVU B.S. Marketing in progress, **no
+    finish date**. (User.)
+15. **Work page projects:** see `coordination/notes/projects.md` (facts and order).
+    AI SDR removed. (User + coordinator.)
+
 ## Stats the site may use (all from Jake's Domo year)
 
 93% team adoption · 26 production systems · $2.3M first-year value (ledger rows in
 `src/data/ledger.ts`, total computed) · $840K hard dollars · 1.65x team
 productivity · 80+ people trained · Bissell: 2 days to workflows in use ·
 30+ funnels at Bucked Up · CEO keynote: 100+ slides of AI-generated graphics ·
-video pipeline: 16 hours to 1 hour 15 minutes per video · media relations: 17 news
-feeds scanned daily. Story leads; numbers support. Don't add numbers not listed
+video pipeline: 8 to 16 hours down to 1 hour 15 minutes per video · media
+relations: 17 news feeds scanned daily · Domopalooza scheduler: 6,000+ registrants ·
+Messaging Brain: 55 tools connected across the agents · executive assistants for 11
+C-suite leaders · 575+ skills. Story leads; numbers support. Don't add numbers not listed
 here. (Coordinator default; user did not object.)
 
 ## Shared names, formats and interfaces
@@ -90,7 +108,11 @@ here. (Coordinator default; user did not object.)
 | 2026-11-21 | Feature on /work: Messaging Brain, media monitoring agent, Domopalooza scheduler, Apollo outbound engine, plus others | User | Asked directly |
 | 2026-11-21 | Others to feature: media relations platform, video pipeline, AI SDR, live translator, keynote graphics, CMO analysis, paid search agent | Coordinator | From src/data/projects.ts |
 | 2026-11-21 | Keep layout and outline; rebrand + rewrite + mobile | User | Asked directly |
-| 2026-11-21 | Naitive: one line in the career story and as context for the client outbound work | Coordinator default | User did not answer; flagged in PR |
-| 2026-11-21 | Contact: form + email + LinkedIn | Coordinator default | User did not answer |
+| 2026-11-21 | Naitive removed everywhere | User | Answered |
+| 2026-11-21 | Contact: LinkedIn only, no email, no form (public pages) | User | Answered |
+| 2026-11-21 | Brand: old jakeheaps system, modernized; kit in brand-kit/ | User | Answered |
+| 2026-11-21 | AI SDR removed; Apollo engine = Domo version, Apollo named; media monitor = Domo tracking workflow | User | Answered |
+| 2026-11-21 | /brief left as is (screenshots stay there) | User | Answered |
 | 2026-11-21 | Deploys: Cloudflare Workers Builds connected to GitHub (push to main deploys) | Coordinator default | User asked for push-to-deploy; dashboard step is the user's |
-| 2026-11-21 | Domopalooza scheduler: describe only as a scheduling tool for Domopalooza, Domo's annual conference, until Jake supplies details | Coordinator | No source in repo; no invented specifics |
+| 2026-11-21 | Domopalooza scheduler: breakout scheduling for 6,000+ registrants | User pointed to jake-heaps-os | External case study |
+| 2026-11-21 | Deploy: Workers Builds connected via API; production deploy on merge to main | Coordinator | User: "just get it deployed" |
