@@ -16,7 +16,8 @@ export interface LedgerColumn {
  * rows, right-aligned tabular numerals. No zebra striping, no chips.
  * Cell conventions live here, not at call sites: lead columns are medium ink,
  * prose cells are caption-size soft ink, numeric cells are right-aligned mono.
- * Below md the table collapses to stacked label/value blocks.
+ * Below md each row becomes a stacked entry: the lead cell as its heading,
+ * then each other cell under its own small mono label.
  */
 export function LedgerTable({
   columns,
@@ -34,7 +35,7 @@ export function LedgerTable({
       ? "text-right font-mono text-caption text-ink"
       : c.lead
         ? "text-body font-medium text-ink"
-        : "text-caption leading-relaxed text-ink-soft";
+        : "text-body leading-relaxed text-ink-soft md:text-caption";
 
   return (
     <table
@@ -46,7 +47,7 @@ export function LedgerTable({
         </caption>
       )}
       <thead className="max-md:hidden">
-        <tr className="border-t-2 border-ink">
+        <tr className="rule-strong">
           {columns.map((c) => (
             <th
               key={c.key}
@@ -60,20 +61,22 @@ export function LedgerTable({
           ))}
         </tr>
       </thead>
-      <tbody className="max-md:block max-md:border-t-2 max-md:border-ink">
+      <tbody className="max-md:block max-md:rule-strong">
         {rows.map((row, i) => (
           <tr
             key={i}
-            className="border-t border-hairline max-md:block max-md:py-4 max-md:first:border-t-0"
+            className="border-t border-hairline max-md:grid max-md:gap-2.5 max-md:py-5 max-md:first:border-t-0"
           >
             {columns.map((c) => (
               <td
                 key={c.key}
                 className={`py-3 pr-4 align-top last:pr-0 max-md:block max-md:py-0.5 max-md:pr-0 max-md:text-left ${cellClass(c)}`}
               >
-                <span className="eyebrow mr-2 hidden text-ink-soft max-md:inline">
-                  {c.label}&ensp;·&ensp;
-                </span>
+                {!c.lead && (
+                  <span className="eyebrow mb-0.5 hidden text-ink-soft max-md:block">
+                    {c.label}
+                  </span>
+                )}
                 {row[c.key]}
               </td>
             ))}
