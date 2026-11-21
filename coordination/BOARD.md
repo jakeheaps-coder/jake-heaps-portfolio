@@ -18,11 +18,11 @@ branch (listed below). The coordinator merges them.
 
 ## Waiting on the user
 
-- Confirm the mission wording (church named) once the copy is in.
 - Logos (Manscaped, Cox, Thryv, Carvana, Regional One Health): confirm none were Naitive-only clients.
 - GoDaddy nameserver switch for jakeheaps.com (zone pending in Cloudflare).
 
 ## Done and verified by the coordinator
 
+- Jake approved the mission and Ella lines as written (2026-11-21).
 - Workers Builds connected via API: repo connection cd8b4ac7, triggers "Production: main" (wrangler deploy) and "Previews: other branches" (wrangler versions upload). Worker `jakeheaps-site` created (placeholder until first build).
 - `Messaging Brain` removed from the confidentiality blocklist (user asked to feature it).
