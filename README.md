@@ -30,13 +30,20 @@ npm run check      # confidentiality check (forbidden terms)
 
 ## Deploy (Cloudflare)
 
-`wrangler.jsonc` describes an assets-only Worker named `jakeheaps-site`.
+`wrangler.jsonc` describes an assets-only Worker named `jakeheaps-site`. It is
+connected to this GitHub repo through Cloudflare Workers Builds, so you never
+deploy by hand:
 
-- Manual: `npm run deploy` (build, confidentiality check, `wrangler deploy`). Needs
-  `wrangler login` or a `CLOUDFLARE_API_TOKEN` with Workers edit permission.
-- Automatic (recommended): in the Cloudflare dashboard, Workers & Pages → Create →
-  Import a repository → this repo. Build command `npm run build`, deploy command
-  `npx wrangler deploy`. Every push to `main` then deploys, like Vercel did.
+| Push to | What happens |
+|---|---|
+| `main` | Production deploy (`npx wrangler deploy`) to `jakeheaps-site` |
+| any other branch | Preview version (`npx wrangler versions upload`) with its own preview URL |
+
+Both run `npm ci && npm run build && ./scripts/check-confidentiality.sh` first, so a
+confidentiality hit fails the build. Build logs are in the Cloudflare dashboard under
+Workers & Pages → jakeheaps-site → Deployments.
+
+`npm run deploy` still works from a laptop with `wrangler login` if you ever need it.
 
 Routing details:
 
