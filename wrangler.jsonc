@@ -13,13 +13,12 @@
     "not_found_handling": "404-page"
   },
   "workers_dev": true,
-  "preview_urls": true
+  "preview_urls": true,
 
-  // Custom domains. Uncomment once the jakeheaps.com zone shows "Active" in
-  // Cloudflare (after the GoDaddy nameservers point at Cloudflare), then
-  // deploy again. Wrangler creates the DNS records and certificates.
-  // "routes": [
-  //   { "pattern": "jakeheaps.com", "custom_domain": true },
-  //   { "pattern": "www.jakeheaps.com", "custom_domain": true }
-  // ]
+  // Custom domains. The zone is on Cloudflare, which manages the DNS records
+  // and certificates for both.
+  "routes": [
+    { "pattern": "jakeheaps.com", "custom_domain": true },
+    { "pattern": "www.jakeheaps.com", "custom_domain": true }
+  ]
 }

@@ -19,10 +19,12 @@ branch (listed below). The coordinator merges them.
 ## Waiting on the user
 
 - Logos (Manscaped, Cox, Thryv, Carvana, Regional One Health): confirm none were Naitive-only clients.
-- GoDaddy nameserver switch for jakeheaps.com (zone pending in Cloudflare).
+- Remove jakeheaps.com from the old Vercel project (after a day, once DNS caches expire).
+- Logos (Manscaped, Cox, Thryv, Carvana, Regional One Health): confirm none were Naitive-only clients.
 
 ## Done and verified by the coordinator
 
+- 2026-11-21: PR #1 merged; production deployed by Workers Builds; jakeheaps.com + www attached as Workers custom domains; verified HTTPS via Cloudflare (server: cloudflare, cf-ray) and public DNS → Cloudflare IPs.
 - Blind review: pass 1 4.0 Ready, pass 2 4.4 Ready (reviews/site-pass-1.md, site-pass-2.md).
 - Integration merged and checked at 360/390/1440; build, confidentiality pass.
 - Jake approved the mission and Ella lines as written (2026-11-21).
